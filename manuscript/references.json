@@ -755,5 +755,44 @@
     "journal": "bioRxiv",
     "volume_pages": "posted 18 December 2025; preprint, not peer reviewed",
     "identifier": "https://github.com/SamuelTaborCU/Mtb-16S-rRNA-vs-CFU"
+  },
+  "R61": {
+    "kind": "report",
+    "authors": "Clinical and Laboratory Standards Institute",
+    "year": "2024",
+    "title": "Methods for dilution antimicrobial susceptibility tests for bacteria that grow aerobically, 12th ed. CLSI standard M07",
+    "journal": "",
+    "volume_pages": "",
+    "publisher": "Clinical and Laboratory Standards Institute, Wayne, PA",
+    "repository": "",
+    "identifier": "",
+    "retrieved": "",
+    "supports": "Materials and Methods, the prospective experiment: the reference broth-microdilution method and incubation conditions used to determine the ciprofloxacin MIC of E. coli ATCC 25922."
+  },
+  "R62": {
+    "kind": "report",
+    "authors": "Clinical and Laboratory Standards Institute",
+    "year": "2026",
+    "title": "Performance standards for antimicrobial susceptibility testing, 36th ed. CLSI supplement M100",
+    "journal": "",
+    "volume_pages": "",
+    "publisher": "Clinical and Laboratory Standards Institute, Wayne, PA",
+    "repository": "",
+    "identifier": "",
+    "retrieved": "",
+    "supports": "Materials and Methods, the prospective experiment: the quality-control MIC range for ciprofloxacin against E. coli ATCC 25922 within which the measured MIC falls."
+  },
+  "R63": {
+    "kind": "article",
+    "authors": "Fisher RA",
+    "year": "1935",
+    "title": "The logic of inductive inference",
+    "journal": "J R Stat Soc",
+    "volume_pages": "98:39-82",
+    "publisher": "",
+    "repository": "",
+    "identifier": "https://doi.org/10.2307/2342435",
+    "retrieved": "",
+    "supports": "Results Section 2: the exact test for a 2x2 table, which Fisher introduced here rather than in the 1922 chi-square paper."
   }
 }
