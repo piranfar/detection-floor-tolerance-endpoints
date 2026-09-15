@@ -84,7 +84,12 @@ RESULTS_ROUTE = {
     7:  (SUPP, "the inversion decomposition; a consequence of the boundary "
                "rather than evidence for it"),
     8:  (MAIN, "the only prospective data in the paper"),
-    9:  (MAIN, "the shortest and most concrete demonstration of the cost"),
+    9:  (SUPP, "the concentration-response reversal. Its deposit states no plated volume and no limit, so its floor cannot be established at all, and the reversal it reports may itself be a censoring artefact. It is the one section whose evidence the paper cannot put a floor under, so on a 6,000-word budget it is the first to go"),
+    12: (MAIN, "the sub-floor population measured directly in M. tuberculosis "
+               "lungs, and the four further tuberculosis deposits the screen "
+               "reached. This is the organism the title claims and the pillar "
+               "the paper stands on; without it the only prospective data and "
+               "the only held-out validation are both in E. coli"),
     10: (SUPP, "resistance and tolerance as separate axes; this is the prior "
                "literature's claim, not this paper's finding"),
     11: (MAIN, "one culture, two plated volumes, two labels -- the boundary "
@@ -96,24 +101,11 @@ RESULTS_ROUTE = {
 # not named here defaults to the supplement, so a new Methods subsection is
 # moved unless someone deliberately keeps it.
 METHODS_KEEP_IN_MAIN = {
-    # The Methods are back in the article, by the author's decision and against
-    # the word budget. A methods-facing journal is asked to evaluate a method; an
-    # article whose Materials and Methods contained only three declarations --
-    # no estimator, no screening protocol, no threshold recovery, no bootstrap
-    # specification -- is not evaluable on its own, whatever the supplement
-    # holds. Length is the price and it is paid here deliberately.
-    "The corpus screened, and how five deposits came out of it",
-    "The five deposits analysed",
-    "The prospective experiment",
-    "Two kinds of limit, kept apart",
-    "Floor posterior, refusal, and what is not learned",
-    "Causal mediation of the resistance association",
-    "What each analysis was fitted to",
-    "Dynamic range, and the two boundaries it sets",
-    "Estimation",
-    "The decomposition of a crossing time",
-    "Multiplicity",
-    "Reproducibility",
+    # Back to the supplement, reversing the earlier decision, because the target
+    # is now a tuberculosis journal and those run to 3,500-4,000 words. The
+    # article keeps only what a journal requires to sit in it; the full account
+    # is Supplementary Methods and the article says so where the Methods would
+    # have been. This is a venue decision, not a view about what a reader needs.
     "Ethics",
     "Use of generative artificial intelligence",
     "Data availability",

@@ -854,6 +854,58 @@ def tableS1() -> str:
             "20 rows and no conclusion drawn from that panel."
             + chr(10) + chr(10) + md(f, align_right_from=2))
 
+def tableS11() -> str:
+    """The M. tuberculosis deposits in the screened corpus, with their floors.
+
+    The five deposits reanalysed in the article are one clinical panel, one
+    six-laboratory exercise and one concentration grid. This table is the rest
+    of the tuberculosis literature the screen reached: every M. tuberculosis
+    deposit in the corpus whose floor could be established at all, with how far
+    its own series could see. It is the TB-specific version of the screen, and
+    it is what licenses the claim that the reachability problem is not a
+    property of one deposit.
+    """
+    d = pd.read_csv(T / "exp42_corpus_boundaries.csv")
+    tb = {
+        "PRETOMANID": ("pretomanid, Q203, and the combination",
+                       "BioStudies, 2026"),
+        "JINDANI1980_SGUL": ("24 regimen arms, sputum from pulmonary TB",
+                             "figshare 50649807"),
+        "WALTER2021_RSRATIO": ("rifampin, isoniazid, streptomycin and others",
+                               "Europe PubMed Central, 2021"),
+        "WALLER2023": ("isoniazid, bedaquiline, Q203, pretomanid",
+                       "figshare 39444559"),
+        "EDOO2026": ("ethionamide, isoniazid, alpibectir",
+                     "Nat Commun, 2026"),
+    }
+    rows, n_ser, n4, n5 = [], 0, 0, 0
+    for r in d.itertuples(index=False):
+        if r.study_id not in tb:
+            continue
+        drug, dep = tb[r.study_id]
+        rows.append([drug, r.floor_tier.lower(), f"{float(r.floor_used):g}",
+                     int(r.n_series), f"{float(r.headroom_median):.2f}",
+                     int(r.series_short_of_4_logs),
+                     int(r.series_short_of_5_logs), dep])
+        n_ser += int(r.n_series)
+        n4 += int(r.series_short_of_4_logs)
+        n5 += int(r.series_short_of_5_logs)
+    d2 = pd.DataFrame(rows, columns=[
+        "Drug or regimen", "Floor is", "*L* (CFU/mL)", "Series",
+        "Median *h*", "Short of 4 logs", "Short of 5 logs", "Deposit"])
+    return ("**Table S11.** Every *Mycobacterium tuberculosis* deposit in the "
+            "screened corpus whose assay floor could be established, and how "
+            f"deep its own series could see. Across the five, {n4} of {n_ser} "
+            f"series could not have demonstrated a four-log reduction however "
+            f"completely the drug worked, and {n5} of {n_ser} could not have "
+            "demonstrated five. Headroom is *h* = log10(*N*0/*L*) and the floor "
+            "is stated by the source, derived from a recorded plated volume, or "
+            "inferred from a pile-up on the lowest reported value, as the column "
+            "says. None of these deposits carries the analysis in the article; "
+            "they are what the screen found in the same organism. The full accession for each deposit is in the corpus manifest released with the analysis code.\n\n"
+            + md(d2, align_right_from=2))
+
+
 def main() -> int:
     OUT.parent.mkdir(parents=True, exist_ok=True)
     parts = ["# Tables",
@@ -873,13 +925,13 @@ def main() -> int:
               "Table S5 the turbidity-standard analysis.",
               ""]
     for fn in (tableS1, tableS2, tableS3, tableS4, tableS5, tableS6, tableS7,
-                tableS8, tableS9, tableS10):
+                tableS8, tableS9, tableS10, tableS11):
         parts.append(fn())
         parts.append("")
     OUT.write_text("\n".join(parts), encoding="utf-8")
     print(f"wrote {OUT.relative_to(ROOT)}")
     for fn in order + (tableS1, tableS2, tableS3, tableS4, tableS5, tableS6,
-                       tableS7, tableS8, tableS9, tableS10):
+                       tableS7, tableS8, tableS9, tableS10, tableS11):
         first = fn().split("\n")[0]
         print("   " + first[:96])
     return 0
