@@ -436,3 +436,13 @@ Held here so the Results stay on one line of reasoning. Table S6 supports the co
 | 10^-2 | 1 of 54 | 2% | 1 of 54 | 2% |
 | 10^-3 | 6 of 54 | 11% | 9 of 54 | 17% |
 | 10^-4 | 7 of 54 | 13% | 8 of 54 | 15% |
+
+**Table S11.** Every *Mycobacterium tuberculosis* deposit in the screened corpus whose assay floor could be established, and how deep its own series could see. Across the five, 184 of 310 series could not have demonstrated a four-log reduction however completely the drug worked, and 240 of 310 could not have demonstrated five. Headroom is *h* = log10(*N*0/*L*) and the floor is stated by the source, derived from a recorded plated volume, or inferred from a pile-up on the lowest reported value, as the column says. None of these deposits carries the analysis in the article; they are what the screen found in the same organism. The full accession for each deposit is in the corpus manifest released with the analysis code.
+
+| Drug or regimen | Floor is | *L* (CFU/mL) | Series | Median *h* | Short of 4 logs | Short of 5 logs | Deposit |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| pretomanid, Q203, and the combination | stated | 20 | 21 | 5.60 | 0 | 0 | BioStudies, 2026 |
+| 24 regimen arms, sputum from pulmonary TB | derived | 24 | 112 | 4.23 | 43 | 83 | figshare 50649807 |
+| rifampin, isoniazid, streptomycin and others | derived | 13 | 27 | 6.64 | 7 | 7 | Europe PubMed Central, 2021 |
+| isoniazid, bedaquiline, Q203, pretomanid | inferred | 200 | 123 | 2.85 | 123 | 123 | figshare 39444559 |
+| ethionamide, isoniazid, alpibectir | inferred | 100 | 27 | 4.10 | 11 | 27 | Nat Commun, 2026 |

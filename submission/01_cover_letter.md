@@ -83,7 +83,7 @@ Abstract, which the first does not parse. The manuscript states plainly what tho
 audits do not cover.
 
 **Supplementary material.** The full Materials and Methods, three supplementary
-analyses, two supplementary figures and 22 supplementary tables are supplied as a
+analyses, three supplementary figures and 23 supplementary tables are supplied as a
 single supplemental file, complete at this first submission, as the journal's
 guide requires.
 

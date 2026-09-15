@@ -4,7 +4,7 @@
 
 Vahhab Piranfar
 
-This file contains 2 supplemental figures and 10 supplemental tables, Table S1 to Table S10, each with its legend. Every one is cited in the manuscript text.
+This file contains 3 supplemental figures and 11 supplemental tables, Table S1 to Table S11, each with its legend. Every one is cited in the manuscript text.
 
 ---
 
@@ -40,6 +40,17 @@ none survives. (**B**) The censoring behind them: the fraction of isolates at th
 assay ceiling rises with endpoint depth, and the nominal hits concentrate where
 censoring is heaviest. (**C**) The same question in 126 evolved *E. coli* clones,
 by nutrient stratum.
+
+**Figure S3. A late endpoint cannot resolve a 32-fold concentration range.**
+Apramycin against *M. tuberculosis*, five concentrations, triplicate counts.
+(**A**) The trajectories, with an assumed floor of 100 CFU/mL — the value 10 µL
+plating would give — drawn as a band; this deposit records no plated volume, so
+the band is an assumption and is drawn to show what the assumption costs; by day 14 the highest arm lies within it, so its apparent rate
+over the final interval is a lower bound. (**B**) The ratio of survivors between
+the lowest and highest of the four compared concentrations, 4 and 128 µg/mL, at
+each sampling day, rising to 48.2-fold at
+day 7 and collapsing to 5.2-fold at day 14. (**C**) The concentration slope fitted
+separately in each interval from a replicate-level bootstrap, 20 000 draws.
 
 ---
 
@@ -269,3 +280,13 @@ Held here so the Results stay on one line of reasoning. Table S6 supports the co
 | 10^-2 | 1 of 54 | 2% | 1 of 54 | 2% |
 | 10^-3 | 6 of 54 | 11% | 9 of 54 | 17% |
 | 10^-4 | 7 of 54 | 13% | 8 of 54 | 15% |
+
+**Table S11.** Every *Mycobacterium tuberculosis* deposit in the screened corpus whose assay floor could be established, and how deep its own series could see. Across the five, 184 of 310 series could not have demonstrated a four-log reduction however completely the drug worked, and 240 of 310 could not have demonstrated five. Headroom is *h* = log10(*N*0/*L*) and the floor is stated by the source, derived from a recorded plated volume, or inferred from a pile-up on the lowest reported value, as the column says. None of these deposits carries the analysis in the article; they are what the screen found in the same organism. The full accession for each deposit is in the corpus manifest released with the analysis code.
+
+| Drug or regimen | Floor is | *L* (CFU/mL) | Series | Median *h* | Short of 4 logs | Short of 5 logs | Deposit |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| pretomanid, Q203, and the combination | stated | 20 | 21 | 5.60 | 0 | 0 | BioStudies, 2026 |
+| 24 regimen arms, sputum from pulmonary TB | derived | 24 | 112 | 4.23 | 43 | 83 | figshare 50649807 |
+| rifampin, isoniazid, streptomycin and others | derived | 13 | 27 | 6.64 | 7 | 7 | Europe PubMed Central, 2021 |
+| isoniazid, bedaquiline, Q203, pretomanid | inferred | 200 | 123 | 2.85 | 123 | 123 | figshare 39444559 |
+| ethionamide, isoniazid, alpibectir | inferred | 100 | 27 | 4.10 | 11 | 27 | Nat Commun, 2026 |
