@@ -29,6 +29,7 @@ import subprocess
 import sys
 from datetime import date
 from pathlib import Path
+from .figure_manifest import article, supplemental
 
 ROOT = Path(__file__).resolve().parents[1]
 MAIN = ROOT / "manuscript" / "SUBMISSION_MAIN.md"
@@ -38,19 +39,12 @@ OUT = ROOT / "manuscript" / "REVIEW_COPY.html"
 
 # Which image belongs to which figure number in the article. Taken from
 # src/assemble_paper.py, which is the module that decides it.
-FIGURES = {
-    1: "fig1_dynamic_range",
-    2: "fig2_rate_vs_duration",
-    3: "fig3_endpoint_collapse",
-}
+FIGURES = article()
 
 # Supplemental figures, placed in the supplement half of the reading copy by the
 # same routine. Keyed by the label as it appears in the legend, so "S1" builds
 # the pattern "Figure S1." without a second regex.
-SUPP_FIGURES = {
-    "S1": "figS1_survival_and_cox",
-    "S2": "fig4_independence",
-}
+SUPP_FIGURES = supplemental()
 
 CSS = """
 :root { --ink:#1a1a1a; --dim:#666; --rule:#d8d8d8; --mark:#fffbe6; --bg:#fff; }
@@ -216,7 +210,7 @@ Article {words(main_md):,} words, {len(FIGURES)} figures,
 {main_md.count(chr(10) + '**Table ')} tables &middot;
 supplement {words(supp_md):,} words,
 {supp_md.count(chr(10) + '**Table ')} tables,
-{len(SUPP_FIGURES)} figure &middot;
+{len(SUPP_FIGURES)} figures &middot;
 target: <i>Journal of Microbiological Methods</i> &middot;
 manuscript audit: {audit_line()}.{warn}</div>
 <div class="part">Article</div>
@@ -232,7 +226,7 @@ manuscript audit: {audit_line()}.{warn}</div>
         print(f"   FIGURES NOT PLACED: {missing}")
         return 1
     print(f"   all {len(FIGURES)} article figures and "
-          f"{len(SUPP_FIGURES)} supplemental figure embedded")
+          f"{len(SUPP_FIGURES)} supplemental figures embedded")
     pdf = to_pdf()
     print(f"   {pdf}")
     return 0

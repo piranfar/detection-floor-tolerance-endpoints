@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
+from .figure_manifest import image_map
 
 ROOT = Path(__file__).resolve().parents[1]
 BODY = ROOT / "manuscript" / "MANUSCRIPT.md"
@@ -33,19 +34,7 @@ ABSTRACT = ROOT / "manuscript" / "abstract.md"
 FIGDIR = ROOT / "results" / "figures"
 OUT = ROOT / "manuscript" / "PAPER_COMPLETE.md"
 
-FIGURES = {
-    1: "fig1_dynamic_range",
-    2: "fig2_rate_vs_duration",
-    3: "fig3_endpoint_collapse",
-    "S1": "figS1_survival_and_cox",
-    # Figure 4 became Figure S2: its only citation is in Section 10, which the
-    # routing table sends to the supplement, so the legend was sitting in an
-    # article that never referred to it.
-    "S2": "fig4_independence",
-    # fig13_parameter_transfer belongs to the published-rate-constant comparison,
-    # which is no longer part of this paper. The figure stays in results/ as a
-    # record of the work; it is neither embedded nor listed as supplementary.
-}
+FIGURES = image_map()
 
 
 def split_tables(text: str) -> dict[int, str]:
@@ -141,7 +130,7 @@ def main() -> int:
     # ---- embed each figure just before its caption ------------------------
     def embed(m):
         n = m.group(1)
-        stem = FIGURES.get(int(n) if n.isdigit() else n)
+        stem = FIGURES.get(n)
         if not stem or not (FIGDIR / f"{stem}.png").exists():
             return m.group(0)
         rel = f"../results/figures/{stem}.png"

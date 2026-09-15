@@ -32,6 +32,7 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
+from .figure_manifest import image_map
 
 from docx import Document
 from docx.enum.section import WD_SECTION
@@ -49,13 +50,7 @@ OUT = ROOT / "submission"
 # Which image belongs to which legend. The legends say "Figure 2"; the scripts
 # that drew them are named for what they compute, and nothing in either name
 # tells you about the other, so the mapping is written down once here.
-FIGURE_IMAGE = {
-    "1": "fig1_dynamic_range",
-    "2": "fig2_rate_vs_duration",
-    "3": "fig3_endpoint_collapse",
-    "S1": "figS1_survival_and_cox",
-    "S2": "fig4_independence",
-}
+FIGURE_IMAGE = image_map()
 
 LEGEND = re.compile(r"^\*\*Figure (S?\d+)\.")
 TABLE_ROW = re.compile(r"^\s*\|")
