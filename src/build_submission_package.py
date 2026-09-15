@@ -66,6 +66,8 @@ hand. Delete it and rebuild it rather than correcting a file inside it.
 | `02_manuscript.md` | The article. This is the file to upload as the manuscript. |
 | `03_supplementary_material.md` | The supplemental file, uploaded separately. The journal takes it only at first submission. |
 | `04_preferred_reviewers.md` | Three names with affiliations and verified emails, for the submission form. Not uploaded as a file. |
+| `02_manuscript.docx` | The same article in Word, double-spaced and line-numbered, with each figure above its legend. For reading and marking up. Written by `src.build_docx`, which runs after this module. |
+| `03_supplementary_material.docx` | The supplement in Word, as a separate document, because the journal takes it as a separate upload. |
 | `figures/` | Every figure at 600 dpi, as PNG, PDF and TIFF. |
 
 ## Not for upload

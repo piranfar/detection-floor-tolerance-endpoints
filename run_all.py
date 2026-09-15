@@ -130,6 +130,8 @@ STAGES = [
      "src.build_blinded_copy"),
     ("pack    everything the journal receives, in one folder, correctly named",
      "src.build_submission_package"),
+    ("docx    the article and the supplement as two Word files, for marking up",
+     "src.build_docx"),
 ]
 
 
