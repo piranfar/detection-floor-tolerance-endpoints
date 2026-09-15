@@ -1,6 +1,6 @@
 # Submission package
 
-Built by `python -m src.build_submission_package` on 2026-09-09. Every file here is
+Built by `python -m src.build_submission_package` on 2026-09-10. Every file here is
 a copy of something the pipeline generated; nothing in this folder is edited by
 hand. Delete it and rebuild it rather than correcting a file inside it.
 
@@ -12,6 +12,8 @@ hand. Delete it and rebuild it rather than correcting a file inside it.
 | `02_manuscript.md` | The article. This is the file to upload as the manuscript. |
 | `03_supplementary_material.md` | The supplemental file, uploaded separately. The journal takes it only at first submission. |
 | `04_preferred_reviewers.md` | Three names with affiliations and verified emails, for the submission form. Not uploaded as a file. |
+| `02_manuscript.docx` | The same article in Word, double-spaced and line-numbered, with each figure above its legend. For reading and marking up. Written by `src.build_docx`, which runs after this module. |
+| `03_supplementary_material.docx` | The supplement in Word, as a separate document, because the journal takes it as a separate upload. |
 | `figures/` | Every figure at 600 dpi, as PNG, PDF and TIFF. |
 
 ## Not for upload
@@ -34,8 +36,8 @@ hand. Delete it and rebuild it rather than correcting a file inside it.
 ## State of the manuscript at this build
 
 - Manuscript audit: {'high': 0, 'medium': 1, 'low': 9}
-- Article: 15,685 words
-- Supplement: 20,440 words
+- Article: 19,874 words
+- Supplement: 16,992 words
 
 ## Still to do before this can be sent
 

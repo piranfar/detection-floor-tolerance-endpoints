@@ -45,7 +45,7 @@ by nutrient stratum.
 
 ## Supplemental tables
 
-Held here so the Results stay on one line of reasoning. Table S6 supports Section 10 and Table S5 supports Section 6.
+Held here so the Results stay on one line of reasoning. Table S6 supports the concentration-and-duration analysis and Table S5 the turbidity-standard analysis.
 
 **Table S1.** The comparison the Methods promise: rows dropped from the association family against rows retained, on starting density and susceptibility. The MDR exclusion differs in susceptibility by construction, since those isolates are outside the resistant-versus-susceptible contrast the family tests. The one difference not by construction is in the 60-day panel, where the dropped rows sit higher in starting density (p = 0.027); it affects 20 rows and no conclusion drawn from that panel.
 

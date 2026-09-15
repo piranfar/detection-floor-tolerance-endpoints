@@ -105,3 +105,6 @@ data/corpus/
 # tracked. Committing them puts two binaries in every diff that touches prose.
 manuscript/REVIEW_COPY.html
 manuscript/REVIEW_COPY.pdf
+
+# macOS directory droppings
+.DS_Store
