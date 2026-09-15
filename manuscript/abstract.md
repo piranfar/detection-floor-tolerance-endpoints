@@ -4,7 +4,10 @@ A culture that grows nothing after antibiotics has never proved sterility, so
 tolerance is scored by how far the count fell: the minimum duration for killing.
 That endpoint is a fraction of the starting count, so the inoculum should cancel.
 It does in the definition, and fails once killing reaches the assay's floor.
-Five deposits are reanalysed; one experiment tests this.
+Seventy-eight published time-kill datasets were screened: of the 45 whose series
+could be inspected in full, 36 state no assay floor by any route. Five are
+reanalysed here — the floor derived in two, inferred in one and absent in two —
+and one experiment tests this.
 
 Two boundaries follow from the definitions. For a floor *L*, a *q*-log endpoint
 is visible only above *L*·10^*q*; above
@@ -22,8 +25,8 @@ on.
 Prospectively, *Escherichia coli* ATCC 25922 at the standard inoculum could
 report 3.71–3.93 logs at 10 µL and 4.88–5.05 at 100 µL; at a cut of 10⁻³, six of
 54 sample-times took two labels from one culture, the pipette alone deciding.
-Letting the plated volume vary across the permitted range moves demonstrable
-depth by 1.60 log10, as exact arithmetic.
+Across the plated volumes these laboratories actually used, 100 down to 2.5 µL,
+demonstrable depth moves by 1.60 log10 as exact arithmetic.
 A tolerance call reported without its starting density and assay floor cannot be
 interpreted.
 
