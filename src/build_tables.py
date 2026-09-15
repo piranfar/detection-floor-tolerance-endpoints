@@ -275,7 +275,8 @@ def table8() -> str:
             "says which visits contributed. Institute A deposits no day-zero "
             "reading at all, and among treated flasks only institutes C and D do, "
             "so for the rest this figure rests partly on readings taken after 24 "
-            "hours of drug. Section 6 and Table 9 instead use untreated day-zero "
+            "hours of drug. The turbidity-standard analysis and Table 9 instead use "
+            "untreated day-zero "
             "readings only, so the two tables are not expected to "
             "match.\n\n" + md(d))
 
@@ -868,7 +869,8 @@ def main() -> int:
         parts.append("")
     parts += ["---", "", "## Supplementary tables", "",
               "Held here so the Results stay on one line of reasoning. "
-              "Table S6 supports Section 10 and Table S5 supports Section 6.",
+              "Table S6 supports the concentration-and-duration analysis and "
+              "Table S5 the turbidity-standard analysis.",
               ""]
     for fn in (tableS1, tableS2, tableS3, tableS4, tableS5, tableS6, tableS7,
                 tableS8, tableS9, tableS10):

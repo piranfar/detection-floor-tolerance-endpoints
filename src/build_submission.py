@@ -65,9 +65,20 @@ RESULTS_ROUTE = {
     2:  (MAIN, "the boundary changing a published label -- the core claim"),
     3:  (MAIN, "the affected isolates are identified before treatment; short "
                "and load-bearing"),
-    4:  (MAIN, "what the phenotype tracks instead, and the mediation the "
-               "referee attacked; longest section, cut hard rather than moved"),
-    5:  (MAIN, "six laboratories, one protocol -- the generality argument"),
+    4:  (MAIN, "what the phenotype tracks instead, and the mediation a referee "
+               "attacked. It comes back because the Abstract makes both of its "
+               "claims -- that the label tracks growth state rather than "
+               "isoniazid resistance, and that most of that runs through a "
+               "ten-fold lower inoculum -- and an Abstract claim whose numbers "
+               "first appear in the Discussion is the commonest structural "
+               "objection at this class of journal"),
+    5:  (MAIN, "six laboratories, one protocol -- the generality argument, cut "
+               "hard rather than moved. Moving it wholesale orphaned Figure 2: "
+               "the figure stayed in the article with nothing citing it, which "
+               "no checker caught because an uncited figure is the reverse of a "
+               "dangling reference. Three paragraphs stay -- the lead, the kill "
+               "rates behind Fig. 2A, and the two orderings behind Fig. 2B -- "
+               "and the rest is deferred"),
     6:  (SUPP, "corroboration: the turbidity standard fixes the inoculum, not "
                "the resolvable depth. Supports Section 5, does not extend it"),
     7:  (SUPP, "the inversion decomposition; a consequence of the boundary "
@@ -85,10 +96,24 @@ RESULTS_ROUTE = {
 # not named here defaults to the supplement, so a new Methods subsection is
 # moved unless someone deliberately keeps it.
 METHODS_KEEP_IN_MAIN = {
-    # "The prospective experiment" is NOT here, by the author's decision: it goes
-    # to the supplement with the rest of the detailed methods. Noted because the
-    # default here is already the supplement, so the absence is deliberate rather
-    # than an omission, and because it is the one experiment this paper generated.
+    # The Methods are back in the article, by the author's decision and against
+    # the word budget. A methods-facing journal is asked to evaluate a method; an
+    # article whose Materials and Methods contained only three declarations --
+    # no estimator, no screening protocol, no threshold recovery, no bootstrap
+    # specification -- is not evaluable on its own, whatever the supplement
+    # holds. Length is the price and it is paid here deliberately.
+    "The corpus screened, and how five deposits came out of it",
+    "The five deposits analysed",
+    "The prospective experiment",
+    "Two kinds of limit, kept apart",
+    "Floor posterior, refusal, and what is not learned",
+    "Causal mediation of the resistance association",
+    "What each analysis was fitted to",
+    "Dynamic range, and the two boundaries it sets",
+    "Estimation",
+    "The decomposition of a crossing time",
+    "Multiplicity",
+    "Reproducibility",
     "Ethics",
     "Use of generative artificial intelligence",
     "Data availability",
@@ -191,6 +216,24 @@ class Section:
             keep.append(para)
         self.body = "\n\n".join(keep) + "\n"
         self.deferred = moved
+
+
+def defer_from_preamble(text: str) -> tuple[str, list[str]]:
+    """Pull the marked paragraphs out of a `## `-level preamble.
+
+    The Introduction has no `### ` subsections, so it never becomes a Section and
+    never passed through Section.defer_marked. Marking a paragraph there used to
+    do nothing at all, silently -- which is the worst way for this to fail,
+    because the marker reads in the source as an instruction that was obeyed and
+    the word count moves by less than the editor thinks it did.
+    """
+    keep, moved = [], []
+    for para in re.split(r"\n{2,}", text.strip()):
+        if SUPP_MARK.search(para):
+            moved.append(SUPP_MARK.sub("", para).rstrip())
+        else:
+            keep.append(para)
+    return "\n\n".join(keep), moved
 
 
 def split_sections(prose: str) -> tuple[str, list[Section], dict[str, str]]:
@@ -449,6 +492,13 @@ def main() -> int:
     problems: list[str] = []
     for s in sections:
         s.defer_marked(problems)
+    # The same marker, applied to the `## `-level text that has no subsections.
+    preamble_deferred: list[tuple[str, list[str]]] = []
+    for parent in list(preambles):
+        kept, moved = defer_from_preamble(preambles[parent])
+        if moved:
+            preambles[parent] = kept
+            preamble_deferred.append((parent, moved))
 
     # ---- assemble the two bodies -------------------------------------
     def gather(dest: str, parent: str) -> list[Section]:
@@ -489,13 +539,28 @@ def main() -> int:
                   "Vahhab Piranfar", "", "---", ""]
     moved_results = gather(SUPP, "Results")
     deferred = [s for s in sections if s.deferred]
-    if moved_results or deferred:
+    if moved_results or deferred or preamble_deferred:
         supp_parts += ["## Supplementary text", ""]
+        for parent, paras in preamble_deferred:
+            supp_parts += [f"### Extended background for the {parent}", "",
+                           "*Material held back from the article for length. It "
+                           "is reported here rather than dropped, because each "
+                           "paragraph answers a question a reader of that "
+                           "section may reasonably ask.*", ""]
+            supp_parts += ["\n\n".join(paras), ""]
         for s in moved_results:
             supp_parts += [f"### Text {s.new_label}. {s.title}", "",
                            s.body.strip(), ""]
         for s in deferred:
-            where = (f"Section {s.new_label}" if s.parent == "Results"
+            # Lower-case "section" on purpose. This heading already carries the
+            # ARTICLE's number for the section, but rewrite_section_refs runs
+            # over the finished supplement afterwards and its pattern is
+            # `\bSection (\d+)\b`, keyed on SOURCE numbers -- so a capitalised
+            # "Section 6" here was read as a source reference and reported as
+            # dangling, or silently renumbered to point somewhere else. Writing
+            # it lower-case leaves the one string in the file that is already
+            # final untouched by a pass that has no business editing it.
+            where = (f"article section {s.new_label}" if s.parent == "Results"
                      and s.new_label else s.parent)
             supp_parts += [f"### Extended results for {where}: {s.title}", "",
                            "*Material held back from the article for length. It "
