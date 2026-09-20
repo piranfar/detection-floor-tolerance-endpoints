@@ -62,8 +62,8 @@ quantification against its floor; a susceptibility-testing methodology critique.
 | Article type | Research Article. | Front matter reads `Research Article`. |
 | Title | No stated limit. | Retitled: names the finding and the design, expands "MDK", and drops the universal "every MDK" that the Discussion spent a paragraph walking back. 168 characters. |
 | Abstract | 250 words, 1–7 keywords. | Exactly 250 words. Seven keywords, retargeted to the journal's own vocabulary. |
-| Main text length | No limit, succinctness encouraged. | 12,000 words with 3 tables and 4 figures. Legal, and shorter than it was. |
-| Supplementary file | Encouraged; **can only be added or replaced at revision**, so it must be complete at first submission. | One file: three supplementary analyses, the full Materials and Methods, one supplementary figure and 22 supplementary tables. Built by `src/build_submission.py` from the same prose as the article, so the two cannot drift. |
+| Main text length | No limit, succinctness encouraged. | 8,400 words with 2 figures and 15 tables; the full deposit including Methods, references and legends runs to roughly 10,100. Legal, and shorter than it was. |
+| Supplementary file | Encouraged; **can only be added or replaced at revision**, so it must be complete at first submission. | One file: three supplementary analyses, the full Materials and Methods, five supplementary figures and 14 supplementary tables. Built by `src/build_submission.py` from the same prose as the article, so the two cannot drift. |
 | Every supplementary item cited | Files "must be cited in the text". | Enforced by the builder, which fails the build if an item is uncited. |
 | Reference style | Numbered, citation order. | Generated per file from its own citation order: 27 in the article, 38 in the supplement. |
 | Data availability | Required. | Paragraph at the end of Materials and Methods. |

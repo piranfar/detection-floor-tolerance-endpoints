@@ -703,9 +703,16 @@ cent CI 1.30 to 4.12, p = 0.0042). Adjusted for starting density the odds ratio
 falls to 1.31 (0.67 to 2.57, p = 0.42), and the interval no longer excludes one.
 The two figures estimate different things: the unadjusted 2.32 is the total
 effect of resistance on the label, and the adjusted 1.31 is the controlled
-direct effect with the inoculum held fixed, since starting density sits on
-the causal path as a mediator here rather than as a confounder — the mediation
-decomposition is Table S3. Call this attenuation rather than elimination: 185 of
+direct effect with the inoculum held fixed under an assumption this deposit
+cannot test on its own — that starting density sits on the causal path as a
+mediator here rather than beside it as a confounder. The reverse reading is
+equally available a priori: if slow growth both thins the inoculum and causes
+genuine tolerance, adjusting for starting density would remove real signal
+rather than a confounder, not attenuate a spurious one (Discussion weighs the
+two readings against each other). The mediation decomposition under the
+mediator reading is Table S3. What is not in question, whichever reading is
+right, is that the association weakens once starting density enters the
+model: 185 of
 the 203 calls still rest on a measured, uncensored numerator. Starting density
 is the strongest term in the file: every ten-fold rise in the starting most
 probable number halves the odds of a higher tolerance class (OR 0.480, 0.340 to
@@ -1823,6 +1830,17 @@ endpoints cannot be recomputed against their own measurement.
 A report carrying all five can be audited against its own floor, which is the
 test applied to every deposit in this article.
 
+A time-kill guide already exists and this five-field minimum does not replace
+it: the ASTM International (American Society for Testing and Materials)
+guide E2315 sets out how to run and report a time-kill procedure in
+general — organism, media, neutralisation, raw counts — for antimicrobial
+products broadly, and none of its reporting requirements is *L*, headroom or a
+censoring convention specific to a duration endpoint cut on a fraction of the
+starting count (40). The five fields above are additional to that guide,
+not a substitute for it, and apply wherever a killing curve is read against an
+assay floor to score how long killing took rather than only whether it
+happened.
+
 ---
 
 ### Conclusion
@@ -2007,16 +2025,16 @@ Mueller–Hinton (HiMedia): cation-adjusted Mueller–Hinton broth for the minim
 inhibitory concentration and the exposure, Mueller–Hinton agar for the viable
 counts. Cultures, the microdilution plates and the count plates were incubated at
 35 ± 2 °C in ambient air, the reference conditions CLSI specifies for this
-organism, count plates being read after 18 to 24 h (11, 40).
+organism, count plates being read after 18 to 24 h (11, 41).
 
 **Minimum inhibitory concentration.** The ciprofloxacin MIC of the strain was
-determined by CLSI reference broth microdilution (40, 41): ciprofloxacin
+determined by CLSI reference broth microdilution (41, 42): ciprofloxacin
 doubling-diluted in cation-adjusted Mueller–Hinton broth, a final inoculum of
 about 5 × 10⁵ CFU/mL, incubation at 35 ± 2 °C for 16 to 20 h in ambient air, and
 the MIC read as the lowest concentration with no visible growth, with growth,
 sterility and quality-control wells alongside as CLSI directs. The MIC was
 0.008 mg/L, which falls within the CLSI quality-control range for this strain
-(41), and the exposure was set at ten times it, 0.08 mg/L.
+(42), and the exposure was set at ten times it, 0.08 mg/L.
 
 **Drug and design.** Ciprofloxacin at ten times the MIC, 0.08 mg/L — chosen
 because it kills deeply and fast, so every arm reaches the floor inside a working
@@ -2233,7 +2251,7 @@ The attenuation of the resistance coefficient once starting density enters the
 model is reported in the Results as a descriptive ratio, which is what it is.
 Separately, a linear product-of-coefficients mediation decomposes the total
 effect of isoniazid resistance on the day-5 tolerance class into an average
-causal mediation effect through log10 *N₀* and an average direct effect (42, 43), with
+causal mediation effect through log10 *N₀* and an average direct effect (43, 44), with
 bootstrap percentile intervals from 5 000 resamples, repeated on the baseline
 stratum and on two binary collapses of the outcome.
 
@@ -2329,15 +2347,22 @@ than a diagnosis after it.
 
 ### Estimation
 
-A **Tobit model** fits log10 CFU/mL linearly in time by maximum likelihood (44). An
+A **Tobit model** fits log10 CFU/mL linearly in time by maximum likelihood (45). An
 observed reading contributes the usual Gaussian density; a censored reading
 contributes log Φ((limit − µ)/σ), the probability that it fell below its own
-limit. This is Beal's M3 (Beal 2001) written for this assay (45). Intervals come from
-the profile likelihood.
+limit. This is Beal's M3 (Beal 2001) written for this assay (46). The choice is
+not new to tuberculosis: censoring bactericidal-activity CFU series below their
+detection limit, rather than dropping or zeroing them, has been applied to early
+bactericidal activity trial data before, and reported to undercover the true
+killing rate relative to a model that treats zero counts as their own outcome
+rather than as bounded-below continuous ones (47, 48). That finding is
+about the slope fitted across an entire trial arm; what this paper adds is the
+classification consequence of the same censoring at the single terminal reading a
+tolerance call is cut on. Intervals come from the profile likelihood.
 
 **Multiple imputation** draws each censored reading from the fitted normal
 truncated at its own limit, refits by ordinary least squares, and pools 50 fits
-by Rubin's rules (46). The imputation is proper: the line and the error scale
+by Rubin's rules (49). The imputation is proper: the line and the error scale
 are redrawn from the Tobit fit's own asymptotic distribution at every imputation
 rather than held at the point estimate, so the between-imputation variance
 carries the uncertainty in the model that generated the draws. What the agreement
@@ -2352,13 +2377,13 @@ the deposit records no wavelength, so none is given here. Because it is a time,
 it runs inversely to growth rate: a larger value is a slower-growing isolate.
 
 **The tolerance label** is modelled as an ordered categorical outcome by
-proportional-odds ordinal logistic regression (47), with starting density as a
+proportional-odds ordinal logistic regression (50), with starting density as a
 prespecified covariate and every association reported unadjusted and adjusted for
 it. The MDR category of the deposited label is a fourth, unordered category and
 is excluded; all 14 rows carrying it fall outside the susceptible-versus-resistant
 contrast in any case, so the ordinal and linear models are fitted to identical
-rows. Proportional odds is tested by a Brant test per predictor (48) and by a
-likelihood-ratio test against a generalised ordered logit (49) with the coefficient
+rows. Proportional odds is tested by a Brant test per predictor (51) and by a
+likelihood-ratio test against a generalised ordered logit (52) with the coefficient
 released; where it fails, the released partial-proportional-odds fit is reported
 and checked against a multinomial fit that assumes no ordering. Rows are dropped
 only for a missing outcome, predictor or starting density, and the dropped rows
@@ -2378,18 +2403,18 @@ The crossing time is interval-censored, not observed: it lies between the last
 visit above the floor and the first visit below it, and the visit schedule is
 coarse. Interval-censored fits (31) are therefore reported alongside the naive
 treatment that pins the event to the visit at which the blank plate was noticed.
-Kaplan–Meier (50) and Cox proportional hazards (51) are retained as **descriptive**
+Kaplan–Meier (53) and Cox proportional hazards (54) are retained as **descriptive**
 summaries of first crossing only; their intervals are replaced by cluster
-bootstraps over laboratories and over flasks (52), because those 261 series come from
+bootstraps over laboratories and over flasks (55), because those 261 series come from
 72 flasks in 6 laboratories and the partial likelihood treats them as independent.
 No p-value is quoted for a term that is constant within laboratory, since six
-clusters cannot support one. Proportionality is tested on Schoenfeld residuals (53, 54).
+clusters cannot support one. Proportionality is tested on Schoenfeld residuals (56, 57).
 
 A cell is fitted only when it retains at least six quantified readings at three
 distinct times; below that the slope is determined by the censoring pattern
 rather than by the counts.
 
-**The replicate-level bootstrap** (55) behind the interval slopes resamples the three
+**The replicate-level bootstrap** (58) behind the interval slopes resamples the three
 replicate counts with replacement at both ends of each interval, takes their
 mean, refits the concentration slope on each draw, and takes percentile intervals
 from 20 000 draws. The resampling unit is the replicate count, not the interval,
@@ -2402,7 +2427,7 @@ interval quoted in Section 9 and drawn in Figure S3C. The least-squares fit is
 kept in the table for comparison and is labelled there: it has two residual
 degrees of freedom and discards the replicate scatter entirely. An interval on a
 proportion — an inversion rate, or a share of flasks — is the Jeffreys
-interval (56), which is the equal-tailed posterior under the Jeffreys prior
+interval (59), which is the equal-tailed posterior under the Jeffreys prior
 and does not collapse to zero width when the count is 0 or n, as the normal
 approximation does at the sample sizes here.
 
@@ -2440,7 +2465,7 @@ from.
 ### Multiplicity
 
 Where a question admits more than one test, every test the deposit supports is
-run, and the family is corrected by the Benjamini–Hochberg procedure (57) at a false
+run, and the family is corrected by the Benjamini–Hochberg procedure (60) at a false
 discovery rate of 5 per cent. For each test we report the correlation the sample
 size could have resolved at 95 per cent confidence, so that a null is bounded
 rather than asserted.
@@ -2491,9 +2516,9 @@ conclusions that table lists, so a reading retracted in the prose alone lies
 outside it, and a verdict silently changed from unsupported to supported would
 not be detected.
 
-Analyses used Python 3.14 with numpy 2.5.0 (58), scipy 1.18.0 (59),
-pandas 3.0.3 (60), statsmodels 0.15.0 (61) and lifelines 0.30.3
-(62).
+Analyses used Python 3.14 with numpy 2.5.0 (61), scipy 1.18.0 (62),
+pandas 3.0.3 (63), statsmodels 0.15.0 (64) and lifelines 0.30.3
+(65).
 
 ---
 
@@ -2535,12 +2560,12 @@ prospective experiment are deposited with the analysis code.
 
 That code, both audit scripts, the headroom tool and the machine-readable
 receipts recording the software versions each stage ran under are in a public
-repository (63), with the documentation and test data needed to run them. It
+repository (66), with the documentation and test data needed to run them. It
 is dual-licensed: the code under the Massachusetts Institute of Technology (MIT)
 licence, and the manuscript, figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit ada65b7+ of it — the state of the repository
+manuscript was built from commit 9edf230+ of it — the state of the repository
 the text describes, rather than the commit that records the build. A trailing
 plus sign, if present, marks a build made with uncommitted changes in the tree.
 
@@ -2643,53 +2668,59 @@ the original draft, review and editing, and visualisation.
 
 39. Tabor ST, Friesen AD, Reichlen MJ, Dide-Agossou C, McGrath M, Peterson R, Ganusov VV, Robertson GT, Voskuil MI, Walter ND. 2025. Mind the gap: understanding discordance between culture- and a non-culture-based measure of bacterial burden in murine tuberculosis treatment models. bioRxiv posted 18 December 2025; preprint, not peer reviewed. https://github.com/SamuelTaborCU/Mtb-16S-rRNA-vs-CFU.
 
-40. Clinical and Laboratory Standards Institute. 2024. Methods for dilution antimicrobial susceptibility tests for bacteria that grow aerobically, 12th ed. CLSI standard M07. Clinical and Laboratory Standards Institute, Wayne, PA.
+40. ASTM International. 2023. E2315-23: Standard Guide for Assessment of Antimicrobial Activity Using a Time-Kill Procedure. ASTM International, West Conshohocken, PA. https://doi.org/10.1520/E2315-23.
 
-41. Clinical and Laboratory Standards Institute. 2026. Performance standards for antimicrobial susceptibility testing, 36th ed. CLSI supplement M100. Clinical and Laboratory Standards Institute, Wayne, PA.
+41. Clinical and Laboratory Standards Institute. 2024. Methods for dilution antimicrobial susceptibility tests for bacteria that grow aerobically, 12th ed. CLSI standard M07. Clinical and Laboratory Standards Institute, Wayne, PA.
 
-42. Imai K, Keele L, Yamamoto T. 2010. Identification, inference and sensitivity analysis for causal mediation effects. Stat Sci 25:51-71. https://doi.org/10.1214/10-STS321.
+42. Clinical and Laboratory Standards Institute. 2026. Performance standards for antimicrobial susceptibility testing, 36th ed. CLSI supplement M100. Clinical and Laboratory Standards Institute, Wayne, PA.
 
-43. Baron RM, Kenny DA. 1986. The moderator-mediator variable distinction in social psychological research: conceptual, strategic, and statistical considerations. J Pers Soc Psychol 51:1173-1182. https://doi.org/10.1037/0022-3514.51.6.1173.
+43. Imai K, Keele L, Yamamoto T. 2010. Identification, inference and sensitivity analysis for causal mediation effects. Stat Sci 25:51-71. https://doi.org/10.1214/10-STS321.
 
-44. Tobin J. 1958. Estimation of relationships for limited dependent variables. Econometrica 26:24. https://doi.org/10.2307/1907382.
+44. Baron RM, Kenny DA. 1986. The moderator-mediator variable distinction in social psychological research: conceptual, strategic, and statistical considerations. J Pers Soc Psychol 51:1173-1182. https://doi.org/10.1037/0022-3514.51.6.1173.
 
-45. Beal SL. 2001. Ways to fit a PK model with some data below the quantification limit. J Pharmacokinet Pharmacodyn 28:481-504. https://doi.org/10.1023/A:1012299115260.
+45. Tobin J. 1958. Estimation of relationships for limited dependent variables. Econometrica 26:24. https://doi.org/10.2307/1907382.
 
-46. Rubin DB. 1987. Multiple imputation for nonresponse in surveys. John Wiley & Sons, New York, NY. https://doi.org/10.1002/9780470316696.
+46. Beal SL. 2001. Ways to fit a PK model with some data below the quantification limit. J Pharmacokinet Pharmacodyn 28:481-504. https://doi.org/10.1023/A:1012299115260.
 
-47. McCullagh P. 1980. Regression models for ordinal data. J R Stat Soc Series B Stat Methodol 42:109-127. https://doi.org/10.1111/j.2517-6161.1980.tb01109.x.
+47. Burger DA, Schall R. 2015. A Bayesian nonlinear mixed-effects regression model for the characterization of early bactericidal activity of tuberculosis drugs. J Biopharm Stat 25:1247-1271. https://doi.org/10.1080/10543406.2014.971170.
 
-48. Brant R. 1990. Assessing proportionality in the proportional odds model for ordinal logistic regression. Biometrics 46:1171-1178.
+48. Burger DA, Schall R. 2018. Robust fit of Bayesian mixed effects regression models with application to colony forming unit count in tuberculosis research. Stat Med 37:544-556. https://doi.org/10.1002/sim.7529.
 
-49. Peterson B, Harrell FE Jr. 1990. Partial proportional odds models for ordinal response variables. J R Stat Soc Ser C Appl Stat 39:205. https://doi.org/10.2307/2347760.
+49. Rubin DB. 1987. Multiple imputation for nonresponse in surveys. John Wiley & Sons, New York, NY. https://doi.org/10.1002/9780470316696.
 
-50. Kaplan EL, Meier P. 1958. Nonparametric estimation from incomplete observations. J Am Stat Assoc 53:457-481. https://doi.org/10.1080/01621459.1958.10501452.
+50. McCullagh P. 1980. Regression models for ordinal data. J R Stat Soc Series B Stat Methodol 42:109-127. https://doi.org/10.1111/j.2517-6161.1980.tb01109.x.
 
-51. Cox DR. 1972. Regression models and life-tables. J R Stat Soc Series B Stat Methodol 34:187-202. https://doi.org/10.1111/j.2517-6161.1972.tb00899.x.
+51. Brant R. 1990. Assessing proportionality in the proportional odds model for ordinal logistic regression. Biometrics 46:1171-1178.
 
-52. Field CA, Welsh AH. 2007. Bootstrapping clustered data. J R Stat Soc Series B Stat Methodol 69:369-390. https://doi.org/10.1111/j.1467-9868.2007.00593.x.
+52. Peterson B, Harrell FE Jr. 1990. Partial proportional odds models for ordinal response variables. J R Stat Soc Ser C Appl Stat 39:205. https://doi.org/10.2307/2347760.
 
-53. Schoenfeld D. 1982. Partial residuals for the proportional hazards regression model. Biometrika 69:239-241. https://doi.org/10.1093/biomet/69.1.239.
+53. Kaplan EL, Meier P. 1958. Nonparametric estimation from incomplete observations. J Am Stat Assoc 53:457-481. https://doi.org/10.1080/01621459.1958.10501452.
 
-54. Grambsch PM, Therneau TM. 1994. Proportional hazards tests and diagnostics based on weighted residuals. Biometrika 81:515-526. https://doi.org/10.1093/biomet/81.3.515.
+54. Cox DR. 1972. Regression models and life-tables. J R Stat Soc Series B Stat Methodol 34:187-202. https://doi.org/10.1111/j.2517-6161.1972.tb00899.x.
 
-55. Efron B. 1979. Bootstrap methods: another look at the jackknife. Ann Stat 7:1-26. https://doi.org/10.1214/aos/1176344552.
+55. Field CA, Welsh AH. 2007. Bootstrapping clustered data. J R Stat Soc Series B Stat Methodol 69:369-390. https://doi.org/10.1111/j.1467-9868.2007.00593.x.
 
-56. Brown LD, Cai TT, DasGupta A. 2001. Interval estimation for a binomial proportion. Stat Sci 16:101-133. https://doi.org/10.1214/ss/1009213286.
+56. Schoenfeld D. 1982. Partial residuals for the proportional hazards regression model. Biometrika 69:239-241. https://doi.org/10.1093/biomet/69.1.239.
 
-57. Benjamini Y, Hochberg Y. 1995. Controlling the false discovery rate: a practical and powerful approach to multiple testing. J R Stat Soc Series B Stat Methodol 57:289-300. https://doi.org/10.1111/j.2517-6161.1995.tb02031.x.
+57. Grambsch PM, Therneau TM. 1994. Proportional hazards tests and diagnostics based on weighted residuals. Biometrika 81:515-526. https://doi.org/10.1093/biomet/81.3.515.
 
-58. Harris CR, Millman KJ, van der Walt SJ, Gommers R, Virtanen P, Cournapeau D, Wieser E, Taylor J, Berg S, Smith NJ, Kern R, Picus M, Hoyer S, van Kerkwijk MH, Brett M, Haldane A, del Río JF, Wiebe M, Peterson P, Gérard-Marchant P, Sheppard K, Reddy T, Weckesser W, Abbasi H, Gohlke C, Oliphant TE. 2020. Array programming with NumPy. Nature 585:357-362. https://doi.org/10.1038/s41586-020-2649-2.
+58. Efron B. 1979. Bootstrap methods: another look at the jackknife. Ann Stat 7:1-26. https://doi.org/10.1214/aos/1176344552.
 
-59. Virtanen P, Gommers R, Oliphant TE, Haberland M, Reddy T, Cournapeau D, Burovski E, Peterson P, Weckesser W, Bright J, van der Walt SJ, Brett M, Wilson J, Millman KJ, Mayorov N, Nelson ARJ, Jones E, Kern R, Larson E, Carey CJ, Polat İ, Feng Y, Moore EW, VanderPlas J, Laxalde D, Perktold J, Cimrman R, Henriksen I, Quintero EA, Harris CR, Archibald AM, Ribeiro AH, Pedregosa F, van Mulbregt P, SciPy 1.0 Contributors. 2020. SciPy 1.0: fundamental algorithms for scientific computing in Python. Nat Methods 17:261-272. https://doi.org/10.1038/s41592-019-0686-2.
+59. Brown LD, Cai TT, DasGupta A. 2001. Interval estimation for a binomial proportion. Stat Sci 16:101-133. https://doi.org/10.1214/ss/1009213286.
 
-60. McKinney W. 2010. Data structures for statistical computing in Python. Proceedings of the 9th Python in Science Conference 56-61. https://doi.org/10.25080/Majora-92bf1922-00a.
+60. Benjamini Y, Hochberg Y. 1995. Controlling the false discovery rate: a practical and powerful approach to multiple testing. J R Stat Soc Series B Stat Methodol 57:289-300. https://doi.org/10.1111/j.2517-6161.1995.tb02031.x.
 
-61. Seabold S, Perktold J. 2010. Statsmodels: econometric and statistical modeling with Python. Proceedings of the 9th Python in Science Conference 92-96. https://doi.org/10.25080/Majora-92bf1922-011.
+61. Harris CR, Millman KJ, van der Walt SJ, Gommers R, Virtanen P, Cournapeau D, Wieser E, Taylor J, Berg S, Smith NJ, Kern R, Picus M, Hoyer S, van Kerkwijk MH, Brett M, Haldane A, del Río JF, Wiebe M, Peterson P, Gérard-Marchant P, Sheppard K, Reddy T, Weckesser W, Abbasi H, Gohlke C, Oliphant TE. 2020. Array programming with NumPy. Nature 585:357-362. https://doi.org/10.1038/s41586-020-2649-2.
 
-62. Davidson-Pilon C. 2019. lifelines: survival analysis in Python. J Open Source Softw 4:1317. https://doi.org/10.21105/joss.01317.
+62. Virtanen P, Gommers R, Oliphant TE, Haberland M, Reddy T, Cournapeau D, Burovski E, Peterson P, Weckesser W, Bright J, van der Walt SJ, Brett M, Wilson J, Millman KJ, Mayorov N, Nelson ARJ, Jones E, Kern R, Larson E, Carey CJ, Polat İ, Feng Y, Moore EW, VanderPlas J, Laxalde D, Perktold J, Cimrman R, Henriksen I, Quintero EA, Harris CR, Archibald AM, Ribeiro AH, Pedregosa F, van Mulbregt P, SciPy 1.0 Contributors. 2020. SciPy 1.0: fundamental algorithms for scientific computing in Python. Nat Methods 17:261-272. https://doi.org/10.1038/s41592-019-0686-2.
 
-63. Piranfar V. 2026. Analysis code, audit scripts and headroom tool for "The detection floor bounds tolerance endpoints in Mycobacterium tuberculosis". GitHub. https://github.com/piranfar/detection-floor-tolerance-endpoints.
+63. McKinney W. 2010. Data structures for statistical computing in Python. Proceedings of the 9th Python in Science Conference 56-61. https://doi.org/10.25080/Majora-92bf1922-00a.
+
+64. Seabold S, Perktold J. 2010. Statsmodels: econometric and statistical modeling with Python. Proceedings of the 9th Python in Science Conference 92-96. https://doi.org/10.25080/Majora-92bf1922-011.
+
+65. Davidson-Pilon C. 2019. lifelines: survival analysis in Python. J Open Source Softw 4:1317. https://doi.org/10.21105/joss.01317.
+
+66. Piranfar V. 2026. Analysis code, audit scripts and headroom tool for "The detection floor bounds tolerance endpoints in Mycobacterium tuberculosis". GitHub. https://github.com/piranfar/detection-floor-tolerance-endpoints.
 
 ## Figure legends
 

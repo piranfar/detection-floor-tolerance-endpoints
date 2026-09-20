@@ -409,7 +409,14 @@ class Doc:
                 blanks += 1
                 k += 1
                 continue
-            if re.match(r"^\*Note[.:]", ln):
+            # `_prepare` already mapped every literal "*" to a space (to strip
+            # markdown emphasis before number-parsing), and this method's
+            # caller already .strip()s each line, so the footnote convention
+            # `*Note.` or `*Note:` survives here as bare `Note.` / `Note:` --
+            # matching the literal asterisk would never fire, and every
+            # footnote would silently vanish from the text this checker
+            # validates numbers against.
+            if re.match(r"^Note[.:]", ln):
                 para = [ln]
                 k += 1
                 while k < len(lines) and lines[k].strip():

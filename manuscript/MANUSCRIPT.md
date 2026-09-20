@@ -522,9 +522,16 @@ cent CI 1.30 to 4.12, p = 0.0042). Adjusted for starting density the odds ratio
 falls to 1.31 (0.67 to 2.57, p = 0.42), and the interval no longer excludes one.
 The two figures estimate different things: the unadjusted 2.32 is the total
 effect of resistance on the label, and the adjusted 1.31 is the controlled
-direct effect with the inoculum held fixed, since starting density sits on
-the causal path as a mediator here rather than as a confounder — the mediation
-decomposition is Table S3. Call this attenuation rather than elimination: 185 of
+direct effect with the inoculum held fixed under an assumption this deposit
+cannot test on its own — that starting density sits on the causal path as a
+mediator here rather than beside it as a confounder. The reverse reading is
+equally available a priori: if slow growth both thins the inoculum and causes
+genuine tolerance, adjusting for starting density would remove real signal
+rather than a confounder, not attenuate a spurious one (Discussion weighs the
+two readings against each other). The mediation decomposition under the
+mediator reading is Table S3. What is not in question, whichever reading is
+right, is that the association weakens once starting density enters the
+model: 185 of
 the 203 calls still rest on a measured, uncensored numerator. Starting density
 is the strongest term in the file: every ten-fold rise in the starting most
 probable number halves the odds of a higher tolerance class (OR 0.480, 0.340 to
@@ -1545,6 +1552,17 @@ endpoints cannot be recomputed against their own measurement.
 A report carrying all five can be audited against its own floor, which is the
 test applied to every deposit in this article.
 
+A time-kill guide already exists and this five-field minimum does not replace
+it: the ASTM International (American Society for Testing and Materials)
+guide E2315 sets out how to run and report a time-kill procedure in
+general — organism, media, neutralisation, raw counts — for antimicrobial
+products broadly, and none of its reporting requirements is *L*, headroom or a
+censoring convention specific to a duration endpoint cut on a fraction of the
+starting count [[R69]]. The five fields above are additional to that guide,
+not a substitute for it, and apply wherever a killing curve is read against an
+assay floor to score how long killing took rather than only whether it
+happened.
+
 ---
 
 ### Conclusion
@@ -2039,8 +2057,15 @@ than a diagnosis after it.
 A **Tobit model** fits log10 CFU/mL linearly in time by maximum likelihood [[R47]]. An
 observed reading contributes the usual Gaussian density; a censored reading
 contributes log Φ((limit − µ)/σ), the probability that it fell below its own
-limit. This is Beal's M3 (Beal 2001) written for this assay [[R46]]. Intervals come from
-the profile likelihood.
+limit. This is Beal's M3 (Beal 2001) written for this assay [[R46]]. The choice is
+not new to tuberculosis: censoring bactericidal-activity CFU series below their
+detection limit, rather than dropping or zeroing them, has been applied to early
+bactericidal activity trial data before, and reported to undercover the true
+killing rate relative to a model that treats zero counts as their own outcome
+rather than as bounded-below continuous ones [[R67]][[R68]]. That finding is
+about the slope fitted across an entire trial arm; what this paper adds is the
+classification consequence of the same censoring at the single terminal reading a
+tolerance call is cut on. Intervals come from the profile likelihood.
 
 **Multiple imputation** draws each censored reading from the fitted normal
 truncated at its own limit, refits by ordinary least squares, and pools 50 fits

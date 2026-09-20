@@ -1114,6 +1114,17 @@ def _is_status_word(p: Paper, tok: str) -> bool:
 def _check_abbreviations(p: Paper, debug: bool = False) -> list[dict]:
     findings: list[dict] = []
     occ = _abbr_occurrences(p)
+    # The reference list is not prose: ASM-style author initials ("Burger DA",
+    # "Cox DR") are two-letter all-caps tokens that satisfy the same regex as
+    # a real abbreviation, and confusable-pair detection in part (b) below
+    # would otherwise read every such pair of authors' initials as one
+    # abbreviation standing in for another. Part (a) already excludes the
+    # reference list region by region; part (b) works from `real` directly
+    # and must exclude it here, at the source, or the exclusion never reaches
+    # it.
+    refs_span = p.span_of("References")
+    occ = [(off, tok) for off, tok in occ
+           if not (refs_span and refs_span[0] <= off < refs_span[1])]
     real: dict[str, list[int]] = defaultdict(list)
     for off, tok in occ:
         if tok in _ABBR_STANDARD or _is_status_word(p, tok):

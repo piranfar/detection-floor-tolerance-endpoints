@@ -833,5 +833,44 @@
     "identifier": "https://doi.org/10.1073/pnas.1705385114",
     "retrieved": "",
     "supports": "Results Section 12: differentially detectable Mycobacterium tuberculosis, a population viable and culturable in liquid dilution but silent on solid medium, generated experimentally by rifamycin action on RNA polymerase rather than by any assay's detection floor."
+  },
+  "R67": {
+    "kind": "article",
+    "authors": "Burger DA, Schall R",
+    "year": "2015",
+    "title": "A Bayesian nonlinear mixed-effects regression model for the characterization of early bactericidal activity of tuberculosis drugs",
+    "journal": "J Biopharm Stat",
+    "volume_pages": "25:1247-1271",
+    "publisher": "",
+    "repository": "",
+    "identifier": "https://doi.org/10.1080/10543406.2014.971170",
+    "retrieved": "",
+    "supports": "Methods, Estimation: censoring bactericidal-activity CFU series below their detection limit rather than dropping or zeroing them has precedent in tuberculosis early bactericidal activity trial data."
+  },
+  "R68": {
+    "kind": "article",
+    "authors": "Burger DA, Schall R",
+    "year": "2018",
+    "title": "Robust fit of Bayesian mixed effects regression models with application to colony forming unit count in tuberculosis research",
+    "journal": "Stat Med",
+    "volume_pages": "37:544-556",
+    "publisher": "",
+    "repository": "",
+    "identifier": "https://doi.org/10.1002/sim.7529",
+    "retrieved": "",
+    "supports": "Methods, Estimation: a conventional normal model that censors log-transformed colony-forming-unit counts below their detection limit is reported to undercover the true bactericidal activity relative to a model built for the zero counts as their own outcome."
+  },
+  "R69": {
+    "kind": "article",
+    "authors": "ASTM International",
+    "year": "2023",
+    "title": "E2315-23: Standard Guide for Assessment of Antimicrobial Activity Using a Time-Kill Procedure",
+    "journal": "",
+    "publisher": "ASTM International, West Conshohocken, PA",
+    "volume_pages": "",
+    "repository": "",
+    "identifier": "https://doi.org/10.1520/E2315-23",
+    "retrieved": "",
+    "supports": "Box 2: an existing general time-kill reporting guide, distinguished from the five-field minimum this paper proposes, which is additional to it rather than a substitute for it."
   }
 }

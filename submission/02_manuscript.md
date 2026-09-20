@@ -396,9 +396,16 @@ cent CI 1.30 to 4.12, p = 0.0042). Adjusted for starting density the odds ratio
 falls to 1.31 (0.67 to 2.57, p = 0.42), and the interval no longer excludes one.
 The two figures estimate different things: the unadjusted 2.32 is the total
 effect of resistance on the label, and the adjusted 1.31 is the controlled
-direct effect with the inoculum held fixed, since starting density sits on
-the causal path as a mediator here rather than as a confounder — the mediation
-decomposition is Table S6. Call this attenuation rather than elimination: 185 of
+direct effect with the inoculum held fixed under an assumption this deposit
+cannot test on its own — that starting density sits on the causal path as a
+mediator here rather than beside it as a confounder. The reverse reading is
+equally available a priori: if slow growth both thins the inoculum and causes
+genuine tolerance, adjusting for starting density would remove real signal
+rather than a confounder, not attenuate a spurious one (Discussion weighs the
+two readings against each other). The mediation decomposition under the
+mediator reading is Table S6. What is not in question, whichever reading is
+right, is that the association weakens once starting density enters the
+model: 185 of
 the 203 calls still rest on a measured, uncensored numerator. Starting density
 is the strongest term in the file: every ten-fold rise in the starting most
 probable number halves the odds of a higher tolerance class (OR 0.480, 0.340 to
@@ -658,6 +665,17 @@ endpoints cannot be recomputed against their own measurement.
 A report carrying all five can be audited against its own floor, which is the
 test applied to every deposit in this article.
 
+A time-kill guide already exists and this five-field minimum does not replace
+it: the ASTM International (American Society for Testing and Materials)
+guide E2315 sets out how to run and report a time-kill procedure in
+general — organism, media, neutralisation, raw counts — for antimicrobial
+products broadly, and none of its reporting requirements is *L*, headroom or a
+censoring convention specific to a duration endpoint cut on a fraction of the
+starting count (20). The five fields above are additional to that guide,
+not a substitute for it, and apply wherever a killing curve is read against an
+assay floor to score how long killing took rather than only whether it
+happened.
+
 ---
 
 ### Conclusion
@@ -730,20 +748,20 @@ article, including its accuracy and its originality.
 
 Every dataset reanalysed here was already public under an open licence and none
 was generated for this study. Each is identified in Table 3 and cited alongside
-the article that first described it: Vijay and colleagues (20, 21), van Wijk
-and colleagues (12, 13), Windels and colleagues (22, 23), Kaur and
-colleagues (24, 25), and the hollow-fibre Source Data of Dubey and
+the article that first described it: Vijay and colleagues (21, 22), van Wijk
+and colleagues (12, 13), Windels and colleagues (23, 24), Kaur and
+colleagues (25, 26), and the hollow-fibre Source Data of Dubey and
 colleagues (14, 15), held out of every fitting step. The readings from the
 prospective experiment are deposited with the analysis code.
 
 That code, both audit scripts, the headroom tool and the machine-readable
 receipts recording the software versions each stage ran under are in a public
-repository (26), with the documentation and test data needed to run them. It
+repository (27), with the documentation and test data needed to run them. It
 is dual-licensed: the code under the Massachusetts Institute of Technology (MIT)
 licence, and the manuscript, figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit ada65b7+ of it — the state of the repository
+manuscript was built from commit 9edf230+ of it — the state of the repository
 the text describes, rather than the commit that records the build. A trailing
 plus sign, if present, marks a build made with uncommitted changes in the tree.
 
@@ -838,7 +856,7 @@ The supplemental file carries the full Materials and Methods, the analyses named
 | --- | --- | --- | --- | --- | --- |
 | Six-laboratory exercise | *M. tuberculosis* H37Rv | moxifloxacin, isoniazid, 1x and 10x MIC | 90 flasks, 2 775 readings | figshare 19766083 | CC BY 4.0 |
 | Clinical isolates | *M. tuberculosis*, 217 isolates | rifampicin | 6 duration endpoints per isolate | eLife 93243, suppl. file 2 | CC BY 4.0 |
-| Evolved clones | *E. coli*, 126 clones | amikacin | MIC and persister fraction per clone | Zenodo 7550302 (23) | CC BY 4.0 |
+| Evolved clones | *E. coli*, 126 clones | amikacin | MIC and persister fraction per clone | Zenodo 7550302 (24) | CC BY 4.0 |
 | Concentration-by-time grid | *M. tuberculosis* | apramycin 1-128 ug/mL (amikacin arm not analysed) | 5 concentrations x 4 days x 3 replicates | figshare 26462791 | CC BY 4.0 |
 | Analysed last, after the derivation was fixed | *E. coli*, hollow fibre | amoxicillin-clavulanate | 20 cultures, measured day-zero density, 100 uL plated | Nat Commun 2026 Source Data | CC BY 4.0 |
 
@@ -885,16 +903,18 @@ The supplemental file carries the full Materials and Methods, the analyses named
 
 19. March VFA, Mchedlishvili K, Goig GA, Maghradze N, Avaliani T, Aspindzelashvili R, Avaliani Z, Kipiani M, Tukvadze N, Jugheli L, Bouaouina S, Doetsch A, Kalkan S, Reinhardt M, Gagneux S, Borrell S. 2025. Within-host evolution of drug tolerance in *Mycobacterium tuberculosis*. bioRxiv 2025.07.29.667394; preprint, not peer reviewed. https://doi.org/10.1101/2025.07.29.667394.
 
-20. Vijay S, Bao NLH, Vinh DN, Nhat LTH, Thu DDA, Quang NL, Trieu LPT, Nhung HN, Ha VTN, Thai PVK, Ha DTM, Lan NH, Caws M, Thwaites GE, Javid B, Thuong NT. 2024. Supplementary file 2 to "Rifampicin tolerance and growth fitness among isoniazid-resistant clinical *Mycobacterium tuberculosis* isolates from a longitudinal study" (elife-93243-supp2-v1.xlsx). eLife. https://doi.org/10.7554/eLife.93243.
+20. ASTM International. 2023. E2315-23: Standard Guide for Assessment of Antimicrobial Activity Using a Time-Kill Procedure. ASTM International, West Conshohocken, PA. https://doi.org/10.1520/E2315-23.
 
-21. Vijay S, Bao NLH, Vinh DN, Nhat LTH, Thu DDA, Quang NL, Trieu LPT, Nhung HN, Ha VTN, Thai PVK, Ha DTM, Lan NH, Caws M, Thwaites GE, Javid B, Thuong NT. 2024. Rifampicin tolerance and growth fitness among isoniazid-resistant clinical *Mycobacterium tuberculosis* isolates from a longitudinal study. Elife 13:RP93243. https://doi.org/10.7554/eLife.93243.
+21. Vijay S, Bao NLH, Vinh DN, Nhat LTH, Thu DDA, Quang NL, Trieu LPT, Nhung HN, Ha VTN, Thai PVK, Ha DTM, Lan NH, Caws M, Thwaites GE, Javid B, Thuong NT. 2024. Supplementary file 2 to "Rifampicin tolerance and growth fitness among isoniazid-resistant clinical *Mycobacterium tuberculosis* isolates from a longitudinal study" (elife-93243-supp2-v1.xlsx). eLife. https://doi.org/10.7554/eLife.93243.
 
-22. Windels EM, Cool L, Persy E, Swinnen J, Matthay P, Van den Bergh B, Wenseleers T, Michiels J. 2024. Data supporting "Antibiotic dose and nutrient availability differentially drive the evolution of antibiotic resistance and persistence". Zenodo. https://doi.org/10.5281/zenodo.7550302.
+22. Vijay S, Bao NLH, Vinh DN, Nhat LTH, Thu DDA, Quang NL, Trieu LPT, Nhung HN, Ha VTN, Thai PVK, Ha DTM, Lan NH, Caws M, Thwaites GE, Javid B, Thuong NT. 2024. Rifampicin tolerance and growth fitness among isoniazid-resistant clinical *Mycobacterium tuberculosis* isolates from a longitudinal study. Elife 13:RP93243. https://doi.org/10.7554/eLife.93243.
 
-23. Windels EM, Cool L, Persy E, Swinnen J, Matthay P, Van den Bergh B, Wenseleers T, Michiels J. 2024. Antibiotic dose and nutrient availability differentially drive the evolution of antibiotic resistance and persistence. ISME J 18:wrae070. https://doi.org/10.1093/ismejo/wrae070.
+23. Windels EM, Cool L, Persy E, Swinnen J, Matthay P, Van den Bergh B, Wenseleers T, Michiels J. 2024. Data supporting "Antibiotic dose and nutrient availability differentially drive the evolution of antibiotic resistance and persistence". Zenodo. https://doi.org/10.5281/zenodo.7550302.
 
-24. Kaur P. 2024. Apramycin kills replicating and non-replicating *Mycobacterium tuberculosis* — raw data. figshare. https://doi.org/10.6084/m9.figshare.26462791.v1.
+24. Windels EM, Cool L, Persy E, Swinnen J, Matthay P, Van den Bergh B, Wenseleers T, Michiels J. 2024. Antibiotic dose and nutrient availability differentially drive the evolution of antibiotic resistance and persistence. ISME J 18:wrae070. https://doi.org/10.1093/ismejo/wrae070.
 
-25. Kaur P, Ramya VK, Naveenkumar CN, Bharathkumar K, Singh M, Hobbie SN, Shandil RK, Narayanan S. 2024. Apramycin kills replicating and non-replicating *Mycobacterium tuberculosis*. Front Trop Dis 5:1413211. https://doi.org/10.3389/fitd.2024.1413211.
+25. Kaur P. 2024. Apramycin kills replicating and non-replicating *Mycobacterium tuberculosis* — raw data. figshare. https://doi.org/10.6084/m9.figshare.26462791.v1.
 
-26. Piranfar V. 2026. Analysis code, audit scripts and headroom tool for "The detection floor bounds tolerance endpoints in Mycobacterium tuberculosis". GitHub. https://github.com/piranfar/detection-floor-tolerance-endpoints.
+26. Kaur P, Ramya VK, Naveenkumar CN, Bharathkumar K, Singh M, Hobbie SN, Shandil RK, Narayanan S. 2024. Apramycin kills replicating and non-replicating *Mycobacterium tuberculosis*. Front Trop Dis 5:1413211. https://doi.org/10.3389/fitd.2024.1413211.
+
+27. Piranfar V. 2026. Analysis code, audit scripts and headroom tool for "The detection floor bounds tolerance endpoints in Mycobacterium tuberculosis". GitHub. https://github.com/piranfar/detection-floor-tolerance-endpoints.

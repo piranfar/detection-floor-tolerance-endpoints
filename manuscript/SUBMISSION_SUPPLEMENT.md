@@ -1495,12 +1495,19 @@ than a diagnosis after it.
 A **Tobit model** fits log10 CFU/mL linearly in time by maximum likelihood (36). An
 observed reading contributes the usual Gaussian density; a censored reading
 contributes log Φ((limit − µ)/σ), the probability that it fell below its own
-limit. This is Beal's M3 (Beal 2001) written for this assay (37). Intervals come from
-the profile likelihood.
+limit. This is Beal's M3 (Beal 2001) written for this assay (37). The choice is
+not new to tuberculosis: censoring bactericidal-activity CFU series below their
+detection limit, rather than dropping or zeroing them, has been applied to early
+bactericidal activity trial data before, and reported to undercover the true
+killing rate relative to a model that treats zero counts as their own outcome
+rather than as bounded-below continuous ones (38, 39). That finding is
+about the slope fitted across an entire trial arm; what this paper adds is the
+classification consequence of the same censoring at the single terminal reading a
+tolerance call is cut on. Intervals come from the profile likelihood.
 
 **Multiple imputation** draws each censored reading from the fitted normal
 truncated at its own limit, refits by ordinary least squares, and pools 50 fits
-by Rubin's rules (38). The imputation is proper: the line and the error scale
+by Rubin's rules (40). The imputation is proper: the line and the error scale
 are redrawn from the Tobit fit's own asymptotic distribution at every imputation
 rather than held at the point estimate, so the between-imputation variance
 carries the uncertainty in the model that generated the draws. What the agreement
@@ -1515,13 +1522,13 @@ the deposit records no wavelength, so none is given here. Because it is a time,
 it runs inversely to growth rate: a larger value is a slower-growing isolate.
 
 **The tolerance label** is modelled as an ordered categorical outcome by
-proportional-odds ordinal logistic regression (39), with starting density as a
+proportional-odds ordinal logistic regression (41), with starting density as a
 prespecified covariate and every association reported unadjusted and adjusted for
 it. The MDR category of the deposited label is a fourth, unordered category and
 is excluded; all 14 rows carrying it fall outside the susceptible-versus-resistant
 contrast in any case, so the ordinal and linear models are fitted to identical
-rows. Proportional odds is tested by a Brant test per predictor (40) and by a
-likelihood-ratio test against a generalised ordered logit (41) with the coefficient
+rows. Proportional odds is tested by a Brant test per predictor (42) and by a
+likelihood-ratio test against a generalised ordered logit (43) with the coefficient
 released; where it fails, the released partial-proportional-odds fit is reported
 and checked against a multinomial fit that assumes no ordering. Rows are dropped
 only for a missing outcome, predictor or starting density, and the dropped rows
@@ -1541,18 +1548,18 @@ The crossing time is interval-censored, not observed: it lies between the last
 visit above the floor and the first visit below it, and the visit schedule is
 coarse. Interval-censored fits (29) are therefore reported alongside the naive
 treatment that pins the event to the visit at which the blank plate was noticed.
-Kaplan–Meier (42) and Cox proportional hazards (43) are retained as **descriptive**
+Kaplan–Meier (44) and Cox proportional hazards (45) are retained as **descriptive**
 summaries of first crossing only; their intervals are replaced by cluster
-bootstraps over laboratories and over flasks (44), because those 261 series come from
+bootstraps over laboratories and over flasks (46), because those 261 series come from
 72 flasks in 6 laboratories and the partial likelihood treats them as independent.
 No p-value is quoted for a term that is constant within laboratory, since six
-clusters cannot support one. Proportionality is tested on Schoenfeld residuals (45, 46).
+clusters cannot support one. Proportionality is tested on Schoenfeld residuals (47, 48).
 
 A cell is fitted only when it retains at least six quantified readings at three
 distinct times; below that the slope is determined by the censoring pattern
 rather than by the counts.
 
-**The replicate-level bootstrap** (47) behind the interval slopes resamples the three
+**The replicate-level bootstrap** (49) behind the interval slopes resamples the three
 replicate counts with replacement at both ends of each interval, takes their
 mean, refits the concentration slope on each draw, and takes percentile intervals
 from 20 000 draws. The resampling unit is the replicate count, not the interval,
@@ -1565,7 +1572,7 @@ interval quoted in Text S3 and drawn in Figure S3C. The least-squares fit is
 kept in the table for comparison and is labelled there: it has two residual
 degrees of freedom and discards the replicate scatter entirely. An interval on a
 proportion — an inversion rate, or a share of flasks — is the Jeffreys
-interval (48), which is the equal-tailed posterior under the Jeffreys prior
+interval (50), which is the equal-tailed posterior under the Jeffreys prior
 and does not collapse to zero width when the count is 0 or n, as the normal
 approximation does at the sample sizes here.
 
@@ -1603,7 +1610,7 @@ from.
 ### Multiplicity
 
 Where a question admits more than one test, every test the deposit supports is
-run, and the family is corrected by the Benjamini–Hochberg procedure (49) at a false
+run, and the family is corrected by the Benjamini–Hochberg procedure (51) at a false
 discovery rate of 5 per cent. For each test we report the correlation the sample
 size could have resolved at 95 per cent confidence, so that a null is bounded
 rather than asserted.
@@ -1654,9 +1661,9 @@ conclusions that table lists, so a reading retracted in the prose alone lies
 outside it, and a verdict silently changed from unsupported to supported would
 not be detected.
 
-Analyses used Python 3.14 with numpy 2.5.0 (50), scipy 1.18.0 (51),
-pandas 3.0.3 (52), statsmodels 0.15.0 (53) and lifelines 0.30.3
-(54).
+Analyses used Python 3.14 with numpy 2.5.0 (52), scipy 1.18.0 (53),
+pandas 3.0.3 (54), statsmodels 0.15.0 (55) and lifelines 0.30.3
+(56).
 
 ---
 
@@ -2271,36 +2278,40 @@ pandas 3.0.3 (52), statsmodels 0.15.0 (53) and lifelines 0.30.3
 
 37. Beal SL. 2001. Ways to fit a PK model with some data below the quantification limit. J Pharmacokinet Pharmacodyn 28:481-504. https://doi.org/10.1023/A:1012299115260.
 
-38. Rubin DB. 1987. Multiple imputation for nonresponse in surveys. John Wiley & Sons, New York, NY. https://doi.org/10.1002/9780470316696.
+38. Burger DA, Schall R. 2015. A Bayesian nonlinear mixed-effects regression model for the characterization of early bactericidal activity of tuberculosis drugs. J Biopharm Stat 25:1247-1271. https://doi.org/10.1080/10543406.2014.971170.
 
-39. McCullagh P. 1980. Regression models for ordinal data. J R Stat Soc Series B Stat Methodol 42:109-127. https://doi.org/10.1111/j.2517-6161.1980.tb01109.x.
+39. Burger DA, Schall R. 2018. Robust fit of Bayesian mixed effects regression models with application to colony forming unit count in tuberculosis research. Stat Med 37:544-556. https://doi.org/10.1002/sim.7529.
 
-40. Brant R. 1990. Assessing proportionality in the proportional odds model for ordinal logistic regression. Biometrics 46:1171-1178.
+40. Rubin DB. 1987. Multiple imputation for nonresponse in surveys. John Wiley & Sons, New York, NY. https://doi.org/10.1002/9780470316696.
 
-41. Peterson B, Harrell FE Jr. 1990. Partial proportional odds models for ordinal response variables. J R Stat Soc Ser C Appl Stat 39:205. https://doi.org/10.2307/2347760.
+41. McCullagh P. 1980. Regression models for ordinal data. J R Stat Soc Series B Stat Methodol 42:109-127. https://doi.org/10.1111/j.2517-6161.1980.tb01109.x.
 
-42. Kaplan EL, Meier P. 1958. Nonparametric estimation from incomplete observations. J Am Stat Assoc 53:457-481. https://doi.org/10.1080/01621459.1958.10501452.
+42. Brant R. 1990. Assessing proportionality in the proportional odds model for ordinal logistic regression. Biometrics 46:1171-1178.
 
-43. Cox DR. 1972. Regression models and life-tables. J R Stat Soc Series B Stat Methodol 34:187-202. https://doi.org/10.1111/j.2517-6161.1972.tb00899.x.
+43. Peterson B, Harrell FE Jr. 1990. Partial proportional odds models for ordinal response variables. J R Stat Soc Ser C Appl Stat 39:205. https://doi.org/10.2307/2347760.
 
-44. Field CA, Welsh AH. 2007. Bootstrapping clustered data. J R Stat Soc Series B Stat Methodol 69:369-390. https://doi.org/10.1111/j.1467-9868.2007.00593.x.
+44. Kaplan EL, Meier P. 1958. Nonparametric estimation from incomplete observations. J Am Stat Assoc 53:457-481. https://doi.org/10.1080/01621459.1958.10501452.
 
-45. Schoenfeld D. 1982. Partial residuals for the proportional hazards regression model. Biometrika 69:239-241. https://doi.org/10.1093/biomet/69.1.239.
+45. Cox DR. 1972. Regression models and life-tables. J R Stat Soc Series B Stat Methodol 34:187-202. https://doi.org/10.1111/j.2517-6161.1972.tb00899.x.
 
-46. Grambsch PM, Therneau TM. 1994. Proportional hazards tests and diagnostics based on weighted residuals. Biometrika 81:515-526. https://doi.org/10.1093/biomet/81.3.515.
+46. Field CA, Welsh AH. 2007. Bootstrapping clustered data. J R Stat Soc Series B Stat Methodol 69:369-390. https://doi.org/10.1111/j.1467-9868.2007.00593.x.
 
-47. Efron B. 1979. Bootstrap methods: another look at the jackknife. Ann Stat 7:1-26. https://doi.org/10.1214/aos/1176344552.
+47. Schoenfeld D. 1982. Partial residuals for the proportional hazards regression model. Biometrika 69:239-241. https://doi.org/10.1093/biomet/69.1.239.
 
-48. Brown LD, Cai TT, DasGupta A. 2001. Interval estimation for a binomial proportion. Stat Sci 16:101-133. https://doi.org/10.1214/ss/1009213286.
+48. Grambsch PM, Therneau TM. 1994. Proportional hazards tests and diagnostics based on weighted residuals. Biometrika 81:515-526. https://doi.org/10.1093/biomet/81.3.515.
 
-49. Benjamini Y, Hochberg Y. 1995. Controlling the false discovery rate: a practical and powerful approach to multiple testing. J R Stat Soc Series B Stat Methodol 57:289-300. https://doi.org/10.1111/j.2517-6161.1995.tb02031.x.
+49. Efron B. 1979. Bootstrap methods: another look at the jackknife. Ann Stat 7:1-26. https://doi.org/10.1214/aos/1176344552.
 
-50. Harris CR, Millman KJ, van der Walt SJ, Gommers R, Virtanen P, Cournapeau D, Wieser E, Taylor J, Berg S, Smith NJ, Kern R, Picus M, Hoyer S, van Kerkwijk MH, Brett M, Haldane A, del Río JF, Wiebe M, Peterson P, Gérard-Marchant P, Sheppard K, Reddy T, Weckesser W, Abbasi H, Gohlke C, Oliphant TE. 2020. Array programming with NumPy. Nature 585:357-362. https://doi.org/10.1038/s41586-020-2649-2.
+50. Brown LD, Cai TT, DasGupta A. 2001. Interval estimation for a binomial proportion. Stat Sci 16:101-133. https://doi.org/10.1214/ss/1009213286.
 
-51. Virtanen P, Gommers R, Oliphant TE, Haberland M, Reddy T, Cournapeau D, Burovski E, Peterson P, Weckesser W, Bright J, van der Walt SJ, Brett M, Wilson J, Millman KJ, Mayorov N, Nelson ARJ, Jones E, Kern R, Larson E, Carey CJ, Polat İ, Feng Y, Moore EW, VanderPlas J, Laxalde D, Perktold J, Cimrman R, Henriksen I, Quintero EA, Harris CR, Archibald AM, Ribeiro AH, Pedregosa F, van Mulbregt P, SciPy 1.0 Contributors. 2020. SciPy 1.0: fundamental algorithms for scientific computing in Python. Nat Methods 17:261-272. https://doi.org/10.1038/s41592-019-0686-2.
+51. Benjamini Y, Hochberg Y. 1995. Controlling the false discovery rate: a practical and powerful approach to multiple testing. J R Stat Soc Series B Stat Methodol 57:289-300. https://doi.org/10.1111/j.2517-6161.1995.tb02031.x.
 
-52. McKinney W. 2010. Data structures for statistical computing in Python. Proceedings of the 9th Python in Science Conference 56-61. https://doi.org/10.25080/Majora-92bf1922-00a.
+52. Harris CR, Millman KJ, van der Walt SJ, Gommers R, Virtanen P, Cournapeau D, Wieser E, Taylor J, Berg S, Smith NJ, Kern R, Picus M, Hoyer S, van Kerkwijk MH, Brett M, Haldane A, del Río JF, Wiebe M, Peterson P, Gérard-Marchant P, Sheppard K, Reddy T, Weckesser W, Abbasi H, Gohlke C, Oliphant TE. 2020. Array programming with NumPy. Nature 585:357-362. https://doi.org/10.1038/s41586-020-2649-2.
 
-53. Seabold S, Perktold J. 2010. Statsmodels: econometric and statistical modeling with Python. Proceedings of the 9th Python in Science Conference 92-96. https://doi.org/10.25080/Majora-92bf1922-011.
+53. Virtanen P, Gommers R, Oliphant TE, Haberland M, Reddy T, Cournapeau D, Burovski E, Peterson P, Weckesser W, Bright J, van der Walt SJ, Brett M, Wilson J, Millman KJ, Mayorov N, Nelson ARJ, Jones E, Kern R, Larson E, Carey CJ, Polat İ, Feng Y, Moore EW, VanderPlas J, Laxalde D, Perktold J, Cimrman R, Henriksen I, Quintero EA, Harris CR, Archibald AM, Ribeiro AH, Pedregosa F, van Mulbregt P, SciPy 1.0 Contributors. 2020. SciPy 1.0: fundamental algorithms for scientific computing in Python. Nat Methods 17:261-272. https://doi.org/10.1038/s41592-019-0686-2.
 
-54. Davidson-Pilon C. 2019. lifelines: survival analysis in Python. J Open Source Softw 4:1317. https://doi.org/10.21105/joss.01317.
+54. McKinney W. 2010. Data structures for statistical computing in Python. Proceedings of the 9th Python in Science Conference 56-61. https://doi.org/10.25080/Majora-92bf1922-00a.
+
+55. Seabold S, Perktold J. 2010. Statsmodels: econometric and statistical modeling with Python. Proceedings of the 9th Python in Science Conference 92-96. https://doi.org/10.25080/Majora-92bf1922-011.
+
+56. Davidson-Pilon C. 2019. lifelines: survival analysis in Python. J Open Source Softw 4:1317. https://doi.org/10.21105/joss.01317.
