@@ -1,6 +1,6 @@
 {
   "script": "src/audit_manuscript.py",
-  "utc": "2026-09-20T22:49:44+00:00",
+  "utc": "2026-09-20T23:05:10+00:00",
   "checkers": [
     "check_abstract_length",
     "check_arithmetic",
@@ -15,19 +15,10 @@
   "n_words_audited": 40942,
   "counts": {
     "high": 0,
-    "medium": 1,
+    "medium": 0,
     "low": 11
   },
   "findings": [
-    {
-      "severity": "medium",
-      "kind": "limit-outside-its-declared-sense",
-      "where": "line 142 (Introduction)",
-      "detail": "\"limit\" appears here in none of the senses the Methods reserve it for. Check that it is not standing in for the assay floor *L*.",
-      "expected": "the assay floor *L*",
-      "found": "m requires below- and above-quantification-limit flags together with the limit of quantification, and notes that pharmacometric mo",
-      "checker": "check_terms"
-    },
     {
       "severity": "low",
       "kind": "abstract-length-summary",

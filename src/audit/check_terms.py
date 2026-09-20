@@ -634,13 +634,23 @@ _LIMIT_OK_CTX = (
 # them, not merely near them.
 _LIMIT_OK_COVER = (
     r"limits? of (?:quantification|detection)",
-    r"(?:quantification|detection) limits?",
+    r"(?:quantification|detection)[\s-]limits?",
     r"\b(?:upper|lower)\s+limits?\b",
     # a constraint on something, not a value: "a limit on how deep the assay
     # can see, the other on how long it looks"
     r"\blimits?\s+on\b",
-    # the deposit's own flag columns, always hyphenated as a modifier
-    r"\b(?:below|above)-limit\b",
+    # the deposit's own flag columns, always hyphenated as a modifier.  Two
+    # spellings occur in the sources: the bare "below-limit" flag, and
+    # ERA4TB's fully-spelled "below- and above-quantification-limit flags"
+    # [[R23]], where the whole compound is one hyphenated modifier.  The bare
+    # pattern does not cover the long one -- "above-quantification-limit" was
+    # reported as a medium "outside its declared sense" finding for exactly
+    # this reason, even though naming a source's flag column is the licensed
+    # sense.  The suspended hyphen in "below- and above-..." is why the
+    # leading half has to be optional on its own.
+    r"\b(?:below|above)-(?:quantification-|detection-)?limit\b",
+    r"\b(?:below|above)-\s+and\s+(?:below|above)-"
+    r"(?:quantification-|detection-)?limit\b",
     r"\b(?:state[sd]?|report(?:s|ed)?|nam(?:e|es|ed|ing)|quote[sd]?|"
     r"record(?:s|ed)?|declares?|gives?|carr(?:y|ies))\s+"
     r"(?:no|a|any|the|its|their)?\s*limits?\b",
