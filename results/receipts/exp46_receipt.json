@@ -1,0 +1,69 @@
+{
+  "script": "src/experiments/exp46_class_posterior.py",
+  "utc": "2026-09-19T22:15:24+00:00",
+  "data_source": "eLife 93243 supplementary file 2 (Vijay 2024)",
+  "confidence_for_a_label": 0.95,
+  "priors": {
+    "logflat": "1/lambda (scale parameter; primary)",
+    "flat": "uniform (sensitivity)"
+  },
+  "verdicts_day5_by_design_reading_prior": {
+    "duplicate/pattern/logflat/15d": {
+      "confirmed": 12,
+      "refused": 6
+    },
+    "duplicate/pattern/logflat/60d": {
+      "confirmed": 6
+    },
+    "duplicate/pattern/flat/15d": {
+      "confirmed": 12,
+      "refused": 6
+    },
+    "duplicate/pattern/flat/60d": {
+      "confirmed": 6
+    },
+    "duplicate/censor/logflat/15d": {
+      "confirmed": 12,
+      "refused": 6
+    },
+    "duplicate/censor/logflat/60d": {
+      "confirmed": 6
+    },
+    "duplicate/censor/flat/15d": {
+      "confirmed": 12,
+      "refused": 6
+    },
+    "duplicate/censor/flat/60d": {
+      "confirmed": 6
+    },
+    "triplicate/pattern/logflat/15d": {
+      "confirmed": 12,
+      "refused": 6
+    },
+    "triplicate/pattern/logflat/60d": {
+      "confirmed": 6
+    },
+    "triplicate/pattern/flat/15d": {
+      "confirmed": 12,
+      "refused": 6
+    },
+    "triplicate/pattern/flat/60d": {
+      "confirmed": 6
+    },
+    "triplicate/censor/logflat/15d": {
+      "confirmed": 12,
+      "contradicted": 6
+    },
+    "triplicate/censor/logflat/60d": {
+      "confirmed": 6
+    },
+    "triplicate/censor/flat/15d": {
+      "confirmed": 12,
+      "refused": 6
+    },
+    "triplicate/censor/flat/60d": {
+      "confirmed": 6
+    }
+  },
+  "scope_note": "floored isolates only: a floor reading identifies its generating pattern; a measured reading does not, and the deposit does not record which pattern produced it"
+}

@@ -640,10 +640,23 @@ _LEGEND_MPN_DISCLOSED = re.compile(
 
 def _cross_unit_ratio(lines: list[str], tag: str) -> list[dict]:
     out, legend, name, hits, start = [], None, None, [], 0
+    in_note = False
     for i, ln in enumerate(lines + [""]):
         m = _TABLE_LEGEND.match(ln)
+        # A footnote directly below the grid (`*Note.` / `*Note:`) is part of
+        # the same caption a reader sees above the table; the disclosure a
+        # rule here looks for can live in either half, so it is folded into
+        # `legend` rather than being invisible to a check that only reads the
+        # opening line.
+        is_note_start = legend is not None and re.match(r"^\*Note[.:]", ln.strip())
+        if is_note_start or (in_note and ln.strip()):
+            legend = legend + " " + ln.strip()
+            in_note = True
+            continue
+        if in_note and not ln.strip():
+            in_note = False
         end_of_table = m or ln.startswith("#") or (legend and not ln.strip()
-                                                   and hits)
+                                                   and hits and not in_note)
         if end_of_table and hits:
             out.append(_flag(
                 "low", "unit-mpn-over-cfu-reference",

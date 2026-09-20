@@ -1,0 +1,45 @@
+{
+  "script": "src/experiments/exp45_screen_flow.py",
+  "utc": "2026-09-18T04:48:58+00:00",
+  "flow": [
+    {
+      "stage": "candidates assembled into the manifest",
+      "n": 78
+    },
+    {
+      "stage": "marked a duplicate record, never fetched",
+      "n": -2
+    },
+    {
+      "stage": "never opened (no reader, not established, or out of scope)",
+      "n": -31
+    },
+    {
+      "stage": "inspected: a coverage row exists",
+      "n": 45
+    },
+    {
+      "stage": "of those, a duplicate fetch of a record already counted",
+      "n": -4
+    },
+    {
+      "stage": "distinct inspected records",
+      "n": 41
+    },
+    {
+      "stage": "of those, this paper's own prospective experiment",
+      "n": -1
+    },
+    {
+      "stage": "DISTINCT LITERATURE DEPOSITS INSPECTED",
+      "n": 40
+    },
+    {
+      "stage": "of those, stating no assay floor by any route",
+      "n": 32
+    }
+  ],
+  "distinct_literature_inspected": 40,
+  "stating_no_floor": 32,
+  "share_no_floor_pct": 80.0
+}

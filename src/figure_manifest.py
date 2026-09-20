@@ -38,6 +38,8 @@ FIGURES = [
     ("S1", "figS1_survival_and_cox", "survival_behind_figure_2"),
     ("S2", "fig4_independence",      "resistance_and_tolerance_axes"),
     ("S3", "fig3_endpoint_collapse", "a_late_endpoint_hides_the_dose"),
+    ("S4", "figS4_corpus_funnel",    "the_corpus_screened"),
+    ("S5", "figS5_two_platings",     "one_culture_two_platings"),
 ]
 
 # fig13_parameter_transfer belongs to the published-rate-constant comparison,

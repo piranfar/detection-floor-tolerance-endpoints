@@ -161,6 +161,10 @@ def by_group(c: pd.DataFrame) -> pd.DataFrame:
         rows.append({
             "group": g, "n": len(sub),
             "pct_measured": 100 * (sub["observability"] == "measured").mean(),
+            # The count as well as the percentage. A reader who multiplies
+            # 26.2 per cent by 84 should not have to, and the two counts have
+            # to add to the shortfall the first Results section reports.
+            "n_deep_endpoint_unreachable": int((~sub["deep_endpoint_reachable"]).sum()),
             "pct_deep_endpoint_unreachable": 100 * (~sub["deep_endpoint_reachable"]).mean(),
             "median_headroom_log10": float(sub["headroom_log10"].median()),
         })

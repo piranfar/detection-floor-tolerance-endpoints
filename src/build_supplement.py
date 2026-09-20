@@ -28,6 +28,8 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
+from .commit_stamp import stamp
+
 ROOT = Path(__file__).resolve().parents[1]
 TABLES = ROOT / "manuscript" / "tables.md"
 PROSE = ROOT / "manuscript" / "MANUSCRIPT.md"
@@ -51,7 +53,7 @@ def main() -> int:
     main_tables, supp = tables_md.split(MARKER, 1)
     supp = supp.strip()
 
-    prose = PROSE.read_text(encoding="utf-8") if PROSE.exists() else ""
+    prose = stamp(PROSE.read_text(encoding="utf-8")) if PROSE.exists() else ""
     in_manuscript = set(KEY.findall(prose)) | set(KEY.findall(main_tables))
     in_supp = set(KEY.findall(supp))
     only_here = sorted(in_supp - in_manuscript, key=lambda s: int(s[1:]))

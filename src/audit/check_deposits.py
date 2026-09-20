@@ -270,9 +270,12 @@ class Tables:
             legend: list[str] = []
             rows: list[str] = []
             in_legend = True
+            grid_done = False
+            in_note = False
             for ln in lines[i:end]:
                 if _GRID_RE.match(ln):
                     in_legend = False
+                    grid_done = True
                     cells = [_plain(c).strip()
                              for c in ln.strip().strip("|").split("|")]
                     if all(_RULE_ROW.fullmatch(c) for c in cells if c):
@@ -280,6 +283,21 @@ class Tables:
                     rows.append(" | ".join(cells))
                 elif in_legend:
                     legend.append(_plain(ln))
+                elif grid_done and (in_note or re.match(r"^\*Note[.:]", ln.strip())):
+                    # A footnote below the table grid carries the same promise
+                    # as the caption above it -- what the table is about --
+                    # split out only so the printed caption stays short. The
+                    # checks below read one `legend` string, so the footnote
+                    # rejoins it here. Kept open across its own paragraph, so
+                    # a footnote spanning several lines is not truncated at
+                    # its first one.
+                    if ln.strip():
+                        legend.append(_plain(ln))
+                        in_note = True
+                    else:
+                        in_note = False
+                elif ln.strip() == "" and grid_done:
+                    continue
                 else:
                     break                    # the block ends at its grid
             self.blocks[num] = {

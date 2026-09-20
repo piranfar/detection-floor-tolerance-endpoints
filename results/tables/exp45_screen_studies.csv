@@ -1,0 +1,79 @@
+study_id,fate,duplicate_of,screen_scope,floor_regime,role
+MICHIELS2022,duplicate,GEERTS2022,in,none,CANDIDATE
+SALMONELLA2023,duplicate,NOREL2023,in,none,CANDIDATE
+SOEORG2026_2,duplicate,SOEORG2026,in,none,CANDIDATE
+SOU,duplicate,SOEORG2026,in,none,CANDIDATE
+KOLLEROVA2024_2,"duplicate, never fetched",KOLLEROVA2024,in,,DUPLICATE
+STEWART2011,"duplicate, never fetched",STEWART2012,in,,DUPLICATE
+AGUILAR2025,inspected,,in,none,CANDIDATE
+ALEXANDER2020,inspected,,in,derived from a stated plated volume,CANDIDATE
+BENZBROMARONE2025,inspected,,in,none,CANDIDATE
+BIOENERGETIC2025,inspected,,in,none,CANDIDATE
+BISHAI2023_JHU083,inspected,,in,none,
+BUCHHOLZ2026,inspected,,in,none,CANDIDATE
+DIDEAGOSSOU2022,inspected,,in,stated by the source,
+EDOO2026,inspected,,in,none,CANDIDATE
+ENOBLOCK,inspected,,in,none,CANDIDATE
+GEERTS2022,inspected,,in,none,CANDIDATE
+HAO2026,inspected,,in,none,CANDIDATE
+JINDANI1980_SGUL,inspected,,in,derived from a stated plated volume,
+JOVANOVIC2026,inspected,,in,none,CANDIDATE
+KOLLEROVA2024,inspected,,in,derived from a stated plated volume,CANDIDATE
+LEON2025,inspected,,in,none,CANDIDATE
+MABS_CF_FIGSHARE2025,inspected,,in,none,
+MANUSE2021,inspected,,in,none,CANDIDATE
+MERCHAN2025,inspected,,in,stated by the source,
+MIYAHARA2026,inspected,,in,none,CANDIDATE
+MOLECULAR2026,inspected,,in,none,CANDIDATE
+NOREL2023,inspected,,in,none,CANDIDATE
+OFORI2024,inspected,,in,none,CANDIDATE
+PEPPER2026,inspected,,in,none,CANDIDATE
+PRETOMANID,inspected,,in,stated by the source,CANDIDATE
+PZA_PARP1_2023,inspected,,in,none,
+RIVANI2022,inspected,,in,none,CANDIDATE
+RIVANI2022_2,inspected,,in,none,CANDIDATE
+SEBASTIAN2025,inspected,,in,none,CANDIDATE
+SHEE2026_SENOLYTIC,inspected,,in,none,
+SOEORG2026,inspected,,in,stated by the source,CANDIDATE
+STEPANYAN2015,inspected,,in,none,CANDIDATE
+STEWART2012,inspected,,in,none,CANDIDATE
+STRYDOM2024,inspected,,in,none,CANDIDATE
+TBM_ETO_2026,inspected,,in,none,
+WALLER2023,inspected,,in,none,
+WALTER2021_RSRATIO,inspected,,in,stated by the source,
+WALTER2025,inspected,,in,none,CANDIDATE
+XU2026,inspected,,in,none,CANDIDATE
+YANG2024_PHAGE,inspected,,in,none,
+ZHU2022,inspected,,in,none,CANDIDATE
+BARR2021_OSF,not inspected: no reader,,in,,
+BORRELLI2025,not inspected: no reader,,in,,CANDIDATE
+BOSCH2026_NATMICRO,not inspected: no reader,,in,,
+BRAETZ2025,not inspected: no reader,,in,,CANDIDATE
+CEFTAZIDIME2021,not inspected: no reader,,in,,CANDIDATE
+FLORFENICOL2019,not inspected: no reader,,in,,CANDIDATE
+GREENSTEIN2023,not inspected: no reader,,in,,CANDIDATE
+JEPSON2016,not inspected: no reader,,in,,CANDIDATE
+JUSKEWITZ2022,not inspected: no reader,,in,,CANDIDATE
+MUETTER2026,not inspected: no reader,,in,,CANDIDATE
+MUETTER2026_2,not inspected: no reader,,in,,CANDIDATE
+NORDHOLT2024,not inspected: no reader,,in,,CANDIDATE
+RIFAPENTINE_LAI2023,not inspected: no reader,,in,,
+TABOR2025_MINDTHEGAP,not inspected: no reader,,in,,
+TANTRY2024,not inspected: no reader,,in,,CANDIDATE
+VAN2022,not inspected: no reader,,in,,CANDIDATE
+ZAINABADI_JID2024,not inspected: no reader,,in,,
+ZHANG2023,not inspected: no reader,,in,,CANDIDATE
+BROWN2015,not inspected: not established,,in,,CANDIDATE
+DESTEENWINKEL2010,not inspected: not established,,in,,EXTERNAL_VALIDATION_CANDIDATE
+DRUSANO2018,not inspected: not established,,in,,TRAIN
+FERRO2014,not inspected: not established,,in,,TRAIN
+FERRO2015,not inspected: not established,,in,,TRAIN
+GUMBO2004,not inspected: not established,,in,,TRAIN
+MAURER2014,not inspected: not established,,in,,EXTERNAL_VALIDATION_CANDIDATE
+NGUYEN2021,not inspected: not established,,in,,TRAIN
+P2021,not inspected: not established,,in,,CANDIDATE
+TSUJI2012,not inspected: not established,,in,,TRAIN
+VAN2026,not inspected: not established,,in,,CANDIDATE
+VAN2026_2,not inspected: not established,,in,,CANDIDATE
+EVANGELOPOULOS2022,out of scope,,out,,CANDIDATE
+PIRANFAR2026,own experiment,,in,derived from a stated plated volume,PROSPECTIVE TEST

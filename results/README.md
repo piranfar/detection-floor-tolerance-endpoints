@@ -6,11 +6,11 @@ Outputs of the earlier paper are not here; they live in `version_one/results/`.
 
 | | tables | figures | receipts |
 | --- | ---: | ---: | ---: |
-| total | 78 | 6 | 28 |
+| total | 84 | 7 | 31 |
 
 ## Tolerance and the assay floor (manuscript/PAPER_COMPLETE.md)
 
-**Figures.** `fig1_dynamic_range`, `fig2_rate_vs_duration`, `fig3_endpoint_collapse`, `fig4_independence`, `figS1_survival_and_cox`
+**Figures.** `fig1_dynamic_range`, `fig2_rate_vs_duration`, `fig3_endpoint_collapse`, `fig4_independence`, `figS1_survival_and_cox`, `figS_designer_nomogram`
 
 **Tables (63).**
 
@@ -84,14 +84,14 @@ Outputs of the earlier paper are not here; they live in `version_one/results/`.
 
 **Figures.** `fig13_parameter_transfer`
 
-**Tables (15).**
+**Tables (21).**
 
 | file | written by | used by |
 | --- | --- | --- |
-| `corpus_coverage.csv` | `-` | `build_corpus_long` |
+| `corpus_coverage.csv` | `exp45_screen_flow.py` | `build_corpus_long` |
 | `exp38_boundary_tests.csv` | `exp38_boundary_experiment.py` | quoted in the text only |
 | `exp38_experiment_readings.csv` | `exp38_boundary_experiment.py` | quoted in the text only |
-| `exp38_headroom_by_flask.csv` | `exp38_boundary_experiment.py` | `audit_claims`, `build_tables` |
+| `exp38_headroom_by_flask.csv` | `exp38_boundary_experiment.py` | `audit_claims`, `build_tables`, `figS_designer_nomogram` |
 | `exp38_threshold_sweep.csv` | `exp38_boundary_experiment.py` | `audit_claims`, `build_tables` |
 | `exp40_floor_signatures.csv` | `exp40_corpus_landscape.py` | quoted in the text only |
 | `exp40_landscape.csv` | `exp40_corpus_landscape.py` | quoted in the text only |
@@ -99,6 +99,12 @@ Outputs of the earlier paper are not here; they live in `version_one/results/`.
 | `exp42_corpus_boundaries.csv` | `exp42_boundaries_across_the_corpus.py` | `build_tables` |
 | `exp42_corpus_series.csv` | `exp42_boundaries_across_the_corpus.py` | quoted in the text only |
 | `exp43_plate_zero_vs_mpn.csv` | `exp43_below_the_floor_is_not_zero.py` | quoted in the text only |
+| `exp44_mpn_interval.csv` | `exp44_mpn_interval.py` | quoted in the text only |
+| `exp44_mpn_interval_summary.csv` | `exp44_mpn_interval.py` | `build_tables` |
+| `exp45_screen_flow.csv` | `exp45_screen_flow.py` | `build_tables` |
+| `exp45_screen_studies.csv` | `exp45_screen_flow.py` | quoted in the text only |
+| `exp46_class_posterior.csv` | `exp46_class_posterior.py` | `build_tables` |
+| `exp46_class_posterior_summary.csv` | `exp46_class_posterior.py` | quoted in the text only |
 | `learn_boundaries.csv` | `-` | `learn_boundaries` |
 | `neural_structure.csv` | `-` | `neural_structure` |
 | `symbolic_boundaries.csv` | `-` | `symbolic_boundaries` |
@@ -112,7 +118,7 @@ Outputs of the earlier paper are not here; they live in `version_one/results/`.
 
 ## Receipts
 
-28 JSON receipts, one per analysis stage. Each records the inputs, the headline outputs and the software versions the stage actually ran under, so a run under different versions is recorded rather than silently substituted.
+31 JSON receipts, one per analysis stage. Each records the inputs, the headline outputs and the software versions the stage actually ran under, so a run under different versions is recorded rather than silently substituted.
 
 ## Checking the numbers
 

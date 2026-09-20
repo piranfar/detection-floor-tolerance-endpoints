@@ -587,6 +587,24 @@ def _check_denominators(ms: Manuscript) -> list[dict]:
                       "was found, so denominators could not be traced.",
         }]
     traced = _flow_values(tab)
+    # THE SECOND FLOW ACCOUNT. Table 5 traces analysis SETS -- which rows
+    # entered which model and what excluded the rest. The literature screen is a
+    # different flow under the same obligation: 78 assembled, 45 inspected, 41
+    # distinct, 40 literature deposits, 32 stating no floor. It carries no
+    # Excluded column because its deductions ARE its rows, so the lookup above
+    # -- which finds a flow table by Stage plus Excluded -- cannot see it, and
+    # every screen count was reported as untraceable when it was in fact traced.
+    # A denominator is accounted for if SOME flow account carries it, and this
+    # manuscript now has two. Absolute value, because a deduction is written as
+    # a negative row and is quoted in the prose as a positive count.
+    for _tnum, other in ms.tables.items():
+        if other is tab or not other["grid"]:
+            continue
+        head = [c.lower() for c in other["grid"][0]]
+        if len(head) == 2 and head[0].startswith("stage") and head[1] == "n":
+            for row in other["grid"][1:]:
+                if len(row) > 1 and _NUM_RE.fullmatch(row[1].strip()):
+                    traced.add(abs(_int(row[1].strip())))
     rows = _flow_rows(tab)
     flow_lines = set(range(tab["line"], tab["line"] + len(tab["grid"]) + 4))
 

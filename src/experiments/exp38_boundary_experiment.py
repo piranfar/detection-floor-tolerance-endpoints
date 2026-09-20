@@ -144,11 +144,20 @@ def main() -> int:
         if s.empty:
             continue
         n0 = s.n0.mean()
-        h100 = np.log10(n0 / 10)
-        h10 = np.log10(n0 / 100)
+        # The POOLED floors, 5 and 50 CFU/mL, which is what every other
+        # headroom in this script and in exp38_headroom_by_flask.csv is
+        # computed against. These were 10 and 100 -- the SINGLE-plate
+        # floors -- so the arm figures sat two-fold tighter than the
+        # per-flask ones, and a paragraph of the manuscript compared the
+        # two and reported a verdict flip that the floor change alone had
+        # produced. The floor now travels with the number, below.
+        floor_100, floor_10 = 5.0, 50.0
+        h100 = np.log10(n0 / floor_100)
+        h10 = np.log10(n0 / floor_10)
         print(f"   {arm:5} target {TARGET[arm]:>9,.0f}   realised {n0:>11,.0f}   "
               f"h = {h100:.2f} at 100 uL, {h10:.2f} at 10 uL")
         out.append({"arm": arm, "target_n0": TARGET[arm], "realised_n0": n0,
+                    "floor_100ul": floor_100, "floor_10ul": floor_10,
                     "h_100ul": h100, "h_10ul": h10,
                     "q_log_legal_100ul": h100 >= Q, "q_log_legal_10ul": h10 >= Q})
 

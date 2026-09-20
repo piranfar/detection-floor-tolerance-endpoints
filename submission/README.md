@@ -1,6 +1,6 @@
 # Submission package
 
-Built by `python -m src.build_submission_package` on 2026-09-15. Every file here is
+Built by `python -m src.build_submission_package` on 2026-09-20. Every file here is
 a copy of something the pipeline generated; nothing in this folder is edited by
 hand. Delete it and rebuild it rather than correcting a file inside it.
 
@@ -32,12 +32,14 @@ hand. Delete it and rebuild it rather than correcting a file inside it.
 | `figure_S1_survival_behind_figure_2` | PNG, PDF, TIF | from `figS1_survival_and_cox` |
 | `figure_S2_resistance_and_tolerance_axes` | PNG, PDF, TIF | from `fig4_independence` |
 | `figure_S3_a_late_endpoint_hides_the_dose` | PNG, PDF, TIF | from `fig3_endpoint_collapse` |
+| `figure_S4_the_corpus_screened` | PNG, PDF, TIF | from `figS4_corpus_funnel` |
+| `figure_S5_one_culture_two_platings` | PNG, PDF, TIF | from `figS5_two_platings` |
 
 ## State of the manuscript at this build
 
 - Manuscript audit: {'high': 0, 'medium': 1, 'low': 10}
-- Article: 8,857 words
-- Supplement: 28,907 words
+- Article: 10,058 words
+- Supplement: 31,578 words
 
 ## Still to do before this can be sent
 

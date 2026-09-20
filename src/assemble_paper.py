@@ -27,6 +27,8 @@ import re
 from pathlib import Path
 from .figure_manifest import image_map
 
+from .commit_stamp import stamp
+
 ROOT = Path(__file__).resolve().parents[1]
 BODY = ROOT / "manuscript" / "MANUSCRIPT.md"
 TABLES = ROOT / "manuscript" / "tables.md"
@@ -74,7 +76,7 @@ def first_citation_positions(body: str, n_tables: int) -> dict[int, int]:
 def main() -> int:
     if not BODY.exists():
         raise SystemExit(f"missing {BODY}")
-    body = BODY.read_text(encoding="utf-8")
+    body = stamp(BODY.read_text(encoding="utf-8"))
     # The supplementary block is a trailing section of tables.md. It has to be
     # separated before splitting, or it rides along with whichever numbered table
     # happens to come last and is spliced into the middle of a Results section.

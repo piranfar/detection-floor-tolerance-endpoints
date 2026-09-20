@@ -37,6 +37,8 @@ import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from .commit_stamp import stamp
+
 ROOT = Path(__file__).resolve().parents[1]
 PROSE = ROOT / "manuscript" / "MANUSCRIPT.md"
 TABLES = ROOT / "manuscript" / "tables.md"
@@ -410,14 +412,19 @@ def apply_table_remap(text: str, remap: dict[str, str]) -> str:
 def check(main: str, supp: str, table_remap: dict[str, str],
           problems: list[str]) -> None:
     """The obligations a journal imposes, checked rather than remembered."""
-    # 1. Every supplemental item must be cited in the manuscript text.
+    # 1. Every supplemental item must be cited somewhere in the submission.
+    #    The article is the better place and the journal asks for it there,
+    #    but a table belonging to an analysis that lives in the supplement is
+    #    properly cited in the supplement. Naming it in the article purely to
+    #    satisfy this rule is padding, and a referee read it as exactly that.
     for old, new in table_remap.items():
         if not new.startswith("S"):
             continue
-        if not re.search(rf"Table {new}\b", main):
+        if not re.search(rf"Table {new}\b", main + supp):
             problems.append(
-                f"Table {new} is supplemental but the main text never cites it; "
-                "journals require every supplemental item to be cited in the article")
+                f"Table {new} is supplemental and neither the article nor the "
+                "supplementary text cites it; every supplemental item must be "
+                "cited somewhere in the submission")
     # 2. Nothing in the main text may point at a table that is not there.
     for m in TABLE_REF.finditer(main):
         lab = m.group(1)
@@ -474,7 +481,7 @@ def check(main: str, supp: str, table_remap: dict[str, str],
 def main() -> int:
     if not PROSE.exists():
         raise SystemExit(f"missing {PROSE}")
-    prose = PROSE.read_text(encoding="utf-8")
+    prose = stamp(PROSE.read_text(encoding="utf-8"))
     tables_md = TABLES.read_text(encoding="utf-8") if TABLES.exists() else ""
     blocks, _ = split_tables(tables_md)
 
@@ -586,17 +593,24 @@ def main() -> int:
     supp_labels = sorted((v for v in table_remap.values() if v.startswith("S")),
                          key=lambda s: int(s[1:]))
     orphans = [s for s in supp_labels if not re.search(rf"Table {s}\b", main_text)]
+    # A supplemental table has to be cited somewhere. Listing the orphans by
+    # number in the article reads as padding -- a referee said exactly that --
+    # and it helps nobody, because the place those tables are used is the
+    # supplement. So the article says how many there are and where they are
+    # cited, and the obligation is enforced against the supplement instead.
+    uncited = [s for s in orphans if not re.search(rf"Table {s}\b", supp_text)]
+    for lab in uncited:
+        problems.append(
+            f"Table {lab} is cited neither in the article nor in the "
+            "supplementary text, so nothing in the submission refers to it")
     if orphans:
-        named = ", ".join(f"Table {s}" for s in orphans[:-1])
-        named = f"{named} and Table {orphans[-1]}" if len(orphans) > 1 \
-            else f"Table {orphans[0]}"
         main_text += (
             "\n\n## Supplemental material\n\n"
             "The supplemental file carries the full Materials and Methods, the "
             f"analyses named above as supplementary text, and {len(supp_labels)} "
-            f"supplemental tables. {named} support analyses reported there "
-            "rather than in this article, and are listed so that every "
-            "supplemental item is named in the manuscript.\n")
+            f"supplemental tables. Of those, {len(orphans)} belong to "
+            "analyses reported in that file rather than in this article, and "
+            "are cited there at the point where each is used.\n")
 
     # ---- place the table blocks --------------------------------------
     main_tabs, supp_tabs = [], []
@@ -616,9 +630,10 @@ def main() -> int:
     # first. The prose file's own count describes the long document and is
     # simply wrong here: the article carries three tables, not fifteen.
     n_figs = len({s for s in FIG_REF.findall(main_text) if not s.startswith("S")})
+    n_boxes = len({m.group(1) for m in re.finditer(r"\*\*Box (\d+)\.", main_text)})
     main_text = COUNTS.sub(
         f"**Figures:** {n_figs} | **Tables:** {len(main_tabs)} | "
-        f"**Boxes:** 1 | **Supplemental figures:** {len(supp_fig_legends)} | "
+        f"**Boxes:** {n_boxes} | **Supplemental figures:** {len(supp_fig_legends)} | "
         f"**Supplemental tables:** {len(supp_tabs)}",
         main_text, count=1)
     if ABSTRACT.exists():

@@ -1,0 +1,572 @@
+{
+  "script": "src/experiments/exp44_mpn_interval.py",
+  "utc": "2026-09-19T22:11:49+00:00",
+  "data_source": "eLife 93243 supplementary file 2 (Vijay 2024)",
+  "mpn_design": {
+    "wells_per_dilution": {
+      "duplicate": 2,
+      "triplicate": 3
+    },
+    "primary": "duplicate",
+    "first_well_ml_of_original": 0.1,
+    "dilution_factor": 10.0,
+    "sources": {
+      "duplicate": "Vijay et al. 2024, eLife 93243 methods: '100 uL ... as an undiluted culture in duplicate for serial dilution'",
+      "triplicate": "Vijay et al. 2021, AAC 65:e01439-20 methods: '100 ul ... in triplicate ... 10 ul into 90 ul 7H9T ... up to 10^-9'"
+    },
+    "day2_series_start": "10^-1: the day-2 floor is 230 = 10x the day-5 floor, the same design started one dilution later",
+    "design_validation": {
+      "n_distinct_deposit_values": 30,
+      "tolerance": 0.08,
+      "unmatched": [],
+      "note": "near-duplicate rungs in the deposit (12 & 13, 49 & 50, 61 & 62 & 63) are consistent with a published MPN table used alongside exact computation and 'mean MPN/mL' averaging"
+    }
+  },
+  "intervals_for_a_floor_reading": {
+    "duplicate": {
+      "day5": {
+        "rung_mle": 23.116349285139638,
+        "pattern_95": [
+          3.245106112719663,
+          119.90894201811595
+        ],
+        "pattern_99": [
+          1.4519568520322668,
+          183.39672698838962
+        ],
+        "censor_95": 136.17144898115552,
+        "censor_99": 209.3259228494619,
+        "censor_95_k4_stability": 134.94488392775156,
+        "firstdilution_rule_95": 36.76138347077869,
+        "firstdilution_rule_99": 52.95807939120428
+      },
+      "day2": {
+        "rung_mle": 231.1634928513964,
+        "pattern_95": [
+          32.45106112719663,
+          1199.0894201811595
+        ],
+        "pattern_99": [
+          14.51956852032266,
+          1833.9672698838963
+        ],
+        "censor_95": 1361.7144898149006,
+        "censor_99": 2093.259228494565,
+        "censor_95_k4_stability": 1349.448839279221,
+        "firstdilution_rule_95": 367.61383470778696,
+        "firstdilution_rule_99": 529.5807939120429
+      }
+    },
+    "triplicate": {
+      "day5": {
+        "rung_mle": 23.116349285139645,
+        "pattern_95": [
+          4.923061631118901,
+          90.79718491527723
+        ],
+        "pattern_99": [
+          2.7210895258091394,
+          133.13220955718435
+        ],
+        "censor_95": 90.90874613053278,
+        "censor_99": 139.55388343088404,
+        "censor_95_k4_stability": 90.09924499710989,
+        "firstdilution_rule_95": 40.773442395728296,
+        "firstdilution_rule_99": 57.004361037849094
+      },
+      "day2": {
+        "rung_mle": 231.1634928513964,
+        "pattern_95": [
+          49.230616311189,
+          907.9718491527725
+        ],
+        "pattern_99": [
+          27.210895258091394,
+          1331.322095571913
+        ],
+        "censor_95": 909.0874613053744,
+        "censor_99": 1395.538834309608,
+        "censor_95_k4_stability": 900.9924499732527,
+        "firstdilution_rule_95": 407.734423957283,
+        "firstdilution_rule_99": 570.0436103784909
+      }
+    }
+  },
+  "acceptance_plate_sweep_reproduces_exp25": {
+    "per_design": {
+      "duplicate": {
+        "15d_day5": [
+          12,
+          6
+        ],
+        "60d_day5": [
+          6,
+          0
+        ]
+      },
+      "triplicate": {
+        "15d_day5": [
+          12,
+          6
+        ],
+        "60d_day5": [
+          6,
+          0
+        ]
+      }
+    },
+    "expected": {
+      "15d_day5": [
+        12,
+        6
+      ],
+      "60d_day5": [
+        6,
+        0
+      ]
+    },
+    "passed": true
+  },
+  "verdicts": [
+    {
+      "design": "duplicate",
+      "culture_age_days": 15,
+      "sample_day": 5,
+      "method": "plate_sweep",
+      "n_floored": 18,
+      "single": 12,
+      "multiple": 6,
+      "count_interval_low": 0.0,
+      "count_interval_high": 23.0
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 15,
+      "sample_day": 5,
+      "method": "mpn_pattern_95",
+      "n_floored": 18,
+      "single": 12,
+      "multiple": 6,
+      "count_interval_low": 3.245106112719663,
+      "count_interval_high": 119.90894201811595
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 15,
+      "sample_day": 5,
+      "method": "mpn_pattern_99",
+      "n_floored": 18,
+      "single": 12,
+      "multiple": 6,
+      "count_interval_low": 1.4519568520322668,
+      "count_interval_high": 183.39672698838962
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 15,
+      "sample_day": 5,
+      "method": "mpn_censor_95",
+      "n_floored": 18,
+      "single": 12,
+      "multiple": 6,
+      "count_interval_low": 0.0,
+      "count_interval_high": 136.17144898115552
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 15,
+      "sample_day": 5,
+      "method": "mpn_censor_99",
+      "n_floored": 18,
+      "single": 12,
+      "multiple": 6,
+      "count_interval_low": 0.0,
+      "count_interval_high": 209.3259228494619
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 15,
+      "sample_day": 2,
+      "method": "plate_sweep",
+      "n_floored": 18,
+      "single": 2,
+      "multiple": 16,
+      "count_interval_low": 0.0,
+      "count_interval_high": 230.0
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 15,
+      "sample_day": 2,
+      "method": "mpn_pattern_95",
+      "n_floored": 18,
+      "single": 1,
+      "multiple": 17,
+      "count_interval_low": 32.45106112719663,
+      "count_interval_high": 1199.0894201811595
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 15,
+      "sample_day": 2,
+      "method": "mpn_pattern_99",
+      "n_floored": 18,
+      "single": 1,
+      "multiple": 17,
+      "count_interval_low": 14.51956852032266,
+      "count_interval_high": 1833.9672698838963
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 15,
+      "sample_day": 2,
+      "method": "mpn_censor_95",
+      "n_floored": 18,
+      "single": 1,
+      "multiple": 17,
+      "count_interval_low": 0.0,
+      "count_interval_high": 1361.7144898149006
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 15,
+      "sample_day": 2,
+      "method": "mpn_censor_99",
+      "n_floored": 18,
+      "single": 1,
+      "multiple": 17,
+      "count_interval_low": 0.0,
+      "count_interval_high": 2093.259228494565
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 60,
+      "sample_day": 5,
+      "method": "plate_sweep",
+      "n_floored": 6,
+      "single": 6,
+      "multiple": 0,
+      "count_interval_low": 0.0,
+      "count_interval_high": 23.0
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 60,
+      "sample_day": 5,
+      "method": "mpn_pattern_95",
+      "n_floored": 6,
+      "single": 6,
+      "multiple": 0,
+      "count_interval_low": 3.245106112719663,
+      "count_interval_high": 119.90894201811595
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 60,
+      "sample_day": 5,
+      "method": "mpn_pattern_99",
+      "n_floored": 6,
+      "single": 6,
+      "multiple": 0,
+      "count_interval_low": 1.4519568520322668,
+      "count_interval_high": 183.39672698838962
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 60,
+      "sample_day": 5,
+      "method": "mpn_censor_95",
+      "n_floored": 6,
+      "single": 6,
+      "multiple": 0,
+      "count_interval_low": 0.0,
+      "count_interval_high": 136.17144898115552
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 60,
+      "sample_day": 5,
+      "method": "mpn_censor_99",
+      "n_floored": 6,
+      "single": 6,
+      "multiple": 0,
+      "count_interval_low": 0.0,
+      "count_interval_high": 209.3259228494619
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 60,
+      "sample_day": 2,
+      "method": "plate_sweep",
+      "n_floored": 3,
+      "single": 1,
+      "multiple": 2,
+      "count_interval_low": 0.0,
+      "count_interval_high": 230.0
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 60,
+      "sample_day": 2,
+      "method": "mpn_pattern_95",
+      "n_floored": 3,
+      "single": 1,
+      "multiple": 2,
+      "count_interval_low": 32.45106112719663,
+      "count_interval_high": 1199.0894201811595
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 60,
+      "sample_day": 2,
+      "method": "mpn_pattern_99",
+      "n_floored": 3,
+      "single": 1,
+      "multiple": 2,
+      "count_interval_low": 14.51956852032266,
+      "count_interval_high": 1833.9672698838963
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 60,
+      "sample_day": 2,
+      "method": "mpn_censor_95",
+      "n_floored": 3,
+      "single": 1,
+      "multiple": 2,
+      "count_interval_low": 0.0,
+      "count_interval_high": 1361.7144898149006
+    },
+    {
+      "design": "duplicate",
+      "culture_age_days": 60,
+      "sample_day": 2,
+      "method": "mpn_censor_99",
+      "n_floored": 3,
+      "single": 1,
+      "multiple": 2,
+      "count_interval_low": 0.0,
+      "count_interval_high": 2093.259228494565
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 15,
+      "sample_day": 5,
+      "method": "plate_sweep",
+      "n_floored": 18,
+      "single": 12,
+      "multiple": 6,
+      "count_interval_low": 0.0,
+      "count_interval_high": 23.0
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 15,
+      "sample_day": 5,
+      "method": "mpn_pattern_95",
+      "n_floored": 18,
+      "single": 12,
+      "multiple": 6,
+      "count_interval_low": 4.923061631118901,
+      "count_interval_high": 90.79718491527723
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 15,
+      "sample_day": 5,
+      "method": "mpn_pattern_99",
+      "n_floored": 18,
+      "single": 12,
+      "multiple": 6,
+      "count_interval_low": 2.7210895258091394,
+      "count_interval_high": 133.13220955718435
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 15,
+      "sample_day": 5,
+      "method": "mpn_censor_95",
+      "n_floored": 18,
+      "single": 12,
+      "multiple": 6,
+      "count_interval_low": 0.0,
+      "count_interval_high": 90.90874613053278
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 15,
+      "sample_day": 5,
+      "method": "mpn_censor_99",
+      "n_floored": 18,
+      "single": 12,
+      "multiple": 6,
+      "count_interval_low": 0.0,
+      "count_interval_high": 139.55388343088404
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 15,
+      "sample_day": 2,
+      "method": "plate_sweep",
+      "n_floored": 18,
+      "single": 2,
+      "multiple": 16,
+      "count_interval_low": 0.0,
+      "count_interval_high": 230.0
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 15,
+      "sample_day": 2,
+      "method": "mpn_pattern_95",
+      "n_floored": 18,
+      "single": 1,
+      "multiple": 17,
+      "count_interval_low": 49.230616311189,
+      "count_interval_high": 907.9718491527725
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 15,
+      "sample_day": 2,
+      "method": "mpn_pattern_99",
+      "n_floored": 18,
+      "single": 1,
+      "multiple": 17,
+      "count_interval_low": 27.210895258091394,
+      "count_interval_high": 1331.322095571913
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 15,
+      "sample_day": 2,
+      "method": "mpn_censor_95",
+      "n_floored": 18,
+      "single": 1,
+      "multiple": 17,
+      "count_interval_low": 0.0,
+      "count_interval_high": 909.0874613053744
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 15,
+      "sample_day": 2,
+      "method": "mpn_censor_99",
+      "n_floored": 18,
+      "single": 1,
+      "multiple": 17,
+      "count_interval_low": 0.0,
+      "count_interval_high": 1395.538834309608
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 60,
+      "sample_day": 5,
+      "method": "plate_sweep",
+      "n_floored": 6,
+      "single": 6,
+      "multiple": 0,
+      "count_interval_low": 0.0,
+      "count_interval_high": 23.0
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 60,
+      "sample_day": 5,
+      "method": "mpn_pattern_95",
+      "n_floored": 6,
+      "single": 6,
+      "multiple": 0,
+      "count_interval_low": 4.923061631118901,
+      "count_interval_high": 90.79718491527723
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 60,
+      "sample_day": 5,
+      "method": "mpn_pattern_99",
+      "n_floored": 6,
+      "single": 6,
+      "multiple": 0,
+      "count_interval_low": 2.7210895258091394,
+      "count_interval_high": 133.13220955718435
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 60,
+      "sample_day": 5,
+      "method": "mpn_censor_95",
+      "n_floored": 6,
+      "single": 6,
+      "multiple": 0,
+      "count_interval_low": 0.0,
+      "count_interval_high": 90.90874613053278
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 60,
+      "sample_day": 5,
+      "method": "mpn_censor_99",
+      "n_floored": 6,
+      "single": 6,
+      "multiple": 0,
+      "count_interval_low": 0.0,
+      "count_interval_high": 139.55388343088404
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 60,
+      "sample_day": 2,
+      "method": "plate_sweep",
+      "n_floored": 3,
+      "single": 1,
+      "multiple": 2,
+      "count_interval_low": 0.0,
+      "count_interval_high": 230.0
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 60,
+      "sample_day": 2,
+      "method": "mpn_pattern_95",
+      "n_floored": 3,
+      "single": 1,
+      "multiple": 2,
+      "count_interval_low": 49.230616311189,
+      "count_interval_high": 907.9718491527725
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 60,
+      "sample_day": 2,
+      "method": "mpn_pattern_99",
+      "n_floored": 3,
+      "single": 1,
+      "multiple": 2,
+      "count_interval_low": 27.210895258091394,
+      "count_interval_high": 1331.322095571913
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 60,
+      "sample_day": 2,
+      "method": "mpn_censor_95",
+      "n_floored": 3,
+      "single": 1,
+      "multiple": 2,
+      "count_interval_low": 0.0,
+      "count_interval_high": 909.0874613053744
+    },
+    {
+      "design": "triplicate",
+      "culture_age_days": 60,
+      "sample_day": 2,
+      "method": "mpn_censor_99",
+      "n_floored": 3,
+      "single": 1,
+      "multiple": 2,
+      "count_interval_low": 0.0,
+      "count_interval_high": 1395.538834309608
+    }
+  ]
+}

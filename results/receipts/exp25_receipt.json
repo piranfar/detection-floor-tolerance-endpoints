@@ -1,6 +1,6 @@
 {
   "script": "src/experiments/exp25_observability_classes.py",
-  "utc": "2026-09-09T04:12:14+00:00",
+  "utc": "2026-09-19T22:07:54+00:00",
   "data_source": "eLife 93243 supplementary file 2",
   "mpn_floor_per_ml": 23.0,
   "deep_endpoint_logs": 4.0,
@@ -38,6 +38,7 @@
         "group": "IR",
         "n": 84,
         "pct_measured": 91.66666666666666,
+        "n_deep_endpoint_unreachable": 22,
         "pct_deep_endpoint_unreachable": 26.190476190476193,
         "median_headroom_log10": 4.0,
         "fisher_p_unreachable": 0.0005630647809615917
@@ -46,6 +47,7 @@
         "group": "IS",
         "n": 119,
         "pct_measured": 90.75630252100841,
+        "n_deep_endpoint_unreachable": 9,
         "pct_deep_endpoint_unreachable": 7.563025210084033,
         "median_headroom_log10": 5.0,
         "fisher_p_unreachable": 0.0005630647809615917
@@ -56,6 +58,7 @@
         "group": "IR",
         "n": 80,
         "pct_measured": 93.75,
+        "n_deep_endpoint_unreachable": 4,
         "pct_deep_endpoint_unreachable": 5.0,
         "median_headroom_log10": 6.0,
         "fisher_p_unreachable": 0.444941643384403
@@ -64,6 +67,7 @@
         "group": "IS",
         "n": 117,
         "pct_measured": 99.14529914529915,
+        "n_deep_endpoint_unreachable": 3,
         "pct_deep_endpoint_unreachable": 2.564102564102564,
         "median_headroom_log10": 6.0,
         "fisher_p_unreachable": 0.444941643384403

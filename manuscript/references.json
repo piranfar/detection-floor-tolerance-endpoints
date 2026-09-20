@@ -794,5 +794,31 @@
     "identifier": "https://doi.org/10.2307/2342435",
     "retrieved": "",
     "supports": "Results Section 2: the exact test for a 2x2 table, which Fisher introduced here rather than in the 1922 chi-square paper."
+  },
+  "R64": {
+    "kind": "article",
+    "authors": "Mukamolova GV, Turapov O, Malkin J, Woltmann G, Barer MR",
+    "year": "2010",
+    "title": "Resuscitation-promoting factors reveal an occult population of tubercle bacilli in sputum",
+    "journal": "Am J Respir Crit Care Med",
+    "volume_pages": "181:174-180",
+    "publisher": "",
+    "repository": "",
+    "identifier": "https://doi.org/10.1164/rccm.200905-0661OC",
+    "retrieved": "",
+    "supports": "Results Section 12: bacilli that grow only with resuscitation-promoting factors dominate pre-treatment sputum and rise as a proportion of the population during chemotherapy, so a colony count understates the viable population for a reason that is not the assay floor."
+  },
+  "R65": {
+    "kind": "article",
+    "authors": "Chengalroyen MD, Beukes GM, Gordhan BG, Streicher EM, Churchyard G, Hafner R, Warren R, Otwombe K, Martinson N, Kana BD",
+    "year": "2016",
+    "title": "Detection and quantification of differentially culturable tubercle bacteria in sputum from patients with tuberculosis",
+    "journal": "Am J Respir Crit Care Med",
+    "volume_pages": "194:1532-1540",
+    "publisher": "",
+    "repository": "",
+    "identifier": "https://doi.org/10.1164/rccm.201604-0769OC",
+    "retrieved": "",
+    "supports": "Results Section 12: differentially culturable tubercle bacteria, both resuscitation-promoting-factor-dependent and -independent, are recovered from patients whose solid-medium cultures return nothing."
   }
 }

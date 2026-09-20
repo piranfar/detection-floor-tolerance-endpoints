@@ -95,6 +95,12 @@ STAGES = [
     ("exp43  what a second method finds in lungs the plate calls sterile",
      "src.experiments.exp43_below_the_floor_is_not_zero"),
 
+    ("exp44  an MPN floor is not a plate-count floor: the identifiability sweep, rerun with the assay's own likelihood",
+     "src.experiments.exp44_mpn_interval"),
+
+    ("exp46  tolerance classification as posterior inference, with a refusal rule",
+     "src.experiments.exp46_class_posterior"),
+
     ("fig 1  the assay floor bounds the endpoint and decides the phenotype",
      "src.figures.fig1_dynamic_range"),
     ("fig 2  one protocol, six laboratories: the inoculum still decides",
@@ -105,6 +111,10 @@ STAGES = [
      "src.figures.fig3_endpoint_collapse"),
     ("fig 4  resistance and tolerance as separate axes",
      "src.figures.fig4_independence"),
+    ("fig S4 the corpus screened, and how five deposits came out of it",
+     "src.figures.figS4_corpus_funnel"),
+    ("fig S5 one culture, two plated volumes, two tolerance labels",
+     "src.figures.figS5_two_platings"),
     ("aside   which published constants transfer (not a figure of this paper)",
      "src.figures.fig13_parameter_transfer"),
 

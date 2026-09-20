@@ -1,6 +1,6 @@
 {
   "script": "src/experiments/exp38_boundary_experiment.py",
-  "utc": "2026-09-09T16:36:47+00:00",
+  "utc": "2026-09-19T22:11:34+00:00",
   "source_workbook": "BOUNDARY_TEST_BLIND.xlsx",
   "n_plate_readings": 216,
   "n_sample_platings": 108,
@@ -9,17 +9,21 @@
       "arm": "LOW",
       "target_n0": 50000.0,
       "realised_n0": 64333.333333333336,
-      "h_100ul": 3.8084360542881113,
-      "h_10ul": 2.8084360542881113,
-      "q_log_legal_100ul": "False",
+      "floor_100ul": 5.0,
+      "floor_10ul": 50.0,
+      "h_100ul": 4.1094660499520925,
+      "h_10ul": 3.1094660499520925,
+      "q_log_legal_100ul": "True",
       "q_log_legal_10ul": "False"
     },
     {
       "arm": "MID",
       "target_n0": 500000.0,
       "realised_n0": 440000.0,
-      "h_100ul": 4.643452676486188,
-      "h_10ul": 3.6434526764861874,
+      "floor_100ul": 5.0,
+      "floor_10ul": 50.0,
+      "h_100ul": 4.944482672150168,
+      "h_10ul": 3.9444826721501687,
       "q_log_legal_100ul": "True",
       "q_log_legal_10ul": "False"
     },
@@ -27,8 +31,10 @@
       "arm": "HIGH",
       "target_n0": 5000000.0,
       "realised_n0": 3766666.6666666665,
-      "h_100ul": 5.575957188763757,
-      "h_10ul": 4.575957188763757,
+      "floor_100ul": 5.0,
+      "floor_10ul": 50.0,
+      "h_100ul": 5.876987184427739,
+      "h_10ul": 4.876987184427739,
       "q_log_legal_100ul": "True",
       "q_log_legal_10ul": "True"
     }

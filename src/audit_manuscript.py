@@ -51,6 +51,8 @@ import pkgutil
 from datetime import datetime, timezone
 from pathlib import Path
 
+from .commit_stamp import stamp
+
 ROOT = Path(__file__).resolve().parents[1]
 PAPER = ROOT / "manuscript" / "PAPER_COMPLETE.md"
 PROSE = ROOT / "manuscript" / "MANUSCRIPT.md"
@@ -86,7 +88,7 @@ def main() -> int:
     ctx = {
         "root": ROOT,
         "paper": text,
-        "prose": PROSE.read_text(encoding="utf-8") if PROSE.exists() else "",
+        "prose": stamp(PROSE.read_text(encoding="utf-8")) if PROSE.exists() else "",
         "tables": TABLES.read_text(encoding="utf-8") if TABLES.exists() else "",
         "abstract": ABSTRACT.read_text(encoding="utf-8") if ABSTRACT.exists() else "",
     }

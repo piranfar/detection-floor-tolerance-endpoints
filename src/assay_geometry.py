@@ -246,6 +246,50 @@ def vignette_dubey() -> dict:
     }
 
 
+# ------------------------------------------------------------------ design ---
+STANDARD_VOLUMES_UL = (2.5, 10.0, 25.0, 100.0, 250.0, 1000.0)
+
+
+def design_report(n0: float, endpoint_logs: float = DEEP_ENDPOINT_LOGS) -> dict:
+    """Invert the boundary: the assay configuration a q-log endpoint needs.
+
+    headroom = log10(N0 / L) >= q  <=>  L <= N0 / 10^q. For a plate count
+    L = 1000 / v per mL with v in microlitres, so the endpoint needs
+    v >= 1000 * 10^q / N0. Below that volume the endpoint is unreachable and
+    the culture will be recorded as failing it whatever the drug does.
+    """
+    v_min_ul = 1000.0 * (10.0 ** endpoint_logs) / n0
+    rows = []
+    for v in STANDARD_VOLUMES_UL:
+        lim = limit_from_plated_volume(v)
+        h = headroom(n0, lim)
+        rows.append({"plated_ul": v, "floor_per_ml": 10.0 ** lim,
+                     "headroom_log10": h, "reachable": h >= endpoint_logs})
+    possible = any(r["reachable"] for r in rows)
+    lines = [
+        f"Design for a {endpoint_logs:g}-log endpoint at N0 = {n0:.3g} per mL",
+        f"  the floor must be <= {n0 / 10.0 ** endpoint_logs:.3g} per mL, "
+        f"i.e. plate >= {v_min_ul:.3g} uL, or use an MPN design whose "
+        f"lowest rung is <= {n0 / 10.0 ** endpoint_logs:.3g}",
+        f"  {'volume (uL)':>12} {'floor/mL':>10} {'headroom':>9}  verdict",
+    ]
+    for r in rows:
+        lines.append(
+            f"  {r['plated_ul']:>12.4g} {r['floor_per_ml']:>10.4g} "
+            f"{r['headroom_log10']:>9.2f}  "
+            f"{'reachable' if r['reachable'] else 'unreachable'}")
+    if not possible:
+        lines.append("  no standard plated volume reaches this endpoint: "
+                     "dilute the inoculum is NOT the fix (it changes state); "
+                     "lower the floor (larger volume, enrichment, or an MPN "
+                     "series with a deeper first dilution), or choose a "
+                     "shallower endpoint.")
+    return {"n0": n0, "endpoint_logs": endpoint_logs,
+            "min_plated_ul": v_min_ul, "floor_needed_per_ml": n0 / 10.0 ** endpoint_logs,
+            "by_volume": rows, "achievable": possible,
+            "human": "\n".join(lines)}
+
+
 def deposit_floor(name: str) -> dict:
     """Named deposit floor posterior for CLI users."""
     key = {
@@ -301,6 +345,11 @@ def main(argv: list[str] | None = None) -> int:
     p_v.add_argument("name", choices=["clinical", "dubey", "all"])
     p_v.add_argument("--json", action="store_true")
 
+    p_d = sub.add_parser("design", help="the assay configuration a q-log endpoint needs")
+    p_d.add_argument("--n0", type=float, required=True)
+    p_d.add_argument("--endpoint", choices=sorted(ENDPOINT_LOGS), default="99.99")
+    p_d.add_argument("--json", action="store_true")
+
     a = ap.parse_args(argv)
 
     if a.cmd == "headroom":
@@ -351,6 +400,15 @@ def main(argv: list[str] | None = None) -> int:
             print(json.dumps(results if len(results) > 1 else results[0],
                              indent=2, default=str))
         return 0 if ok else 1
+
+    if a.cmd == "design":
+        out = design_report(a.n0, ENDPOINT_LOGS[a.endpoint])
+        if a.json:
+            print(json.dumps({k: v for k, v in out.items() if k != "human"},
+                             indent=2))
+        else:
+            print(out["human"])
+        return 0 if out["achievable"] else 1
 
     return 2
 

@@ -52,20 +52,33 @@ def table1() -> str:
          "apramycin 1-128 ug/mL (amikacin arm not analysed)",
          "5 concentrations x 4 days x 3 replicates",
          "figshare 26462791", "CC BY 4.0"],
-        ["Held out for validation", "*E. coli*, hollow fibre",
+        ["Analysed last, after the derivation was fixed",
+         "*E. coli*, hollow fibre",
          "amoxicillin-clavulanate",
          "20 cultures, measured day-zero density, 100 uL plated",
          "Nat Commun 2026 Source Data", "CC BY 4.0"],
     ]
     d = pd.DataFrame(rows, columns=["Dataset", "Organism", "Drug and range",
                                     "Design", "Deposit", "Licence"])
-    return ("**Table 1.** The five published deposits reanalysed. Four carry "
-            "the analysis and the fifth is held out to test it. None was "
-            "generated for this study. The held-out deposit was opened after "
-            "every boundary and threshold was fixed, which the commit history "
-            "of the analysis repository timestamps; the other four were "
-            "selected for the fields they carry, and that selection is not "
-            "separately registered.\n\n" + md(d, align_right_from=99))
+    return ("**Table 1.** The five published deposits reanalysed.\n\n"
+            + md(d, align_right_from=99) + "\n\n"
+            "*Note.* Four carry the analysis and the fifth was analysed "
+            "last, to test it. None was generated for this study. That "
+            "fifth deposit was opened after every boundary and threshold "
+            "was fixed: the headroom tool at 00:08 and the symbolic "
+            "recovery of both boundary laws at 01:34 on 6 September 2026, "
+            "against the deposit's arrival at 02:41 the same morning. The "
+            "deposit entered in the same commit as the script that tests "
+            "it, which git cannot order internally, so it is where "
+            "reachability and identifiability were committed that dates "
+            "the hold-out, not where the deposit arrived. This is an "
+            "attestation and not a registration: the deposit had been "
+            "public since its article appeared on 13 June 2026, so "
+            "nothing outside this repository's own commit history "
+            "evidences that it was not opened earlier, and a reader "
+            "should weigh it accordingly. The other four were selected "
+            "for the fields they carry, and that selection is not "
+            "separately registered.")
 
 
 def table3() -> str:
@@ -87,14 +100,15 @@ def table3() -> str:
     d = pd.DataFrame(rows, columns=[
         "Prior culture", "Endpoint", "Isolates", "Short of headroom",
         "Fraction short", "At ceiling: short vs ample"])
-    return ("**Table 3.** The reduction each tolerance endpoint requires against "
-            "the reduction the assay can resolve, in the 15-day and the 60-day "
-            "prior-culture panel alike. Headroom is the distance from an "
-            "isolate's starting density down to the day-5 MPN floor of 23 per "
-            "mL. An "
-            "isolate short of headroom cannot reach that endpoint however "
-            "completely the drug worked, and every such isolate is recorded at "
-            "the assay ceiling." + chr(10) + chr(10) + md(d))
+    return ("**Table 3.** The reduction each tolerance endpoint requires "
+            "against the reduction the assay can resolve.\n\n"
+            + md(d) + "\n\n"
+            "*Note.* In the 15-day and the 60-day prior-culture panel alike. "
+            "Headroom is the distance from an isolate's starting density "
+            "down to the day-5 MPN floor of 23 per mL. An isolate short of "
+            "headroom cannot reach that endpoint however completely the "
+            "drug worked, and every such isolate is recorded at the assay "
+            "ceiling.")
 
 
 def table6() -> str:
@@ -113,30 +127,35 @@ def table6() -> str:
                      f"{f['apparent_survival_fold_range']:.0f}x",
                      ", ".join(f"{k}: {v}" for k, v in
                                json.loads(f["label_counts"]).items()),
+                     int(s["n_calls"]),
                      int(s["measured"]),
                      int(s["single_compatible_class"]),
                      int(s["multiple_compatible_classes"])])
     d = pd.DataFrame(rows, columns=[
         "Prior culture", "At the floor", "Starting density spread",
         "Recorded survival spread", "Labels assigned at the floor",
-        "Measured", "Single compatible class", "Multiple compatible classes"])
-    return ("**Table 6.** Isolates whose day-5 reading was censored at the MPN "
-            "floor. They share one reported floor-level observation, but their "
-            "true final counts are unknown below the floor, so the assay cannot "
-            "distinguish their final viable burdens; because their starting "
-            "densities differ, the same reading also implies a different range of "
-            "compatible fractional reductions in each. The recorded fraction is "
-            "L/N0, so the spread in apparent survival equals the spread in "
-            "starting density exactly, and the labels differ accordingly. The "
-            "last three columns sort every call in the 15-day panel, not only "
-            "the "
-            "censored ones: a censored reading bounds the class from above, and "
-            "sweeping the true count across the admissible range leaves twelve "
-            "calls with a single compatible class and six with more than one. "
-            "Reaching the floor at all is a property of the killing; which class "
-            "is then compatible is a property of the starting density and the "
-            "floor."
-            + chr(10) + chr(10) + md(d))
+        "Ordered calls", "Measured", "Single compatible class",
+        "Multiple compatible classes"])
+    return ("**Table 6.** Isolates whose day-5 reading was censored at the "
+            "MPN floor.\n\n"
+            + md(d) + "\n\n"
+            "*Note.* Starting densities differ across the row, so the same "
+            "floor-level reading implies a different range of compatible "
+            "fractional reductions in each; the recorded fraction is L/N0, so "
+            "the spread in apparent survival equals the spread in starting "
+            "density exactly, and the labels differ accordingly. The last four "
+            "columns sort every call in the 15-day panel, not only the "
+            "censored ones: a censored reading bounds the class from "
+            "above, and sweeping the true count across the admissible "
+            "range leaves twelve calls with a single compatible class and "
+            "six with more than one. Reaching the floor at all is a "
+            "property of the killing; which class is then compatible is a "
+            "property of the starting density and the floor. Ordered "
+            "calls is the denominator those four columns are taken over, "
+            "and it is not the isolate count of Table 3: it counts only "
+            "the isolates whose deposited label is one of the three "
+            "ordered classes, leaving out the 14 at 15 days and the 13 at "
+            "60 days that carry the unordered fourth category.")
 
 
 def table7() -> str:
@@ -163,30 +182,32 @@ def table7() -> str:
         "Baseline isolates only"])
     n = int(a["survives_bh_ordinal"].sum())
     return (f"**Table 7.** The family of {len(a)} tests between the deposited "
-            f"tolerance label and its candidate determinants, fitted as "
-            f"proportional-odds ordinal logistic regression and corrected "
-            f"together by the Benjamini-Hochberg procedure at a false discovery "
-            f"rate of 5%; the \"survives BH\" column is that correction. {n} "
-            f"survive. An odds "
-            "ratio above one means higher odds of a higher tolerance class; time "
-            "to an optical density (OD) of 0.4 is in days and runs inversely to "
-            "growth rate, so above one "
-            "there means *slower* growth accompanies a higher class. The "
-            "proportional-odds column is a Brant test per predictor; the "
-            "assumption holds for every predictor in this family. Starting "
-            "density enters the adjusted fits as a covariate rather than as a "
-            "member of the family, and it is where proportional odds fails, at "
-            "60 days at the deepest endpoint; that failure and the released fit "
-            "are reported in Section 4. The final column repeats "
-            "each test on the baseline isolates, one per patient by "
-            "construction, which is where the resistance association stops "
-            "clearing its corrected threshold. The deposit carries no patient "
-            "identifier, so no standard error here can be clustered on the true "
-            "grouping and every interval in this table is model-based; the "
-            "baseline-isolate column is the sensitivity analysis that stands in "
-            "for clustering, and Table S8 records what each conclusion is worth "
-            "once it is applied."
-            + chr(10) + chr(10) + md(d, align_right_from=4))
+            f"tolerance label and its candidate determinants (BH: "
+            f"Benjamini-Hochberg; OD: optical density).\n\n"
+            + md(d, align_right_from=4) + "\n\n"
+            f"*Note.* Fitted as proportional-odds ordinal logistic "
+            f"regression and corrected together by the Benjamini-Hochberg "
+            f"procedure at a false discovery rate of 5%; the \"survives "
+            f"BH\" column is that correction. {n} survive. An odds ratio "
+            "above one means higher odds of a higher tolerance class; "
+            "time to an optical density (OD) of 0.4 is in days and runs "
+            "inversely to growth rate, so above one there means *slower* "
+            "growth accompanies a higher class. The proportional-odds "
+            "column is a Brant test per predictor; the assumption holds "
+            "for every predictor in this family. Starting density enters "
+            "the adjusted fits as a covariate rather than as a member of "
+            "the family, and it is where proportional odds fails, at "
+            "60 days at the deepest endpoint; that failure and the "
+            "released fit are reported in Section 4. The final column "
+            "repeats each test on the baseline isolates, one per patient "
+            "by construction, which is where the resistance association "
+            "stops clearing its corrected threshold. The deposit carries "
+            "no patient identifier, so no standard error here can be "
+            "clustered on the true grouping and every interval in this "
+            "table is model-based; the baseline-isolate column is the "
+            "sensitivity analysis that stands in for clustering, and "
+            "Table S8 records what each conclusion is worth once it is "
+            "applied.")
 
 
 def table11() -> str:
@@ -214,7 +235,9 @@ def table11() -> str:
         "Distance share, leave one laboratory out",
         "Distance share, laboratory bootstrap"])
     return (f"**Table 11.** Pairs of flasks in the same arm from different "
-            f"laboratories. An inversion is a pair in which the population that "
+            f"laboratories.\n\n"
+            + md(d) + "\n\n"
+            f"*Note.* An inversion is a pair in which the population that "
             f"fell faster crossed below the assay floor later. "
             f"{inv['undecidable_pairs']} further pairs that the censoring could "
             "not settle are excluded rather than imputed. The variance columns "
@@ -232,7 +255,7 @@ def table11() -> str:
             "decomposition is taken on log *D* and log *b*, five of six "
             "laboratories record net growth in that arm, and only one flask "
             "in it returns a positive fitted rate, so there is no spread in "
-            "the rate to divide." + chr(10) + chr(10) + md(d))
+            "the rate to divide.")
 
 
 def table8() -> str:
@@ -263,9 +286,10 @@ def table8() -> str:
         "Kill rate (log10/day)",
         "95% profile interval", "By imputation", "Readings censored",
         "Flasks ever crossing the floor (treated arms)"])
-    return ("**Table 8.** Moxifloxacin at ten times MIC. Every laboratory yields "
-            "a rate; three record no crossing below the assay floor in any arm "
-            "at the 100 uL plating. "
+    return ("**Table 8.** Moxifloxacin at ten times MIC.\n\n"
+            + md(d) + "\n\n"
+            "*Note.* Every laboratory yields a rate; three record no crossing "
+            "below the assay floor in any arm at the 100 uL plating. "
             "The final column counts first observed crossings, which are not "
             "clearances: across the deposit 60% of the series that cross read "
             "above the floor again at a later visit. The two censoring "
@@ -278,7 +302,7 @@ def table8() -> str:
             "hours of drug. The turbidity-standard analysis and Table 9 instead use "
             "untreated day-zero "
             "readings only, so the two tables are not expected to "
-            "match.\n\n" + md(d))
+            "match.")
 
 
 def table14() -> str:
@@ -294,15 +318,16 @@ def table14() -> str:
         "Stratum", "Endpoint", "n", "Spearman rho", "p", "BH critical value",
         "Survives correction", "Resolvable rho"])
     n_nom = int((i["p_value"] < 0.05).sum())
-    return (f"**Table 14.** The six strongest of the {len(i)} comparisons the "
-            f"217-isolate file supports. {n_nom} reach nominal significance where "
+    return (f"**Table 14.** The six strongest of the {len(i)} comparisons "
+            f"the 217-isolate file supports.\n\n"
+            + md(d) + "\n\n"
+            f"*Note.* {n_nom} reach nominal significance where "
             f"{0.05 * len(i):.1f} are expected by chance; none exceeds its "
             "Benjamini-Hochberg critical value, which is ranked against the full "
             "family of 24 rather than against any one stratum. MDK99 and MDK99.99 "
             "are the minimum durations for a 99 and a 99.99 per cent reduction, "
             "the endpoints the text names in words. The final column is the "
-            "correlation each design could have resolved at 95% confidence.\n\n"
-            + md(d))
+            "correlation each design could have resolved at 95% confidence.")
 
 
 def table13() -> str:
@@ -320,11 +345,13 @@ def table13() -> str:
     d = pd.DataFrame(rows, columns=[
         "Read at", "Survivor ratio (low/high dose)", "log10 separation",
         "Slope per doubling", "95% interval", "p"])
-    return ("**Table 13.** The same 32-fold concentration range summarised at each "
-            "sampling day (upper rows), and the concentration slope fitted "
-            "separately in each interval (lower rows). Slopes and intervals are "
-            "from the replicate-level bootstrap described in the Methods.\n\n"
-            + md(d))
+    return ("**Table 13.** The same 32-fold concentration range summarised "
+            "at each sampling day and the concentration slope fitted per "
+            "interval.\n\n"
+            + md(d) + "\n\n"
+            "*Note.* Upper rows are the day summaries; lower rows the "
+            "interval slopes. Slopes and intervals are from the "
+            "replicate-level bootstrap described in the Methods.")
 
 
 def tableS2() -> str:
@@ -343,15 +370,16 @@ def tableS2() -> str:
     d = pd.DataFrame(rows, columns=[
         "Predictor", "Prior culture", "Reading day", "Linear beta", "p (linear)",
         "Survives BH", "Odds ratio", "p (ordinal)", "Survives BH ", "Same direction"])
-    return ("**Table S2.** The ordinal reanalysis against the linear model it "
-            "replaces, member for member. The linear model scores the ordering "
+    return ("**Table S2.** The ordinal reanalysis against the linear model "
+            "it replaces, member for member.\n\n"
+            + md(d, align_right_from=3) + "\n\n"
+            "*Note.* The linear model scores the ordering "
             "0, 1, 2, which assumes the two class steps are equal; the ordinal "
             "model does not. Every direction agrees and the same two members "
             "survive correction under both, so the linear treatment did not "
             "manufacture the result -- but the coefficients it reports are in a "
             "unit that does not exist, which is why the ordinal fit is the one "
-            "in the main table."
-            + chr(10) + chr(10) + md(d, align_right_from=3))
+            "in the main table.")
 
 
 def tableS6() -> str:
@@ -366,11 +394,12 @@ def tableS6() -> str:
         "Nominal concentration (ug/mL)", "Nutrient levels",
         "Lowest exposure (x MIC)", "Highest exposure (x MIC)", "Spread",
         "Straddles the MIC"])
-    return ("**Table S6.** The same nominal concentration expressed in multiples "
-            "of the minimum inhibitory concentration each population actually "
-            "evolved to. At 25 ug/mL the same number denotes a sub-inhibitory "
+    return ("**Table S6.** The same nominal concentration expressed in "
+            "multiples of the MIC each population actually evolved to.\n\n"
+            + md(d) + "\n\n"
+            "*Note.* At 25 ug/mL the same number denotes a sub-inhibitory "
             "exposure in one nutrient condition and a strongly inhibitory one in "
-            "another." + chr(10) + chr(10) + md(d))
+            "another.")
 
 
 
@@ -388,15 +417,16 @@ def table9() -> str:
     f = pd.DataFrame(rows, columns=[
         "Dataset", "Level of variation", "n", "Median log10 N0",
         "Assay floor L", "delta h (log10)", "Fold"])
-    return ("**Table 9.** The deepest reduction each assay could resolve, as "
-            "h = log10(N0/L), with the assay floor taken per sample "
-            "where it varies. Rows compare only within a level of variation: the "
-            "clinical rows describe between-isolate starting burden, which is "
-            "biological, and are not a measure of laboratory imprecision. Kaur "
-            "is NA because its three day-zero readings are technical replicates "
-            "of one preparation and cannot estimate between-preparation "
-            "reproducibility, and because that deposit states no quantification "
-            "limit." + chr(10) + chr(10) + md(f, align_right_from=2))
+    return ("**Table 9.** The deepest reduction each assay could resolve.\n\n"
+            + md(f, align_right_from=2) + "\n\n"
+            "*Note.* Computed as h = log10(N0/L), with the assay floor "
+            "taken per sample where it varies. Rows compare only within a "
+            "level of variation: the clinical rows describe between-isolate "
+            "starting burden, which is biological, and are not a measure of "
+            "laboratory imprecision. Kaur is NA because its three day-zero "
+            "readings are technical replicates of one preparation and "
+            "cannot estimate between-preparation reproducibility, and "
+            "because that deposit states no quantification limit.")
 
 
 def table12() -> str:
@@ -408,12 +438,13 @@ def table12() -> str:
             for r in d.itertuples()]
     f = pd.DataFrame(rows, columns=[
         "Endpoint", "N_reach (per mL)", "Cultures", "Unreachable", "Per cent"])
-    return ("**Table 12.** Dubey et al. 2026, analysed cold. The floor is "
-            "derived from a stated 100 uL plated volume and corroborated inside "
-            "the file: all 229 genuine counts are multiples of ten and the "
-            "smallest is exactly ten. Starting densities are the 20 measured "
-            "day-zero counts, not the nominal inoculum the Methods state."
-            + chr(10) + chr(10) + md(f))
+    return ("**Table 12.** Dubey et al. 2026, analysed cold.\n\n"
+            + md(f) + "\n\n"
+            "*Note.* The floor is derived from a stated 100 uL plated "
+            "volume and corroborated inside the file: all 229 genuine "
+            "counts are multiples of ten and the smallest is exactly ten. "
+            "Starting densities are the 20 measured day-zero counts, not "
+            "the nominal inoculum the Methods state.")
 
 
 def tableS5() -> str:
@@ -425,14 +456,16 @@ def tableS5() -> str:
     f = pd.DataFrame(rows, columns=[
         "Dataset", "Median log10 N0", "Fold below nominal 0.5 McFarland"])
     return ("**Table S5.** Fold below the nominal 0.5 McFarland reference, "
-            "1.5e8 CFU/mL. Descriptive only, and not a protocol-compliance "
-            "metric. A time-kill inoculum is prepared by diluting from a "
+            "1.5e8 CFU/mL.\n\n"
+            + md(f) + "\n\n"
+            "*Note.* Descriptive only, and not a "
+            "protocol-compliance metric. A time-kill inoculum is prepared by diluting from a "
             "suspension matched to that turbidity, so every entry is expected to "
             "sit far below it; the conversion of a turbidity to CFU/mL depends "
             "on species, cell aggregation and preparation and is least reliable "
             "for mycobacteria. The clinical rows are most probable numbers divided by "
             "a reference stated in CFU/mL, so those two ratios cross units and "
-            "are the least meaningful in the table." + chr(10) + chr(10) + md(f))
+            "are the least meaningful in the table.")
 
 
 
@@ -449,21 +482,16 @@ def table15() -> str:
     f = pd.DataFrame(rows, columns=[
         "Deposit", "States an LOD", "States an LOQ", "Value used", "Units",
         "How obtained", "What it should be called"])
-    return ("**Table 15.** What the assay floor *L* is in each deposit analysed. No "
-            "deposit reports a validated limit of quantification with a value. "
-            "The six-laboratory file names the concept in the definitions of its "
-            "below- and above-quantification-limit columns but defines it as "
-            "whether the plate was countable, which is an operator's judgement. "
-            "DERIVED means the value follows arithmetically from a recorded "
-            "plated volume; INFERRED means it was read off the deposit's own "
-            "behaviour and is labelled as inferred wherever it is used; NONE "
-            "means no floor is evidenced and none is assumed; FLAGGED means the deposit "
-            "marks below-limit readings without naming a value, which fixes no floor "
-            "either. Where a plated "
-            "volume is recorded the honest term is the minimum reportable "
-            "positive count, one colony in that volume; elsewhere it is an "
-            "operational assay floor."
-            + chr(10) + chr(10) + md(f))
+    return ("**Table 15.** What the assay floor *L* is in each deposit "
+            "analysed.\n\n"
+            + md(f) + "\n\n"
+            "*Note.* Verdict follows the two kinds of limit defined in "
+            "Methods: DERIVED means the value follows arithmetically from "
+            "a recorded plated volume; INFERRED means it was read off the "
+            "deposit's own behaviour and is labelled as inferred wherever "
+            "it is used; NONE means no floor is evidenced and none is "
+            "assumed; FLAGGED means the deposit marks below-limit readings "
+            "without naming a value, which fixes no floor either.")
 
 
 def tableS7() -> str:
@@ -498,8 +526,10 @@ def tableS7() -> str:
     rows = [[r.dataset.split(",")[0], r.scenario, r.metric, fmt(r.value)]
             for r in f.itertuples()]
     w = pd.DataFrame(rows, columns=["Deposit", "Floor assumed", "Quantity", "Value"])
-    return ("**Table S7.** Sensitivity of the load-bearing counts to the choice "
-            "of floor. Each deposit is sensitive to a different thing, so the "
+    return ("**Table S7.** Sensitivity of the load-bearing counts to the "
+            "choice of floor.\n\n"
+            + md(w, align_right_from=3) + "\n\n"
+            "*Note.* Each deposit is sensitive to a different thing, so the "
             "table is long rather than wide: one row per deposit, floor scenario "
             "and quantity. The clinical sweep steps through every three-tube "
             "most-probable-number rung at or below 23 per mL, and the number of "
@@ -509,8 +539,7 @@ def tableS7() -> str:
             "volumes to one floor would cost. The Kaur deposit records no plated "
             "volume, so its rows show what assuming one would do: the four-log "
             "endpoint stays reachable throughout while the headroom itself moves "
-            "by 1.6 log10."
-            + chr(10) + chr(10) + md(w, align_right_from=3))
+            "by 1.6 log10.")
 
 
 
@@ -536,12 +565,15 @@ def tableS9() -> str:
         "*h* at 10 µL", "*h* at 100 µL", "Gain"])
     mid = d[d.arm == "MID"]
     return (f"**Table S9.** The deepest reduction each culture in the "
-            f"prospective experiment could report, at each of its two platings. "
-            f"*h* = log10(*N*₀/*L*) with *L* one colony in the pooled volume "
-            f"plated, taken at the lowest dilution the series was read at, "
-            f"which is where the floor is lowest and the reportable depth "
-            f"greatest. The two platings of one flask share a row: at the "
-            f"standard inoculum the 10 µL plating ceiling runs "
+            f"prospective experiment could report, at each of its two "
+            f"platings.\n\n"
+            + md(f, align_right_from=2) + "\n\n"
+            f"*Note.* *h* = log10(*N*₀/*L*) with *L* one colony in the "
+            f"pooled volume plated, taken at the lowest dilution the series "
+            f"was read at, which is where the floor is lowest and the "
+            f"reportable depth greatest. The two platings of one flask "
+            f"share a row: at the standard inoculum the 10 µL plating "
+            f"ceiling runs "
             f"{mid.headroom_10ul.min():.2f} to {mid.headroom_10ul.max():.2f} "
             f"logs and the 100 µL ceiling {mid.headroom_100ul.min():.2f} to "
             f"{mid.headroom_100ul.max():.2f}, so a four-log endpoint is "
@@ -549,8 +581,7 @@ def tableS9() -> str:
             f"same culture. The gain column is close to the log10(10) = 1.00 "
             f"that plating ten times the volume buys; it is not exactly 1.00 "
             f"because each plating measures its own *N*₀ and the two "
-            f"measurements differ."
-            + chr(10) + chr(10) + md(f, align_right_from=2))
+            f"measurements differ.")
 
 
 def tableS10() -> str:
@@ -565,8 +596,10 @@ def tableS10() -> str:
         "Class threshold *c*₁", "Straddling, one *N*₀ per flask", "Share",
         "Straddling, each plating's own *N*₀", "Share "])
     return ("**Table S10.** How often one culture receives two different "
-            "tolerance labels from its two platings, swept across the class "
-            "threshold. That two platings report different fractions is "
+            "tolerance labels from its two platings, swept across the "
+            "class threshold.\n\n"
+            + md(f, align_right_from=1) + "\n\n"
+            "*Note.* That two platings report different fractions is "
             "arithmetic; that those fractions land either side of a cut is not, "
             "and this is the quantity that could have come out zero. At a cut "
             "of one per cent the window is nearly shut. At one in a thousand, "
@@ -579,8 +612,7 @@ def tableS10() -> str:
             "for itself, which is what a laboratory running both platings would "
             "have; the count rises because those two estimates of one culture "
             "disagree by 0.74- to 1.53-fold. The first column is the claim, the "
-            "second is the practice, and neither is the other."
-            + chr(10) + chr(10) + md(f, align_right_from=1))
+            "second is the practice, and neither is the other.")
 
 
 def tableS8() -> str:
@@ -598,9 +630,11 @@ def tableS8() -> str:
         "Units treated as independent",
         "Independent clusters", "Method used instead", "Verdict"])
     n = d.verdict.value_counts()
-    return (f"**Table S8.** Every conclusion this paper draws from the two "
-            f"primary deposits, against uncertainty recomputed at the level the "
-            f"observations are actually independent. "
+    return (f"**Table S8.** Every conclusion this paper draws from the "
+            f"two primary deposits, against uncertainty recomputed at the "
+            f"level the observations are actually independent.\n\n"
+            + md(f, align_right_from=3) + "\n\n"
+            f"*Note.* "
             f"{int(n.get('SUPPORTED', 0))} survive unchanged, "
             f"{int(n.get('WEAKENED', 0))} survive with materially wider "
             f"uncertainty, {int(n.get('NOT SUPPORTED', 0))} do not survive, and "
@@ -618,8 +652,7 @@ def tableS8() -> str:
             "like 67 flasks is six laboratories, and for a three-against-three "
             "split of six clusters the smallest attainable two-sided p is 0.10. "
             "They are deleted rather than corrected, because there is nothing to "
-            "correct them to."
-            + chr(10) + chr(10) + md(f, align_right_from=3))
+            "correct them to.")
 
 
 def table10() -> str:
@@ -640,15 +673,16 @@ def table10() -> str:
         "Never below", "One crossing, holds", "One crossing, returns",
         "Crosses repeatedly", "Shape the model assumes"])
     return ("**Table 10.** What follows a first observed crossing below the "
-            "assay floor. The state below the floor is not absorbing: a "
+            "assay floor.\n\n"
+            + md(f) + "\n\n"
+            "*Note.* The state below the floor is not absorbing: a "
             "series sitting below it reads above again at the next visit with "
             "probability 0.22 overall, and that probability rises as drug "
             "pressure falls, which is what a plating artefact does. Only 56 of "
             "360 series, 15.6 per cent, show the shape a survival model assumes "
             "-- one crossing that holds. The 360 series are four platings of "
             "each of 90 flasks and are not independent; the flask-level counts "
-            "are 53 flasks with a crossing series and 42 with a returning one."
-            + chr(10) + chr(10) + md(f))
+            "are 53 flasks with a crossing series and 42 with a returning one.")
 
 
 def table4() -> str:
@@ -670,14 +704,15 @@ def table4() -> str:
     f = pd.DataFrame(rows, columns=[
         "Recorded class", "n", "Min fraction", "Max fraction",
         "Predicted from cuts", "Disagreements"])
-    return ("**Table 4.** The deposited tolerance class at day 5 after 15 days "
-            "of prior culture is a threshold on the recorded surviving fraction, "
-            "with no overlap between classes: low below 10\u207b\u00b3, medium from "
+    return ("**Table 4.** The deposited tolerance class at day 5 after 15 "
+            "days of prior culture is a threshold on the recorded surviving "
+            "fraction.\n\n"
+            + md(f, align_right_from=1) + "\n\n"
+            "*Note.* With no overlap between classes: low below 10\u207b\u00b3, medium from "
             "10\u207b\u00b3 to 10\u207b\u00b2 inclusive, high above 10\u207b\u00b2. Applying those cuts "
             "reproduces every usable class in the file. This matters because the "
             "argument that follows is about the fraction the assay recorded, not "
-            "about an independent clinical judgement."
-            + chr(10) + chr(10) + md(f, align_right_from=1))
+            "about an independent clinical judgement.")
 
 
 def table2() -> str:
@@ -699,8 +734,10 @@ def table2() -> str:
     f = pd.DataFrame(rows, columns=[
         "Deposit", "Verdict", "Floor used", "95% support",
         "Span (log10)", "Refuse observability labels"])
-    return ("**Table 2.** What is actually known about the assay floor in each "
-            "deposit, and the rule that follows from it. A floor derived from a "
+    return ("**Table 2.** What is actually known about the assay floor in "
+            "each deposit.\n\n"
+            + md(f, align_right_from=2) + "\n\n"
+            "*Note.* And the rule that follows from it. A floor derived from a "
             "recorded plated volume is a point mass: one colony in that volume, "
             "no inference required. A floor inferred from a pile-up on a "
             "most-probable-number rung carries a posterior over the rungs at or "
@@ -708,8 +745,7 @@ def table2() -> str:
             "Where no floor is evidenced at all, or where the support spans more "
             "than one log10, the observability labels of Section 3 are refused "
             "rather than reported -- a label is only as good as the floor it is "
-            "computed against."
-            + chr(10) + chr(10) + md(f, align_right_from=2))
+            "computed against.")
 
 
 def tableS3() -> str:
@@ -741,17 +777,19 @@ def tableS3() -> str:
         "Outcome and stratum", "n", "Total effect c (95% CI)",
         "Direct effect c' (95% CI)", "Mediated effect (95% CI)",
         "Proportion mediated"])
-    return ("**Table S3.** Decomposition of the isoniazid-resistance association "
-            "with the tolerance class into a path through log10 starting density "
-            "and a direct path, by the product of coefficients with bootstrap "
+    return ("**Table S3.** Decomposition of the isoniazid-resistance "
+            "association with the tolerance class into a mediated and a "
+            "direct path.\n\n"
+            + md(f, align_right_from=1) + "\n\n"
+            "*Note.* Through log10 starting density (mediated) and a "
+            "direct path, by the product of coefficients with bootstrap "
             "percentile intervals. The mediated path excludes zero in every "
             "specification and the direct path covers zero in every one. This "
             "replaces the percentage attenuation the earlier analysis quoted, "
             "which is a descriptive ratio rather than an estimand. Sequential "
             "ignorability is assumed and is not testable here; the sensitivity "
             "analysis in the Methods reports the residual correlation that would "
-            "nullify the estimate."
-            + chr(10) + chr(10) + md(f, align_right_from=1))
+            "nullify the estimate.")
 
 
 def tableS4() -> str:
@@ -773,9 +811,12 @@ def tableS4() -> str:
         "Covariate", "Recorded, resistant", "Recorded, susceptible",
         "Can it adjust?", "Resistance coefficient", "Attenuation"])
     n_ok = int(ind.usable_for_adjustment.sum())
-    return ("**Table S4.** Isoniazid-resistant isolates enter this assay ten-fold "
-            "lower than susceptible ones, and we do not know why. This is what the "
-            "deposit can and cannot rule out. The verdict column is decided "
+    return ("**Table S4.** What the deposit can and cannot rule out for "
+            "the isoniazid-resistance seeding gap.\n\n"
+            + md(f, align_right_from=1) + "\n\n"
+            "*Note.* Isoniazid-resistant isolates enter this assay "
+            "ten-fold lower than susceptible ones, and we do not know why. "
+            "The verdict column is decided "
             "on the two recorded-rate columns beside it: PROXY means the "
             "covariate is recorded for no isolate in one of the two exposure "
             "groups, so its missingness is the exposure; PARTIAL means both "
@@ -802,7 +843,7 @@ def tableS4() -> str:
             "to susceptibility, and adjusting for either leaves the coefficient "
             "within five per cent of its unadjusted value. The file records no "
             "referring site and no processing batch, so those cannot be tested at "
-            "all." + chr(10) + chr(10) + md(f, align_right_from=1))
+            "all.")
 
 
 
@@ -814,8 +855,10 @@ def table5() -> str:
             for r in d.itertuples()]
     f = pd.DataFrame(rows, columns=[
         "Deposit", "Panel", "Stratum", "Stage", "n", "Excluded here"])
-    return ("**Table 5.** Every analysis set in this paper, and the exclusion "
-            "that produced it. The manuscript quotes a dozen different "
+    return ("**Table 5.** Every analysis set in this paper, and the "
+            "exclusion that produced it.\n\n"
+            + md(f, align_right_from=4) + "\n\n"
+            "*Note.* The manuscript quotes a dozen different "
             "denominators, each correct for its own analysis; this is where a "
             "reader checks which is which. The MDR tolerance label is a fourth, "
             "unordered category and is dropped wherever an ordered outcome is "
@@ -826,8 +869,7 @@ def table5() -> str:
             "tested in Table S1. The last rows of each block cover sets counted in "
             "units other than isolates or flasks -- pairs, flags, cells, "
             "readings -- because a reader meeting one of those figures in the "
-            "text needs somewhere to look it up too."
-            + chr(10) + chr(10) + md(f, align_right_from=4))
+            "text needs somewhere to look it up too.")
 
 
 def tableS1() -> str:
@@ -844,15 +886,16 @@ def tableS1() -> str:
         "Panel", "Exclusion", "Dropped", "Retained", "Median log10 N0 retained",
         "Median log10 N0 dropped", "p", "Resistant, retained",
         "Resistant, dropped", "p "])
-    return ("**Table S1.** The comparison the Methods promise: rows dropped from "
-            "the association family against rows retained, on starting density "
-            "and susceptibility. The MDR exclusion differs in susceptibility by "
-            "construction, since those isolates are outside the "
+    return ("**Table S1.** The comparison the Methods promise: rows "
+            "dropped from the association family against rows retained.\n\n"
+            + md(f, align_right_from=2) + "\n\n"
+            "*Note.* On starting density and susceptibility. The MDR "
+            "exclusion differs in susceptibility by construction, since those "
+            "isolates are outside the "
             "resistant-versus-susceptible contrast the family tests. The one "
             "difference not by construction is in the 60-day panel, where the "
             "dropped rows sit higher in starting density (p = 0.027); it affects "
-            "20 rows and no conclusion drawn from that panel."
-            + chr(10) + chr(10) + md(f, align_right_from=2))
+            "20 rows and no conclusion drawn from that panel.")
 
 def tableS11() -> str:
     """The M. tuberculosis deposits in the screened corpus, with their floors.
@@ -893,8 +936,10 @@ def tableS11() -> str:
     d2 = pd.DataFrame(rows, columns=[
         "Drug or regimen", "Floor is", "*L* (CFU/mL)", "Series",
         "Median *h*", "Short of 4 logs", "Short of 5 logs", "Deposit"])
-    return ("**Table S11.** Every *Mycobacterium tuberculosis* deposit in the "
-            "screened corpus whose assay floor could be established, and how "
+    return ("**Table S11.** Every *Mycobacterium tuberculosis* deposit in "
+            "the screened corpus whose assay floor could be established.\n\n"
+            + md(d2, align_right_from=2) + "\n\n"
+            "*Note.* And how "
             f"deep its own series could see. Across the five, {n4} of {n_ser} "
             f"series could not have demonstrated a four-log reduction however "
             f"completely the drug worked, and {n5} of {n_ser} could not have "
@@ -902,8 +947,90 @@ def tableS11() -> str:
             "is stated by the source, derived from a recorded plated volume, or "
             "inferred from a pile-up on the lowest reported value, as the column "
             "says. None of these deposits carries the analysis in the article; "
-            "they are what the screen found in the same organism. The full accession for each deposit is in the corpus manifest released with the analysis code.\n\n"
-            + md(d2, align_right_from=2))
+            "they are what the screen found in the same organism. The full "
+            "accession for each deposit is in the corpus manifest released "
+            "with the analysis code.")
+
+
+def tableS12() -> str:
+    """The screen as one reconcilable flow, so every count reads off one object."""
+    d = pd.read_csv(T / "exp45_screen_flow.csv")
+    d.columns = ["Stage", "n"]
+    return ("**Table S12.** The screen, stage by stage.\n\n"
+            + md(d, align_right_from=1) + "\n\n"
+            "*Note.* Counts in the Abstract, "
+            "the Introduction, the Methods and the Discussion are read off this "
+            "table. A negative row is a deduction from the line above it. "
+            "\"Distinct literature deposits inspected\" is the denominator for "
+            "the proportion stating no assay floor: it excludes duplicate fetches "
+            "of records already counted, and it excludes this paper's own "
+            "prospective experiment, which is not a screened literature deposit. "
+            "The 33 candidates that were never opened are not characterised here "
+            "or anywhere, and the proportion is not extrapolated to them.")
+
+
+def tableS13() -> str:
+    """The identifiability verdicts under the assay's own likelihood (exp44)."""
+    d = pd.read_csv(T / "exp44_mpn_interval_summary.csv")
+    d = d[d.design == "duplicate"].copy()
+    d["panel"] = d.culture_age_days.astype(int).astype(str) + "-day"
+    d["interval"] = (d.count_interval_low.map(lambda v: f"{v:.3g}")
+                     + " to " + d.count_interval_high.map(lambda v: f"{v:.3g}"))
+    d = d.assign(method=d.method.str.replace("_", " ", regex=False))
+    rows = d[["panel", "sample_day", "method", "n_floored",
+              "single", "multiple", "interval"]].values.tolist()
+    f = pd.DataFrame(rows, columns=[
+        "Panel", "Sample day", "What the floor reading is taken to be",
+        "Floored isolates", "One compatible class",
+        "Several compatible classes", "True counts the reading admits (per mL)"])
+    return ("**Table S13.** An MPN floor is not a plate-count floor: the "
+            "identifiability verdicts of the Results recomputed under the "
+            "assay's own likelihood.\n\n"
+            + md(f, align_right_from=4) + "\n\n"
+            "*Note.* `plate sweep` is the [0, L] interval used in the "
+            "main text; `mpn pattern` treats the floor reading as the literal "
+            "lowest-rung well pattern and quotes its two-sided profile interval; "
+            "`mpn censor` treats it as every pattern whose estimate falls below "
+            "the lowest rung and quotes the one-sided likelihood bound. The "
+            "deposit's day-5 splits (12 single, 6 multiple at 15 days; 6 and 0 "
+            "at 60) are unchanged under every reading at 95 and 99 per cent, "
+            "because the widest 99 per cent bound, 209 per mL, still falls short "
+            "of the 230 per mL that would move any of the twelve. At day 2, "
+            "where the floor is 230, one isolate of eighteen moves from one "
+            "compatible class to two. The triplicate-well design gives identical "
+            "verdicts throughout (results/tables/"
+            "exp44_mpn_interval_summary.csv).")
+
+
+def tableS14() -> str:
+    """Class posterior with a refusal rule, per floored isolate (exp46)."""
+    d = pd.read_csv(T / "exp46_class_posterior.csv")
+    d = d[(d.design == "duplicate") & (d.reading == "pattern")
+          & (d.prior == "logflat") & (d.sample_day == 5)].copy()
+    d["panel"] = d.culture_age_days.astype(int).astype(str) + "-day"
+    rows = d[["panel", "isolate_index", "n0_mpn_ml", "recorded_class",
+              "p_low", "p_medium", "p_high", "verdict"]].values.tolist()
+    f = pd.DataFrame(rows, columns=[
+        "Panel", "Isolate", "N0 (MPN/mL)", "Recorded class",
+        "P(Low)", "P(Medium)", "P(High)", "Verdict at 95%"])
+    return ("**Table S14.** Tolerance classification as posterior "
+            "inference.\n\n"
+            + md(f, align_right_from=2) + "\n\n"
+            "*Note.* For each isolate whose day-5 reading sits at the "
+            "floor, the "
+            "likelihood of the floor reading under the deposit's own MPN design "
+            "(duplicate wells, literal lowest-rung pattern) and a log-flat prior "
+            "give a posterior over the true count, mapped through the isolate's "
+            "starting density to a posterior over class. An isolate is confirmed "
+            "when the recorded class reaches 95 per cent, contradicted when "
+            "another class does, and refused otherwise. The twelve Low labels "
+            "are confirmed; the six Medium labels are refused, their posterior "
+            "split across the threshold the deposit drew at exactly L/N0 = "
+            "1e-3. The verdicts are unchanged across both well designs, both "
+            "readings of the floor value and a uniform prior; under the most "
+            "conservative analysis (triplicate wells, censoring reading, "
+            "log-flat prior) the six are contradicted rather than refused "
+            "(results/tables/exp46_class_posterior.csv).")
 
 
 def main() -> int:
@@ -925,13 +1052,15 @@ def main() -> int:
               "Table S5 the turbidity-standard analysis.",
               ""]
     for fn in (tableS1, tableS2, tableS3, tableS4, tableS5, tableS6, tableS7,
-                tableS8, tableS9, tableS10, tableS11):
+                tableS8, tableS9, tableS10, tableS11, tableS12, tableS13,
+                tableS14):
         parts.append(fn())
         parts.append("")
     OUT.write_text("\n".join(parts), encoding="utf-8")
     print(f"wrote {OUT.relative_to(ROOT)}")
     for fn in order + (tableS1, tableS2, tableS3, tableS4, tableS5, tableS6,
-                       tableS7, tableS8, tableS9, tableS10, tableS11):
+                       tableS7, tableS8, tableS9, tableS10, tableS11, tableS12,
+                       tableS13, tableS14):
         first = fn().split("\n")[0]
         print("   " + first[:96])
     return 0

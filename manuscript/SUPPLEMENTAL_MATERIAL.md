@@ -4,7 +4,7 @@
 
 Vahhab Piranfar
 
-This file contains 3 supplemental figures and 11 supplemental tables, Table S1 to Table S11, each with its legend. Every one is cited in the manuscript text.
+This file contains 3 supplemental figures and 14 supplemental tables, Table S1 to Table S14, each with its legend. Every one is cited in the manuscript text.
 
 ---
 
@@ -290,3 +290,71 @@ Held here so the Results stay on one line of reasoning. Table S6 supports the co
 | rifampin, isoniazid, streptomycin and others | derived | 13 | 27 | 6.64 | 7 | 7 | Europe PubMed Central, 2021 |
 | isoniazid, bedaquiline, Q203, pretomanid | inferred | 200 | 123 | 2.85 | 123 | 123 | figshare 39444559 |
 | ethionamide, isoniazid, alpibectir | inferred | 100 | 27 | 4.10 | 11 | 27 | Nat Commun, 2026 |
+
+**Table S12.** The screen, stage by stage. Counts in the Abstract, the Introduction, the Methods and the Discussion are read off this table. A negative row is a deduction from the line above it. "Distinct literature deposits inspected" is the denominator for the proportion stating no assay floor: it excludes duplicate fetches of records already counted, and it excludes this paper's own prospective experiment, which is not a screened literature deposit. The 33 candidates that were never opened are not characterised here or anywhere, and the proportion is not extrapolated to them.
+
+| Stage | n |
+| --- | ---: |
+| candidates assembled into the manifest | 78 |
+| marked a duplicate record, never fetched | -2 |
+| never opened (no reader, not established, or out of scope) | -31 |
+| inspected: a coverage row exists | 45 |
+| of those, a duplicate fetch of a record already counted | -4 |
+| distinct inspected records | 41 |
+| of those, this paper's own prospective experiment | -1 |
+| DISTINCT LITERATURE DEPOSITS INSPECTED | 40 |
+| of those, stating no assay floor by any route | 32 |
+
+**Table S13.** An MPN floor is not a plate-count floor: the identifiability verdicts of the Results recomputed under the assay's own likelihood. `plate sweep` is the [0, L] interval used in the main text; `mpn pattern` treats the floor reading as the literal lowest-rung well pattern and quotes its two-sided profile interval; `mpn censor` treats it as every pattern whose estimate falls below the lowest rung and quotes the one-sided likelihood bound. The deposit's day-5 splits (12 single, 6 multiple at 15 days; 6 and 0 at 60) are unchanged under every reading at 95 and 99 per cent, because the widest 99 per cent bound, 209 per mL, still falls short of the 230 per mL that would move any of the twelve. At day 2, where the floor is 230, one isolate of eighteen moves from one compatible class to two. The triplicate-well design gives identical verdicts throughout (results/tables/exp44_mpn_interval_summary.csv).
+
+| Panel | Sample day | What the floor reading is taken to be | Floored isolates | One compatible class | Several compatible classes | True counts the reading admits (per mL) |
+| --- | --- | --- | --- | ---: | ---: | ---: |
+| 15-day | 5 | plate sweep | 18 | 12 | 6 | 0 to 23 |
+| 15-day | 5 | mpn pattern 95 | 18 | 12 | 6 | 3.25 to 120 |
+| 15-day | 5 | mpn pattern 99 | 18 | 12 | 6 | 1.45 to 183 |
+| 15-day | 5 | mpn censor 95 | 18 | 12 | 6 | 0 to 136 |
+| 15-day | 5 | mpn censor 99 | 18 | 12 | 6 | 0 to 209 |
+| 15-day | 2 | plate sweep | 18 | 2 | 16 | 0 to 230 |
+| 15-day | 2 | mpn pattern 95 | 18 | 1 | 17 | 32.5 to 1.2e+03 |
+| 15-day | 2 | mpn pattern 99 | 18 | 1 | 17 | 14.5 to 1.83e+03 |
+| 15-day | 2 | mpn censor 95 | 18 | 1 | 17 | 0 to 1.36e+03 |
+| 15-day | 2 | mpn censor 99 | 18 | 1 | 17 | 0 to 2.09e+03 |
+| 60-day | 5 | plate sweep | 6 | 6 | 0 | 0 to 23 |
+| 60-day | 5 | mpn pattern 95 | 6 | 6 | 0 | 3.25 to 120 |
+| 60-day | 5 | mpn pattern 99 | 6 | 6 | 0 | 1.45 to 183 |
+| 60-day | 5 | mpn censor 95 | 6 | 6 | 0 | 0 to 136 |
+| 60-day | 5 | mpn censor 99 | 6 | 6 | 0 | 0 to 209 |
+| 60-day | 2 | plate sweep | 3 | 1 | 2 | 0 to 230 |
+| 60-day | 2 | mpn pattern 95 | 3 | 1 | 2 | 32.5 to 1.2e+03 |
+| 60-day | 2 | mpn pattern 99 | 3 | 1 | 2 | 14.5 to 1.83e+03 |
+| 60-day | 2 | mpn censor 95 | 3 | 1 | 2 | 0 to 1.36e+03 |
+| 60-day | 2 | mpn censor 99 | 3 | 1 | 2 | 0 to 2.09e+03 |
+
+**Table S14.** Tolerance classification as posterior inference. For each isolate whose day-5 reading sits at the floor, the likelihood of the floor reading under the deposit's own MPN design (duplicate wells, literal lowest-rung pattern) and a log-flat prior give a posterior over the true count, mapped through the isolate's starting density to a posterior over class. An isolate is confirmed when the recorded class reaches 95 per cent, contradicted when another class does, and refused otherwise. The twelve Low labels are confirmed; the six Medium labels are refused, their posterior split across the threshold the deposit drew at exactly L/N0 = 1e-3. The verdicts are unchanged across both well designs, both readings of the floor value and a uniform prior; under the most conservative analysis (triplicate wells, censoring reading, log-flat prior) the six are contradicted rather than refused (results/tables/exp46_class_posterior.csv).
+
+| Panel | Isolate | N0 (MPN/mL) | Recorded class | P(Low) | P(Medium) | P(High) | Verdict at 95% |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 15-day | 8 | 230000.0 | Low | 0.999 | 0.001 | 0.0 | confirmed |
+| 15-day | 43 | 23000.0 | Medium | 0.5331 | 0.4655 | 0.001 | refused |
+| 15-day | 49 | 23000.0 | Medium | 0.5331 | 0.4655 | 0.001 | refused |
+| 15-day | 50 | 23000.0 | Medium | 0.5331 | 0.4655 | 0.001 | refused |
+| 15-day | 61 | 610000.0 | Low | 1.0 | 0.0 | 0.0 | confirmed |
+| 15-day | 66 | 23000.0 | Medium | 0.5331 | 0.4655 | 0.001 | refused |
+| 15-day | 76 | 230000.0 | Low | 0.999 | 0.001 | 0.0 | confirmed |
+| 15-day | 103 | 23000.0 | Medium | 0.5331 | 0.4655 | 0.001 | refused |
+| 15-day | 104 | 230000.0 | Low | 0.999 | 0.001 | 0.0 | confirmed |
+| 15-day | 118 | 230000.0 | Low | 0.999 | 0.001 | 0.0 | confirmed |
+| 15-day | 128 | 6100000.0 | Low | 1.0 | 0.0 | 0.0 | confirmed |
+| 15-day | 135 | 230000.0 | Low | 0.999 | 0.001 | 0.0 | confirmed |
+| 15-day | 137 | 2300000.0 | Low | 1.0 | 0.0 | 0.0 | confirmed |
+| 15-day | 138 | 230000.0 | Low | 0.999 | 0.001 | 0.0 | confirmed |
+| 15-day | 148 | 230000.0 | Low | 0.999 | 0.001 | 0.0 | confirmed |
+| 15-day | 161 | 230000.0 | Low | 0.999 | 0.001 | 0.0 | confirmed |
+| 15-day | 167 | 23000.0 | Medium | 0.5331 | 0.4655 | 0.001 | refused |
+| 15-day | 186 | 6100000.0 | Low | 1.0 | 0.0 | 0.0 | confirmed |
+| 60-day | 43 | 610000.0 | Low | 1.0 | 0.0 | 0.0 | confirmed |
+| 60-day | 49 | 230000.0 | Low | 0.999 | 0.001 | 0.0 | confirmed |
+| 60-day | 50 | 230000.0 | Low | 0.999 | 0.001 | 0.0 | confirmed |
+| 60-day | 66 | 6100000.0 | Low | 1.0 | 0.0 | 0.0 | confirmed |
+| 60-day | 76 | 23000000.0 | Low | 1.0 | 0.0 | 0.0 | confirmed |
+| 60-day | 103 | 230000.0 | Low | 0.999 | 0.001 | 0.0 | confirmed |

@@ -320,6 +320,19 @@ def segment(text):
             legend.append(lines[j])
             j += 1
         body = _table_body_after(lines, j - 1)
+        # A footnote directly below the grid (`*Note.` / `*Note:`) carries a
+        # caption's numeric claims same as a paragraph above the table would;
+        # only the printed layout moves it below the grid, so it is folded
+        # back into the legend text a claim-scan reads.
+        k = j
+        while k < len(lines) and lines[k].lstrip().startswith("|"):
+            k += 1
+        while k < len(lines) and not lines[k].strip():
+            k += 1
+        if k < len(lines) and re.match(r"^\*Note[.:]", lines[k].strip()):
+            while k < len(lines) and lines[k].strip():
+                legend.append(lines[k])
+                k += 1
         regions.append({
             "region": "table legend",
             "label": "Table %s legend" % m.group(1),

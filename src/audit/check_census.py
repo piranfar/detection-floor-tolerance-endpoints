@@ -438,6 +438,20 @@ class Manuscript:
                     while j < n and lines[j].lstrip().startswith("|"):
                         rows.append(lines[j].strip())
                         j += 1
+                # A footnote directly below the grid (`*Note.` or `*Note:`)
+                # is part of the caption for every check downstream: only the
+                # printed layout splits it from the paragraph above the
+                # table, so the audit reads them as one legend_text.
+                m2 = j
+                while m2 < n and not lines[m2].strip():
+                    m2 += 1
+                if m2 < n and re.match(r"^\*Note[.:]", lines[m2].strip()):
+                    note_lines = []
+                    while m2 < n and lines[m2].strip():
+                        note_lines.append(lines[m2].strip())
+                        m2 += 1
+                    body.append(" ".join(note_lines))
+                    j = m2
                 legend_text = " ".join(body)
                 self.table_legend[num] = legend_text
                 self.table_rows[num] = rows

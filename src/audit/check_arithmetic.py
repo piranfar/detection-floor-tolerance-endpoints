@@ -356,7 +356,15 @@ class Doc:
                             rows.append(cells)
                             row_lines.append(self.line_at(offsets[k]))
                     label, legend = self._legend_for(lines, i)
-                    tables.append(Table(label, legend, headers, rows,
+                    note = self._note_after(lines, j)
+                    # The audit reads one text -- `legend` -- for every
+                    # numeric cross-check. A short caption above the table and
+                    # a footnote below it are one caption to a reader, so they
+                    # are one string here too: splitting them for print layout
+                    # must not blind a single check that used to see the
+                    # sentence with the number in it.
+                    full = f"{legend} {note}".strip() if note else legend
+                    tables.append(Table(label, full, headers, rows,
                                         row_lines, self.line_at(offsets[i])))
                 i = j
                 continue
@@ -381,6 +389,35 @@ class Doc:
                 return label, ln
             k -= 1
         return "", ""
+
+    @staticmethod
+    def _note_after(lines: list[str], end: int) -> str:
+        """A footnote paragraph immediately below a table block.
+
+        Convention: an italicised paragraph beginning `*Note.` or `*Note:`,
+        directly after the table with at most one blank line before it. A
+        table caption stays a short title; anything a reader needs beyond
+        that -- what a column means, what an abbreviation stands for, why a
+        cell reads NA -- goes here instead of being folded into a two-
+        paragraph caption.
+        """
+        k = end
+        blanks = 0
+        while k < len(lines) and blanks < 2:
+            ln = lines[k].strip()
+            if not ln:
+                blanks += 1
+                k += 1
+                continue
+            if re.match(r"^\*Note[.:]", ln):
+                para = [ln]
+                k += 1
+                while k < len(lines) and lines[k].strip():
+                    para.append(lines[k].strip())
+                    k += 1
+                return " ".join(para)
+            return ""
+        return ""
 
 
 def _split_row(line: str) -> list[str]:
