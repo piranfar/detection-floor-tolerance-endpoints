@@ -49,7 +49,7 @@ keywords:
 
 **Author:** [AUTHOR]¹
 
-¹[AFFILIATION]
+¹Department of Microbiology, Iran University of Medical Sciences, Tehran, Iran
 
 ORCID: [[AUTHOR ORCID]]([AUTHOR ORCID])
 
@@ -661,9 +661,13 @@ they did not form colonies on solid medium. That is differential culturability,
 not censoring. It is a described phenotype of XX with a literature
 of its own: bacilli that require resuscitation-promoting factors to grow dominate
 pre-treatment sputum and rise as a proportion of the population during
-chemotherapy (23), and both resuscitation-promoting-factor-dependent and
+chemotherapy (23), both resuscitation-promoting-factor-dependent and
 -independent differentially culturable populations are recovered from patients
-whose solid-medium cultures return nothing (24).
+whose solid-medium cultures return nothing (24), and the mechanism has been
+reproduced experimentally: rifamycin action on RNA polymerase, independent of
+any assay's floor, converts a starved population to over 90 per cent
+differentially detectable in vitro (25) — the same drug class every arm of
+the GROUP-6 regimen carries.
 
 Keeping the two apart matters for what this paper claims. Reachability and
 identifiability are arithmetic on the plated volume; they hold whether or not
@@ -742,7 +746,7 @@ probable number halves the odds of a higher tolerance class (OR 0.480, 0.340 to
 
 Why the adjustment does that is measurable. DRUG-B-resistant isolates go into
 this assay at 5.36 log10 against 6.36 for susceptible isolates, ten-fold thinner
-(Mann–Whitney p = 9.1 × 10⁻¹⁴) (25), and 22 of the 84 resistant isolates
+(Mann–Whitney p = 9.1 × 10⁻¹⁴) (26), and 22 of the 84 resistant isolates
 carrying an ordered label lack the headroom for the deepest endpoint, 26.2 per
 cent, against 9 of the 119 susceptible, 7.6 per cent. Those two counts are the 31
 of Section 1, which is that section's 33 less the two isolates whose label is the
@@ -813,7 +817,7 @@ Why they seed lower is not established here, and the obvious explanation fails:
 resistant isolates do not grow significantly more slowly in this deposit (median
 time to OD 0.4 of 19 against 17, p = 0.24), and 85 of them carry *GENE-1* S315X,
 the mutation that predominates clinically precisely because it is close to
-fitness-neutral — it costs the bacterium almost nothing to carry (26, 27).
+fitness-neutral — it costs the bacterium almost nothing to carry (27, 28).
 What the deposit can rule out is less than we first reported, and the correction
 runs in our favour. Seven of the nine pretreatment covariates the file carries
 cannot adjust this association, and they fail in two different ways. Five of them
@@ -862,9 +866,9 @@ assay is not thin. The two panels are columns on the same spreadGROUP-7t rows �
 isolates appear in both — so every comparison between them is within-isolate and
 is made that way. Pairing sharpens the result rather than softening it: 26
 isolates lose their headroom shortfall between panels and none acquires one
-(exact McNemar p = 3.0 × 10⁻⁸ against an unpaired p of 2 × 10⁻⁵) (28), eleven
+(exact McNemar p = 3.0 × 10⁻⁸ against an unpaired p of 2 × 10⁻⁵) (29), eleven
 leave the floor and none joins it (p = 9.8 × 10⁻⁴), and every isolate whose
-headroom changes gains (Wilcoxon signed-rank p = 1.3 × 10⁻³³) (29). The
+headroom changes gains (Wilcoxon signed-rank p = 1.3 × 10⁻³³) (30). The
 interquartile range of starting density falls by 0.58 log10. <!--supp-->
 
 It does not vanish, and the ordinal treatment is what shows where it goes. The
@@ -1027,7 +1031,7 @@ The second is that the crossing time is never observed. It lies between the last
 visit above the floor and the first visit below it, and the naive treatment pins
 it to the later end, which biases every duration late by construction rather than
 merely imprecisely. Fitted as interval-censored data — the crossing recorded as
-lying somewhere inside a window rather than at a point (30) — at the most
+lying somewhere inside a window rather than at a point (31) — at the most
 sensitive plating, the tenth percentile of the first crossing falls from 2.95 to
 1.82 days and the twenty-fifth from 11.24 to 9.64; across the treated arms at all
 four platings the twenty-fifth percentile falls from 5.77 to 3.67 days, a 36 per
@@ -1061,11 +1065,11 @@ suspension to 0.5 McFarland and dilute it, and NCCLS M26-A (approved guideline,
 variable the preceding sections rest on does not vary.
 
 Two things about the standard let counts settle this. First, a McFarland reading
-is a turbidity — how cloudy the tube looks, matched optically (31) — and
+is a turbidity — how cloudy the tube looks, matched optically (32) — and
 cloudiness counts live cells, dead cells, debris and a clump of cells all as one
-particle (31). Converting it to CFU/mL assumes a cell size, a shape and a
+particle (32). Converting it to CFU/mL assumes a cell size, a shape and a
 dispersal that XX does not oblige, and XX protocols work
-from a range of dilutions and target inocula (32). Second, the standard fixes
+from a range of dilutions and target inocula (33). Second, the standard fixes
 what goes into the flask. What matters here is what the plate counts, and between
 the two sit a dilution, a transfer, and whatever clumping happens on the way.
 
@@ -1375,7 +1379,7 @@ points the same negative way. The axes are not shown to be independent here. The
 are shown not to be positively coupled, and that is what the deposits can
 support.
 
-Ask the same question of 126 evolved clones sharing one ancestor (16, 33) and
+Ask the same question of 126 evolved clones sharing one ancestor (16, 34) and
 the answer is ρ = +0.043 (p = 0.63), against the 0.175 this sample size could
 have detected. Independence holds inside every nutrient group separately.
 Splitting by nutrient is not optional there. The concentration written on the
@@ -1526,7 +1530,7 @@ That is also where the counts feeding regimen selection are taken. A model
 published as a preprint while this paper was in preparation predicts relapse in
 the murine model across nine datasets, 58 regimens and 2 239 relapse
 observations, reaching an area under the receiver operating characteristic curve
-of 0.90 on its final external validation (34). Its eight predictors include
+of 0.90 on its final external validation (35). Its eight predictors include
 the fall in lung CFU from baseline at days 14 and 28, the fall in the ribosomal RNA (ribonucleic acid)
 synthesis ratio at day 14, the presence of an oxazolidinone, and four
 experimental covariates. Removing either biomarker costs performance. What the
@@ -1614,7 +1618,7 @@ rule did not travel with the deeper endpoints.
 Take the assay's contribution out and what is left makes biological sense.
 Growth state predicts the tolerance class before and after adjustment for
 starting density — DRUG-B needs GENE-1 and active cell-wall synthesis
-(35), DRUG-A needs transcription (36), and a population that is not
+(36), DRUG-A needs transcription (37), and a population that is not
 dividing offers less of what these drugs act on. The classification is reading
 physiological state, not drug susceptibility.
 
@@ -1644,7 +1648,7 @@ enter the assay ten-fold lower and 26.2 per cent of them lack the room the
 endpoint requires. We do not know why they seed lower. The natural explanation —
 that resistance carries a fitness cost — is not supported here, since these
 isolates do not grow measurably more slowly and most carry the near-neutral
-*GENE-1* S315X allele (26, 27). That gap is a finding in its own right and
+*GENE-1* S315X allele (27, 28). That gap is a finding in its own right and
 belongs in the next study rather than in a speculative sentence in this one. Nor
 is it explained away by anything else the file records: of its nine pretreatment
 covariates only two can legitimately be adjusted for, and neither moves the
@@ -1772,7 +1776,7 @@ experiment writes its lower limit of detection into the deposited workbook once
 on every GROUP-7t, separately for each agar type, and separately for individual mice
 where the lower limit differed between them: 0.78 log10 CFU per lung on plain and
 DRUG-G agar, 0.54 on thiophenecarboxylic acid hydrazide agar, with the plated
-volume stated beside it (37). That is better practice than anything else in
+volume stated beside it (38). That is better practice than anything else in
 this corpus. The article reporting the experiment states none of it — a full-text
 search returns no occurrence of "limit of detection" or of either value. So the
 number is not missing from the science. It is missing from the paper, and a
@@ -1781,7 +1785,7 @@ bounded. What we are asking for is one sentence in a methods section, and
 somebody has already done all the work that sits behind it. <!--supp-->
 
 The mirror image is a deposit whose modelling table carries a column named
-`CFU_LOD`, and that column is empty in all 272 rows (38). Somebody designed
+`CFU_LOD`, and that column is empty in all 272 rows (39). Somebody designed
 the field, declared it numeric, and never filled it in; nor does a detection
 limit appear in any of the eight analysis scripts deposited beside it. Put the
 two cases together and the diagnosis is not carelessness. The assay floor *L* is
@@ -1981,7 +1985,7 @@ pre-treatment visits, is 2 580 readings, of which 19.3 per cent are flagged.
 experiment under amikacin, each carrying an endpoint minimum inhibitory
 concentration and a persister fraction measured on the same clone, labelled by
 the antibiotic concentration and nutrient level its population evolved under
-(GROUP-4 et al. 2024; Zenodo 10.5281/zenodo.7550302, CC BY 4.0) (16, 33). Six of its
+(GROUP-4 et al. 2024; Zenodo 10.5281/zenodo.7550302, CC BY 4.0) (16, 34). Six of its
 595 surviving fractions are written as exact zeros, marking a below-limit reading
 without naming a limit; they fix no floor, so this deposit is one of the two for
 which observability labels are refused.
@@ -2034,16 +2038,16 @@ Mueller–Hinton (HiMedia): cation-adjusted Mueller–Hinton broth for the minim
 inhibitory concentration and the exposure, Mueller–Hinton agar for the viable
 counts. Cultures, the microdilution plates and the count plates were incubated at
 35 ± 2 °C in ambient air, the reference conditions CLSI specifies for this
-organism, count plates being read after 18 to 24 h (11, 39).
+organism, count plates being read after 18 to 24 h (11, 40).
 
 **Minimum inhibitory concentration.** The DRUG-F MIC of the strain was
-determined by CLSI reference broth microdilution (39, 40): DRUG-F
+determined by CLSI reference broth microdilution (40, 41): DRUG-F
 doubling-diluted in cation-adjusted Mueller–Hinton broth, a final inoculum of
 about 5 × 10⁵ CFU/mL, incubation at 35 ± 2 °C for 16 to 20 h in ambient air, and
 the MIC read as the lowest concentration with no visible growth, with growth,
 sterility and quality-control wells alongside as CLSI directs. The MIC was
 0.008 mg/L, which falls within the CLSI quality-control range for this strain
-(40), and the exposure was set at ten times it, 0.08 mg/L.
+(41), and the exposure was set at ten times it, 0.08 mg/L.
 
 **Drug and design.** DRUG-F at ten times the MIC, 0.08 mg/L — chosen
 because it kills deeply and fast, so every arm reaches the floor inside a working
@@ -2260,7 +2264,7 @@ The attenuation of the resistance coefficient once starting density enters the
 model is reported in the Results as a descriptive ratio, which is what it is.
 Separately, a linear product-of-coefficients mediation decomposes the total
 effect of DRUG-B resistance on the day-5 tolerance class into an average
-causal mediation effect through log10 *N₀* and an average direct effect (41, 42), with
+causal mediation effect through log10 *N₀* and an average direct effect (42, 43), with
 bootstrap percentile intervals from 5 000 resamples, repeated on the baseline
 stratum and on two binary collapses of the outcome.
 
@@ -2356,15 +2360,15 @@ than a diagnosis after it.
 
 ### Estimation
 
-A **Tobit model** fits log10 CFU/mL linearly in time by maximum likelihood (43). An
+A **Tobit model** fits log10 CFU/mL linearly in time by maximum likelihood (44). An
 observed reading contributes the usual Gaussian density; a censored reading
 contributes log Φ((limit − µ)/σ), the probability that it fell below its own
-limit. This is Beal's M3 (Beal 2001) written for this assay (44). Intervals come from
+limit. This is Beal's M3 (Beal 2001) written for this assay (45). Intervals come from
 the profile likelihood.
 
 **Multiple imputation** draws each censored reading from the fitted normal
 truncated at its own limit, refits by ordinary least squares, and pools 50 fits
-by Rubin's rules (45). The imputation is proper: the line and the error scale
+by Rubin's rules (46). The imputation is proper: the line and the error scale
 are redrawn from the Tobit fit's own asymptotic distribution at every imputation
 rather than held at the point estimate, so the between-imputation variance
 carries the uncertainty in the model that generated the draws. What the agreement
@@ -2379,13 +2383,13 @@ the deposit records no wavelength, so none is given here. Because it is a time,
 it runs inversely to growth rate: a larger value is a slower-growing isolate.
 
 **The tolerance label** is modelled as an ordered categorical outcome by
-proportional-odds ordinal logistic regression (46), with starting density as a
+proportional-odds ordinal logistic regression (47), with starting density as a
 prespecified covariate and every association reported unadjusted and adjusted for
 it. The MDR category of the deposited label is a fourth, unordered category and
 is excluded; all 14 rows carrying it fall outside the susceptible-versus-resistant
 contrast in any case, so the ordinal and linear models are fitted to identical
-rows. Proportional odds is tested by a Brant test per predictor (47) and by a
-likelihood-ratio test against a generalised ordered logit (48) with the coefficient
+rows. Proportional odds is tested by a Brant test per predictor (48) and by a
+likelihood-ratio test against a generalised ordered logit (49) with the coefficient
 released; where it fails, the released partial-proportional-odds fit is reported
 and checked against a multinomial fit that assumes no ordering. Rows are dropped
 only for a missing outcome, predictor or starting density, and the dropped rows
@@ -2403,20 +2407,20 @@ cross, 60 per cent read above the floor again at a later visit.
 
 The crossing time is interval-censored, not observed: it lies between the last
 visit above the floor and the first visit below it, and the visit schedule is
-coarse. Interval-censored fits (30) are therefore reported alongside the naive
+coarse. Interval-censored fits (31) are therefore reported alongside the naive
 treatment that pins the event to the visit at which the blank plate was noticed.
-Kaplan–Meier (49) and Cox proportional hazards (50) are retained as **descriptive**
+Kaplan–Meier (50) and Cox proportional hazards (51) are retained as **descriptive**
 summaries of first crossing only; their intervals are replaced by cluster
-bootstraps over laboratories and over flasks (51), because those 261 series come from
+bootstraps over laboratories and over flasks (52), because those 261 series come from
 72 flasks in 6 laboratories and the partial likelihood treats them as independent.
 No p-value is quoted for a term that is constant within laboratory, since six
-clusters cannot support one. Proportionality is tested on Schoenfeld residuals (52, 53).
+clusters cannot support one. Proportionality is tested on Schoenfeld residuals (53, 54).
 
 A cell is fitted only when it retains at least six quantified readings at three
 distinct times; below that the slope is determined by the censoring pattern
 rather than by the counts.
 
-**The replicate-level bootstrap** (54) behind the interval slopes resamples the three
+**The replicate-level bootstrap** (55) behind the interval slopes resamples the three
 replicate counts with replacement at both ends of each interval, takes their
 mean, refits the concentration slope on each draw, and takes percentile intervals
 from 20 000 draws. The resampling unit is the replicate count, not the interval,
@@ -2429,7 +2433,7 @@ interval quoted in Section 9 and drawn in Figure S3C. The least-squares fit is
 kept in the table for comparison and is labelled there: it has two residual
 degrees of freedom and discards the replicate scatter entirely. An interval on a
 proportion — an inversion rate, or a share of flasks — is the Jeffreys
-interval (55), which is the equal-tailed posterior under the Jeffreys prior
+interval (56), which is the equal-tailed posterior under the Jeffreys prior
 and does not collapse to zero width when the count is 0 or n, as the normal
 approximation does at the sample sizes here.
 
@@ -2467,7 +2471,7 @@ from.
 ### Multiplicity
 
 Where a question admits more than one test, every test the deposit supports is
-run, and the family is corrected by the Benjamini–Hochberg procedure (56) at a false
+run, and the family is corrected by the Benjamini–Hochberg procedure (57) at a false
 discovery rate of 5 per cent. For each test we report the correlation the sample
 size could have resolved at 95 per cent confidence, so that a null is bounded
 rather than asserted.
@@ -2518,9 +2522,9 @@ conclusions that table lists, so a reading retracted in the prose alone lies
 outside it, and a verdict silently changed from unsupported to supported would
 not be detected.
 
-Analyses used Python 3.14 with numpy 2.5.0 (57), scipy 1.18.0 (58),
-pandas 3.0.3 (59), statsmodels 0.15.0 (60) and lifelines 0.30.3
-(61).
+Analyses used Python 3.14 with numpy 2.5.0 (58), scipy 1.18.0 (59),
+pandas 3.0.3 (60), statsmodels 0.15.0 (61) and lifelines 0.30.3
+(62).
 
 ---
 
@@ -2538,34 +2542,36 @@ de-identified public data or over work on a bacterial quality-control strain.
 
 ### Use of generative artificial intelligence
 
-Anthropic's Claude (Opus 5) was used under the author's direction to copy-edit
-and language-edit the manuscript text, including the text of the version
-submitted. That is the whole of it: no figure,
-image or schematic was generated by an artificial intelligence tool; every figure
-is plotted from values that regenerate from the public deposits. No artificial
-intelligence tool is an author. The author directed the study, verified every
-reported quantity against the source deposits and the regenerating pipeline, and
-takes full responsibility for the content of this article, including its accuracy
-and its originality.
+Anthropic's Claude was used under the author's direction to read the
+manuscript and to assist in running the Python analysis pipeline. Claude
+Sonnet 5 was further used, under the author's direction, to document and
+organise the analysis code and to prepare its commits to the version-controlled
+repository. No figure, image or schematic was generated by an artificial
+intelligence tool; every figure is plotted from values that regenerate from the
+public deposits. No artificial intelligence tool is an author. The author
+directed the study, verified every reported quantity against the source
+deposits and the regenerating pipeline, and takes full responsibility for the
+content of this
+article, including its accuracy and its originality.
 
 ### Data availability
 
 Every dataset reanalysed here was already public under an open licence and none
 was generated for this study. Each is identified in Table 1 and cited alongside
 the article that first described it: GROUP-2 and colleagues (6, 12), GROUP-8
-and colleagues (7, 13), GROUP-4 and colleagues (16, 33), GROUP-3 and
+and colleagues (7, 13), GROUP-4 and colleagues (16, 34), GROUP-3 and
 colleagues (14, 15), and the hollow-fibre Source Data of GROUP-5 and
 colleagues (17, 18), held out of every fitting step. The readings from the
 prospective experiment are deposited with the analysis code.
 
 That code, both audit scripts, the headroom tool and the machine-readable
 receipts recording the software versions each stage ran under are in a public
-repository (62), with the documentation and test data needed to run them. It
+repository (63), with the documentation and test data needed to run them. It
 is dual-licensed: the code under the Massachusetts Institute of Technology (MIT)
 licence, and the manuscript, figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 [REPOSITORY URL] and this
-manuscript was built from commit 7722ac3+ of it — the state of the repository
+manuscript was built from commit ada65b7+ of it — the state of the repository
 the text describes, rather than the commit that records the build. A trailing
 plus sign, if present, marks a build made with uncommitted changes in the tree.
 
@@ -2713,6 +2719,8 @@ the original draft, review and editing, and visualisation.
 61. [reference withheld]
 
 62. [reference withheld]
+
+63. [reference withheld]
 
 ## Figure legends
 

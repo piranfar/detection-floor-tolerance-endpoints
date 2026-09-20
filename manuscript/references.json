@@ -820,5 +820,18 @@
     "identifier": "https://doi.org/10.1164/rccm.201604-0769OC",
     "retrieved": "",
     "supports": "Results Section 12: differentially culturable tubercle bacteria, both resuscitation-promoting-factor-dependent and -independent, are recovered from patients whose solid-medium cultures return nothing."
+  },
+  "R66": {
+    "kind": "article",
+    "authors": "Saito K, Warrier T, Somersan-Karakaya S, Kaminski L, Mi J, Jiang X, Park S, Shigyo K, Gold B, Roberts J, Weber E, Jacobs WR Jr, Nathan CF",
+    "year": "2017",
+    "title": "Rifamycin action on RNA polymerase in antibiotic-tolerant Mycobacterium tuberculosis results in differentially detectable populations",
+    "journal": "Proc Natl Acad Sci U S A",
+    "volume_pages": "114:E4832-E4840",
+    "publisher": "",
+    "repository": "",
+    "identifier": "https://doi.org/10.1073/pnas.1705385114",
+    "retrieved": "",
+    "supports": "Results Section 12: differentially detectable Mycobacterium tuberculosis, a population viable and culturable in liquid dilution but silent on solid medium, generated experimentally by rifamycin action on RNA polymerase rather than by any assay's detection floor."
   }
 }

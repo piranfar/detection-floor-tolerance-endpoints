@@ -16,7 +16,7 @@ keywords:
 
 **Author:** Vahhab Piranfar¹
 
-¹Independent Researcher, New York, NY, USA
+¹Department of Microbiology, Iran University of Medical Sciences, Tehran, Iran
 
 ORCID: [0000-0003-3653-5739](https://orcid.org/0000-0003-3653-5739)
 
@@ -346,9 +346,13 @@ they did not form colonies on solid medium. That is differential culturability,
 not censoring. It is a described phenotype of *M. tuberculosis* with a literature
 of its own: bacilli that require resuscitation-promoting factors to grow dominate
 pre-treatment sputum and rise as a proportion of the population during
-chemotherapy (8), and both resuscitation-promoting-factor-dependent and
+chemotherapy (8), both resuscitation-promoting-factor-dependent and
 -independent differentially culturable populations are recovered from patients
-whose solid-medium cultures return nothing (9).
+whose solid-medium cultures return nothing (9), and the mechanism has been
+reproduced experimentally: rifamycin action on RNA polymerase, independent of
+any assay's floor, converts a starved population to over 90 per cent
+differentially detectable in vitro (10) — the same drug class every arm of
+the Evangelopoulos regimen carries.
 
 Keeping the two apart matters for what this paper claims. Reachability and
 identifiability are arithmetic on the plated volume; they hold whether or not
@@ -402,7 +406,7 @@ probable number halves the odds of a higher tolerance class (OR 0.480, 0.340 to
 
 Why the adjustment does that is measurable. Isoniazid-resistant isolates go into
 this assay at 5.36 log10 against 6.36 for susceptible isolates, ten-fold thinner
-(Mann–Whitney p = 9.1 × 10⁻¹⁴) (10), and 22 of the 84 resistant isolates
+(Mann–Whitney p = 9.1 × 10⁻¹⁴) (11), and 22 of the 84 resistant isolates
 carrying an ordered label lack the headroom for the deepest endpoint, 26.2 per
 cent, against 9 of the 119 susceptible, 7.6 per cent. Those two counts are the 31
 of Section 1, which is that section's 33 less the two isolates whose label is the
@@ -423,7 +427,7 @@ If the effect is a property of assay geometry rather than of clinical sampling,
 it should appear where one protocol, one strain and one stock are handed out
 deliberately. Van Wijk and colleagues (2023) ran exactly that exercise, sending a
 single stock of H37Rv to six blinded laboratories under one written protocol
-(11, 12). It does.
+(12, 13). It does.
 
 At ten times the minimum inhibitory concentration of moxifloxacin all six
 laboratories return a positive kill rate, and the rates span 5.2-fold, from 0.090
@@ -464,7 +468,7 @@ different apparatus. The boundaries are derived from definitions, so they predic
 they will survive exactly that, and this is where that prediction was put at risk.
 
 Dubey and colleagues (2026) report amoxicillin-clavulanate against *Escherichia
-coli* in a hollow-fibre system (13, 14). Their Methods state 100 µL plated
+coli* in a hollow-fibre system (14, 15). Their Methods state 100 µL plated
 with counts per mL, so *L* = 10 CFU/mL is derived rather than inferred, and the
 file corroborates the derivation: a 100 µL plate reporting per mL can return only
 multiples of ten, and all 229 genuine counts in the deposit are multiples of ten,
@@ -553,7 +557,7 @@ The standard is not silent on that choice, and this is the paper's sharpest
 finding rather than an awkwardness for it. M26-A's own section 1.3.2.5, headed
 *Volume Transferred*, ties the volume to the endpoint with a counting rule:
 after the defined 99.9 per cent killing, at least ten colonies must remain
-(15) — for a standard inoculum of 5 × 10⁵ per mL that means at least 20 µL
+(16) — for a standard inoculum of 5 × 10⁵ per mL that means at least 20 µL
 streaked, so a 10 µL streak fails the rule, and section 3.1 separately requires
 the smallest detectable count to be established by serial dilution. A guideline
 written in 1999 already required both numbers this paper asks for. The
@@ -564,13 +568,13 @@ rule did not travel with the deeper endpoints.
 Take the assay's contribution out and what is left makes biological sense.
 Growth state predicts the tolerance class before and after adjustment for
 starting density — isoniazid needs KatG and active cell-wall synthesis
-(16), rifampicin needs transcription (17), and a population that is not
+(17), rifampicin needs transcription (18), and a population that is not
 dividing offers less of what these drugs act on. The classification is reading
 physiological state, not drug susceptibility.
 
 That axis is the one tuberculosis drug development already leans on. Killing
 assays of this design rank regimens before they enter trials, and tolerance
-followed in patients is now being read as within-host evolution (18). If a
+followed in patients is now being read as within-host evolution (19). If a
 tolerance classification is partly an inoculum measurement, conclusions drawn
 from it — that one regimen sterilises faster than another, that a patient's
 isolates are becoming more tolerant over therapy — are in part conclusions
@@ -710,34 +714,36 @@ de-identified public data or over work on a bacterial quality-control strain.
 
 ### Use of generative artificial intelligence
 
-Anthropic's Claude (Opus 5) was used under the author's direction to copy-edit
-and language-edit the manuscript text, including the text of the version
-submitted. That is the whole of it: no figure,
-image or schematic was generated by an artificial intelligence tool; every figure
-is plotted from values that regenerate from the public deposits. No artificial
-intelligence tool is an author. The author directed the study, verified every
-reported quantity against the source deposits and the regenerating pipeline, and
-takes full responsibility for the content of this article, including its accuracy
-and its originality.
+Anthropic's Claude was used under the author's direction to read the
+manuscript and to assist in running the Python analysis pipeline. Claude
+Sonnet 5 was further used, under the author's direction, to document and
+organise the analysis code and to prepare its commits to the version-controlled
+repository. No figure, image or schematic was generated by an artificial
+intelligence tool; every figure is plotted from values that regenerate from the
+public deposits. No artificial intelligence tool is an author. The author
+directed the study, verified every reported quantity against the source
+deposits and the regenerating pipeline, and takes full responsibility for the
+content of this
+article, including its accuracy and its originality.
 
 ### Data availability
 
 Every dataset reanalysed here was already public under an open licence and none
 was generated for this study. Each is identified in Table 3 and cited alongside
-the article that first described it: Vijay and colleagues (19, 20), van Wijk
-and colleagues (11, 12), Windels and colleagues (21, 22), Kaur and
-colleagues (23, 24), and the hollow-fibre Source Data of Dubey and
-colleagues (13, 14), held out of every fitting step. The readings from the
+the article that first described it: Vijay and colleagues (20, 21), van Wijk
+and colleagues (12, 13), Windels and colleagues (22, 23), Kaur and
+colleagues (24, 25), and the hollow-fibre Source Data of Dubey and
+colleagues (14, 15), held out of every fitting step. The readings from the
 prospective experiment are deposited with the analysis code.
 
 That code, both audit scripts, the headroom tool and the machine-readable
 receipts recording the software versions each stage ran under are in a public
-repository (25), with the documentation and test data needed to run them. It
+repository (26), with the documentation and test data needed to run them. It
 is dual-licensed: the code under the Massachusetts Institute of Technology (MIT)
 licence, and the manuscript, figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit 7722ac3+ of it — the state of the repository
+manuscript was built from commit ada65b7+ of it — the state of the repository
 the text describes, rather than the commit that records the build. A trailing
 plus sign, if present, marks a build made with uncommitted changes in the tree.
 
@@ -832,7 +838,7 @@ The supplemental file carries the full Materials and Methods, the analyses named
 | --- | --- | --- | --- | --- | --- |
 | Six-laboratory exercise | *M. tuberculosis* H37Rv | moxifloxacin, isoniazid, 1x and 10x MIC | 90 flasks, 2 775 readings | figshare 19766083 | CC BY 4.0 |
 | Clinical isolates | *M. tuberculosis*, 217 isolates | rifampicin | 6 duration endpoints per isolate | eLife 93243, suppl. file 2 | CC BY 4.0 |
-| Evolved clones | *E. coli*, 126 clones | amikacin | MIC and persister fraction per clone | Zenodo 7550302 (22) | CC BY 4.0 |
+| Evolved clones | *E. coli*, 126 clones | amikacin | MIC and persister fraction per clone | Zenodo 7550302 (23) | CC BY 4.0 |
 | Concentration-by-time grid | *M. tuberculosis* | apramycin 1-128 ug/mL (amikacin arm not analysed) | 5 concentrations x 4 days x 3 replicates | figshare 26462791 | CC BY 4.0 |
 | Analysed last, after the derivation was fixed | *E. coli*, hollow fibre | amoxicillin-clavulanate | 20 cultures, measured day-zero density, 100 uL plated | Nat Commun 2026 Source Data | CC BY 4.0 |
 
@@ -859,34 +865,36 @@ The supplemental file carries the full Materials and Methods, the analyses named
 
 9. Chengalroyen MD, Beukes GM, Gordhan BG, Streicher EM, Churchyard G, Hafner R, Warren R, Otwombe K, Martinson N, Kana BD. 2016. Detection and quantification of differentially culturable tubercle bacteria in sputum from patients with tuberculosis. Am J Respir Crit Care Med 194:1532-1540. https://doi.org/10.1164/rccm.201604-0769OC.
 
-10. Mann HB, Whitney DR. 1947. On a test of whether one of two random variables is stochastically larger than the other. Ann Math Stat 18:50-60. https://doi.org/10.1214/aoms/1177730491.
+10. Saito K, Warrier T, Somersan-Karakaya S, Kaminski L, Mi J, Jiang X, Park S, Shigyo K, Gold B, Roberts J, Weber E, Jacobs WR Jr, Nathan CF. 2017. Rifamycin action on RNA polymerase in antibiotic-tolerant Mycobacterium tuberculosis results in differentially detectable populations. Proc Natl Acad Sci U S A 114:E4832-E4840. https://doi.org/10.1073/pnas.1705385114.
 
-11. van Wijk RC, Lucía A, Sudhakar PK, Sonnenkalb L, Gaudin C, Hoffmann E, Dremierre B, Aguilar-Ayala DA, Dal Molin M, Rybniker J, de Giorgi S, Cioetto-Mazzabò L, Segafreddo G, Manganelli R, Degiacomi G, Recchia D, Pasca MR, Simonsson USH, Ramón-García S. 2023. Implementing best practices on data generation and reporting of *Mycobacterium tuberculosis* in vitro assays within the ERA4TB consortium. iScience 26:106411. https://doi.org/10.1016/j.isci.2023.106411.
+11. Mann HB, Whitney DR. 1947. On a test of whether one of two random variables is stochastically larger than the other. Ann Math Stat 18:50-60. https://doi.org/10.1214/aoms/1177730491.
 
-12. van Wijk RC, Lucía Quintana A, Ramón-García S. 2023. *Mycobacterium tuberculosis* time kill assay data of the standardized protocol within the ERA4TB consortium. figshare. https://doi.org/10.6084/m9.figshare.19766083.v1.
+12. van Wijk RC, Lucía A, Sudhakar PK, Sonnenkalb L, Gaudin C, Hoffmann E, Dremierre B, Aguilar-Ayala DA, Dal Molin M, Rybniker J, de Giorgi S, Cioetto-Mazzabò L, Segafreddo G, Manganelli R, Degiacomi G, Recchia D, Pasca MR, Simonsson USH, Ramón-García S. 2023. Implementing best practices on data generation and reporting of *Mycobacterium tuberculosis* in vitro assays within the ERA4TB consortium. iScience 26:106411. https://doi.org/10.1016/j.isci.2023.106411.
 
-13. Dubey V, Darlow C, Gerada A, Unsworth J, Sheth E, Reza N, Farrington N, Haldenby S, Warren D, Liu X, Howard A, Hope W. 2026. Molecular pharmacodynamics of amoxicillin-clavulanic acid for urinary tract infections caused by *Escherichia coli*. Nat Commun 17:7504. https://doi.org/10.1038/s41467-026-74323-2.
+13. van Wijk RC, Lucía Quintana A, Ramón-García S. 2023. *Mycobacterium tuberculosis* time kill assay data of the standardized protocol within the ERA4TB consortium. figshare. https://doi.org/10.6084/m9.figshare.19766083.v1.
 
-14. Dubey V, Darlow C, Gerada A, Unsworth J, Sheth E, Reza N, Farrington N, Haldenby S, Warren D, Liu X, Howard A, Hope W. 2026. Source Data to "Molecular pharmacodynamics of amoxicillin-clavulanic acid for urinary tract infections caused by *Escherichia coli*" (41467_2026_74323_MOESM4_ESM.xlsx). Nature Communications. https://doi.org/10.1038/s41467-026-74323-2.
+14. Dubey V, Darlow C, Gerada A, Unsworth J, Sheth E, Reza N, Farrington N, Haldenby S, Warren D, Liu X, Howard A, Hope W. 2026. Molecular pharmacodynamics of amoxicillin-clavulanic acid for urinary tract infections caused by *Escherichia coli*. Nat Commun 17:7504. https://doi.org/10.1038/s41467-026-74323-2.
 
-15. National Committee for Clinical Laboratory Standards. 1999. Methods for determining bactericidal activity of antimicrobial agents; approved guideline. NCCLS document M26-A. National Committee for Clinical Laboratory Standards, Wayne, PA. ISBN 1-56238-384-1.
+15. Dubey V, Darlow C, Gerada A, Unsworth J, Sheth E, Reza N, Farrington N, Haldenby S, Warren D, Liu X, Howard A, Hope W. 2026. Source Data to "Molecular pharmacodynamics of amoxicillin-clavulanic acid for urinary tract infections caused by *Escherichia coli*" (41467_2026_74323_MOESM4_ESM.xlsx). Nature Communications. https://doi.org/10.1038/s41467-026-74323-2.
 
-16. Vilchèze C, Jacobs WR Jr. 2007. The mechanism of isoniazid killing: clarity through the scope of genetics. Annu Rev Microbiol 61:35-50. https://doi.org/10.1146/annurev.micro.61.111606.122346.
+16. National Committee for Clinical Laboratory Standards. 1999. Methods for determining bactericidal activity of antimicrobial agents; approved guideline. NCCLS document M26-A. National Committee for Clinical Laboratory Standards, Wayne, PA. ISBN 1-56238-384-1.
 
-17. Campbell EA, Korzheva N, Mustaev A, Murakami K, Nair S, Goldfarb A, Darst SA. 2001. Structural mechanism for rifampicin inhibition of bacterial RNA polymerase. Cell 104:901-912. https://doi.org/10.1016/S0092-8674(01)00286-0.
+17. Vilchèze C, Jacobs WR Jr. 2007. The mechanism of isoniazid killing: clarity through the scope of genetics. Annu Rev Microbiol 61:35-50. https://doi.org/10.1146/annurev.micro.61.111606.122346.
 
-18. March VFA, Mchedlishvili K, Goig GA, Maghradze N, Avaliani T, Aspindzelashvili R, Avaliani Z, Kipiani M, Tukvadze N, Jugheli L, Bouaouina S, Doetsch A, Kalkan S, Reinhardt M, Gagneux S, Borrell S. 2025. Within-host evolution of drug tolerance in *Mycobacterium tuberculosis*. bioRxiv 2025.07.29.667394; preprint, not peer reviewed. https://doi.org/10.1101/2025.07.29.667394.
+18. Campbell EA, Korzheva N, Mustaev A, Murakami K, Nair S, Goldfarb A, Darst SA. 2001. Structural mechanism for rifampicin inhibition of bacterial RNA polymerase. Cell 104:901-912. https://doi.org/10.1016/S0092-8674(01)00286-0.
 
-19. Vijay S, Bao NLH, Vinh DN, Nhat LTH, Thu DDA, Quang NL, Trieu LPT, Nhung HN, Ha VTN, Thai PVK, Ha DTM, Lan NH, Caws M, Thwaites GE, Javid B, Thuong NT. 2024. Supplementary file 2 to "Rifampicin tolerance and growth fitness among isoniazid-resistant clinical *Mycobacterium tuberculosis* isolates from a longitudinal study" (elife-93243-supp2-v1.xlsx). eLife. https://doi.org/10.7554/eLife.93243.
+19. March VFA, Mchedlishvili K, Goig GA, Maghradze N, Avaliani T, Aspindzelashvili R, Avaliani Z, Kipiani M, Tukvadze N, Jugheli L, Bouaouina S, Doetsch A, Kalkan S, Reinhardt M, Gagneux S, Borrell S. 2025. Within-host evolution of drug tolerance in *Mycobacterium tuberculosis*. bioRxiv 2025.07.29.667394; preprint, not peer reviewed. https://doi.org/10.1101/2025.07.29.667394.
 
-20. Vijay S, Bao NLH, Vinh DN, Nhat LTH, Thu DDA, Quang NL, Trieu LPT, Nhung HN, Ha VTN, Thai PVK, Ha DTM, Lan NH, Caws M, Thwaites GE, Javid B, Thuong NT. 2024. Rifampicin tolerance and growth fitness among isoniazid-resistant clinical *Mycobacterium tuberculosis* isolates from a longitudinal study. Elife 13:RP93243. https://doi.org/10.7554/eLife.93243.
+20. Vijay S, Bao NLH, Vinh DN, Nhat LTH, Thu DDA, Quang NL, Trieu LPT, Nhung HN, Ha VTN, Thai PVK, Ha DTM, Lan NH, Caws M, Thwaites GE, Javid B, Thuong NT. 2024. Supplementary file 2 to "Rifampicin tolerance and growth fitness among isoniazid-resistant clinical *Mycobacterium tuberculosis* isolates from a longitudinal study" (elife-93243-supp2-v1.xlsx). eLife. https://doi.org/10.7554/eLife.93243.
 
-21. Windels EM, Cool L, Persy E, Swinnen J, Matthay P, Van den Bergh B, Wenseleers T, Michiels J. 2024. Data supporting "Antibiotic dose and nutrient availability differentially drive the evolution of antibiotic resistance and persistence". Zenodo. https://doi.org/10.5281/zenodo.7550302.
+21. Vijay S, Bao NLH, Vinh DN, Nhat LTH, Thu DDA, Quang NL, Trieu LPT, Nhung HN, Ha VTN, Thai PVK, Ha DTM, Lan NH, Caws M, Thwaites GE, Javid B, Thuong NT. 2024. Rifampicin tolerance and growth fitness among isoniazid-resistant clinical *Mycobacterium tuberculosis* isolates from a longitudinal study. Elife 13:RP93243. https://doi.org/10.7554/eLife.93243.
 
-22. Windels EM, Cool L, Persy E, Swinnen J, Matthay P, Van den Bergh B, Wenseleers T, Michiels J. 2024. Antibiotic dose and nutrient availability differentially drive the evolution of antibiotic resistance and persistence. ISME J 18:wrae070. https://doi.org/10.1093/ismejo/wrae070.
+22. Windels EM, Cool L, Persy E, Swinnen J, Matthay P, Van den Bergh B, Wenseleers T, Michiels J. 2024. Data supporting "Antibiotic dose and nutrient availability differentially drive the evolution of antibiotic resistance and persistence". Zenodo. https://doi.org/10.5281/zenodo.7550302.
 
-23. Kaur P. 2024. Apramycin kills replicating and non-replicating *Mycobacterium tuberculosis* — raw data. figshare. https://doi.org/10.6084/m9.figshare.26462791.v1.
+23. Windels EM, Cool L, Persy E, Swinnen J, Matthay P, Van den Bergh B, Wenseleers T, Michiels J. 2024. Antibiotic dose and nutrient availability differentially drive the evolution of antibiotic resistance and persistence. ISME J 18:wrae070. https://doi.org/10.1093/ismejo/wrae070.
 
-24. Kaur P, Ramya VK, Naveenkumar CN, Bharathkumar K, Singh M, Hobbie SN, Shandil RK, Narayanan S. 2024. Apramycin kills replicating and non-replicating *Mycobacterium tuberculosis*. Front Trop Dis 5:1413211. https://doi.org/10.3389/fitd.2024.1413211.
+24. Kaur P. 2024. Apramycin kills replicating and non-replicating *Mycobacterium tuberculosis* — raw data. figshare. https://doi.org/10.6084/m9.figshare.26462791.v1.
 
-25. Piranfar V. 2026. Analysis code, audit scripts and headroom tool for "The detection floor bounds tolerance endpoints in Mycobacterium tuberculosis". GitHub. https://github.com/piranfar/detection-floor-tolerance-endpoints.
+25. Kaur P, Ramya VK, Naveenkumar CN, Bharathkumar K, Singh M, Hobbie SN, Shandil RK, Narayanan S. 2024. Apramycin kills replicating and non-replicating *Mycobacterium tuberculosis*. Front Trop Dis 5:1413211. https://doi.org/10.3389/fitd.2024.1413211.
+
+26. Piranfar V. 2026. Analysis code, audit scripts and headroom tool for "The detection floor bounds tolerance endpoints in Mycobacterium tuberculosis". GitHub. https://github.com/piranfar/detection-floor-tolerance-endpoints.
