@@ -38,6 +38,7 @@ DOCS = [
     (M / "SUBMISSION_MAIN.md", "02_manuscript.md"),
     (M / "SUBMISSION_SUPPLEMENT.md", "03_supplementary_material.md"),
     (M / "PREFERRED_REVIEWERS.md", "04_preferred_reviewers.md"),
+    (M / "highlights.md", "05_highlights.md"),
     (M / "REVIEW_COPY.pdf", "reading_copy.pdf"),
     (M / "REVIEW_COPY.html", "reading_copy.html"),
 ]

@@ -98,20 +98,15 @@ RESULTS_ROUTE = {
                "made experimental"),
 }
 
-# Methods: the main text keeps a condensed account, written by hand in
-# manuscript/methods_condensed.md; the full account moves wholesale. Anything
-# not named here defaults to the supplement, so a new Methods subsection is
-# moved unless someone deliberately keeps it.
-METHODS_KEEP_IN_MAIN = {
-    # Back to the supplement, reversing the earlier decision, because the target
-    # is now a tuberculosis journal and those run to 3,500-4,000 words. The
-    # article keeps only what a journal requires to sit in it; the full account
-    # is Supplementary Methods and the article says so where the Methods would
-    # have been. This is a venue decision, not a view about what a reader needs.
-    "Ethics",
-    "Use of generative artificial intelligence",
-    "Data availability",
-}
+# Methods: JMM sets no word limit ("We do not impose a word limit"; see
+# manuscript/JMM_SUBMISSION_CHECKLIST.md), so the full Methods stays in the
+# main text rather than being condensed with a pointer to the supplement.
+# Nothing here needs a keep-list any more: every Materials and Methods
+# subsection routes to MAIN. The set is kept, empty, as the switch this
+# project has already needed to flip twice for two different venues -- a
+# future venue with a real word cap restores it by naming subsections here.
+METHODS_KEEP_IN_MAIN: set[str] = set()
+METHODS_ALL_IN_MAIN = True
 
 # Discussion subsections are merged into a running Discussion in the main text;
 # none moves, because a Discussion split across two files cannot be read.
@@ -263,8 +258,8 @@ def route(sections: list[Section]) -> None:
                 s.number, (SUPP, "not in the routing table, so moved by default"))
             s.dest, s.why = dest, why
         elif s.parent == "Materials and Methods":
-            if s.title in METHODS_KEEP_IN_MAIN:
-                s.dest, s.why = MAIN, "a declaration the journal requires in the article"
+            if METHODS_ALL_IN_MAIN or s.title in METHODS_KEEP_IN_MAIN:
+                s.dest, s.why = MAIN, "no word limit at this venue: full Methods stays in the article"
             else:
                 s.dest, s.why = SUPP, "detailed methods move wholesale"
         else:
@@ -511,10 +506,7 @@ def main() -> int:
     main_parts += ["## Discussion", "", preambles.get("Discussion", "").strip(), ""]
     for s in gather(MAIN, "Discussion"):
         main_parts += [f"### {s.title}", "", s.body.strip(), ""]
-    main_parts += ["## Materials and Methods", "",
-                   "*The condensed account. The full account, with every "
-                   "estimator and every sensitivity analysis, is Supplementary "
-                   "Methods in the supplemental file.*", ""]
+    main_parts += ["## Materials and Methods", ""]
     for s in gather(MAIN, "Materials and Methods"):
         main_parts += [f"### {s.title}", "", s.body.strip(), ""]
     # "References" is skipped: the prose file carries an empty placeholder
@@ -570,9 +562,11 @@ def main() -> int:
     if supp_fig_legends:
         supp_parts += ["## Supplementary figures", ""]
         supp_parts += ["\n\n".join(supp_fig_legends), ""]
-    supp_parts += ["## Supplementary methods", ""]
-    for s in gather(SUPP, "Materials and Methods"):
-        supp_parts += [f"### {s.title}", "", s.body.strip(), ""]
+    supp_methods = gather(SUPP, "Materials and Methods")
+    if supp_methods:
+        supp_parts += ["## Supplementary methods", ""]
+        for s in supp_methods:
+            supp_parts += [f"### {s.title}", "", s.body.strip(), ""]
 
     main_text = "\n".join(main_parts)
     supp_text = "\n".join(supp_parts)

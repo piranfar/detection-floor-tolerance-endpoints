@@ -2534,7 +2534,7 @@ biosafety-level-1-appropriate quality-control strain (ATCC 25922); no
 institutional review board holds jurisdiction over secondary analysis of
 de-identified public data or over work on a bacterial quality-control strain.
 
-### Use of generative artificial intelligence
+### Declaration of generative AI and AI-assisted technologies in the manuscript preparation process
 
 Anthropic's Claude was used under the author's direction to read the
 manuscript and to assist in running the Python analysis pipeline. Claude
@@ -2565,7 +2565,7 @@ is dual-licensed: the code under the Massachusetts Institute of Technology (MIT)
 licence, and the manuscript, figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit 9edf230+ of it — the state of the repository
+manuscript was built from commit 9b1b57c+ of it — the state of the repository
 the text describes, rather than the commit that records the build. A trailing
 plus sign, if present, marks a build made with uncommitted changes in the tree.
 

@@ -2241,7 +2241,7 @@ biosafety-level-1-appropriate quality-control strain (ATCC 25922); no
 institutional review board holds jurisdiction over secondary analysis of
 de-identified public data or over work on a bacterial quality-control strain.
 
-### Use of generative artificial intelligence
+### Declaration of generative AI and AI-assisted technologies in the manuscript preparation process
 
 Anthropic's Claude was used under the author's direction to read the
 manuscript and to assist in running the Python analysis pipeline. Claude

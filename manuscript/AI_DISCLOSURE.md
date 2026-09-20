@@ -1,20 +1,25 @@
 # Generative AI disclosure — the decision, and the record behind it
 
 **Decided 8 September 2026, revised 9 September 2026, revised again 20 September
-2026 by the author.** The manuscript discloses that Claude was used to read the
-manuscript and assist in running the Python analysis pipeline, and that Claude
-Sonnet 5 was used to document and organise the analysis code and prepare its
-commits to the version-controlled repository. The statement is in Materials and
-Methods under *Use of generative artificial intelligence* and repeated in the
-cover letter. This file is the record of what was considered before that wording
-was fixed; it is not part of the submission and the manuscript does not point at
-it.
+2026 by the author (twice: once to describe the code-documentation use, once to
+match Elsevier's required section title).** The manuscript discloses that
+Claude was used to read the manuscript and assist in running the Python
+analysis pipeline, and that Claude Sonnet 5 was used to document and organise
+the analysis code and prepare its commits to the version-controlled
+repository. The statement is in Materials and Methods under *Declaration of
+generative AI and AI-assisted technologies in the manuscript preparation
+process* — Elsevier's own required section title, verified against the
+journal's current Guide for Authors rather than assumed — and repeated in the
+cover letter. This file is the record of what was considered before that
+wording was fixed; it is not part of the submission and the manuscript does
+not point at it.
 
 ---
 
 ## The statement as it now stands
 
-> **Use of generative artificial intelligence.** Anthropic's Claude was used
+> **Declaration of generative AI and AI-assisted technologies in the
+> manuscript preparation process.** Anthropic's Claude was used
 > under the author's direction to read the manuscript and to assist in running
 > the Python analysis pipeline. Claude Sonnet 5 was further used, under the
 > author's direction, to document and organise the analysis code and to
@@ -29,11 +34,15 @@ it.
 ## What the target journal requires
 
 *Journal of Microbiological Methods* is an Elsevier title. Elsevier requires a
-declaration where generative AI was used **in the writing process**, placed in
-the manuscript before the reference list. The statement covers that use, and
-the author chose to state the code-documentation and commit-preparation use as
-well, on the same footing, so that nothing in the deposited repository's
-history reads as undisclosed.
+declaration where generative AI was used **in the writing process**, in a new
+section placed before the reference list and titled *Declaration of
+generative AI and AI-assisted technologies in the manuscript preparation
+process* — the journal's Guide for Authors gives this exact title as the
+required heading, not a description of what should go in a
+similarly-named one. The statement covers that use, and the author chose to
+state the code-documentation and commit-preparation use as well, on the same
+footing, so that nothing in the deposited repository's history reads as
+undisclosed.
 
 Two further Elsevier rules, both satisfied:
 
