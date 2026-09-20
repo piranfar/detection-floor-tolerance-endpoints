@@ -1,7 +1,8 @@
 {
   "script": "src/audit_manuscript.py",
-  "utc": "2026-09-20T19:45:15+00:00",
+  "utc": "2026-09-20T22:49:44+00:00",
   "checkers": [
+    "check_abstract_length",
     "check_arithmetic",
     "check_census",
     "check_consistency",
@@ -11,17 +12,17 @@
     "check_identity",
     "check_terms"
   ],
-  "n_words_audited": 41068,
+  "n_words_audited": 40942,
   "counts": {
     "high": 0,
     "medium": 1,
-    "low": 10
+    "low": 11
   },
   "findings": [
     {
       "severity": "medium",
       "kind": "limit-outside-its-declared-sense",
-      "where": "line 150 (Introduction)",
+      "where": "line 142 (Introduction)",
       "detail": "\"limit\" appears here in none of the senses the Methods reserve it for. Check that it is not standing in for the assay floor *L*.",
       "expected": "the assay floor *L*",
       "found": "m requires below- and above-quantification-limit flags together with the limit of quantification, and notes that pharmacometric mo",
@@ -29,9 +30,18 @@
     },
     {
       "severity": "low",
+      "kind": "abstract-length-summary",
+      "where": "manuscript/abstract.md",
+      "detail": "250 words against a 250-word limit.",
+      "expected": "<= 250 words",
+      "found": "250 words",
+      "checker": "check_abstract_length"
+    },
+    {
+      "severity": "low",
       "kind": "audit-count-summary",
       "where": "whole repository",
-      "detail": "src/audit_claims.py runs 174 checks (run); 3 place(s) state that number: Methods (PAPER_COMPLETE.md) line 2476 = 174; manuscript/MANUSCRIPT.md line 2183 = 174; README.md line 44 = 174",
+      "detail": "src/audit_claims.py runs 174 checks (run); 3 place(s) state that number: Methods (PAPER_COMPLETE.md) line 2468 = 174; manuscript/MANUSCRIPT.md line 2183 = 174; README.md line 44 = 174",
       "expected": "174",
       "found": "174, 174, 174",
       "checker": "check_census"
@@ -40,15 +50,15 @@
       "severity": "low",
       "kind": "census-summary",
       "where": "whole manuscript",
-      "detail": "2 censuses of the form 'N of the M <things>' were checked against the parts the text names and partition cleanly; 2 are answerable to a table whose rows equal M and are the only ones the arithmetic runs on; 32 have no such table and are counted here rather than checked",
+      "detail": "2 censuses of the form 'N of the M <things>' were checked against the parts the text names and partition cleanly; 2 are answerable to a table whose rows equal M and are the only ones the arithmetic runs on; 33 have no such table and are counted here rather than checked",
       "expected": "every checkable census partitioned",
-      "found": "2 resolved, 2 gated on a table, 32 not checkable",
+      "found": "2 resolved, 2 gated on a table, 33 not checkable",
       "checker": "check_census"
     },
     {
       "severity": "low",
       "kind": "named-items-not-resolved",
-      "where": "results, 4. The label tracks how fast an isolate grows, and its link  (line 790): \"Five of them are recorded almost only for resistant isolates, so their missingness is the exposure: the two su\"",
+      "where": "results, 4. The label tracks how fast an isolate grows, and its link  (line 782): \"Five of them are recorded almost only for resistant isolates, so their missingness is the exposure: the two su\"",
       "detail": "resolved: the sentence says 5 and then names a list. Not resolved: 2 of its 6 items do not open with a determiner or a count (for none of the 119 susceptible on; none), so the list runs into qualifying clauses and cannot be counted mechanically. Count it by eye",
       "expected": "5 items named",
       "found": "a list of 6 fragments",
@@ -57,7 +67,7 @@
     {
       "severity": "low",
       "kind": "quantity-in-words-and-figures",
-      "where": "Table 11 legend (line 1145) and results, 7. The flask that fell faster often crossed the floor later (line 1174)",
+      "where": "Table 11 legend (line 1137) and results, 7. The flask that fell faster often crossed the floor later (line 1166)",
       "detail": "\"a half\" states in words what 70.4 per cent states in figures; the two sentences share arms, bootstrap, deleting, distance, half. Check they are the same quantity -- this rule matches on wording, not on arithmetic, because 70.4 is not a rounding of 50",
       "expected": "the figure, or the word, in both places",
       "found": "\"a half\" against 70.4 per cent",
@@ -66,7 +76,7 @@
     {
       "severity": "low",
       "kind": "quantity-in-words-and-figures",
-      "where": "Table 11 legend (line 1145) and results, 7. The flask that fell faster often crossed the floor later (line 1174)",
+      "where": "Table 11 legend (line 1137) and results, 7. The flask that fell faster often crossed the floor later (line 1166)",
       "detail": "\"a half\" states in words what 62.3 per cent states in figures; the two sentences share arms, bootstrap, deleting, distance, half. Check they are the same quantity -- this rule matches on wording, not on arithmetic, because 62.3 is not a rounding of 50",
       "expected": "the figure, or the word, in both places",
       "found": "\"a half\" against 62.3 per cent",
@@ -75,7 +85,7 @@
     {
       "severity": "low",
       "kind": "quantity-in-words-and-figures",
-      "where": "discussion (line 1636) and results, 7. The flask that fell faster often crossed the floor later (line 1129)",
+      "where": "discussion (line 1628) and results, 7. The flask that fell faster often crossed the floor later (line 1121)",
       "detail": "\"a third\" states in words what 34.6 per cent states in figures; the two sentences share assay, crossed, faster, fell, flask. Check they are the same quantity -- this rule matches on wording, not on arithmetic, because 34.6 is not a rounding of 33.3333",
       "expected": "the figure, or the word, in both places",
       "found": "\"a third\" against 34.6 per cent",
@@ -94,9 +104,9 @@
       "severity": "low",
       "kind": "coverage-summary",
       "where": "whole manuscript",
-      "detail": "abstract (1): 23 numeric claims, 23 traceable, 23 of those to a results table or receipt, 5 tokens skipped as conventions; box (2): 18 numeric claims, 18 traceable, 18 of those to a results table or receipt, 7 tokens skipped as conventions; figure legend (2): 21 numeric claims, 21 traceable, 21 of those to a results table or receipt, 8 tokens skipped as conventions; table legend (29): 12 numeric claims, 12 traceable, 12 of those to a results table or receipt, 1 tokens skipped as conventions",
+      "detail": "abstract (1): 19 numeric claims, 19 traceable, 19 of those to a results table or receipt, 4 tokens skipped as conventions; box (2): 18 numeric claims, 18 traceable, 18 of those to a results table or receipt, 7 tokens skipped as conventions; figure legend (2): 21 numeric claims, 21 traceable, 21 of those to a results table or receipt, 8 tokens skipped as conventions; table legend (29): 12 numeric claims, 12 traceable, 12 of those to a results table or receipt, 1 tokens skipped as conventions",
       "expected": "every region scanned",
-      "found": "74 numeric claims outside table bodies",
+      "found": "70 numeric claims outside table bodies",
       "checker": "check_coverage"
     },
     {
@@ -111,7 +121,7 @@
     {
       "severity": "low",
       "kind": "unit-mpn-over-cfu-reference",
-      "where": "Table S5 legend, line 2894",
+      "where": "Table S5 legend, line 2886",
       "detail": "Table S5 divides every row by one reference stated in CFU/mL, but 2 row(s) are the most-probable-number deposit, so those ratios convert MPN into CFU without saying so",
       "expected": "the MPN rows marked as such, or the reference given per deposit",
       "found": "| Vijay, 15-day culture | 5.79 | 246x |; | Vijay, 60-day culture | 7.36 | 7x |",

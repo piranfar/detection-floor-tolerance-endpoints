@@ -60,40 +60,32 @@ ORCID: [[AUTHOR ORCID]]([AUTHOR ORCID])
 ## Abstract
 
 A culture that grows nothing after antibiotic exposure has never proved
-sterility, so tolerance is scored by how far the count fell: the minimum duration
-for killing. That endpoint is a fraction of the starting count, so the starting
-count should cancel, and in the definition it does. It stops cancelling once
-killing reaches the lowest density the assay can report, because the recorded
-fraction is then the assay floor divided by the starting density, and the drug
-has dropped out of it.
+sterility, so tolerance is scored by how far the count fell: the minimum
+duration for killing, a fraction meant to cancel the starting count out. It
+stops cancelling once killing reaches the assay's lowest reportable density,
+because the recorded fraction is then the floor over starting density, and
+the drug has dropped out.
 
 Two boundaries follow from the definitions alone. For an assay floor *L*, a
-*q*-log endpoint is observable only in cultures started above *L*·10^*q*; that is
-reachability. Above *L*/*c*₁, with *c*₁ the lowest class threshold, a reading
-resting on the floor is compatible with only the lowest tolerance class, whatever
-the drug did; that is identifiability. Reaching the floor is the drug's doing;
-the label it permits is not.
+*q*-log endpoint is observable only above *L*·10^*q*, the reachability boundary.
+Above *L*/*c*₁, with *c*₁ the lowest class threshold, a floor-level reading is
+compatible only with the lowest tolerance class, whatever the drug did: the
+identifiability boundary.
 
-Seventy-eight published time-kill datasets were assembled and 45 inspected in
-full; of the 40 distinct literature deposits among them, 32 state no assay floor
-by any route. Five are reanalysed here — the floor derived in two, inferred in
-one and absent in two — and one new experiment tests both boundaries forward.
+Of 78 time-kill datasets assembled and 45 inspected in full, 32 of 40 distinct
+deposits state no assay floor. Five are reanalysed here and one experiment
+tests both boundaries forward.
 
-Of 217 XX isolates classified for DRUG-A tolerance,
-33 began too close to the floor to show the 99.99 per cent reduction the
-classification is cut on, and all 33 are recorded as failing to reach it.
-Eighteen ended with their reading on the floor: twelve admit one tolerance class,
-six admit two. The label tracks how fast an isolate grows; it also tracks
-DRUG-B resistance, but most of that runs through the starting density, which
-is ten-fold lower in the resistant isolates.
+Of 217 XX isolates classified for DRUG-A
+tolerance, 33 lacked headroom for the 99.99 per cent reduction the
+classification is cut on, and all failed to reach it. Eighteen ended on
+the floor: twelve admit one class, six admit two. The label tracks growth
+rate and, via a ten-fold lower starting density, DRUG-B resistance.
 
-Prospectively, SPECIES-1 STRAIN-1 at the standard inoculum could
-report 3.71 to 3.93 logs of killing at a 10 µL plating and 4.88 to 5.05 at
-100 µL in the same cultures; at a cut of 10⁻³, six of 54 sample-times took two
-labels from one culture, the plated volume deciding. Across the volumes these
-laboratories actually plate, 100 down to 2.5 µL, demonstrable depth moves by
-1.60 log10 as exact arithmetic. A tolerance call reported without its starting
-density and its assay floor cannot be interpreted.
+SPECIES-1 STRAIN-1 reported 3.71 to 3.93 logs at 10 µL and 4.88 to
+5.05 at 100 µL in the same cultures; at a 10⁻³ cut, six of 54 sample-times
+took two labels from one culture, plated volume deciding. A call without its
+starting density and assay floor cannot be interpreted.
 
 **Keywords:** time-kill assay; limit of quantification; minimum duration for
 killing; antibiotic tolerance; colony counting; censored data;
@@ -2596,7 +2588,7 @@ is dual-licensed: the code under the Massachusetts Institute of Technology (MIT)
 licence, and the manuscript, figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 [REPOSITORY URL] and this
-manuscript was built from commit 9b1b57c+ of it — the state of the repository
+manuscript was built from commit 1394e7a+ of it — the state of the repository
 the text describes, rather than the commit that records the build. A trailing
 plus sign, if present, marks a build made with uncommitted changes in the tree.
 

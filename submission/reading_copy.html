@@ -53,13 +53,13 @@ article and the supplemental file are printed here one after the other, with the
 figures placed at their legends, so the whole thing can be read in one pass.
 Numbers in the left margin are block numbers for marking up; they are not in the
 submitted files and are hidden when printed.<br><br>
-Article 15,403 words, 2 figures,
+Article 15,277 words, 2 figures,
 3 tables &middot;
 supplement 15,196 words,
 26 tables,
 5 figures &middot;
 target: <i>Journal of Microbiological Methods</i> &middot;
-manuscript audit: 0 high, 1 medium, 10 low.</div>
+manuscript audit: 0 high, 1 medium, 11 low.</div>
 <div class="part">Article</div>
 <h1><span class="ln">1</span>The detection floor bounds tolerance endpoints in <em>Mycobacterium tuberculosis</em></h1>
 <p><span class="ln">2</span><strong>Author:</strong> Vahhab Piranfar¹</p>
@@ -70,36 +70,28 @@ manuscript audit: 0 high, 1 medium, 10 low.</div>
 <hr>
 <h2><span class="ln">7</span>Abstract</h2>
 <p><span class="ln">8</span>A culture that grows nothing after antibiotic exposure has never proved
-sterility, so tolerance is scored by how far the count fell: the minimum duration
-for killing. That endpoint is a fraction of the starting count, so the starting
-count should cancel, and in the definition it does. It stops cancelling once
-killing reaches the lowest density the assay can report, because the recorded
-fraction is then the assay floor divided by the starting density, and the drug
-has dropped out of it.</p>
+sterility, so tolerance is scored by how far the count fell: the minimum
+duration for killing, a fraction meant to cancel the starting count out. It
+stops cancelling once killing reaches the assay's lowest reportable density,
+because the recorded fraction is then the floor over starting density, and
+the drug has dropped out.</p>
 <p><span class="ln">9</span>Two boundaries follow from the definitions alone. For an assay floor <em>L</em>, a
-<em>q</em>-log endpoint is observable only in cultures started above <em>L</em>·10^<em>q</em>; that is
-reachability. Above <em>L</em>/<em>c</em>₁, with <em>c</em>₁ the lowest class threshold, a reading
-resting on the floor is compatible with only the lowest tolerance class, whatever
-the drug did; that is identifiability. Reaching the floor is the drug's doing;
-the label it permits is not.</p>
-<p><span class="ln">10</span>Seventy-eight published time-kill datasets were assembled and 45 inspected in
-full; of the 40 distinct literature deposits among them, 32 state no assay floor
-by any route. Five are reanalysed here — the floor derived in two, inferred in
-one and absent in two — and one new experiment tests both boundaries forward.</p>
-<p><span class="ln">11</span>Of 217 <em>Mycobacterium tuberculosis</em> isolates classified for rifampicin tolerance,
-33 began too close to the floor to show the 99.99 per cent reduction the
-classification is cut on, and all 33 are recorded as failing to reach it.
-Eighteen ended with their reading on the floor: twelve admit one tolerance class,
-six admit two. The label tracks how fast an isolate grows; it also tracks
-isoniazid resistance, but most of that runs through the starting density, which
-is ten-fold lower in the resistant isolates.</p>
-<p><span class="ln">12</span>Prospectively, <em>Escherichia coli</em> ATCC 25922 at the standard inoculum could
-report 3.71 to 3.93 logs of killing at a 10 µL plating and 4.88 to 5.05 at
-100 µL in the same cultures; at a cut of 10⁻³, six of 54 sample-times took two
-labels from one culture, the plated volume deciding. Across the volumes these
-laboratories actually plate, 100 down to 2.5 µL, demonstrable depth moves by
-1.60 log10 as exact arithmetic. A tolerance call reported without its starting
-density and its assay floor cannot be interpreted.</p>
+<em>q</em>-log endpoint is observable only above <em>L</em>·10^<em>q</em>, the reachability boundary.
+Above <em>L</em>/<em>c</em>₁, with <em>c</em>₁ the lowest class threshold, a floor-level reading is
+compatible only with the lowest tolerance class, whatever the drug did: the
+identifiability boundary.</p>
+<p><span class="ln">10</span>Of 78 time-kill datasets assembled and 45 inspected in full, 32 of 40 distinct
+deposits state no assay floor. Five are reanalysed here and one experiment
+tests both boundaries forward.</p>
+<p><span class="ln">11</span>Of 217 <em>Mycobacterium tuberculosis</em> isolates classified for rifampicin
+tolerance, 33 lacked headroom for the 99.99 per cent reduction the
+classification is cut on, and all failed to reach it. Eighteen ended on
+the floor: twelve admit one class, six admit two. The label tracks growth
+rate and, via a ten-fold lower starting density, isoniazid resistance.</p>
+<p><span class="ln">12</span><em>Escherichia coli</em> ATCC 25922 reported 3.71 to 3.93 logs at 10 µL and 4.88 to
+5.05 at 100 µL in the same cultures; at a 10⁻³ cut, six of 54 sample-times
+took two labels from one culture, plated volume deciding. A call without its
+starting density and assay floor cannot be interpreted.</p>
 <p><span class="ln">13</span><strong>Keywords:</strong> time-kill assay; limit of quantification; minimum duration for
 killing; antibiotic tolerance; colony counting; censored data;
 <em>Mycobacterium tuberculosis</em></p>
@@ -1326,7 +1318,7 @@ is dual-licensed: the code under the Massachusetts Institute of Technology (MIT)
 licence, and the manuscript, figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit 9b1b57c+ of it — the state of the repository
+manuscript was built from commit 1394e7a+ of it — the state of the repository
 the text describes, rather than the commit that records the build. A trailing
 plus sign, if present, marks a build made with uncommitted changes in the tree.</p>
 <p><span class="ln">176</span>Every number quoted in this manuscript regenerates from the deposits by that
