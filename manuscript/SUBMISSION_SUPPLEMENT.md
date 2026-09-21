@@ -1,6 +1,6 @@
 # Supplemental material
 
-**The detection floor bounds tolerance endpoints in Mycobacterium tuberculosis**
+**Rifampicin tolerance classification is bounded by assay detection floor among clinical Mycobacterium tuberculosis isolates**
 
 Vahhab Piranfar
 

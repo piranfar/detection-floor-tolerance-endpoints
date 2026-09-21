@@ -1,6 +1,6 @@
 ---
-title: "The detection floor bounds tolerance endpoints in Mycobacterium tuberculosis"
-short_title: "The detection floor bounds tolerance endpoints in M. tuberculosis"
+title: "Rifampicin tolerance classification is bounded by assay detection floor among clinical Mycobacterium tuberculosis isolates"
+short_title: "Assay detection floor bounds rifampicin tolerance classification"
 article_type: "Research Article"
 keywords:
   - time-kill assay
@@ -12,7 +12,7 @@ keywords:
   - Mycobacterium tuberculosis
 ---
 
-# The detection floor bounds tolerance endpoints in *Mycobacterium tuberculosis*
+# Rifampicin tolerance classification is bounded by assay detection floor among clinical *Mycobacterium tuberculosis* isolates
 
 **Author:** Vahhab Piranfar¹
 

@@ -8,8 +8,9 @@ Elsevier
 
 Dear Editors,
 
-I am submitting **"The detection floor bounds tolerance endpoints in
-*Mycobacterium tuberculosis*"** for consideration as a Research Article.
+I am submitting **"Rifampicin tolerance classification is bounded by assay
+detection floor among clinical *Mycobacterium tuberculosis*
+isolates"** for consideration as a Research Article.
 
 **What the paper establishes.** The minimum duration for killing — the time to a
 90, 99 or 99.99 per cent reduction — is the standard quantitative marker of

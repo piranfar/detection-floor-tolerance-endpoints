@@ -1,6 +1,6 @@
 ---
-title: "The detection floor bounds tolerance endpoints in Mycobacterium tuberculosis"
-short_title: "The detection floor bounds tolerance endpoints in M. tuberculosis"
+title: "Rifampicin tolerance classification is bounded by assay detection floor among clinical Mycobacterium tuberculosis isolates"
+short_title: "Assay detection floor bounds rifampicin tolerance classification"
 article_type: "Research Article"
 keywords:
   - time-kill assay
@@ -12,7 +12,7 @@ keywords:
   - Mycobacterium tuberculosis
 ---
 
-# The detection floor bounds tolerance endpoints in *Mycobacterium tuberculosis*
+# Rifampicin tolerance classification is bounded by assay detection floor among clinical *Mycobacterium tuberculosis* isolates
 
 **Author:** Vahhab Piranfar¹
 
@@ -28,34 +28,38 @@ ORCID: [0000-0003-3653-5739](https://orcid.org/0000-0003-3653-5739)
 
 ## Abstract
 
-An empty plate from a *Mycobacterium tuberculosis* culture exposed to a
-bactericidal antibiotic has never proved sterility. Tolerance is scored
-instead by how far the count fell: the minimum duration for killing (MDK), a
-fraction meant to cancel the starting count out. That cancellation fails
-once killing reaches the assay's lowest reportable density, because the
-recorded fraction is then the floor over starting density.
+Time-kill assays are the standard method for evaluating antibiotic
+tolerance, but constraints from starting bacterial density and the assay's
+detection floor are frequently overlooked, causing systematic
+misclassification of bacterial survival. We show how an unreported
+detection floor structurally distorts rifampicin tolerance classification
+in *Mycobacterium tuberculosis*.
 
-Two boundaries follow from the definitions alone. For an assay floor *L*, a
-*q*-log endpoint is observable only above *L*·10^*q*, the reachability
-boundary. Above *L*/*c*₁, with *c*₁ the lowest class threshold, a
-floor-level reading is compatible only with the lowest tolerance class,
-whatever the drug did: the identifiability boundary.
+We analyzed rifampicin tolerance against the assay's detection floor in 217
+clinical *M. tuberculosis* isolates, isoniazid-susceptible and
+isoniazid-resistant alike, and derived two boundaries from the assay's own
+definitions: a reachability boundary, below which starting density cannot
+mathematically support the assigned log reduction, and an identifiability
+boundary, below which a floor-level reading cannot be distinguished from a
+lower tolerance class. Both boundaries were then tested prospectively in
+*Escherichia coli*.
 
-Of 78 time-kill datasets assembled and 45 inspected in full, 32 of 40
-distinct deposits state no assay floor. Of 217 *M. tuberculosis* isolates
-classified for rifampicin tolerance, 33 lacked headroom for the 99.99 per
-cent reduction the classification is cut on, and none reached it. Eighteen
-ended on the floor: twelve admit one class, six admit two. The label tracks
-growth rate and, via a ten-fold lower starting density, isoniazid
-resistance.
+The standard classification proved structurally compromised. Thirty-three
+of 217 isolates lacked the starting density needed to physically reach
+their assigned 99.99 percent reduction, and none of them did. Eighteen
+isolates ended the assay exactly at the detection floor; a third were
+compatible with more than one tolerance class, admitting no unique
+classification. These floor-level outcomes tracked growth rate, and
+isoniazid-resistant isolates, seeded at a tenfold lower starting density
+than susceptible ones, were disproportionately exposed to this artifact.
+The *E. coli* experiment confirmed both boundaries outside
+*M. tuberculosis*: adjusting the plated volume alone assigned two
+conflicting tolerance labels to a single culture at six of 54 sample times.
 
-A prospective experiment in *Escherichia coli* ATCC 25922 confirmed both
-boundaries outside *M. tuberculosis*: 3.71 to 3.93 logs at 10 µL versus 4.88
-to 5.05 at 100 µL from the same cultures; at a 10⁻³ cut, six of 54
-sample-times took two labels from one culture, plated volume deciding.
-
-A tolerance call reported without its starting density and assay floor
-cannot be interpreted.
+A rifampicin tolerance classification made without reporting starting
+density and detection floor is mathematically uninterpretable, and
+isoniazid-resistant tuberculosis, read at the edge of that floor, is where
+the distortion concentrates.
 
 **Keywords:** time-kill assay; limit of quantification; minimum duration for
 killing; antibiotic tolerance; colony counting; censored data;
@@ -1379,7 +1383,7 @@ is dual-licensed: the code under the Massachusetts Institute of Technology (MIT)
 licence, and the manuscript, figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit 090b520+ of it — the state of the repository
+manuscript was built from commit 59d6b6c+ of it — the state of the repository
 the text describes, rather than the commit that records the build. A trailing
 plus sign, if present, marks a build made with uncommitted changes in the tree.
 
