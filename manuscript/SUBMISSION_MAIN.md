@@ -28,33 +28,34 @@ ORCID: [0000-0003-3653-5739](https://orcid.org/0000-0003-3653-5739)
 
 ## Abstract
 
-A culture that grows nothing after antibiotic exposure has never proved
-sterility, so tolerance is scored by how far the count fell: the minimum
-duration for killing, a fraction meant to cancel the starting count out. It
-stops cancelling once killing reaches the assay's lowest reportable density,
-because the recorded fraction is then the floor over starting density, and
-the drug has dropped out.
+An empty plate from a *Mycobacterium tuberculosis* culture exposed to a
+bactericidal antibiotic has never proved sterility. Tolerance is scored
+instead by how far the count fell: the minimum duration for killing (MDK), a
+fraction meant to cancel the starting count out. That cancellation fails
+once killing reaches the assay's lowest reportable density, because the
+recorded fraction is then the floor over starting density.
 
 Two boundaries follow from the definitions alone. For an assay floor *L*, a
-*q*-log endpoint is observable only above *L*·10^*q*, the reachability boundary.
-Above *L*/*c*₁, with *c*₁ the lowest class threshold, a floor-level reading is
-compatible only with the lowest tolerance class, whatever the drug did: the
-identifiability boundary.
+*q*-log endpoint is observable only above *L*·10^*q*, the reachability
+boundary. Above *L*/*c*₁, with *c*₁ the lowest class threshold, a
+floor-level reading is compatible only with the lowest tolerance class,
+whatever the drug did: the identifiability boundary.
 
-Of 78 time-kill datasets assembled and 45 inspected in full, 32 of 40 distinct
-deposits state no assay floor. Five are reanalysed here and one experiment
-tests both boundaries forward.
+Of 78 time-kill datasets assembled and 45 inspected in full, 32 of 40
+distinct deposits state no assay floor. Of 217 *M. tuberculosis* isolates
+classified for rifampicin tolerance, 33 lacked headroom for the 99.99 per
+cent reduction the classification is cut on, and none reached it. Eighteen
+ended on the floor: twelve admit one class, six admit two. The label tracks
+growth rate and, via a ten-fold lower starting density, isoniazid
+resistance.
 
-Of 217 *Mycobacterium tuberculosis* isolates classified for rifampicin
-tolerance, 33 lacked headroom for the 99.99 per cent reduction the
-classification is cut on, and all failed to reach it. Eighteen ended on
-the floor: twelve admit one class, six admit two. The label tracks growth
-rate and, via a ten-fold lower starting density, isoniazid resistance.
+A prospective experiment in *Escherichia coli* ATCC 25922 confirmed both
+boundaries outside *M. tuberculosis*: 3.71 to 3.93 logs at 10 µL versus 4.88
+to 5.05 at 100 µL from the same cultures; at a 10⁻³ cut, six of 54
+sample-times took two labels from one culture, plated volume deciding.
 
-*Escherichia coli* ATCC 25922 reported 3.71 to 3.93 logs at 10 µL and 4.88 to
-5.05 at 100 µL in the same cultures; at a 10⁻³ cut, six of 54 sample-times
-took two labels from one culture, plated volume deciding. A call without its
-starting density and assay floor cannot be interpreted.
+A tolerance call reported without its starting density and assay floor
+cannot be interpreted.
 
 **Keywords:** time-kill assay; limit of quantification; minimum duration for
 killing; antibiotic tolerance; colony counting; censored data;
@@ -754,8 +755,8 @@ proportion could move either way.
 ### The five deposits analysed
 
 Five published deposits are analysed (Table 3). Four carry the analysis and the
-fifth was analysed last, to test it. None was generated for this
-study and all are openly licensed. That fifth deposit was opened only after
+fifth was analysed last, to test it. All are openly licensed. That fifth
+deposit was opened only after
 every boundary and threshold was fixed. The commit history dates that, though
 not where a reader would first look: the deposit and the script that tests it
 entered in a single commit, at 02:41 on 6 September 2026, and git cannot order
@@ -1378,7 +1379,7 @@ is dual-licensed: the code under the Massachusetts Institute of Technology (MIT)
 licence, and the manuscript, figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit b271a2c+ of it — the state of the repository
+manuscript was built from commit 090b520+ of it — the state of the repository
 the text describes, rather than the commit that records the build. A trailing
 plus sign, if present, marks a build made with uncommitted changes in the tree.
 

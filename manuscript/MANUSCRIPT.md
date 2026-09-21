@@ -181,8 +181,8 @@ exercise distributing one strain under one written protocol [[R4]][[R23]], a
 concentration-by-time grid in the same organism [[R7]][[R37]], a panel of evolved
 clones in which the concentration and duration axes can be checked for
 independence [[R38]], and a hollow-fibre deposit [[R8]][[R36]] held out until
-every boundary was fixed. All five are published and openly licensed, and none
-was generated for this study (Table 1). The two boundaries are then tested forward
+every boundary was fixed. All five are published and openly licensed (Table 1).
+The two boundaries are then tested forward
 rather than backward, in a prospective experiment built to break them, with every
 prediction written down before a plate was counted. <!--supp-->
 
@@ -1648,8 +1648,8 @@ proportion could move either way.
 ### The five deposits analysed
 
 Five published deposits are analysed (Table 1). Four carry the analysis and the
-fifth was analysed last, to test it. None was generated for this
-study and all are openly licensed. That fifth deposit was opened only after
+fifth was analysed last, to test it. All are openly licensed. That fifth
+deposit was opened only after
 every boundary and threshold was fixed. The commit history dates that, though
 not where a reader would first look: the deposit and the script that tests it
 entered in a single commit, at 02:41 on 6 September 2026, and git cannot order

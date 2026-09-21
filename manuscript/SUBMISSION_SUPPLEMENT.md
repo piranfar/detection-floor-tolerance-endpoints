@@ -69,8 +69,8 @@ exercise distributing one strain under one written protocol (3, 11), a
 concentration-by-time grid in the same organism (12, 13), a panel of evolved
 clones in which the concentration and duration axes can be checked for
 independence (14), and a hollow-fibre deposit (15, 16) held out until
-every boundary was fixed. All five are published and openly licensed, and none
-was generated for this study (Table 3). The two boundaries are then tested forward
+every boundary was fixed. All five are published and openly licensed (Table 3).
+The two boundaries are then tested forward
 rather than backward, in a prospective experiment built to break them, with every
 prediction written down before a plate was counted.
 
