@@ -565,6 +565,17 @@ lack the room for a four-log reduction against the day-2 floor, against 31
 against the day-5 floor. At 60 days no pair of decade cuts reproduces the
 day-2 classes.
 
+Every log10 here is computed from the raw MPN rungs against a floor of 23
+per mL and rounded once, at the end, so the deepest headroom displays as
+6.42 rather than as the 6.43 that 7.79 minus 1.36 returns; the fold
+figures quoted throughout are likewise ten raised to the unrounded
+difference.
+
+Two of those 33 carry a fourth label the deposit writes literally as "MDR"
+(conventionally multidrug-resistant), unordered with respect to the other
+three, so no ordered analysis can place it (Table S3); over the 203
+isolates with an ordered label the count is 31.
+
 No p-value is attached to that contrast: an isolate with less than four
 logs of headroom cannot record a four-log reduction, so the 0-of-33 cell is
 fixed by arithmetic and the null of independence between ceiling status and
@@ -617,6 +628,13 @@ comparison of how well each group could be measured.
 
 *Material held back from the article for length. It is reported here rather than dropped, because each paragraph answers a question a reader of that section may reasonably ask.*
 
+That agreement is an identity rather than a passed test. Once the label is
+a cut on the recorded fraction (Table S2) and every floor reading has a
+numerator of exactly *L*, the class of a floored isolate is a function of
+*N₀* alone, so the algebra cannot disagree with the deposit. What could
+have failed, and did not, is the premise: that the three classes separate
+cleanly on the recorded fraction at all, in 203 of 203 calls.
+
 How finely the agreement resolves has to be stated too. Among the eighteen
 the starting density takes only five values: 23,000 for six isolates, then
 230,000 for eight, and 610,000, 2.3 × 10⁶ and 6.1 × 10⁶ for one, one and
@@ -641,6 +659,17 @@ modelled as such: proportional-odds ordinal logistic regression, which does
 not assume the step from low to medium equals the step from medium to high.
 That fit makes an assumption of its own, that a single odds ratio serves
 both cut points, and it was tested rather than assumed (Methods; Table S4).
+
+The unadjusted 2.32 is the total effect of resistance on the label; the
+adjusted 1.31 is the controlled direct effect with the inoculum held
+fixed, under an assumption this deposit cannot test on its own, that
+starting density sits on the causal path as a mediator rather than beside
+it as a confounder. The reverse reading is equally available a priori: if
+slow growth both thins the inoculum and causes genuine tolerance,
+adjusting for starting density would remove real signal rather than a
+confounder (Discussion weighs the two readings against each other). What
+is not in question, whichever reading is right, is that the association
+weakens once starting density enters the model.
 
 The total effect of resistance on tolerance class splits into a part that
 runs through log10 starting density and a part that does not. On the 203
@@ -766,6 +795,13 @@ ten-times-MIC arms have already lost between 0.7 and 2.4 log10. A day-zero
 comparison across all six is therefore not available; re-running the whole
 analysis on a day-one exposure for every laboratory leaves the ordering,
 the area under the curve and the laboratory-level exact test unchanged.
+
+Across all 30 laboratory-by-arm cells the Tobit estimate and the
+imputation estimate never differ by more than 0.006 log10 per day, which
+says the fit is not an artefact of the arithmetic used to reach it, not
+that the sub-floor assumption is safe: both estimators assume the same
+normal distribution below the floor, and nothing here can check that from
+the inside.
 
 The duration endpoint behaves differently on the same flasks. What it
 records is not clearance and not sterilisation but a **first observed
@@ -894,9 +930,29 @@ rather than here. One is the held-out deposit below, fetched independently
 under a second identifier, so this corpus-wide check and the cold test are
 not two confirmations.
 
+Only one deposit was opened after every boundary and threshold was fixed.
+That it is *E. coli* in a hollow-fibre system rather than *M. tuberculosis*
+in a flask makes it a harder test, not a softer one: a rule fitted to
+tuberculosis time-kill data could be expected to fit more of it; what it
+has no right to survive is a different organism, drug class and apparatus.
+The boundaries are derived from definitions, so they predict they will.
+
 ### Extended results for article section 8: One culture, two plated volumes, two tolerance labels
 
 *Material held back from the article for length. It is reported here rather than dropped, because each paragraph answers a question a reader of that section may reasonably ask.*
+
+It is *Escherichia coli* and not *M. tuberculosis* by design, not
+convenience. Reachability and identifiability are arithmetic on a plated
+volume, so they do not know what organism is on the plate; what an organism
+decides is whether the experiment can be run at all. Three seeding
+densities crossed with two plated volumes and six sampling times is 216
+plates that must be counted from one exposure, and in *M. tuberculosis*
+that means three to six weeks to colonies, inside containment, per
+replicate. Ciprofloxacin drives *E. coli* to the floor within a working
+day, which makes the floor reachable in every arm and the prediction
+falsifiable in a week rather than a year. ATCC 25922 is the quality-control
+reference strain the standard itself names, so the demonstration runs in
+the one organism whose assay geometry the standard defines.
 
 The gain the pipette buys should be exactly one log, because the floor at
 the pooled 100 µL plating is one tenth of the floor at the pooled 10 µL
@@ -1006,7 +1062,18 @@ reference list the Methods cite (Table 3, Table S1).
 
 *Note.* Counts in the Abstract, the Introduction, the Methods and the Discussion are read off this table. A negative row is a deduction from the line above it. "Distinct literature deposits inspected" is the denominator for the proportion stating no assay floor: it excludes duplicate fetches of records already counted, and it excludes this paper's own prospective experiment, which is not a screened literature deposit. The 33 candidates that were never opened are not characterised here or anywhere, and the proportion is not extrapolated to them.
 
-**Table S2.** Every analysis set in this paper, and the exclusion that produced it.
+**Table S2.** The deposited tolerance class at day 5 after 15 days of prior culture is a threshold on the recorded surviving fraction.
+
+| Recorded class | n | Min fraction | Max fraction | Predicted from cuts | Disagreements |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Low | 33 | 3.8 × 10⁻⁶ | 4.7 × 10⁻⁴ | Low | 0 |
+| Medium | 124 | 1.0 × 10⁻³ | 1.0 × 10⁻² | Medium | 0 |
+| High | 46 | 2.7 × 10⁻² | 1.0 × 10¹ | High | 0 |
+| All usable | 203 | - | - | - | 0 |
+
+*Note.* With no overlap between classes: low below 10⁻³, medium from 10⁻³ to 10⁻² inclusive, high above 10⁻². Applying those cuts reproduces every usable class in the file. This matters because the argument that follows is about the fraction the assay recorded, not about an independent clinical judgement.
+
+**Table S3.** Every analysis set in this paper, and the exclusion that produced it.
 
 | Deposit | Panel | Stratum | Stage | n | Excluded here |
 | --- | --- | --- | --- | ---: | ---: |
@@ -1065,17 +1132,6 @@ reference list the Methods cite (Table 3, Table S1).
 | Dubey hollow fibre (held out) | - | - | cultures with a measured day-zero density | 20 | - |
 
 *Note.* The manuscript quotes a dozen different denominators, each correct for its own analysis; this is where a reader checks which is which. The MDR tolerance label is a fourth, unordered category and is dropped wherever an ordered outcome is fitted; the growth proxy is missing for one isolate; and five treated flasks in the six-laboratory deposit carry no usable starting density, which is why a comparison over 72 flasks is reported on 67. Whether these exclusions are plausibly ignorable is tested in Table S17. The last rows of each block cover sets counted in units other than isolates or flasks -- pairs, flags, cells, readings -- because a reader meeting one of those figures in the text needs somewhere to look it up too.
-
-**Table S3.** The deposited tolerance class at day 5 after 15 days of prior culture is a threshold on the recorded surviving fraction.
-
-| Recorded class | n | Min fraction | Max fraction | Predicted from cuts | Disagreements |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| Low | 33 | 3.8 × 10⁻⁶ | 4.7 × 10⁻⁴ | Low | 0 |
-| Medium | 124 | 1.0 × 10⁻³ | 1.0 × 10⁻² | Medium | 0 |
-| High | 46 | 2.7 × 10⁻² | 1.0 × 10¹ | High | 0 |
-| All usable | 203 | - | - | - | 0 |
-
-*Note.* With no overlap between classes: low below 10⁻³, medium from 10⁻³ to 10⁻² inclusive, high above 10⁻². Applying those cuts reproduces every usable class in the file. This matters because the argument that follows is about the fraction the assay recorded, not about an independent clinical judgement.
 
 **Table S4.** The family of 8 tests between the deposited tolerance label and its candidate determinants (BH: Benjamini-Hochberg; OD: optical density).
 

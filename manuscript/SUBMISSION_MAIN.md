@@ -208,31 +208,20 @@ Each isolate therefore carries a fixed budget of killing the assay can see.
 At 15 days of prior culture the starting densities run from 2,300 to
 61,000,000 per mL (3.36 to 7.79 log10), so headroom, the distance from the
 starting density down to the floor, runs from 2.00 to 6.42 log10 (Fig. 1B,
-Table 1): both spans are the same 4.42 log10. Every log10 here is computed
-from the raw MPN rungs against a floor of 23 per mL and rounded once, at
-the end, so the deepest headroom displays as 6.42 rather than as the 6.43
-that 7.79 minus 1.36 returns; the fold figures quoted throughout are
-likewise ten raised to the unrounded difference.
+Table 1): both spans are the same 4.42 log10.
 
 Against that budget the three deposited endpoints behave very differently.
 Every isolate has room for a 90 or a 99 per cent reduction: 0 of 217 fall
 short in either case. **Thirty-three of 217 isolates (15.2 per cent) lack
 the headroom for the 99.99 per cent endpoint**, a four-log reduction that
-was unobservable for them before rifampicin was added. Two of those 33
-carry a fourth label the deposit writes literally as "MDR" (conventionally
-multidrug-resistant), unordered with respect to the other three, so no
-ordered analysis can place it (Table S2); over the 203 isolates with an
-ordered label the count is 31.
+was unobservable for them before rifampicin was added.
 
 All 33 are recorded as not having reached the endpoint, sitting at the
-**assay ceiling**, a census rather than an estimate. The ceiling is a
-different censoring mechanism from the floor: the floor censors the count
-(anything below *L* is not reported as a count), the ceiling censors time
-(the assay runs six days, so an isolate that has not reached its endpoint
-by then is recorded at the last day rather than the day it would have
-reached). One sets how deep the assay can see, the other how long it
-looks. Among the 184 isolates that did have four logs of headroom, 162 are
-also at the ceiling, 88.0 per cent.
+**assay ceiling**: a census rather than an estimate, since the floor
+censors the count while the ceiling censors time, an isolate not yet at
+its endpoint after six days being recorded at the last day rather than
+the day it would have reached. Among the 184 isolates that did have four
+logs of headroom, 162 are also at the ceiling, 88.0 per cent.
 
 ### 2. The same floor reading was given different tolerance labels
 
@@ -241,9 +230,9 @@ fraction, with no overlap between classes. The thresholds themselves are
 not deposited; recovered here, at day 5 and 15 days of prior culture, low
 tolerance covers fractions below 10⁻³, medium 10⁻³ to 10⁻², high above
 10⁻². Those cuts reproduce every usable class in the file, 203 of 203
-(Table S3). Usable means the 203 of 217 isolates whose label is one of the
+(Table S2). Usable means the 203 of 217 isolates whose label is one of the
 three ordered classes; the other 14 carry the "MDR" category, which no
-ordered analysis can place (Table S2). What follows is an argument about the
+ordered analysis can place (Table S3). What follows is an argument about the
 fraction the assay recorded, not about an independent clinical judgement.
 
 Eighteen isolates ended at the floor. They share one reported
@@ -288,13 +277,6 @@ to mean once it happens, and there the agreement with the deposit is exact,
 isolate by isolate: the set the algebra says has a single compatible class
 and the set the deposit records in the lowest class are the same set.
 
-That agreement is an identity rather than a passed test. Once the label is
-a cut on the recorded fraction (Table S3) and every floor reading has a
-numerator of exactly *L*, the class of a floored isolate is a function of
-*N₀* alone, so the algebra cannot disagree with the deposit. What could
-have failed, and did not, is the premise: that the three classes separate
-cleanly on the recorded fraction at all, in 203 of 203 calls.
-
 What is sharp is the boundary case. Six isolates sit at exactly 23,000 per
 mL, which is *N*_id itself. For them *L*/*N₀* equals *c*₁ exactly, the
 interval [0, *L*/*N₀*] touches the threshold from below and spans two
@@ -325,18 +307,9 @@ a higher tolerance class, and it survives adjustment for starting density
 Unadjusted, a resistant isolate has 2.32 times the odds of a higher
 tolerance class (1.30 to 4.12, p = 0.0042); adjusted, the odds ratio falls
 to 1.31 (0.67 to 2.57, p = 0.42), and the interval no longer excludes one.
-The unadjusted 2.32 is the total effect of resistance on the label; the
-adjusted 1.31 is the controlled direct effect with the inoculum held fixed,
-under an assumption this deposit cannot test on its own, that starting
-density sits on the causal path as a mediator rather than beside it as a
-confounder. The reverse reading is equally available a priori: if slow
-growth both thins the inoculum and causes genuine tolerance, adjusting for
-starting density would remove real signal rather than a confounder
-(Discussion weighs the two readings against each other). What is not in
-question, whichever reading is right, is that the association weakens once
-starting density enters the model. Starting density is the strongest term
-in the file: every ten-fold rise in the starting MPN halves the odds of a
-higher tolerance class (OR 0.480, 0.340 to 0.677, p = 2.9 × 10⁻⁵).
+Starting density is the strongest term in the file: every ten-fold rise in
+the starting MPN halves the odds of a higher tolerance class (OR 0.480,
+0.340 to 0.677, p = 2.9 × 10⁻⁵).
 
 Why the adjustment does that is measurable. Isoniazid-resistant isolates go
 into this assay at 5.36 log10 against 6.36 for susceptible isolates,
@@ -365,12 +338,7 @@ one written protocol (8, 9). It does.
 
 At ten times the minimum inhibitory concentration of moxifloxacin all six
 laboratories return a positive kill rate, spanning 5.2-fold, from 0.090 to
-0.464 log10 CFU/mL per day. Across all 30 laboratory-by-arm cells the Tobit
-estimate and the imputation estimate never differ by more than 0.006 log10
-per day (Fig. 2A, Table S5), which says the fit is not an artefact of the
-arithmetic used to reach it, not that the sub-floor assumption is safe: both
-estimators assume the same normal distribution below the floor, and nothing
-here can check that from the inside.
+0.464 log10 CFU/mL per day (Fig. 2A, Table S5).
 
 The two orderings do not correspond. Rank the laboratories by starting
 density and the three lowest are exactly the three that recorded crossings,
@@ -383,13 +351,6 @@ other five at 0.223 log10 per day, and records no crossing. Institute E
 returns the slowest rate of all at 0.090 and also records none.
 
 ### 6. The same boundaries hold in an experiment the framework never saw
-
-Only one deposit was opened after every boundary and threshold was fixed.
-That it is *E. coli* in a hollow-fibre system rather than *M. tuberculosis*
-in a flask makes it a harder test, not a softer one: a rule fitted to
-tuberculosis time-kill data could be expected to fit more of it; what it
-has no right to survive is a different organism, drug class and apparatus.
-The boundaries are derived from definitions, so they predict they will.
 
 Dubey and colleagues (2026) report amoxicillin-clavulanate against
 *Escherichia coli* in a hollow-fibre system (10, 11). Their Methods
@@ -474,19 +435,6 @@ counted. *Escherichia coli* ATCC 25922, the reference strain the standard
 names for quality control, against ciprofloxacin at ten times the
 concentration that stops it growing. Three seeding densities, two plated
 volumes, three flasks each, 216 plate readings.
-
-It is *Escherichia coli* and not *M. tuberculosis* by design, not
-convenience. Reachability and identifiability are arithmetic on a plated
-volume, so they do not know what organism is on the plate; what an organism
-decides is whether the experiment can be run at all. Three seeding
-densities crossed with two plated volumes and six sampling times is 216
-plates that must be counted from one exposure, and in *M. tuberculosis*
-that means three to six weeks to colonies, inside containment, per
-replicate. Ciprofloxacin drives *E. coli* to the floor within a working
-day, which makes the floor reachable in every arm and the prediction
-falsifiable in a week rather than a year. ATCC 25922 is the quality-control
-reference strain the standard itself names, so the demonstration runs in
-the one organism whose assay geometry the standard defines.
 
 The middle arm was seeded on purpose at the 5 × 10⁵ per mL the standard
 specifies. The densities actually reached were 6.4 × 10⁴, 4.4 × 10⁵ and
@@ -935,7 +883,7 @@ outcome errors at which the point estimate crosses zero, about −0.23. No
 claim is made that unmeasured confounding is absent.
 
 **Denominators.** A dozen denominators appear in this paper and each is
-derived in a single place (Table S2): the MDR tolerance label is dropped
+derived in a single place (Table S3): the MDR tolerance label is dropped
 wherever an ordered outcome is fitted (14 rows per panel, 20 at 60 days),
 the growth proxy is missing for one isolate, and five of 72 treated
 flasks in the six-laboratory deposit carry no usable starting density.
@@ -1027,7 +975,7 @@ Massachusetts Institute of Technology (MIT) licence, and the manuscript,
 figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit 9ea20a9+ of it.
+manuscript was built from commit c00066d+ of it.
 ---
 
 ## Acknowledgments
