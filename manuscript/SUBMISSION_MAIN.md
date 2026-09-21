@@ -534,6 +534,13 @@ The 15-day and 60-day panels of the clinical deposit contain the same
 isolates. The comparison between panels is therefore not independent, and
 it bounds the evidence for a difference rather than establishing it.
 
+Starting density could sit on the causal path rather than beside it.
+Suppose resistance slows growth, and slow growth causes genuine tolerance:
+then the thin inoculum is a consequence of the slow growth, and adjusting
+for it would remove real signal rather than a confounder. The asymmetry
+favours the confounding reading, since growth survives adjustment and
+resistance does not, but a design that fixes the inoculum would settle it.
+
 **Choose the depth of the endpoint to fit the headroom actually available,
 rather than densifying the inoculum merely to buy more.** The inoculum this
 needs can be worked out before the experiment: seeding above *L* ·
@@ -963,7 +970,7 @@ Massachusetts Institute of Technology (MIT) licence, and the manuscript,
 figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit 6990c62+ of it.
+manuscript was built from commit dc28972+ of it.
 
 ### Declaration of computational reproducibility
 

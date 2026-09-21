@@ -318,13 +318,6 @@ label for a number carrying much the same information than to separating
 two covariates. Telling the two apart needs a design that fixes the
 inoculum across laboratories.
 
-Starting density could sit on the causal path rather than beside it.
-Suppose resistance slows growth, and slow growth causes genuine tolerance:
-then the thin inoculum is a consequence of the slow growth, and adjusting
-for it would remove real signal rather than a confounder. The asymmetry
-favours the confounding reading, since growth survives adjustment and
-resistance does not, but a design that fixes the inoculum would settle it.
-
 This is not an aspiration. One study already does it. A murine
 preventive-therapy experiment writes its lower limit of detection into the
 deposited workbook once on every sheet, separately for each agar type, and

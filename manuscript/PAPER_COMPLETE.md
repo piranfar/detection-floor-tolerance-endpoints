@@ -1664,7 +1664,6 @@ then the thin inoculum is a consequence of the slow growth, and adjusting
 for it would remove real signal rather than a confounder. The asymmetry
 favours the confounding reading, since growth survives adjustment and
 resistance does not, but a design that fixes the inoculum would settle it.
-<!--supp-->
 
 This is not an aspiration. One study already does it. A murine
 preventive-therapy experiment writes its lower limit of detection into the
@@ -2153,7 +2152,7 @@ Massachusetts Institute of Technology (MIT) licence, and the manuscript,
 figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit 6990c62+ of it.
+manuscript was built from commit dc28972+ of it.
 
 ### Declaration of computational reproducibility
 

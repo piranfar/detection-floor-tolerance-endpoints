@@ -1389,7 +1389,6 @@ then the thin inoculum is a consequence of the slow growth, and adjusting
 for it would remove real signal rather than a confounder. The asymmetry
 favours the confounding reading, since growth survives adjustment and
 resistance does not, but a design that fixes the inoculum would settle it.
-<!--supp-->
 
 This is not an aspiration. One study already does it. A murine
 preventive-therapy experiment writes its lower limit of detection into the
