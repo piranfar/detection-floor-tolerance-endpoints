@@ -585,18 +585,13 @@ unaffected. <!--supp-->
 
 These 217 isolates are not 217 independent observations. Forty-three are
 follow-up isolates taken during treatment from patients who also gave a baseline
-isolate, so up to 86 rows sit in clusters of two. But the deposit carries no
+isolate, so up to 86 rows sit in clusters of two. The deposit carries no
 patient identifier: Archive and Sample-ID are unique to each row, and none of the
 48 columns repeats the way a patient key would have to. The pairing cannot be
-recovered, so no standard error can be clustered on the true grouping, and we do
-not pretend otherwise. What is available is the exact substitute, a baseline-only
+recovered, so no standard error can be clustered on the true grouping. What is
+available is the exact substitute, a baseline-only
 stratum in which every isolate is from a different patient by construction
 (Time_point = 0M, n = 167 at 15 days). <!--supp-->
-
-These 217 isolates are not 217 independent patients, and the deposit carries no
-patient key with which to say so in a standard error. What it does carry is the
-exact substitute: a baseline-only stratum in which every isolate comes from a
-different patient by construction (Time_point = 0M, n = 167 at 15 days). <!--supp-->
 
 In that stratum the two surviving associations part company. Growth holds and
 still survives correction (OR 1.116, 1.040 to 1.198, p = 0.0024). Resistance
@@ -611,8 +606,7 @@ resistant isolates do not grow significantly more slowly in this deposit (median
 time to OD 0.4 of 19 against 17, p = 0.24), and 85 of them carry *katG* S315X,
 the mutation that predominates clinically precisely because it is close to
 fitness-neutral: it costs the bacterium almost nothing to carry [[R21]][[R22]].
-What the deposit can rule out is less than we first reported, and the correction
-runs in our favour. Seven of the nine pretreatment covariates the file carries
+Seven of the nine pretreatment covariates the file carries
 cannot adjust this association, and they fail in two different ways. Five of them
 are recorded almost only for resistant isolates, so their missingness *is* the
 exposure: the two susceptibility calls are present for 82 of 84 resistant
@@ -620,9 +614,8 @@ isolates and for none of the 119 susceptible ones, the two Mykrobe calls for 76
 and none, and the mutation identity for 79 and one. Adjusting for such a column
 adjusts for resistance itself, which is why the two susceptibility rows agree to
 three significant figures: they are missing on exactly the same rows and hand
-the fit the same design matrix. That also disposes of the largest attenuation we
-previously quoted, 22 per cent for the mutation identity, which was an artefact
-of the same circularity. The two Mykrobe columns hold a single value wherever
+the fit the same design matrix. The mutation identity's apparent 22 per cent
+attenuation is an artefact of that same circularity, not a real effect. The two Mykrobe columns hold a single value wherever
 they are recorded in this stratum, so no adjusted coefficient exists for them at
 all and Table S4 prints none. <!--supp-->
 
@@ -644,8 +637,8 @@ moves it by less than half a per cent. <!--supp-->
 The remaining two are missing at rates unrelated to susceptibility and can be
 used: the growth proxy and months on treatment. Adjusting for either leaves the
 coefficient at −0.81 or −0.82 against an unadjusted −0.85, an attenuation of at
-most five per cent (Table S4). The seeding gap is therefore more robust than the
-earlier sweep suggested, not less. The file records no referring site and no
+most five per cent (Table S4). The seeding gap is therefore robust to every
+covariate the deposit permits testing against. The file records no referring site and no
 processing batch, so those cannot be tested at all. The association between
 resistance and a low starting inoculum is real, large and unexplained, and we
 record it as such. <!--supp-->
@@ -2040,8 +2033,8 @@ p-values are plotted because they are what moves, not because they are valid: th
 laboratory label is constant within its own cluster and there are six clusters, so
 no between-laboratory test is available and none is claimed. Blue marks a term
 crossing the conventional threshold, which is a description of the movement and
-not a finding. Both panels stood in Figure 2 in an earlier version and are here
-because each had to disclaim itself in its own legend. Colour, and the split
+not a finding. Both panels appear here, rather than in Figure 2,
+because each requires its own disclaiming legend. Colour, and the split
 between laboratories that ever crossed and those that never did, are shared with
 Figure 2 by construction: both figures read the assignment from one function.
 

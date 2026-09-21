@@ -1,6 +1,6 @@
 {
   "script": "src/audit_manuscript.py",
-  "utc": "2026-09-21T15:37:23+00:00",
+  "utc": "2026-09-21T15:46:36+00:00",
   "checkers": [
     "check_abstract_length",
     "check_arithmetic",
@@ -12,7 +12,7 @@
     "check_identity",
     "check_terms"
   ],
-  "n_words_audited": 36518,
+  "n_words_audited": 36423,
   "counts": {
     "high": 0,
     "medium": 0,
@@ -32,7 +32,7 @@
       "severity": "low",
       "kind": "audit-count-summary",
       "where": "whole repository",
-      "detail": "src/audit_claims.py runs 174 checks (run); 3 place(s) state that number: Methods (PAPER_COMPLETE.md) line 2186 = 174; manuscript/MANUSCRIPT.md line 1896 = 174; README.md line 44 = 174",
+      "detail": "src/audit_claims.py runs 174 checks (run); 3 place(s) state that number: Methods (PAPER_COMPLETE.md) line 2179 = 174; manuscript/MANUSCRIPT.md line 1889 = 174; README.md line 44 = 174",
       "expected": "174",
       "found": "174, 174, 174",
       "checker": "check_census"
@@ -49,7 +49,7 @@
     {
       "severity": "low",
       "kind": "named-items-not-resolved",
-      "where": "results, 4. The label tracks how fast an isolate grows, and its link  (line 787): \"Five of them are recorded almost only for resistant isolates, so their missingness is the exposure: the two su\"",
+      "where": "results, 4. The label tracks how fast an isolate grows, and its link  (line 782): \"Five of them are recorded almost only for resistant isolates, so their missingness is the exposure: the two su\"",
       "detail": "resolved: the sentence says 5 and then names a list. Not resolved: 2 of its 6 items do not open with a determiner or a count (for none of the 119 susceptible on; none), so the list runs into qualifying clauses and cannot be counted mechanically. Count it by eye",
       "expected": "5 items named",
       "found": "a list of 6 fragments",
@@ -58,7 +58,7 @@
     {
       "severity": "low",
       "kind": "quantity-in-words-and-figures",
-      "where": "Table 11 legend (line 1142) and results, 7. The flask that fell faster often crossed the floor later (line 1171)",
+      "where": "Table 11 legend (line 1135) and results, 7. The flask that fell faster often crossed the floor later (line 1164)",
       "detail": "\"a half\" states in words what 70.4 per cent states in figures; the two sentences share arms, bootstrap, deleting, distance, half. Check they are the same quantity -- this rule matches on wording, not on arithmetic, because 70.4 is not a rounding of 50",
       "expected": "the figure, or the word, in both places",
       "found": "\"a half\" against 70.4 per cent",
@@ -67,7 +67,7 @@
     {
       "severity": "low",
       "kind": "quantity-in-words-and-figures",
-      "where": "Table 11 legend (line 1142) and results, 7. The flask that fell faster often crossed the floor later (line 1171)",
+      "where": "Table 11 legend (line 1135) and results, 7. The flask that fell faster often crossed the floor later (line 1164)",
       "detail": "\"a half\" states in words what 62.3 per cent states in figures; the two sentences share arms, bootstrap, deleting, distance, half. Check they are the same quantity -- this rule matches on wording, not on arithmetic, because 62.3 is not a rounding of 50",
       "expected": "the figure, or the word, in both places",
       "found": "\"a half\" against 62.3 per cent",
@@ -76,7 +76,7 @@
     {
       "severity": "low",
       "kind": "quantity-in-words-and-figures",
-      "where": "discussion (line 1633) and results, 7. The flask that fell faster often crossed the floor later (line 1126)",
+      "where": "discussion (line 1626) and results, 7. The flask that fell faster often crossed the floor later (line 1119)",
       "detail": "\"a third\" states in words what 34.6 per cent states in figures; the two sentences share assay, crossed, faster, fell, flask. Check they are the same quantity -- this rule matches on wording, not on arithmetic, because 34.6 is not a rounding of 33.3333",
       "expected": "the figure, or the word, in both places",
       "found": "\"a third\" against 34.6 per cent",
@@ -86,9 +86,9 @@
       "severity": "low",
       "kind": "scope-summary",
       "where": "whole manuscript",
-      "detail": "49 claims are stated in the Results and repeated in a legend or in the self-audit table; 49 carry every qualifier family the Results attach to them",
+      "detail": "48 claims are stated in the Results and repeated in a legend or in the self-audit table; 48 carry every qualifier family the Results attach to them",
       "expected": "every repeated claim as narrowly scoped as its original",
-      "found": "49 of 49",
+      "found": "48 of 48",
       "checker": "check_census"
     },
     {
@@ -112,7 +112,7 @@
     {
       "severity": "low",
       "kind": "unit-mpn-over-cfu-reference",
-      "where": "Table S5 legend, line 2563",
+      "where": "Table S5 legend, line 2556",
       "detail": "Table S5 divides every row by one reference stated in CFU/mL, but 2 row(s) are the most-probable-number deposit, so those ratios convert MPN into CFU without saying so",
       "expected": "the MPN rows marked as such, or the reference given per deposit",
       "found": "| Vijay, 15-day culture | 5.79 | 246x |; | Vijay, 60-day culture | 7.36 | 7x |",

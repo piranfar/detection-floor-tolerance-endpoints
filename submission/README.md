@@ -40,7 +40,7 @@ hand. Delete it and rebuild it rather than correcting a file inside it.
 
 - Manuscript audit: {'high': 0, 'medium': 0, 'low': 11}
 - Article: 13,407 words
-- Supplement: 24,176 words
+- Supplement: 24,082 words
 
 ## Still to do before this can be sent
 
