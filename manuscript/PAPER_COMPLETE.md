@@ -1933,7 +1933,7 @@ Zenodo 10.5281/zenodo.7550302, CC BY 4.0) (16, 34). Six of its 595
 surviving fractions are written as exact zeros with no named floor, so
 this deposit is one of two for which observability labels are refused.
 
-**A deposit analysed last, after both boundaries were fixed.**
+**Validation deposit, analysed only after both boundaries were fixed.**
 Amoxicillin-clavulanate against *Escherichia coli* in a hollow-fibre
 infection model, with 100 µL plated, measured day-zero densities for
 every culture, and below-limit readings retained as a placeholder (Dubey
@@ -1950,9 +1950,10 @@ dose comparison, leaving 4 to 128 µg/mL as the range compared (Section 9).
 
 ### The prospective experiment
 
-The two boundaries were used to design an experiment against themselves.
-Its design sheet, predictions and plate counts are one workbook, deposited
-with the analysis code, with every prediction written down before a plate
+An *in vitro* experiment was designed to prospectively test both
+boundaries. Its design sheet, predictions and plate counts are one
+workbook, deposited with the analysis code, with every prediction written
+down before a plate
 was counted.
 
 *Escherichia coli* ATCC 25922, the CLSI quality-control reference strain,
@@ -1990,7 +1991,7 @@ applied unchanged from the definitions below; class labels use the
 thresholds of the clinical deposit above, *c*₁ = 10⁻³ and *c*₂ = 10⁻², so
 the two experiments are scored on one rule.
 
-### Two kinds of limit, kept apart
+### Two kinds of limit, kept apart (operational assay floor vs. reported limit of quantification)
 
 No deposit analysed here reports a validated limit of quantification with
 a value. Throughout this paper *L* is therefore an **operational assay
@@ -2053,7 +2054,7 @@ flask that never falls below the floor contributes the information that
 its crossing time exceeds its last visit, and enters the survival
 likelihood as such rather than as missing.
 
-### Floor posterior, refusal, and what is not learned
+### Posterior probability of assay floors, and what remains unresolved
 
 A volume-derived floor is a point mass, with nothing to infer. A floor
 inferred from a pile-up on a most-probable-number rung carries a discrete
@@ -2250,7 +2251,7 @@ Massachusetts Institute of Technology (MIT) licence, and the manuscript,
 figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit 65bb63d+ of it.
+manuscript was built from commit cf21c60+ of it.
 ---
 
 

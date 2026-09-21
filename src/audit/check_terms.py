@@ -175,7 +175,7 @@ _RULE_EVENT = (
 )
 
 # Headings whose whole body is exempt, and why.
-_H_LIMIT = "Two kinds of limit, kept apart"
+_H_LIMIT = "Two kinds of limit, kept apart (operational assay floor vs. reported limit of quantification)"
 _H_RANGE = "Dynamic range, and the two boundaries it sets"
 _H_ESTIM = "Estimation"
 
