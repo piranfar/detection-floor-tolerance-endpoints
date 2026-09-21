@@ -3,7 +3,7 @@
 **Do not send this file anywhere the blinded copy is going.** It is
 the mapping that undoes the blinding.
 
-The organism is masked to `XX` throughout: 66 substitutions over 10 spellings.
+The organism is masked to `XX` throughout: 64 substitutions over 8 spellings.
 
 ## DRUG
 
@@ -22,8 +22,8 @@ The organism is masked to `XX` throughout: 66 substitutions over 10 spellings.
 
 ## STRAIN
 
-- `STRAIN-1` = ATCC
-- `STRAIN-2` = H37Rv
+- `STRAIN-1` = H37Rv
+- `STRAIN-2` = ATCC
 
 ## GENE
 

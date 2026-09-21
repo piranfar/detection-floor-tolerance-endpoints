@@ -1696,9 +1696,12 @@ Three seeding arms were set so the four-log endpoint is unreachable in
 one, marginal in the second and comfortable in the third: targets of
 5 × 10⁴, 5 × 10⁵ and 5 × 10⁶ CFU/mL (the middle arm the CLSI-specified
 inoculum), reaching 6.4 × 10⁴, 4.4 × 10⁵ and 3.8 × 10⁶ CFU/mL as measured
-from day-zero counts. Three flasks per arm were sampled at 0, 1, 2, 4, 6
-and 24 h; at each time, one dilution series was plated at both 100 µL and
-10 µL in duplicate, giving 216 plate readings in all. Viable density was
+from day-zero counts — headroom of 4.11, 4.94 and 5.88 logs at the pooled
+100 µL floor, and 3.11, 3.94 and 4.88 logs at the pooled 10 µL floor, so
+the lowest arm is reachable for a four-log endpoint only at the deeper
+plating. Three flasks per arm were sampled at 0, 1, 2, 4, 6 and 24 h; at
+each time, one dilution series was plated at both 100 µL and 10 µL in
+duplicate, giving 216 plate readings in all. Viable density was
 *N* = *C*·*D*·1000/*V* for *C* colonies counted at dilution factor *D* and
 plated volume *V* µL.
 
