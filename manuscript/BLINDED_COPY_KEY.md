@@ -3,7 +3,7 @@
 **Do not send this file anywhere the blinded copy is going.** It is
 the mapping that undoes the blinding.
 
-The organism is masked to `XX` throughout: 64 substitutions over 8 spellings.
+The organism is masked to `XX` throughout: 63 substitutions over 8 spellings.
 
 ## DRUG
 
@@ -43,10 +43,10 @@ The organism is masked to `XX` throughout: 64 substitutions over 8 spellings.
 - `GROUP-1` = Brauner
 - `GROUP-10` = Aldridge
 - `GROUP-11` = Rabodoarivelo
-- `GROUP-12` = McHugh
-- `GROUP-13` = Pym
-- `GROUP-14` = Franzblau
-- `GROUP-15` = Nuermberger
+- `GROUP-12` = Pym
+- `GROUP-13` = Franzblau
+- `GROUP-14` = Nuermberger
+- `GROUP-15` = McHugh
 - `GROUP-16` = Savic
 - `GROUP-17` = Vilch
 - `GROUP-18` = Tabor
@@ -54,7 +54,7 @@ The organism is masked to `XX` throughout: 64 substitutions over 8 spellings.
 - `GROUP-3` = Kaur
 - `GROUP-4` = Windels
 - `GROUP-5` = Dubey
-- `GROUP-6` = Evangelopoulos
-- `GROUP-7` = Shee
-- `GROUP-8` = van Wijk
+- `GROUP-6` = Shee
+- `GROUP-7` = van Wijk
+- `GROUP-8` = Evangelopoulos
 - `GROUP-9` = Balaban

@@ -85,17 +85,25 @@ RESULTS_ROUTE = {
                "the resolvable depth. Supports Section 5, does not extend it"),
     7:  (SUPP, "the inversion decomposition; a consequence of the boundary "
                "rather than evidence for it"),
-    8:  (MAIN, "the only prospective data in the paper"),
-    9:  (SUPP, "the concentration-response reversal. Its deposit states no plated volume and no limit, so its floor cannot be established at all, and the reversal it reports may itself be a censoring artefact. It is the one section whose evidence the paper cannot put a floor under, so on a 6,000-word budget it is the first to go"),
-    12: (MAIN, "the sub-floor population measured directly in M. tuberculosis "
+    8:  (SUPP, "two secondary deposits, apramycin's concentration-response "
+               "reversal and the 126-clone MIC-MDK decoupling, merged into one "
+               "condensed section. Apramycin's deposit states no plated volume "
+               "and no limit, so its floor cannot be established at all and the "
+               "reversal it reports may itself be a censoring artefact; the "
+               "MIC-MDK result is the prior literature's null, not this paper's "
+               "finding. Neither bears the paper's central claim, so both move "
+               "together on a 6,000-word budget"),
+    9:  (MAIN, "the held-out cold test in E. coli, analysed only after every "
+               "boundary and threshold was fixed -- the paper's one external "
+               "validation on data it was not built from"),
+    10: (MAIN, "the sub-floor population measured directly in M. tuberculosis "
                "lungs, and the four further tuberculosis deposits the screen "
                "reached. This is the organism the title claims and the pillar "
-               "the paper stands on; without it the only prospective data and "
-               "the only held-out validation are both in E. coli"),
-    10: (SUPP, "resistance and tolerance as separate axes; this is the prior "
-               "literature's claim, not this paper's finding"),
+               "the paper stands on; without it the held-out cold test and the "
+               "only prospective data are both in E. coli"),
     11: (MAIN, "one culture, two plated volumes, two labels -- the boundary "
-               "made experimental"),
+               "made experimental, with predictions written down before a "
+               "plate was counted; the only prospective data in the paper"),
 }
 
 # Methods: JMM sets no word limit ("We do not impose a word limit"; see
