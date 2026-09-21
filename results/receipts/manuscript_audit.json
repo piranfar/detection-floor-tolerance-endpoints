@@ -1,6 +1,6 @@
 {
   "script": "src/audit_manuscript.py",
-  "utc": "2026-09-21T18:59:29+00:00",
+  "utc": "2026-09-21T19:32:02+00:00",
   "checkers": [
     "check_abstract_length",
     "check_arithmetic",
@@ -12,7 +12,7 @@
     "check_identity",
     "check_terms"
   ],
-  "n_words_audited": 34307,
+  "n_words_audited": 34356,
   "counts": {
     "high": 0,
     "medium": 0,
@@ -32,7 +32,7 @@
       "severity": "low",
       "kind": "audit-count-summary",
       "where": "whole repository",
-      "detail": "src/audit_claims.py runs 174 checks (run); 3 place(s) state that number: Methods (PAPER_COMPLETE.md) line 2115 = 174; manuscript/MANUSCRIPT.md line 1825 = 174; README.md line 44 = 174",
+      "detail": "src/audit_claims.py runs 174 checks (run); 3 place(s) state that number: Methods (PAPER_COMPLETE.md) line 2161 = 174; manuscript/MANUSCRIPT.md line 1871 = 174; README.md line 44 = 174",
       "expected": "174",
       "found": "174, 174, 174",
       "checker": "check_census"
@@ -49,7 +49,7 @@
     {
       "severity": "low",
       "kind": "named-items-not-resolved",
-      "where": "results, 4. The label tracks how fast an isolate grows, and its link  (line 707): \"Five are recorded almost only for resistant isolates, so their missingness is the exposure: the two susceptibi\"",
+      "where": "results, 4. Isoniazid-resistant isolates appear more rifampicin-toler (line 707): \"Five are recorded almost only for resistant isolates, so their missingness is the exposure: the two susceptibi\"",
       "detail": "resolved: the sentence says 5 and then names a list. Not resolved: 2 of its 6 items do not open with a determiner or a count (none of the 119 susceptible; none), so the list runs into qualifying clauses and cannot be counted mechanically. Count it by eye",
       "expected": "5 items named",
       "found": "a list of 6 fragments",
@@ -58,7 +58,7 @@
     {
       "severity": "low",
       "kind": "quantity-in-words-and-figures",
-      "where": "Table 11 legend (line 1050) and results, 7. The flask that fell faster often crossed the floor later (line 1077)",
+      "where": "Table 11 legend (line 1050) and results, 7. A slower-killing culture can still cross the assay floor  (line 1077)",
       "detail": "\"a half\" states in words what 70.4 per cent states in figures; the two sentences share arms, bootstrap, deleting, distance, half. Check they are the same quantity -- this rule matches on wording, not on arithmetic, because 70.4 is not a rounding of 50",
       "expected": "the figure, or the word, in both places",
       "found": "\"a half\" against 70.4 per cent",
@@ -67,7 +67,7 @@
     {
       "severity": "low",
       "kind": "quantity-in-words-and-figures",
-      "where": "Table 11 legend (line 1050) and results, 7. The flask that fell faster often crossed the floor later (line 1077)",
+      "where": "Table 11 legend (line 1050) and results, 7. A slower-killing culture can still cross the assay floor  (line 1077)",
       "detail": "\"a half\" states in words what 62.3 per cent states in figures; the two sentences share arms, bootstrap, deleting, distance, half. Check they are the same quantity -- this rule matches on wording, not on arithmetic, because 62.3 is not a rounding of 50",
       "expected": "the figure, or the word, in both places",
       "found": "\"a half\" against 62.3 per cent",
@@ -76,7 +76,7 @@
     {
       "severity": "low",
       "kind": "quantity-in-words-and-figures",
-      "where": "discussion (line 1555) and results, 7. The flask that fell faster often crossed the floor later (line 1034)",
+      "where": "discussion (line 1555) and results, 7. A slower-killing culture can still cross the assay floor  (line 1034)",
       "detail": "\"a third\" states in words what 34.6 per cent states in figures; the two sentences share assay, crossed, faster, fell, flask. Check they are the same quantity -- this rule matches on wording, not on arithmetic, because 34.6 is not a rounding of 33.3333",
       "expected": "the figure, or the word, in both places",
       "found": "\"a third\" against 34.6 per cent",

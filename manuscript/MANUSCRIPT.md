@@ -231,7 +231,7 @@ how often a real experiment lands in that window. It could be none of the time. 
 
 ## Results
 
-### 1. The plate's floor sets how far down killing can be seen
+### 1. Rifampicin tolerance in 217 clinical isolates is scored against an unreported assay floor
 
 Most-probable-number (MPN) readings take only the discrete values of an MPN
 table [[R9]][[R10]], a fixed ladder of rungs, not a continuous scale. The
@@ -300,7 +300,7 @@ it, and 88.0 per cent of those that could are recorded the same way. The
 deepest endpoint is the only one at risk, and it is the one the tolerance
 classification is built on. <!--supp-->
 
-### 2. The same floor reading was given different tolerance labels
+### 2. The same floor-level reading yields opposite tolerance labels depending on starting density
 
 The deposited tolerance level is a cut-off on the recorded surviving
 fraction, with no overlap between classes. The thresholds themselves are
@@ -369,7 +369,7 @@ fall outside that contrast. Median headroom differs by a full log, 4 against
 5. A comparison of tolerance between those groups is therefore in part a
 comparison of how well each group could be measured. <!--supp-->
 
-### 3. The affected isolates are named before the drug is added
+### 3. The floor predicts, before rifampicin is added, which isolates will be mislabeled
 
 Sections 1 and 2 counted isolates. The two boundaries derived in the
 Methods do more: given only the floor, the class thresholds and each
@@ -427,7 +427,7 @@ The empirical findings are therefore consequences of the definitions rather
 than properties of this deposit: any dataset reporting a starting density,
 a floor and a threshold classification can be checked against them.
 
-### 4. The label tracks how fast an isolate grows, and its link to resistance cannot be separated from the inoculum
+### 4. Isoniazid-resistant isolates appear more rifampicin-tolerant, but the effect tracks a thinner inoculum, not resistance
 
 There are two candidate predictors of the deposited label, each tested at
 two culture ages and two endpoint depths, eight tests in all. Eight tests on
@@ -593,7 +593,7 @@ ratio 0.59, p = 0.028; medium against low, 1.22, p = 0.39). In the denser
 panel the starting density no longer decides who is called low. It still
 decides who can be called high. <!--supp-->
 
-### 5. One written protocol does not give every laboratory the same depth to look down
+### 5. Six laboratories given one M. tuberculosis protocol still see six different assay floors
 
 If the effect is a property of assay geometry rather than of clinical
 sampling, it should appear where one protocol, one strain and one stock are
@@ -742,7 +742,7 @@ starting density (permutation p < 0.0002), 36.8 per cent of the within-arm
 kill rate (p = 0.0018), and the duration endpoint outright, since three
 laboratories produce none at all. <!--supp-->
 
-### 6. The turbidity standard fixes what goes into the flask, not what the plate can see
+### 6. The M26-A protocol fixes turbidity, not the plated depth a laboratory can actually see
 
 The inoculum for a time-kill experiment is not a free choice. A suspension
 is matched to 0.5 McFarland and diluted, and NCCLS M26-A (approved
@@ -808,7 +808,7 @@ sets the deepest log-kill an experiment can show is the measured starting
 density and the real assay floor, not the turbidity the preparation began
 from.
 
-### 7. The flask that fell faster often crossed the floor later
+### 7. A slower-killing culture can still cross the assay floor first, inverting the apparent ranking
 
 Take two flasks in the same treatment arm from different laboratories.
 Across 191 such pairs (45 further pairs the censoring could not settle are
@@ -865,7 +865,7 @@ flip which of two flasks fell faster in more than a third of the
 laboratory comparisons here, the practical stake for anyone choosing
 between compounds on this evidence.
 
-### 8. Two further deposits test how much drug against how long it takes, at a cost of reading late and pooling nutrient groups
+### 8. In two further deposits, reading the plate late or pooling across nutrient groups hides the drug-response relationship
 
 The framework that defines these two measures takes it as given that they
 are separate (Brauner et al. 2016 [[R2]]). Two secondary deposits bound how
@@ -914,7 +914,7 @@ population had evolved to, Table S6). Neither deposit shows the two axes
 are independent. Both show they are not positively coupled, which is what
 they can support.
 
-### 9. The same boundaries hold in an experiment the framework never saw
+### 9. The two boundaries hold in a deposit never used to derive them, in a different organism and drug
 
 Every section so far tests the framework on the deposits it was built
 from, all *Mycobacterium tuberculosis*. Of the 45 deposits whose series
@@ -961,7 +961,7 @@ zero while the paired control reads about 10⁶; the file cannot distinguish
 a sample drawn after exposure from a placeholder or a transcription error,
 so the reading is flagged rather than treated as a measured time zero.
 
-### 10. What the plate misses is not only what lies below its floor
+### 10. A second distortion in M. tuberculosis: bacilli invisible to culture, not just below the floor
 
 Everything above is about the floor. One published observation in this
 organism shows that the floor is not the only reason a colony count
@@ -1012,7 +1012,7 @@ single one of its 123 series. None of these five carries the analysis
 above, and none is among the five deposits reanalysed in this paper; they
 say the reachability problem is not a property of one clinical panel.
 
-### 11. One culture, two plated volumes, two tolerance labels
+### 11. A prospective E. coli experiment confirms the floor artifact: one culture, two plated volumes, two conflicting labels
 
 Every result above reads data somebody else generated for another purpose.
 This one reads an experiment built to try to break the two boundaries
@@ -1531,7 +1531,7 @@ and that can bear the weight regimen research already puts on it.
 
 ## Materials and Methods
 
-### Study design and data sources
+### A screen of 78 time-kill datasets for M. tuberculosis and E. coli assay floors
 
 This study combined mathematical derivation, analysis of five public
 datasets, and a prospective *Escherichia coli* experiment to examine how
@@ -1605,7 +1605,7 @@ Each dataset's organism, drug, design and licence is summarised in Table
 1; the complete screening manifest and exclusion reasons accompany the
 analysis code.
 
-### Prospective experimental validation
+### Prospective E. coli experiment designed to test the floor artifact
 
 An *in vitro* experiment was designed to prospectively test both
 boundaries. Its design sheet, predictions and plate counts are one
@@ -1650,7 +1650,7 @@ applied unchanged from the definitions below; class labels use the
 thresholds of the clinical deposit above, *c*₁ = 10⁻³ and *c*₂ = 10⁻², so
 the two experiments are scored on one rule.
 
-### Assay floors and censoring
+### Where rifampicin tolerance readings are censored by the assay floor
 
 No deposit analysed here reports a validated limit of quantification with
 a value. Throughout this paper *L* is therefore an **operational assay
@@ -1705,7 +1705,7 @@ is refused when no class reaches 95 per cent confidence (Table S14). The
 refusal holds across both well designs, both floor readings and two
 priors.
 
-### Reachability and identifiability boundaries
+### Two boundaries that predict which rifampicin tolerance calls are unreliable
 
 For a culture starting at *N₀* against an assay floor *L*, the
 **headroom** is *h* = log10(*N₀*/*L*), the deepest reduction the assay can
@@ -1819,18 +1819,6 @@ Analyses used Python 3.14 with numpy 2.5.0 [[R41]], scipy 1.18.0 [[R42]],
 pandas 3.0.3 [[R43]], statsmodels 0.15.0 [[R44]] and lifelines 0.30.3
 [[R45]].
 
-### Reproducibility
-
-Every number in this paper is regenerated by a script that writes a
-machine-readable receipt, and an audit script recomputes 174 quantities
-quoted in the text from the tables they came from. A second audit checks
-that every number in the Abstract, Box 1, and every table and figure
-legend traces to a results file or receipt, that no numeric literal
-carries two incompatible statistical labels (a hazard ratio quoted where
-another table calls the same figure a p-value, for example), and that no
-cross-reference or sample-size count is stale. Neither audit pins every
-cell of every table.
-
 ### Ethics
 
 This study analysed publicly available, de-identified datasets, and
@@ -1876,6 +1864,18 @@ figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
 manuscript was built from commit {{COMMIT}} of it.
+
+### Declaration of computational reproducibility
+
+Every number in this paper is regenerated by a script that writes a
+machine-readable receipt, and an audit script recomputes 174 quantities
+quoted in the text from the tables they came from. A second audit checks
+that every number in the Abstract, Box 1, and every table and figure
+legend traces to a results file or receipt, that no numeric literal
+carries two incompatible statistical labels (a hazard ratio quoted where
+another table calls the same figure a p-value, for example), and that no
+cross-reference or sample-size count is stale. Neither audit pins every
+cell of every table.
 ---
 
 

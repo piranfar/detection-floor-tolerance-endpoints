@@ -175,8 +175,8 @@ _RULE_EVENT = (
 )
 
 # Headings whose whole body is exempt, and why.
-_H_LIMIT = "Assay floors and censoring"
-_H_RANGE = "Reachability and identifiability boundaries"
+_H_LIMIT = "Where rifampicin tolerance readings are censored by the assay floor"
+_H_RANGE = "Two boundaries that predict which rifampicin tolerance calls are unreliable"
 _H_ESTIM = "Statistical analysis"
 
 

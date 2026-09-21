@@ -368,7 +368,7 @@ not, it declines to compute one rather than assuming a volume. The tool
 exits with a failure code when a requested endpoint is unreachable, so it
 can be run before an experiment rather than after it.
 
-### Text S1. The turbidity standard fixes what goes into the flask, not what the plate can see
+### Text S1. The M26-A protocol fixes turbidity, not the plated depth a laboratory can actually see
 
 The inoculum for a time-kill experiment is not a free choice. A suspension
 is matched to 0.5 McFarland and diluted, and NCCLS M26-A (approved
@@ -434,7 +434,7 @@ sets the deepest log-kill an experiment can show is the measured starting
 density and the real assay floor, not the turbidity the preparation began
 from.
 
-### Text S2. The flask that fell faster often crossed the floor later
+### Text S2. A slower-killing culture can still cross the assay floor first, inverting the apparent ranking
 
 Take two flasks in the same treatment arm from different laboratories.
 Across 191 such pairs (45 further pairs the censoring could not settle are
@@ -491,7 +491,7 @@ flip which of two flasks fell faster in more than a third of the
 laboratory comparisons here, the practical stake for anyone choosing
 between compounds on this evidence.
 
-### Text S3. Two further deposits test how much drug against how long it takes, at a cost of reading late and pooling nutrient groups
+### Text S3. In two further deposits, reading the plate late or pooling across nutrient groups hides the drug-response relationship
 
 The framework that defines these two measures takes it as given that they
 are separate (Brauner et al. 2016 (24)). Two secondary deposits bound how
@@ -540,7 +540,7 @@ population had evolved to, Table S23). Neither deposit shows the two axes
 are independent. Both show they are not positively coupled, which is what
 they can support.
 
-### Extended results for article section 1: The plate's floor sets how far down killing can be seen
+### Extended results for article section 1: Rifampicin tolerance in 217 clinical isolates is scored against an unreported assay floor
 
 *Material held back from the article for length. It is reported here rather than dropped, because each paragraph answers a question a reader of that section may reasonably ask.*
 
@@ -585,7 +585,7 @@ it, and 88.0 per cent of those that could are recorded the same way. The
 deepest endpoint is the only one at risk, and it is the one the tolerance
 classification is built on.
 
-### Extended results for article section 2: The same floor reading was given different tolerance labels
+### Extended results for article section 2: The same floor-level reading yields opposite tolerance labels depending on starting density
 
 *Material held back from the article for length. It is reported here rather than dropped, because each paragraph answers a question a reader of that section may reasonably ask.*
 
@@ -624,7 +624,7 @@ fall outside that contrast. Median headroom differs by a full log, 4 against
 5. A comparison of tolerance between those groups is therefore in part a
 comparison of how well each group could be measured.
 
-### Extended results for article section 3: The affected isolates are named before the drug is added
+### Extended results for article section 3: The floor predicts, before rifampicin is added, which isolates will be mislabeled
 
 *Material held back from the article for length. It is reported here rather than dropped, because each paragraph answers a question a reader of that section may reasonably ask.*
 
@@ -650,7 +650,7 @@ cent, changes no verdict (Table S14); a posterior over class gives the same
 answer probabilistically, with the twelve keeping their label at posterior
 probability at least 0.999 and the six refused outright (Table S11).
 
-### Extended results for article section 4: The label tracks how fast an isolate grows, and its link to resistance cannot be separated from the inoculum
+### Extended results for article section 4: Isoniazid-resistant isolates appear more rifampicin-tolerant, but the effect tracks a thinner inoculum, not resistance
 
 *Material held back from the article for length. It is reported here rather than dropped, because each paragraph answers a question a reader of that section may reasonably ask.*
 
@@ -782,7 +782,7 @@ ratio 0.59, p = 0.028; medium against low, 1.22, p = 0.39). In the denser
 panel the starting density no longer decides who is called low. It still
 decides who can be called high.
 
-### Extended results for article section 5: One written protocol does not give every laboratory the same depth to look down
+### Extended results for article section 5: Six laboratories given one M. tuberculosis protocol still see six different assay floors
 
 *Material held back from the article for length. It is reported here rather than dropped, because each paragraph answers a question a reader of that section may reasonably ask.*
 
@@ -912,7 +912,7 @@ starting density (permutation p < 0.0002), 36.8 per cent of the within-arm
 kill rate (p = 0.0018), and the duration endpoint outright, since three
 laboratories produce none at all.
 
-### Extended results for article section 6: The same boundaries hold in an experiment the framework never saw
+### Extended results for article section 6: The two boundaries hold in a deposit never used to derive them, in a different organism and drug
 
 *Material held back from the article for length. It is reported here rather than dropped, because each paragraph answers a question a reader of that section may reasonably ask.*
 
@@ -937,7 +937,7 @@ tuberculosis time-kill data could be expected to fit more of it; what it
 has no right to survive is a different organism, drug class and apparatus.
 The boundaries are derived from definitions, so they predict they will.
 
-### Extended results for article section 8: One culture, two plated volumes, two tolerance labels
+### Extended results for article section 8: A prospective E. coli experiment confirms the floor artifact: one culture, two plated volumes, two conflicting labels
 
 *Material held back from the article for length. It is reported here rather than dropped, because each paragraph answers a question a reader of that section may reasonably ask.*
 
