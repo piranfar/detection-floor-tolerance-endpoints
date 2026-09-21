@@ -1057,7 +1057,7 @@ Massachusetts Institute of Technology (MIT) licence, and the manuscript,
 figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit 59798f8+ of it.
+manuscript was built from commit 871c657+ of it.
 ---
 
 ## Acknowledgments
