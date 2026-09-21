@@ -1877,21 +1877,24 @@ research already puts on it.
 ---
 ## Materials and Methods
 
-### The corpus screened, and how five deposits came out of it
+### Study design and data sources
 
-We assembled 78 candidate time-kill datasets from the published literature
-(21 August – 8 September 2026) and screened 45 of them field by field for
-the three quantities the two boundaries below require: a pre-treatment
-starting density, a longitudinal series of viable counts, and either a
-plated volume or a stated assay floor. Every inclusion and exclusion is
-recorded in a manifest deposited with the analysis code.
+This study combined mathematical derivation, analysis of five public
+datasets, and a prospective *Escherichia coli* experiment to examine how
+assay floors constrain antibiotic-tolerance endpoints. We assembled 78
+candidate time-kill datasets from the published literature (21 August – 8
+September 2026) and screened 45 of them field by field for the three
+quantities the two boundaries below require: a pre-treatment starting
+density, a longitudinal series of viable counts, and either a plated
+volume or a stated assay floor. Every inclusion and exclusion is recorded
+in a manifest deposited with the analysis code.
 
 Forty-one distinct records were inspected, one of them this paper's own
 prospective experiment. Of the 40 remaining literature deposits, 32
 reported no assay floor by any route — no limit of detection, no limit of
 quantification, and no plated volume from which one could be derived.
-Eighteen deposits carried enough information to compute both boundaries at
-all, and five carried the complete set of fields the full analysis
+Eighteen deposits carried enough information to compute both boundaries
+at all, and five carried the complete set of fields the full analysis
 requires (Table 1, Figure S4). The full pipeline, from this screen through
 the prospective test of both boundaries, is summarised in Figure S6.
 
@@ -1900,24 +1903,18 @@ without a registered search protocol; the two boundaries are derived from
 definitions rather than estimated from the corpus's size, so a single
 deposit with a stated floor is enough to demonstrate them.
 
-### The five deposits analysed
+Four datasets supported the empirical analyses. **Clinical isolates with a
+deposited tolerance classification:** 217 *M. tuberculosis* isolates
+assayed under rifampicin, each carrying a minimum inhibitory
+concentration, minimum durations for 90, 99 and 99.99 per cent killing at
+15 and 60 days of prior culture, most probable number readings at days 0,
+2 and 5, a growth-rate proxy, isoniazid susceptibility with the resistance
+mutation where present, and the authors' own tolerance level for each
+isolate (Vijay et al. 2024; eLife 93243 supplementary file 2) (12). Of
+the 217 rows, 43 are follow-up isolates from patients already represented,
+so a baseline-only stratum is analysed separately.
 
-Five published deposits are analysed (Table 1), four carrying the analysis
-and the fifth held out to test it: opened only after every boundary and
-threshold was fixed, and used nowhere else in the paper except to confirm
-them (Section 8).
-
-**Clinical isolates with a deposited tolerance classification.** 217
-*M. tuberculosis* isolates assayed under rifampicin, each carrying a
-minimum inhibitory concentration, minimum durations for 90, 99 and 99.99
-per cent killing at 15 and 60 days of prior culture, most probable number
-readings at days 0, 2 and 5, a growth-rate proxy, isoniazid susceptibility
-with the resistance mutation where present, and the authors' own tolerance
-level for each isolate (Vijay et al. 2024; eLife 93243 supplementary file
-2) (12). Of the 217 rows, 43 are follow-up isolates from patients
-already represented, so a baseline-only stratum is analysed separately.
-
-**The six-laboratory exercise.** *M. tuberculosis* H37Rv from one stock,
+**The six-laboratory exercise:** *M. tuberculosis* H37Rv from one stock,
 distributed with one written protocol to six blinded laboratories (van
 Wijk et al. 2023; figshare 19766083, CC BY 4.0) (7, 13). Moxifloxacin
 and isoniazid at one and ten times the minimum inhibitory concentration,
@@ -1927,35 +1924,39 @@ a single drop — giving three distinct floors spanning 1.60 log10 within a
 single flask-visit (8). The file holds 2,775 readings; the analysis
 set, after dropping unusable values and pre-treatment visits, is 2,580.
 
-**Evolved clones.** 126 *Escherichia coli* clones from a parallel
+**Evolved clones:** 126 *Escherichia coli* clones from a parallel
 evolution experiment under amikacin, each carrying an endpoint minimum
 inhibitory concentration and a persister fraction (Windels et al. 2024;
 Zenodo 10.5281/zenodo.7550302, CC BY 4.0) (16, 34). Six of its 595
 surviving fractions are written as exact zeros with no named floor, so
 this deposit is one of two for which observability labels are refused.
 
-**Validation deposit, analysed only after both boundaries were fixed.**
-Amoxicillin-clavulanate against *Escherichia coli* in a hollow-fibre
-infection model, with 100 µL plated, measured day-zero densities for
-every culture, and below-limit readings retained as a placeholder (Dubey
-et al. 2026; article Source Data, CC BY 4.0) (17, 18). It was the
-only deposit found carrying all three fields the boundaries require, and
-no boundary, threshold or modelling choice in this paper was informed by
-it.
-
-**Concentration-by-time grid.** Apramycin against *M. tuberculosis* at
+**Concentration-by-time grid:** apramycin against *M. tuberculosis* at
 128, 32, 8, 4 and 1 µg/mL, triplicate log10 CFU at days 0, 3, 7 and 14
 (Kaur et al. 2024; figshare 26462791, CC BY 4.0) (14, 15). The 1
 µg/mL arm shows net growth rather than killing and is excluded from the
 dose comparison, leaving 4 to 128 µg/mL as the range compared (Section 9).
 
-### The prospective experiment
+A fifth dataset was evaluated only after the boundaries, thresholds, and
+modelling choices had been fixed. **Validation deposit:** amoxicillin-
+clavulanate against *Escherichia coli* in a hollow-fibre infection model,
+with 100 µL plated, measured day-zero densities for every culture, and
+below-limit readings retained as a placeholder (Dubey et al. 2026; article
+Source Data, CC BY 4.0) (17, 18). It was the only deposit found
+carrying all three fields the boundaries require, and no boundary,
+threshold or modelling choice in this paper was informed by it; it is
+used nowhere else in the paper except to confirm them (Section 8).
+
+Each dataset's organism, drug, design and licence is summarised in Table
+1; the complete screening manifest and exclusion reasons accompany the
+analysis code.
+
+### Prospective experimental validation
 
 An *in vitro* experiment was designed to prospectively test both
 boundaries. Its design sheet, predictions and plate counts are one
 workbook, deposited with the analysis code, with every prediction written
-down before a plate
-was counted.
+down before a plate was counted.
 
 *Escherichia coli* ATCC 25922, the CLSI quality-control reference strain,
 was grown in cation-adjusted Mueller–Hinton broth and plated on
@@ -1992,7 +1993,7 @@ applied unchanged from the definitions below; class labels use the
 thresholds of the clinical deposit above, *c*₁ = 10⁻³ and *c*₂ = 10⁻², so
 the two experiments are scored on one rule.
 
-### Two kinds of limit, kept apart (operational assay floor vs. reported limit of quantification)
+### Assay floors and censoring
 
 No deposit analysed here reports a validated limit of quantification with
 a value. Throughout this paper *L* is therefore an **operational assay
@@ -2028,34 +2029,22 @@ floor** is left-censored: the population is somewhere below a known
 value. In the clinical deposit the floor is inferred at 23 MPN/mL from
 three signatures — it is the smallest value in the file, nothing lies
 below it in 1,932 readings, and the minimum shifts by exactly a factor of
-ten per culture age. The number of isolates lacking four logs of headroom
-is 33 at this floor and does not fall below 28 at 3.0 MPN/mL, the lowest
-value the deposit's own MPN table admits, so the conclusion holds across
-the range (Table S7).
+ten per culture age; the conclusions drawn from it hold across the full
+range the deposit's own MPN table admits (Table S7). A **crossing time
+not observed within the study** is right-censored: a flask that never
+falls below the floor contributes the information that its crossing time
+exceeds its last visit, and enters the survival likelihood as such rather
+than as missing.
 
 A volume-derived plate floor bounds the true count from above, [0, *L*];
-an MPN rung does not, since its 95 per cent profile interval extends well
-above the rung (3 to 120 per mL under the deposit's own design). Every
-identifiability verdict was recomputed under this likelihood instead of
-the plate-sweep bound (Table S13): 12 of 18 floored isolates admit one
-class and six admit two at 15 days, identically under both treatments,
-because the floored isolates' starting densities sit far from the shifted
-threshold even at the widest 99 per cent bound.
-
-The six-laboratory deposit plates each sample at four volumes at the same
-visit, so a below-limit flag can be checked against the other platings of
-the same flask: 16.7 per cent of its 498 flags are contradicted by a more
-sensitive plating of the same sample recording a quantified count. Each
-reading is therefore judged against its own volume's floor rather than
-pooled to the least sensitive one, which would additionally discard 5.9
-per cent of genuine quantified counts.
-
-A **crossing time not observed within the study** is right-censored: a
-flask that never falls below the floor contributes the information that
-its crossing time exceeds its last visit, and enters the survival
-likelihood as such rather than as missing.
-
-### Posterior probability of assay floors, and what remains unresolved
+an MPN rung does not, since its likelihood extends well above the rung.
+Every identifiability verdict was therefore recomputed under the assay's
+own likelihood rather than the plate-sweep bound, confirming the same
+classification under both treatments (Table S13). Each below-limit flag
+in the six-laboratory deposit is judged against its own plated volume's
+floor rather than pooled to the least sensitive volume, since pooling
+would discard genuine quantified counts a more sensitive plating of the
+same sample recorded (Table 15 note).
 
 A volume-derived floor is a point mass, with nothing to infer. A floor
 inferred from a pile-up on a most-probable-number rung carries a discrete
@@ -2069,39 +2058,12 @@ in hand the rest is derived.
 
 The same likelihood turns classification into an inference with its own
 refusal rule: given a floor reading, the posterior over the true count
-maps through starting density to a posterior over class, and an isolate is
-refused when no class reaches 95 per cent (Table S14). At 15 days the
-twelve isolates recorded as Low are confirmed (P(Low) ≥ 0.999); the six
-recorded as Medium are refused, their posterior split almost evenly across
-the threshold the deposit drew at *L*/*N*₀ = 10⁻³. The refusal holds
-across both well designs, both floor readings and two priors.
+maps through starting density to a posterior over class, and an isolate
+is refused when no class reaches 95 per cent confidence (Table S14). The
+refusal holds across both well designs, both floor readings and two
+priors.
 
-### Causal mediation of the resistance association
-
-A linear product-of-coefficients mediation decomposes the total effect of
-isoniazid resistance on the day-5 tolerance class into an average causal
-mediation effect through log10 *N₀* and an average direct effect
-(43, 44), with bootstrap percentile intervals from 5,000 resamples.
-A refit excludes the 18 of 203 isolates whose day-5 reading sits at or
-below the floor, since their recorded fraction carries no measured
-numerator. Sequential ignorability is assumed and untestable here; the
-sensitivity that matters is the residual correlation between mediator and
-outcome errors at which the point estimate crosses zero, about −0.23. No
-claim is made that unmeasured confounding is absent.
-
-### What each analysis was fitted to
-
-A dozen denominators appear in this paper and each is derived in a single
-place (Table 5): the MDR tolerance label is dropped wherever an ordered
-outcome is fitted (14 rows per panel, 20 at 60 days), the growth proxy is
-missing for one isolate, and five of 72 treated flasks in the
-six-laboratory deposit carry no usable starting density. Dropped rows are
-compared with retained ones on starting density and susceptibility to
-test whether the exclusions are plausibly ignorable (Table S1); the only
-difference not attributable to the exclusion rule itself is that the
-60-day panel's 20 dropped rows sit higher in starting density.
-
-### Dynamic range, and the two boundaries it sets
+### Reachability and identifiability boundaries
 
 For a culture starting at *N₀* against an assay floor *L*, the
 **headroom** is *h* = log10(*N₀*/*L*), the deepest reduction the assay can
@@ -2124,45 +2086,84 @@ properties of the method alone; seeding a culture above
 *L* · max(10^*q*, 1/*c*₁) makes both failure modes impossible before an
 experiment runs.
 
-### Estimation
+### Statistical analysis
 
-A **Tobit model** fits log10 CFU/mL linearly in time by maximum
-likelihood (45); a censored reading contributes log Φ((limit −
+Log10 viable counts were modelled as a linear function of time using a
+**Tobit model** with observation-specific left-censoring limits, fitted by
+maximum likelihood (43); a censored reading contributes log Φ((limit −
 µ)/σ), the probability it fell below its own limit — Beal's M3 written
-for this assay (46). **Multiple imputation** draws each censored
-reading from the fitted normal truncated at its own limit, refits by
-ordinary least squares, and pools 50 fits by Rubin's rules (47); the
-two estimators' agreement shows the answer does not depend on which
-arithmetic recovers it, not that the sub-floor distribution is normal.
+for this assay (44). As a computational consistency check, 50 imputed
+datasets were generated from the fitted truncated-normal distribution,
+analysed by ordinary least squares, and pooled using Rubin's rules
+(45); both procedures share the same distributional assumptions, and
+their agreement shows the answer does not depend on which arithmetic
+recovers it, not that the sub-floor distribution is normal.
 
 The growth proxy is the deposit's time to an optical density of 0.4, in
-days, so it runs inversely to growth rate. **The tolerance label** is
+days, so it runs inversely to growth rate. **The tolerance label** was
 modelled as an ordered categorical outcome by proportional-odds ordinal
-logistic regression (48), with starting density as a prespecified
-covariate; proportional odds is tested by a Brant test per predictor
-(49) and a likelihood-ratio test against a generalised ordered logit
-(50), with the partial-proportional-odds fit reported where it fails
+logistic regression (46), with starting density as a prespecified
+covariate; proportional odds was tested by a Brant test per predictor
+(47) and a likelihood-ratio test against a generalised ordered logit
+(48), with the partial-proportional-odds fit reported where it fails
 and checked against a multinomial fit assuming no ordering (Table S2).
 
-**Time-to-event analysis** treats the first observed crossing below the
+**Time-to-event analysis** treated the first observed crossing below the
 assay floor as the event, right-censoring series that never fall below
 it; 60 per cent of series that cross read above the floor again at a
 later visit, so the event is a crossing, not a clearance. The crossing
 time is interval-censored between the last visit above the floor and the
 first below it; interval-censored fits (31) are reported alongside
-Kaplan–Meier (51) and Cox proportional hazards (52) as descriptive
-summaries, with cluster bootstraps over laboratories and flasks (53)
+Kaplan–Meier (49) and Cox proportional hazards (50) as descriptive
+summaries, with cluster bootstraps over laboratories and flasks (51)
 in place of the partial likelihood's independence assumption, and
-proportionality tested on Schoenfeld residuals (54, 55).
+proportionality tested on Schoenfeld residuals (52, 53).
 
-**The replicate-level bootstrap** (56) behind interval slopes resamples
+**The replicate-level bootstrap** (54) behind interval slopes resamples
 the three replicate counts with replacement, takes their mean, refits the
 concentration slope on each draw, and takes percentile intervals from
 20,000 draws — reported instead of the least-squares fit through the
 deposited concentration means, which has two residual degrees of freedom
 and discards the replicate scatter. An interval on a proportion is the
-Jeffreys interval (57), which does not collapse to zero width at the
+Jeffreys interval (55), which does not collapse to zero width at the
 sample sizes here.
+
+**Causal mediation of the resistance association.** A linear
+product-of-coefficients mediation decomposes the total effect of
+isoniazid resistance on the day-5 tolerance class into an average causal
+mediation effect through log10 *N₀* and an average direct effect
+(56, 57), with bootstrap percentile intervals from 5,000 resamples.
+A refit excludes the 18 of 203 isolates whose day-5 reading sits at or
+below the floor, since their recorded fraction carries no measured
+numerator. Sequential ignorability is assumed and untestable here; the
+sensitivity that matters is the residual correlation between mediator and
+outcome errors at which the point estimate crosses zero, about −0.23. No
+claim is made that unmeasured confounding is absent.
+
+**Denominators.** A dozen denominators appear in this paper and each is
+derived in a single place (Table 5): the MDR tolerance label is dropped
+wherever an ordered outcome is fitted (14 rows per panel, 20 at 60 days),
+the growth proxy is missing for one isolate, and five of 72 treated
+flasks in the six-laboratory deposit carry no usable starting density.
+Dropped rows are compared with retained ones on starting density and
+susceptibility to test whether the exclusions are plausibly ignorable
+(Table S1).
+
+**Decomposition of a crossing time.** Over an interval where the decline
+is close to log-linear, log10 *N*(*t*) = *a* − *bt*, and with *ℓ* the log10
+assay floor and *D* = *a* − *ℓ* the distance the population starts above
+it, the crossing time is *T* = *D*/*b*. For two flasks,
+
+    log(T_A / T_B) = log(D_A / D_B) − log(b_A / b_B),
+
+which splits a difference in crossing time into a distance term and a
+rate term. An **inversion** is a pair in which A fell faster yet crossed
+later, occurring exactly when *D_A*/*D_B* > *b_A*/*b_B*.
+
+**Multiplicity.** Where a question admits more than one test, every test
+the deposit supports is run, and the family is corrected by the
+Benjamini–Hochberg procedure (58) at a false discovery rate of 5 per
+cent.
 
 Four procedures are implemented in the released analysis code rather than
 taken from a package — the Brant test, the partial-proportional-odds fit,
@@ -2171,24 +2172,9 @@ sensitivity — in `exp30_ordinal_tolerance.py` and `exp34_mediation.py`;
 the partial-proportional-odds likelihood is validated against the
 proportional-odds fit it nests, agreeing to 1.0 × 10⁻¹⁰ in log-likelihood.
 
-### The decomposition of a crossing time
-
-Over an interval where the decline is close to log-linear, log10
-*N*(*t*) = *a* − *bt*, and with *ℓ* the log10 assay floor and *D* = *a* −
-*ℓ* the distance the population starts above it, the crossing time is
-*T* = *D*/*b*. For two flasks,
-
-    log(T_A / T_B) = log(D_A / D_B) − log(b_A / b_B),
-
-which splits a difference in crossing time into a distance term and a
-rate term. An **inversion** is a pair in which A fell faster yet crossed
-later, occurring exactly when *D_A*/*D_B* > *b_A*/*b_B*.
-
-### Multiplicity
-
-Where a question admits more than one test, every test the deposit
-supports is run, and the family is corrected by the Benjamini–Hochberg
-procedure (58) at a false discovery rate of 5 per cent.
+Analyses used Python 3.14 with numpy 2.5.0 (59), scipy 1.18.0 (60),
+pandas 3.0.3 (61), statsmodels 0.15.0 (62) and lifelines 0.30.3
+(63).
 
 ### Reproducibility
 
@@ -2201,12 +2187,6 @@ carries two incompatible statistical labels (a hazard ratio quoted where
 another table calls the same figure a p-value, for example), and that no
 cross-reference or sample-size count is stale. Neither audit pins every
 cell of every table.
-
-Analyses used Python 3.14 with numpy 2.5.0 (59), scipy 1.18.0 (60),
-pandas 3.0.3 (61), statsmodels 0.15.0 (62) and lifelines 0.30.3
-(63).
-
----
 
 ### Ethics
 
@@ -2252,7 +2232,7 @@ Massachusetts Institute of Technology (MIT) licence, and the manuscript,
 figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit 2f2728a+ of it.
+manuscript was built from commit 899a67d+ of it.
 ---
 
 
@@ -2355,35 +2335,35 @@ the original draft, review and editing, and visualisation.
 
 42. Clinical and Laboratory Standards Institute. 2026. Performance standards for antimicrobial susceptibility testing, 36th ed. CLSI supplement M100. Clinical and Laboratory Standards Institute, Wayne, PA.
 
-43. Imai K, Keele L, Yamamoto T. 2010. Identification, inference and sensitivity analysis for causal mediation effects. Stat Sci 25:51-71. https://doi.org/10.1214/10-STS321.
+43. Tobin J. 1958. Estimation of relationships for limited dependent variables. Econometrica 26:24. https://doi.org/10.2307/1907382.
 
-44. Baron RM, Kenny DA. 1986. The moderator-mediator variable distinction in social psychological research: conceptual, strategic, and statistical considerations. J Pers Soc Psychol 51:1173-1182. https://doi.org/10.1037/0022-3514.51.6.1173.
+44. Beal SL. 2001. Ways to fit a PK model with some data below the quantification limit. J Pharmacokinet Pharmacodyn 28:481-504. https://doi.org/10.1023/A:1012299115260.
 
-45. Tobin J. 1958. Estimation of relationships for limited dependent variables. Econometrica 26:24. https://doi.org/10.2307/1907382.
+45. Rubin DB. 1987. Multiple imputation for nonresponse in surveys. John Wiley & Sons, New York, NY. https://doi.org/10.1002/9780470316696.
 
-46. Beal SL. 2001. Ways to fit a PK model with some data below the quantification limit. J Pharmacokinet Pharmacodyn 28:481-504. https://doi.org/10.1023/A:1012299115260.
+46. McCullagh P. 1980. Regression models for ordinal data. J R Stat Soc Series B Stat Methodol 42:109-127. https://doi.org/10.1111/j.2517-6161.1980.tb01109.x.
 
-47. Rubin DB. 1987. Multiple imputation for nonresponse in surveys. John Wiley & Sons, New York, NY. https://doi.org/10.1002/9780470316696.
+47. Brant R. 1990. Assessing proportionality in the proportional odds model for ordinal logistic regression. Biometrics 46:1171-1178.
 
-48. McCullagh P. 1980. Regression models for ordinal data. J R Stat Soc Series B Stat Methodol 42:109-127. https://doi.org/10.1111/j.2517-6161.1980.tb01109.x.
+48. Peterson B, Harrell FE Jr. 1990. Partial proportional odds models for ordinal response variables. J R Stat Soc Ser C Appl Stat 39:205. https://doi.org/10.2307/2347760.
 
-49. Brant R. 1990. Assessing proportionality in the proportional odds model for ordinal logistic regression. Biometrics 46:1171-1178.
+49. Kaplan EL, Meier P. 1958. Nonparametric estimation from incomplete observations. J Am Stat Assoc 53:457-481. https://doi.org/10.1080/01621459.1958.10501452.
 
-50. Peterson B, Harrell FE Jr. 1990. Partial proportional odds models for ordinal response variables. J R Stat Soc Ser C Appl Stat 39:205. https://doi.org/10.2307/2347760.
+50. Cox DR. 1972. Regression models and life-tables. J R Stat Soc Series B Stat Methodol 34:187-202. https://doi.org/10.1111/j.2517-6161.1972.tb00899.x.
 
-51. Kaplan EL, Meier P. 1958. Nonparametric estimation from incomplete observations. J Am Stat Assoc 53:457-481. https://doi.org/10.1080/01621459.1958.10501452.
+51. Field CA, Welsh AH. 2007. Bootstrapping clustered data. J R Stat Soc Series B Stat Methodol 69:369-390. https://doi.org/10.1111/j.1467-9868.2007.00593.x.
 
-52. Cox DR. 1972. Regression models and life-tables. J R Stat Soc Series B Stat Methodol 34:187-202. https://doi.org/10.1111/j.2517-6161.1972.tb00899.x.
+52. Schoenfeld D. 1982. Partial residuals for the proportional hazards regression model. Biometrika 69:239-241. https://doi.org/10.1093/biomet/69.1.239.
 
-53. Field CA, Welsh AH. 2007. Bootstrapping clustered data. J R Stat Soc Series B Stat Methodol 69:369-390. https://doi.org/10.1111/j.1467-9868.2007.00593.x.
+53. Grambsch PM, Therneau TM. 1994. Proportional hazards tests and diagnostics based on weighted residuals. Biometrika 81:515-526. https://doi.org/10.1093/biomet/81.3.515.
 
-54. Schoenfeld D. 1982. Partial residuals for the proportional hazards regression model. Biometrika 69:239-241. https://doi.org/10.1093/biomet/69.1.239.
+54. Efron B. 1979. Bootstrap methods: another look at the jackknife. Ann Stat 7:1-26. https://doi.org/10.1214/aos/1176344552.
 
-55. Grambsch PM, Therneau TM. 1994. Proportional hazards tests and diagnostics based on weighted residuals. Biometrika 81:515-526. https://doi.org/10.1093/biomet/81.3.515.
+55. Brown LD, Cai TT, DasGupta A. 2001. Interval estimation for a binomial proportion. Stat Sci 16:101-133. https://doi.org/10.1214/ss/1009213286.
 
-56. Efron B. 1979. Bootstrap methods: another look at the jackknife. Ann Stat 7:1-26. https://doi.org/10.1214/aos/1176344552.
+56. Imai K, Keele L, Yamamoto T. 2010. Identification, inference and sensitivity analysis for causal mediation effects. Stat Sci 25:51-71. https://doi.org/10.1214/10-STS321.
 
-57. Brown LD, Cai TT, DasGupta A. 2001. Interval estimation for a binomial proportion. Stat Sci 16:101-133. https://doi.org/10.1214/ss/1009213286.
+57. Baron RM, Kenny DA. 1986. The moderator-mediator variable distinction in social psychological research: conceptual, strategic, and statistical considerations. J Pers Soc Psychol 51:1173-1182. https://doi.org/10.1037/0022-3514.51.6.1173.
 
 58. Benjamini Y, Hochberg Y. 1995. Controlling the false discovery rate: a practical and powerful approach to multiple testing. J R Stat Soc Series B Stat Methodol 57:289-300. https://doi.org/10.1111/j.2517-6161.1995.tb02031.x.
 

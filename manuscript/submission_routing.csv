@@ -12,18 +12,12 @@ Results,9,Read the plate late enough and the concentration response reverses,sup
 Results,10,How much drug it takes and how long it takes are two different things,supplement,S4,444,"resistance and tolerance as separate axes; this is the prior literature's claim, not this paper's finding"
 Results,11,"One culture, two plated volumes, two tolerance labels",main,8,618,"one culture, two plated volumes, two labels -- the boundary made experimental"
 Discussion,,Conclusion,main,,367,"part of the argument, not the evidence"
-Materials and Methods,,"The corpus screened, and how five deposits came out of it",main,,201,no word limit at this venue: full Methods stays in the article
-Materials and Methods,,The five deposits analysed,main,,438,no word limit at this venue: full Methods stays in the article
-Materials and Methods,,The prospective experiment,main,,394,no word limit at this venue: full Methods stays in the article
-Materials and Methods,,"Two kinds of limit, kept apart (operational assay floor vs. reported limit of quantification)",main,,452,no word limit at this venue: full Methods stays in the article
-Materials and Methods,,"Posterior probability of assay floors, and what remains unresolved",main,,198,no word limit at this venue: full Methods stays in the article
-Materials and Methods,,Causal mediation of the resistance association,main,,101,no word limit at this venue: full Methods stays in the article
-Materials and Methods,,What each analysis was fitted to,main,,105,no word limit at this venue: full Methods stays in the article
-Materials and Methods,,"Dynamic range, and the two boundaries it sets",main,,140,no word limit at this venue: full Methods stays in the article
-Materials and Methods,,Estimation,main,,403,no word limit at this venue: full Methods stays in the article
-Materials and Methods,,The decomposition of a crossing time,main,,91,no word limit at this venue: full Methods stays in the article
-Materials and Methods,,Multiplicity,main,,34,no word limit at this venue: full Methods stays in the article
-Materials and Methods,,Reproducibility,main,,120,no word limit at this venue: full Methods stays in the article
+Materials and Methods,,Study design and data sources,main,,675,no word limit at this venue: full Methods stays in the article
+Materials and Methods,,Prospective experimental validation,main,,394,no word limit at this venue: full Methods stays in the article
+Materials and Methods,,Assay floors and censoring,main,,512,no word limit at this venue: full Methods stays in the article
+Materials and Methods,,Reachability and identifiability boundaries,main,,140,no word limit at this venue: full Methods stays in the article
+Materials and Methods,,Statistical analysis,main,,760,no word limit at this venue: full Methods stays in the article
+Materials and Methods,,Reproducibility,main,,98,no word limit at this venue: full Methods stays in the article
 Materials and Methods,,Ethics,main,,86,no word limit at this venue: full Methods stays in the article
 Materials and Methods,,Declaration of generative AI and AI-assisted technologies in the manuscript preparation process,main,,111,no word limit at this venue: full Methods stays in the article
 Materials and Methods,,Data availability,main,,139,no word limit at this venue: full Methods stays in the article
