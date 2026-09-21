@@ -1,6 +1,6 @@
 {
   "script": "src/audit_manuscript.py",
-  "utc": "2026-09-21T05:57:24+00:00",
+  "utc": "2026-09-21T15:37:23+00:00",
   "checkers": [
     "check_abstract_length",
     "check_arithmetic",
@@ -12,7 +12,7 @@
     "check_identity",
     "check_terms"
   ],
-  "n_words_audited": 36683,
+  "n_words_audited": 36518,
   "counts": {
     "high": 0,
     "medium": 0,
@@ -32,7 +32,7 @@
       "severity": "low",
       "kind": "audit-count-summary",
       "where": "whole repository",
-      "detail": "src/audit_claims.py runs 174 checks (run); 3 place(s) state that number: Methods (PAPER_COMPLETE.md) line 2185 = 174; manuscript/MANUSCRIPT.md line 1895 = 174; README.md line 44 = 174",
+      "detail": "src/audit_claims.py runs 174 checks (run); 3 place(s) state that number: Methods (PAPER_COMPLETE.md) line 2186 = 174; manuscript/MANUSCRIPT.md line 1896 = 174; README.md line 44 = 174",
       "expected": "174",
       "found": "174, 174, 174",
       "checker": "check_census"
@@ -112,7 +112,7 @@
     {
       "severity": "low",
       "kind": "unit-mpn-over-cfu-reference",
-      "where": "Table S5 legend, line 2562",
+      "where": "Table S5 legend, line 2563",
       "detail": "Table S5 divides every row by one reference stated in CFU/mL, but 2 row(s) are the most-probable-number deposit, so those ratios convert MPN into CFU without saying so",
       "expected": "the MPN rows marked as such, or the reference given per deposit",
       "found": "| Vijay, 15-day culture | 5.79 | 246x |; | Vijay, 60-day culture | 7.36 | 7x |",
