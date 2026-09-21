@@ -1864,7 +1864,7 @@ this deposit is one of two for which observability labels are refused.
 128, 32, 8, 4 and 1 µg/mL, triplicate log10 CFU at days 0, 3, 7 and 14
 (Kaur et al. 2024; figshare 26462791, CC BY 4.0) (14, 15). The 1
 µg/mL arm shows net growth rather than killing and is excluded from the
-dose comparison, leaving 4 to 128 µg/mL as the range compared (Section 9).
+dose comparison, leaving 4 to 128 µg/mL as the range compared (Section 8).
 
 A fifth dataset was evaluated only after the boundaries, thresholds, and
 modelling choices had been fixed. **Validation deposit:** amoxicillin-
@@ -1874,7 +1874,7 @@ below-limit readings retained as a placeholder (Dubey et al. 2026; article
 Source Data, CC BY 4.0) (17, 18). It was the only deposit found
 carrying all three fields the boundaries require, and no boundary,
 threshold or modelling choice in this paper was informed by it; it is
-used nowhere else in the paper except to confirm them (Section 8).
+used nowhere else in the paper except to confirm them (Section 9).
 
 Each dataset's organism, drug, design and licence is summarised in Table
 1; the complete screening manifest and exclusion reasons accompany the
@@ -2153,7 +2153,7 @@ Massachusetts Institute of Technology (MIT) licence, and the manuscript,
 figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit ac74e4a+ of it.
+manuscript was built from commit 6990c62+ of it.
 
 ### Declaration of computational reproducibility
 
