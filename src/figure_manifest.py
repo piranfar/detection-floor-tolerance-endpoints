@@ -40,6 +40,7 @@ FIGURES = [
     ("S3", "fig3_endpoint_collapse", "a_late_endpoint_hides_the_dose"),
     ("S4", "figS4_corpus_funnel",    "the_corpus_screened"),
     ("S5", "figS5_two_platings",     "one_culture_two_platings"),
+    ("S6", "figS6_methods_overview", "overview_of_the_methods"),
 ]
 
 # fig13_parameter_transfer belongs to the published-rate-constant comparison,

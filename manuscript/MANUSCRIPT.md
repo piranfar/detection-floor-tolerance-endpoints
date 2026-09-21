@@ -22,7 +22,7 @@ ORCID: [0000-0003-3653-5739](https://orcid.org/0000-0003-3653-5739)
 
 **Correspondence:** Vahhab Piranfar, vahab.p@gmail.com
 
-**Figures:** 2 | **Tables:** 15 | **Boxes:** 2 | **Supplementary figures:** 5 | **Supplementary tables:** 14
+**Figures:** 2 | **Tables:** 15 | **Boxes:** 2 | **Supplementary figures:** 6 | **Supplementary tables:** 14
 
 ---
 
@@ -1617,7 +1617,8 @@ reported no assay floor by any route — no limit of detection, no limit of
 quantification, and no plated volume from which one could be derived.
 Eighteen deposits carried enough information to compute both boundaries at
 all, and five carried the complete set of fields the full analysis
-requires (Table 1, Figure S4).
+requires (Table 1, Figure S4). The full pipeline, from this screen through
+the prospective test of both boundaries, is summarised in Figure S6.
 
 These 78 candidates are a documented sample of the literature, assembled
 without a registered search protocol; the two boundaries are derived from
@@ -2077,3 +2078,9 @@ the four-log endpoint: every flask reaches it at 100 µL and falls short at
 sample-times at which the two platings' recorded fractions fall on opposite
 sides of a class cut, as the cut moves; the marked line is the cut the
 clinical classification of Section 2 uses.
+
+**Figure S6. Overview of the Methods.** The corpus screen that produced
+the five analysed deposits, the two boundaries derived from the assay's
+own definitions, and the prospective experiment that tests both forward.
+Deposit labels and every count are read from the same tables and
+reference list the Methods cite (Table 1, Table S12).

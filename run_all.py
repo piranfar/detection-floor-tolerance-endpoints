@@ -115,6 +115,8 @@ STAGES = [
      "src.figures.figS4_corpus_funnel"),
     ("fig S5 one culture, two plated volumes, two tolerance labels",
      "src.figures.figS5_two_platings"),
+    ("fig S6 overview of the Methods",
+     "src.figures.figS6_methods_overview"),
     ("aside   which published constants transfer (not a figure of this paper)",
      "src.figures.fig13_parameter_transfer"),
 

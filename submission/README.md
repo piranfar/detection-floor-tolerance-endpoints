@@ -34,12 +34,13 @@ hand. Delete it and rebuild it rather than correcting a file inside it.
 | `figure_S3_a_late_endpoint_hides_the_dose` | PNG, PDF, TIF | from `fig3_endpoint_collapse` |
 | `figure_S4_the_corpus_screened` | PNG, PDF, TIF | from `figS4_corpus_funnel` |
 | `figure_S5_one_culture_two_platings` | PNG, PDF, TIF | from `figS5_two_platings` |
+| `figure_S6_overview_of_the_methods` | PNG, PDF, TIF | from `figS6_methods_overview` |
 
 ## State of the manuscript at this build
 
 - Manuscript audit: {'high': 0, 'medium': 0, 'low': 11}
-- Article: 13,566 words
-- Supplement: 24,225 words
+- Article: 13,584 words
+- Supplement: 24,278 words
 
 ## Still to do before this can be sent
 

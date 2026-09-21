@@ -22,7 +22,7 @@ ORCID: [0000-0003-3653-5739](https://orcid.org/0000-0003-3653-5739)
 
 **Correspondence:** Vahhab Piranfar, vahab.p@gmail.com
 
-**Figures:** 2 | **Tables:** 3 | **Boxes:** 2 | **Supplemental figures:** 5 | **Supplemental tables:** 26
+**Figures:** 2 | **Tables:** 3 | **Boxes:** 2 | **Supplemental figures:** 6 | **Supplemental tables:** 26
 
 ---
 
@@ -728,7 +728,8 @@ reported no assay floor by any route — no limit of detection, no limit of
 quantification, and no plated volume from which one could be derived.
 Eighteen deposits carried enough information to compute both boundaries at
 all, and five carried the complete set of fields the full analysis
-requires (Table 3, Figure S4).
+requires (Table 3, Figure S4). The full pipeline, from this screen through
+the prospective test of both boundaries, is summarised in Figure S6.
 
 These 78 candidates are a documented sample of the literature, assembled
 without a registered search protocol; the two boundaries are derived from
@@ -1072,7 +1073,7 @@ Massachusetts Institute of Technology (MIT) licence, and the manuscript,
 figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit cf21c60+ of it.
+manuscript was built from commit 2f2728a+ of it.
 ---
 
 ## Acknowledgments

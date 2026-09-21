@@ -1038,6 +1038,12 @@ sample-times at which the two platings' recorded fractions fall on opposite
 sides of a class cut, as the cut moves; the marked line is the cut the
 clinical classification of Section 2 uses.
 
+**Figure S6. Overview of the Methods.** The corpus screen that produced
+the five analysed deposits, the two boundaries derived from the assay's
+own definitions, and the prospective experiment that tests both forward.
+Deposit labels and every count are read from the same tables and
+reference list the Methods cite (Table 3, Table S1).
+
 
 ## Supplementary tables
 
