@@ -30,60 +30,43 @@ ORCID: [0000-0003-3653-5739](https://orcid.org/0000-0003-3653-5739)
 
 Tuberculosis treatment runs for four to six months [[R1]]. Shortening it means
 finding drugs that kill *Mycobacterium tuberculosis* faster, and that choice is
-made in a flask: the compounds that could shorten a regimen are picked out of
-in vitro killing experiments. The experiment is simple: grow the organism,
-add the drug, and at set times dilute a sample, spread it on a plate, and
-count the colonies, each standing for one bacterium alive when it was plated,
-and the counts over time are the killing curve.
+made in a flask: compounds are ranked by in vitro killing curves, counts of
+surviving colonies read off a plate over time.
 
-Every clinical microbiologist already knows the trap in that last step. A culture
-taken after antibiotics have started is not evidence of sterility. It is why
-blood cultures are drawn before the first dose. A drug suppresses growth, injures
-cells sublethally, carries over into the medium, and drives the population
-beneath what the plate can see; the plate then reports absence, and absence is
-not what happened. The rule is old, it is correct, and nobody disputes it.
+A negative culture taken after treatment has begun is not evidence of sterility,
+which is why blood cultures are drawn before the first dose. The plate also has
+a hard floor, and the pipette sets it: the smallest positive result is one
+colony, and what one colony means depends on the volume spread. Plate 100 µL and
+one colony is 10 bacteria per mL. Below that the plate reports no growth, which
+is not the same as nothing there. Write *L* for that floor and *N₀* for the
+starting density.
 
-The plate also has a hard floor, and the pipette sets it. The smallest positive
-result is one colony, and what one colony means depends on how much you spread.
-Plate 100 µL and one colony is 10 bacteria per mL. That is the floor. Anything
-below it comes back as no growth, which is not the same as nothing there. Write
-*L* for that floor and *N₀* for the starting density.
+Tuberculosis makes that floor expensive, because the phenotype invoked to explain
+why treatment takes so long is itself defined by a duration. Tolerance is the
+capacity of a genetically susceptible population to survive an exposure that
+should kill it: the drug still works, the bacteria take a long time to die, and
+that time is the measurement.
 
-Tuberculosis makes the old rule expensive, because the phenotype invoked to
-explain why treatment takes so long is itself defined by a duration. That
-phenotype is tolerance: the capacity of a genetically susceptible population to
-survive an exposure that should kill it. These bacteria are not resistant. The
-drug still works on them. They just take a long time to die, and that time is the
-measurement. A phenotype defined by a duration is defined by exactly the
-observation the old rule warns about.
-
-The field's response was to engineer around the warning rather than ignore it.
 Rather than asking whether a culture went negative, the modern definition asks
 how many logs the population fell: the minimum duration for killing, MDK, is the
-time to a specified fractional reduction (90, 99 or 99.99 per cent) and it is
-proposed as the tolerance counterpart to the minimum inhibitory concentration
-[[R2]][[R3]]. The choice of a *fraction* is the whole point. A ratio to the
-starting population is scale-free: if the count falls in a straight line on a log
-scale at rate *b*, the time to a *q*-log reduction is *q/b*, and the starting
-density cancels. By construction, MDK cannot be contaminated by how much culture
-went into the tube. That is the property it was built to have.
+time to a specified fractional reduction (90, 99 or 99.99 per cent), proposed as
+the tolerance counterpart to the minimum inhibitory concentration [[R2]][[R3]].
+The fraction is the whole point. A ratio to the starting population is
+scale-free: if the count falls in a straight line on a log scale at rate *b*, the
+time to a *q*-log reduction is *q/b*, and the starting density cancels. By
+construction MDK cannot be contaminated by how much culture went into the tube.
 
-Two things are worth separating before going further. As defined by Brauner and
-colleagues and codified in the field's consensus guidelines, MDK is not a
-plate-count metric: it was first measured from presence or absence of
-survivors in microwell arrays of about a hundred cells, a design chosen
-specifically to avoid dilution plating, and the guidelines say how the
+MDK as originally defined is not a plate-count metric: it was measured from
+presence or absence of survivors in microwell arrays of about a hundred cells, a
+design chosen to avoid dilution plating, and the consensus guidelines say how the
 smallest detectable count should be established [[R3]][[R56]]. What this paper
-examines is the form the tuberculosis field adopted: log-reduction endpoints
-computed from plate counts and most-probable-number series against a measured
-starting density. The floor problem belongs to that implementation, not the
-definition, and every deposit here uses it.
+examines is the form the tuberculosis field adopted, log-reduction endpoints
+computed from plate counts and most-probable-number series. The floor problem
+belongs to that implementation, not to the definition.
 
-The property holds in the definition. It does not hold in the measurement, and
-the gap between the two is what this paper is about. To show a four-log kill you
-have to be able to see four logs down. A *q*-log reduction can be estimated only
-if *q* logs are visible, and what is visible is bounded below by the floor. So an
-isolate has
+The property holds in the definition and fails in the measurement, and that gap
+is what this paper is about. To show a four-log kill you have to see four logs
+down, and what is visible is bounded below by the floor. So an isolate has
 
     headroom  h = log10(N₀ / L)
 
@@ -92,12 +75,10 @@ the drug worked. Where *h* < *q* the endpoint is unreachable before the drug is
 added. That is the first boundary, and we call it reachability.
 
 It gets worse when the last count lands on the floor. The fraction written down
-is then *L/N₀*: the floor divided by the starting density. It is not a
-measurement of how many survived. The drug has dropped out of it, and what is
-left is the pipette and the inoculum. The metric designed to be
-inoculum-independent becomes a pure inoculum readout precisely at the depth where
-tolerance is scored. That is the second boundary, and we call it
-identifiability.
+is then *L/N₀*, the floor divided by the starting density. The drug has dropped
+out of it; what is left is the pipette and the inoculum. A metric designed to be
+inoculum-independent becomes a pure inoculum readout at exactly the depth where
+tolerance is scored. That is the second boundary, identifiability.
 
 The bound is already in the papers that defined the assays. Vijay and colleagues,
 introducing the most-probable-number MDK for rifampicin (a count read off a
@@ -132,14 +113,37 @@ deposits reanalysed here) and must therefore be measured sample by sample rather
 than assumed; nor to ask what the published record looks like where the rule was
 not applied. <!--supp-->
 
-Inoculum-dependent tolerance measurements have been reported before, under a
-different mechanism: a persister assay in *Escherichia coli* was shown to give
-different tolerant fractions depending on growth phase and culture history at
-the time of sampling, attributed there to prophage induction and growth
-dynamics rather than to an assay floor [[R70]]. That report and this one agree
-on the symptom, a measurement that moves with how the culture was prepared
-rather than with the drug; they disagree on the mechanism, and neither rules
-out the other operating at once in a given assay.
+Inoculum-dependent tolerance measurements have been reported before under a
+different mechanism: an *Escherichia coli* persister assay gave different
+tolerant fractions depending on growth phase and culture history, attributed
+there to prophage induction rather than to an assay floor [[R70]]. That report
+and this one agree on the symptom and differ on the mechanism, and neither rules
+out the other operating in a given assay.
+
+No prior treatment converts a floor-level reading into the classification rule it
+becomes. When the last count sits at *L*, the recorded fraction is *L*/*N*₀, and
+the low, medium or high label is then a cut on starting density. That is the gap
+this paper fills. Two further failures stay distinct from it: a duration ceiling
+(the assay stopped looking) is not a count floor, and recording a below-limit
+flag is not the same as scoring a duration from the points so recorded.
+
+This study asks how deep a log-reduction tolerance endpoint can be measured at
+all, and whether isolates have been assigned tolerance phenotypes from outside
+that range. Two boundaries on the starting density follow from the definitions,
+one deciding whether an endpoint is reachable and the other whether a
+floor-level reading identifies a class, both computed from quantities a
+time-kill protocol already records.
+
+That question needs data recording three quantities (a starting density measured
+before treatment, a time series, and either a plated volume or a stated floor),
+and most do not. Of 78 candidate time-kill datasets assembled for this study, 45
+were inspected in full; of the 40 distinct literature deposits among them, **32
+state no assay floor by any route**. That is the first result, and it is why the
+five carried forward are five rather than fifty (Table S12).
+
+If the hypothesis holds, a tolerance call reported without its starting density
+and its assay floor cannot be interpreted, and the phenotypes assigned in its
+name are in part a record of how the assay was set up.
 
 The requirement is older still, and it is quantitative: NCCLS M26-A ties the
 plated volume to the endpoint, and separately requires the smallest accurately
@@ -149,56 +153,19 @@ persistence field's own consensus guideline, which catalogues at length what els
 can go wrong with a time-kill assay, raises neither the limit of detection nor
 the plated volume nor how deep a reduction the assay can report [[R56]]. <!--supp-->
 
-No prior treatment converts a floor-level reading into the classification rule
-it becomes. When the last count sits at *L*, the recorded fraction is *L*/*N*₀, and
-the low, medium or high label is then a cut on starting density. That is the gap
-this paper fills. Two further failures have to be kept distinct from it. A
-duration ceiling (the assay stopped looking) is not a count floor, which is the
-plate being unable to see. And recording a below-limit flag is not the same as
-scoring a duration from the points so recorded.
-
-This is testable rather than arguable, because one published deposit assigns the
-tolerance phenotype itself. Vijay and colleagues [[R5]][[R51]] scored 217 clinical
-*Mycobacterium tuberculosis* isolates as having low, medium or high tolerance to
-rifampicin, on thresholds recovered here from the deposited fractions rather
-than stated by the depositors (Results Section 2), and deposited alongside each call the starting most probable number,
-the growth rate, the isoniazid susceptibility and the killing readings the call
-was built from. The classification, the inputs to it, and the assay geometry that
-bounds it are all in the same file. <!--supp-->
-
-This study asks how deep a log-reduction tolerance endpoint can be measured at
-all, and whether real isolates have been assigned tolerance phenotypes from
-outside that range. Two boundaries on the starting density follow from the
-definitions, one deciding whether an endpoint is reachable and the other whether a
-floor-level reading identifies a class, and both are computed from quantities a
-time-kill protocol already records. Neither asks a laboratory to measure anything
-new.
-
-Answering that question at all requires deposits that record the three quantities
-the arithmetic needs (a starting density measured before treatment, a time
-series, and either a plated volume or a stated floor), and most do not. Of 78
-candidate time-kill datasets assembled for this study, 45 were inspected in
-full; of the 40 distinct literature deposits among them, **32 state no assay
-floor by any route**. That number is not a preamble to the analysis; it is the first
-result, and it is why the five deposits carried forward are five rather than
-fifty (Table S12).
-
-We test the two boundaries on the classification and the assay geometry of 217
-clinical isolates, then ask what the resulting phenotype tracks: drug
-susceptibility, or the physiological state of the culture. Four further deposits
-carry the question beyond one clinical panel: a six-laboratory consortium
-exercise distributing one strain under one written protocol [[R4]][[R23]], a
-concentration-by-time grid in the same organism [[R7]][[R37]], a panel of evolved
-clones in which the concentration and duration axes can be checked for
-independence [[R38]], and a hollow-fibre deposit [[R8]][[R36]] held out until
-every boundary was fixed. All five are published and openly licensed (Table 1).
-The two boundaries are then tested forward
-rather than backward, in a prospective experiment built to break them, with every
-prediction written down before a plate was counted. <!--supp-->
-
-If the hypothesis holds, a tolerance call reported without its starting density
-and its assay floor cannot be interpreted, and the phenotypes assigned in its
-name are, in part, a record of how the assay was set up.
+The two boundaries are tested here on a published rifampicin-tolerance
+classification of 217 clinical *M. tuberculosis* isolates, which deposits
+alongside each call the starting most probable number, the growth rate, the
+isoniazid susceptibility and the killing readings the call was built from
+[[R5]][[R51]]; the class thresholds are not stated there and are recovered here
+(Results Section 2). Four further deposits carry the question beyond one clinical
+panel: a six-laboratory consortium exercise distributing one strain under one
+written protocol [[R4]][[R23]], a concentration-by-time grid in the same organism
+[[R7]][[R37]], a panel of evolved clones in which the concentration and duration
+axes can be checked for independence [[R38]], and a hollow-fibre deposit
+[[R8]][[R36]] held out until every boundary was fixed (Table 1). Both boundaries
+are then tested forward in a prospective experiment built to break them, with
+every prediction written down before a plate was counted. <!--supp-->
 ---
 
 **Box 1. Four numbers that score an MDK.** *N₀* is the starting density. *L* is
@@ -322,19 +289,17 @@ three ordered classes; the other 14 carry the "MDR" category, which no
 ordered analysis can place (Table 5). What follows is an argument about the
 fraction the assay recorded, not about an independent clinical judgement.
 
-Eighteen isolates ended at the floor. They share one reported
-floor-level observation, but their true final counts are unknown below the
-floor, so the assay cannot tell their surviving burdens apart down there.
-That is not the same as saying they were killed to the same degree. Their
+Eighteen isolates ended at the floor. They share one reported floor-level
+observation, but their true final counts are unknown below the floor, so
+the assay cannot tell their surviving burdens apart down there. Their
 starting densities span 265-fold, from 23,000 to 6.1 × 10⁶ per mL, so the
-same terminal reading implies a different range of compatible reductions in
-each: at least 3.00 log reduction for the isolate that began at 23,000, at
-least 5.42 logs for the one that began at 6.1 × 10⁶, and in either case the
-true reduction may be anything from that bound down to complete kill. What
-the deposit records instead is a single number per isolate, *L*/*N₀*, and
+same terminal reading implies a different range of compatible reductions
+in each: at least 3.00 logs for the isolate that began at 23,000, at least
+5.42 for the one that began at 6.1 × 10⁶, and in either case the true
+reduction may be anything from that bound down to complete kill. What the
+deposit records instead is a single number per isolate, *L*/*N₀*, and
 those recorded fractions span the same 265-fold, from 3.8 × 10⁻⁶ to 1.0 ×
-10⁻³ (Fig. 1C), because that is what the ratio is. They are upper bounds on
-survival, not measurements of it.
+10⁻³ (Fig. 1C). They are upper bounds on survival, not measurements of it.
 
 The labels those eighteen received differ accordingly. Six isolates that
 began at 23,000 per mL recorded a fraction of 10⁻³ and were classified
@@ -420,9 +385,7 @@ classes, and the strict inequality fails. Those six are precisely the six
 the deposit records as medium rather than low. A rule written with the
 inequality the other way would have called all six low and been wrong six
 times out of six. That is a test the arithmetic could have failed and did
-not, and it is what licenses using the boundary in advance: given a floor,
-a set of thresholds and a starting density, the affected isolates can be
-named before any reading is taken.
+not.
 
 Two numbers in this section rest on reading the floor as a plate would, and
 both survive the assay's own likelihood: recomputing the twelve-six split
@@ -607,9 +570,9 @@ decides who can be called high. <!--supp-->
 
 If the effect is a property of assay geometry rather than of clinical
 sampling, it should appear where one protocol, one strain and one stock are
-handed out deliberately. Van Wijk and colleagues (2023) ran exactly that
+handed out deliberately. Van Wijk and colleagues ran exactly that
 exercise, sending a single stock of H37Rv to six blinded laboratories under
-one written protocol [[R23]][[R4]]. It does.
+one written protocol [[R23]][[R4]].
 
 The starting densities in Table 8 are the mean of quantified readings at
 day 0 or day 1 at the 100 µL plating, pooled over that laboratory's arms.
@@ -953,7 +916,7 @@ has no right to survive is a different organism, drug class and apparatus.
 The boundaries are derived from definitions, so they predict they will.
 <!--supp-->
 
-Dubey and colleagues (2026) report amoxicillin-clavulanate against
+Dubey and colleagues report amoxicillin-clavulanate against
 *Escherichia coli* in a hollow-fibre system [[R36]][[R8]]. Their Methods
 state 100 µL plated with counts per mL, so *L* = 10 CFU/mL is derived
 rather than inferred, and the file corroborates the derivation: all 229
@@ -974,13 +937,13 @@ than the data would have placed a full order of magnitude into every
 boundary. And its treated arm reads at or below the floor already at day
 zero while the paired control reads about 10⁶; the file cannot distinguish
 a sample drawn after exposure from a placeholder or a transcription error,
-so the reading is flagged rather than treated as a measured time zero.
+so the reading is flagged rather than treated as a measured time zero. <!--supp-->
 
 ### 10. A second distortion in M. tuberculosis: bacilli invisible to culture, not just below the floor
 
 Everything above is about the floor. One published observation in this
-organism shows that the floor is not the only reason a colony count
-understates the population, and the two failures must not be confused.
+organism shows the floor is not the only reason a colony count understates
+the population, and the two failures must not be confused.
 
 Evangelopoulos and colleagues counted the same mouse lungs three ways,
 colony count, a molecular bacterial load from 16S rRNA, and a most probable
@@ -989,43 +952,39 @@ regimens the colony count reads zero in every animal: in three arms, 18
 lungs in all, the plate declared every lung sterile while the most probable
 number on that same tissue ran from 1,450 to 18,700 per lung. The
 molecular load can be dismissed as nucleic acid outliving its owner; the
-most probable number cannot, because it is a culture, and growth in a
-dilution series requires an organism that is alive and culturable.
+most probable number cannot, because growth in a dilution series requires
+an organism that is alive and culturable.
 
-That gap is not the detection floor, and the arithmetic says so. For
-censoring to explain a plate reading of zero against 1,450 organisms in the
-same tissue, the colony count's floor would have to sit above 1,450 per
-lung, far less of the homogenate than any lung protocol plates. This is
-differential culturability, a described phenotype of *M. tuberculosis*
-with a literature of its own: resuscitation-promoting-factor-dependent
-bacilli dominate pre-treatment sputum and rise during chemotherapy [[R64]],
-both dependent and independent differentially culturable populations are
-recovered from patients whose solid-medium cultures return nothing
-[[R65]], and the mechanism has been reproduced experimentally, rifamycin
-action on ribonucleic acid (RNA) polymerase converting a starved
-population to over 90 per
-cent differentially detectable in vitro [[R66]], the same drug class every
-arm of the Evangelopoulos regimen carries.
+That gap is not the detection floor. For censoring to explain a plate
+reading of zero against 1,450 organisms in the same tissue, the colony
+count's floor would have to sit above 1,450 per lung, far less of the
+homogenate than any lung protocol plates. This is differential
+culturability, a described phenotype of *M. tuberculosis*:
+resuscitation-promoting-factor-dependent bacilli dominate pre-treatment
+sputum and rise during chemotherapy [[R64]], both dependent and independent
+differentially culturable populations are recovered from patients whose
+solid-medium cultures return nothing [[R65]], and rifamycin action on
+ribonucleic acid (RNA) polymerase converts a starved population to over 90
+per cent differentially detectable in vitro [[R66]], the same drug class
+every arm of the Evangelopoulos regimen carries.
 
-Reachability and identifiability are arithmetic on the plated volume; they
+Reachability and identifiability are arithmetic on the plated volume and
 would hold in an assay with perfect culturability. Differential
 culturability is biology, acts on the numerator rather than the floor, and
-nothing here derives or measures it. Neither depends on the other, and
-they push the same way: a count that is both floored and culture-selective
-understates the surviving population twice over, and the mouse model that
-decides which regimens enter clinical trials reads out in colony counts, in
-exactly this region.
+nothing here derives or measures it. They push the same way: a count that
+is both floored and culture-selective understates the surviving population
+twice over, and the mouse model that decides which regimens enter clinical
+trials reads out in colony counts, in exactly this region.
 
 That deposit establishes no floor of its own. Five further *M. tuberculosis*
-deposits in the same screen do, and they are not reassuring. Across those
-five, sputum from pulmonary tuberculosis, axenic culture, an auxotrophic
-H37Rv panel and two drug-development series, with floors from 13 to 200
-CFU/mL, **184 of 310 series could not have demonstrated a four-log
-reduction however completely the drug worked, and 240 of 310 could not have
-demonstrated five** (Table S11); one could not have shown four logs in a
-single one of its 123 series. None of these five carries the analysis
-above, and none is among the five deposits reanalysed in this paper; they
-say the reachability problem is not a property of one clinical panel.
+deposits in the same screen do. Across those five, sputum from pulmonary
+tuberculosis, axenic culture, an auxotrophic H37Rv panel and two
+drug-development series, with floors from 13 to 200 CFU/mL, **184 of 310
+series could not have demonstrated a four-log reduction however completely
+the drug worked, and 240 of 310 could not have demonstrated five** (Table S11); one could not have shown four logs in a single one of its 123 series.
+None of these five carries the analysis above, and none is among the five
+reanalysed here; they say the reachability problem is not a property of one
+clinical panel.
 
 ### 11. A prospective E. coli experiment confirms the floor artifact: one culture, two plated volumes, two conflicting labels
 
@@ -1234,8 +1193,7 @@ term from below and not from both sides; it could be almost nothing. The
 exact part is the stronger half, and the choice of plated volume is what
 sets the floor. <!--supp-->
 
-The standard is not silent on that choice, and this is the paper's
-sharpest finding rather than an awkwardness for it. M26-A's own section
+The standard is not silent on that choice. M26-A's section
 1.3.2.5, *Volume Transferred*, ties the volume to the endpoint with a
 counting rule: after the defined 99.9 per cent killing, at least ten
 colonies must remain [[R31]] (for a standard inoculum of 5 × 10⁵ per mL
@@ -1243,7 +1201,7 @@ that means at least 20 µL streaked, so a 10 µL streak fails the rule), and
 section 3.1 separately requires the smallest detectable count to be
 established by serial dilution. A guideline written in 1999 already
 required both numbers this paper asks for. The deposits reanalysed here do
-not meet it, not for lack of care but because the endpoint moved: M26-A
+not meet it because the endpoint moved: M26-A
 nowhere contemplates a four-log call, and the volume rule did not travel
 with the deeper endpoints.
 
@@ -1330,17 +1288,15 @@ its two associations is carried by the geometry of the assay and by
 isolates that are not independent of each other, not that their
 classification is empty. <!--supp-->
 
-The prospective experiment has a limitation of its own, and it is the one a
-reader of this paper should raise first. Its samples were diluted in saline
-and plated; they were not washed, filtered or treated to inactivate the
-drug, and no carryover control was run. Antibiotic carried onto the plate
-suppresses colony formation without killing anything, the same class of
-counting artefact this paper is about, and at the shallow dilutions a
-culture near its floor is read on, dilution is the only thing containing
-it. The design is conservative in this respect rather than clean: the
-larger plated volume carries ten times more drug to the plate, so
-carryover would shrink the very difference between the two platings that
-Section 11 reports, not manufacture it. But the experiment cannot exclude
+The prospective experiment has a limitation a reader should raise first.
+Its samples were diluted in saline and plated; they were not washed,
+filtered or treated to inactivate the drug, and no carryover control was
+run. Antibiotic carried onto the plate suppresses colony formation
+without killing anything, the same class of counting artefact this paper
+is about. The design is conservative in this respect rather than clean:
+the larger plated volume carries ten times more drug to the plate, so
+carryover would shrink the difference between the two platings that
+Section 11 reports, not manufacture it. The experiment cannot exclude
 carryover, and a repetition should include the control that would.
 
 Several further limitations bound what the analysis can establish; each
@@ -1348,16 +1304,15 @@ points at the experiment that would settle the question, and the ones
 bearing on the claims made are given here, with the rest in the
 supplement.
 
-This paper has already acted on the first rather than merely declaring it.
+This paper has already acted on the first rather than declaring it.
 Flasks from one laboratory share a starting culture; repeat isolates come
 from a patient already counted. Every conclusion from the two primary
-deposits was recomputed at the level where the observations really are
-independent, listed one line at a time rather than summarised (Table S8):
-twenty survive unchanged, six survive with much wider uncertainty, five do
-not survive and **have already been removed from the text above**, and one
-is withdrawn because the null it was tested against was already false
-before any data were seen. The ledger is printed so a reader can check the
-dropping was done rather than promised.
+deposits was recomputed at the level where the observations are
+independent, listed one line at a time (Table S8): twenty survive
+unchanged, six survive with much wider uncertainty, five do not survive
+and **have already been removed from the text above**, and one is
+withdrawn because the null it was tested against was already false before
+any data were seen.
 
 The evidence between laboratories rests on six laboratories, not on
 hundreds of flasks. Every flask in a laboratory was seeded from the same
@@ -1434,17 +1389,15 @@ falls out of the record between the bench and the reader: off the end of a
 spreadsheet, or into a column nobody completed. <!--supp-->
 
 **Choose the depth of the endpoint to fit the headroom actually available,
-rather than densifying the inoculum merely to buy more.** The inoculum this
-needs can be worked out before the experiment: seeding above *L* ·
+rather than densifying the inoculum merely to buy more.** The inoculum
+needed can be worked out before the experiment: seeding above *L* ·
 max(10^*q*, 1/*c*₁) makes both failure modes impossible, the endpoint that
 was never reachable and the last count that lands on the floor; for this
 assay that is 230,000 per mL. Seeding higher also changes the experiment,
 because a denser culture is a different physiological state, and
-physiological state is what the tolerance label tracks, so where the deep
+physiological state is what the tolerance label tracks. Where the deep
 endpoint is wanted, lower the assay floor instead; where the headroom will
-not carry it either way, the shallower endpoint is the honest one, and
-growth state belongs on the report whichever is chosen. This is a design
-decision that is currently not being made.
+not carry it either way, the shallower endpoint is the honest one.
 
 **Model an ordered label as ordered.** A tolerance class is low, medium or
 high. Scoring that 0, 1, 2 and fitting a line asserts that the step from
@@ -1456,9 +1409,7 @@ effects into one null. <!--supp-->
 
 **Treat an endpoint at the floor as a bound, not a value.** Analysed as a
 measurement it manufactures differences between isolates whose final
-viable burdens the assay could not tell apart, and the same censored
-reading stands for a different demonstrated kill at every starting
-density.
+viable burdens the assay could not tell apart.
 
 None of this requires new apparatus or a statistician, and to make that
 concrete the four checks are released as a small command-line tool
@@ -1475,9 +1426,9 @@ can be run before an experiment rather than after it. <!--supp-->
 **Fix the inoculum, or adjust for it, before comparing tolerance across
 groups.** The comparison that motivated this work, resistant against
 susceptible isolates, is confounded by a ten-fold difference in starting
-density, and nobody knows why that difference is there. Until it is
-understood, group comparisons of tolerance in clinical isolates should
-carry the starting density as a covariate.
+density. Until that difference is understood, group comparisons of
+tolerance in clinical isolates should carry the starting density as a
+covariate.
 
 **Box 2. The minimum information a time-kill assay must report.** Five
 fields that make a reported tolerance endpoint recomputable by a reader.
@@ -1502,60 +1453,54 @@ the test applied to every deposit in this article.
 A time-kill guide already exists and this five-field minimum does not
 replace it: ASTM International (the American Society for Testing and Materials)
 guide E2315 sets out how to run and report a time-kill
-procedure in general (organism, media, neutralisation, raw counts) for
-antimicrobial products broadly, and none of its reporting
-requirements is *L*, headroom or a censoring convention specific to a
-duration endpoint cut on a fraction of the starting count [[R69]]. The five
-fields above are additional to that guide, not a substitute for it, and
-apply wherever a killing curve is read against an assay floor to score how
-long killing took rather than only whether it happened.
+procedure in general (organism, media, neutralisation, raw counts), and
+none of its reporting requirements is *L*, headroom or a censoring
+convention specific to a duration endpoint cut on a fraction of the
+starting count [[R69]]. The five fields above are additional to that guide,
+and apply wherever a killing curve is read against an assay floor to
+score how long killing took rather than only whether it happened.
 
 ---
 
 ### Conclusion
 
 A plate that grows nothing under antibiotic has never been evidence that
-the flask was sterile, and the field knows it. The remedy adopted was to
-stop asking whether the culture went negative and to start asking how far
-it fell, expressed as a fraction of where it began so that the starting
-culture could not matter. We find that the fraction stops being a fraction
-once the population reaches the floor. What the deposit records from that
-point is *L*/*N₀*, which moves with the starting density and not with the
-surviving population: in this deposit, for fifteen per cent of isolates at
-the depth the classification uses, and for the eighteen isolates whose
-recorded label a single threshold on their inoculum reproduces exactly,
-because for twelve of them no count below the floor would have changed
-which class the rule could return.
+the flask was sterile. The remedy adopted was to stop asking whether the
+culture went negative and to start asking how far it fell, expressed as a
+fraction of where it began so that the starting culture could not matter.
+The fraction stops being a fraction once the population reaches the
+floor. What is recorded from that point is *L*/*N₀*, which moves with the
+starting density and not with the surviving population: here for fifteen
+per cent of isolates at the depth the classification uses, and for the
+eighteen isolates whose recorded label a single threshold on their
+inoculum reproduces exactly.
 
-The consequence is that a tolerance call made without its headroom cannot
-be told apart from an inoculum measurement, and that the phenotype
-associated with survival after correction tracks physiological state at
-least as much as drug susceptibility, not that tolerance is an artefact.
+A tolerance call made without its headroom cannot be told apart from an
+inoculum measurement, and the phenotype associated with survival after
+correction tracks physiological state at least as much as drug
+susceptibility. That is not the same as saying tolerance is an artefact.
 Report the starting density and the assay floor. Match the depth of the
-endpoint to the range actually available. Treat a reading at the floor
-as a bound. Do those
-three things and a tolerance classification would mean the same in one
-laboratory as in the next. Until then, some of what the field calls
-tolerance cannot be separated from a record of how much culture went into
-the tube.
+endpoint to the range actually available. Treat a reading at the floor as
+a bound. Until those three things are routine, some of what the field
+calls tolerance cannot be separated from a record of how much culture
+went into the tube.
 
 What this study adds is a way to see the problem before the plates are
 poured: two boundaries computed from quantities a time-kill protocol
 already records, a classification that refuses rather than guesses when
 the assay cannot decide (Table S14), a five-field minimum that makes any
 killing endpoint recomputable (Box 2), and a small tool that returns the
-endpoint a planned assay can support. None of it asks a laboratory for a
-new measurement; the cost is five numbers written down. The return is a
-tolerance phenotype that means the same in one laboratory as in the next,
-and that can bear the weight regimen research already puts on it.
+endpoint a planned assay can support. The cost is five numbers written
+down. The return is a tolerance phenotype that means the same in one
+laboratory as in the next, and that can bear the weight regimen research
+already puts on it.
 
 ## Materials and Methods
 
 ### A screen of 78 time-kill datasets for M. tuberculosis and E. coli assay floors
 
 This study combined mathematical derivation, analysis of five public
-datasets, and a prospective *Escherichia coli* experiment to examine how
-assay floors constrain antibiotic-tolerance endpoints. We assembled 78
+datasets, and a prospective *Escherichia coli* experiment. We assembled 78
 candidate time-kill datasets from the published literature (21 August – 8
 September 2026) and screened 45 of them field by field for the three
 quantities the two boundaries below require: a pre-treatment starting
@@ -1567,13 +1512,11 @@ Forty-one distinct records were inspected, one of them this paper's own
 prospective experiment. Of the 40 remaining literature deposits, 32
 reported no assay floor by any route: no limit of detection, no limit of
 quantification, and no plated volume from which one could be derived.
-Eighteen deposits carried enough information to compute both boundaries
-at all, and five carried the complete set of fields the full analysis
-requires (Table 1, Figure S4). The full pipeline, from this screen through
-the prospective test of both boundaries, is summarised in Figure S6.
-
-These 78 candidates are a documented sample of the literature, assembled
-without a registered search protocol; the two boundaries are derived from
+Eighteen carried enough information to compute both boundaries, and five
+carried the complete set of fields the full analysis requires (Table 1,
+Figure S4). The full pipeline is summarised in Figure S6. These 78
+candidates are a documented sample of the literature, assembled without a
+registered search protocol; the two boundaries are derived from
 definitions rather than estimated from the corpus's size, so a single
 deposit with a stated floor is enough to demonstrate them.
 
@@ -1584,42 +1527,40 @@ concentration, minimum durations for 90, 99 and 99.99 per cent killing at
 15 and 60 days of prior culture, most probable number readings at days 0,
 2 and 5, a growth-rate proxy, isoniazid susceptibility with the resistance
 mutation where present, and the authors' own tolerance level for each
-isolate (Vijay et al. 2024; eLife 93243 supplementary file 2) [[R5]]. Of
-the 217 rows, 43 are follow-up isolates from patients already represented,
-so a baseline-only stratum is analysed separately.
+isolate [[R5]]. Of the 217 rows, 43 are follow-up isolates from patients
+already represented, so a baseline-only stratum is analysed separately.
 
 **The six-laboratory exercise:** *M. tuberculosis* H37Rv from one stock,
-distributed with one written protocol to six blinded laboratories (van
-Wijk et al. 2023; figshare 19766083, CC BY 4.0) [[R23]][[R4]]. Moxifloxacin
-and isoniazid at one and ten times the minimum inhibitory concentration,
-three flasks per arm, each sample plated at four volumes: 100 µL
-quadruplicate, 10 µL as four drops, 10 µL as a single drop, and 2.5 µL as
-a single drop, giving three distinct floors spanning 1.60 log10 within a
-single flask-visit [[R34]]. The file holds 2,775 readings; the analysis
-set, after dropping unusable values and pre-treatment visits, is 2,580.
+distributed with one written protocol to six blinded laboratories
+[[R23]][[R4]]. Moxifloxacin and isoniazid at one and ten times the minimum
+inhibitory concentration, three flasks per arm, each sample plated at four
+volumes: 100 µL quadruplicate, 10 µL as four drops, 10 µL as a single
+drop, and 2.5 µL as a single drop, giving three distinct floors spanning
+1.60 log10 within a single flask-visit [[R34]]. The file holds 2,775
+readings; the analysis set, after dropping unusable values and
+pre-treatment visits, is 2,580.
 
 **Evolved clones:** 126 *Escherichia coli* clones from a parallel
 evolution experiment under amikacin, each carrying an endpoint minimum
-inhibitory concentration and a persister fraction (Windels et al. 2024;
-Zenodo 10.5281/zenodo.7550302, CC BY 4.0) [[R38]][[R6]]. Six of its 595
-surviving fractions are written as exact zeros with no named floor, so
-this deposit is one of two for which observability labels are refused.
+inhibitory concentration and a persister fraction [[R38]][[R6]]. Six of
+its 595 surviving fractions are written as exact zeros with no named
+floor, so this deposit is one of two for which observability labels are
+refused.
 
 **Concentration-by-time grid:** apramycin against *M. tuberculosis* at
 128, 32, 8, 4 and 1 µg/mL, triplicate log10 CFU at days 0, 3, 7 and 14
-(Kaur et al. 2024; figshare 26462791, CC BY 4.0) [[R37]][[R7]]. The 1
-µg/mL arm shows net growth rather than killing and is excluded from the
-dose comparison, leaving 4 to 128 µg/mL as the range compared (Section 8).
+[[R37]][[R7]]. The 1 µg/mL arm shows net growth rather than killing and is
+excluded from the dose comparison, leaving 4 to 128 µg/mL as the range
+compared (Section 8).
 
 A fifth dataset was evaluated only after the boundaries, thresholds, and
 modelling choices had been fixed. **Validation deposit:** amoxicillin-
 clavulanate against *Escherichia coli* in a hollow-fibre infection model,
 with 100 µL plated, measured day-zero densities for every culture, and
-below-limit readings retained as a placeholder (Dubey et al. 2026; article
-Source Data, CC BY 4.0) [[R36]][[R8]]. It was the only deposit found
-carrying all three fields the boundaries require, and no boundary,
-threshold or modelling choice in this paper was informed by it; it is
-used nowhere else in the paper except to confirm them (Section 9).
+below-limit readings retained as a placeholder [[R36]][[R8]]. It was the
+only deposit found carrying all three fields the boundaries require, and
+no boundary, threshold or modelling choice in this paper was informed by
+it; it is used nowhere else except to confirm them (Section 9).
 
 Each dataset's organism, drug, design and licence is summarised in Table
 1; the complete screening manifest and exclusion reasons accompany the

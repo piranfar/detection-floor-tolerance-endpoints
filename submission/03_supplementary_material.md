@@ -53,27 +53,20 @@ persistence field's own consensus guideline, which catalogues at length what els
 can go wrong with a time-kill assay, raises neither the limit of detection nor
 the plated volume nor how deep a reduction the assay can report (9).
 
-This is testable rather than arguable, because one published deposit assigns the
-tolerance phenotype itself. Vijay and colleagues (2, 10) scored 217 clinical
-*Mycobacterium tuberculosis* isolates as having low, medium or high tolerance to
-rifampicin, on thresholds recovered here from the deposited fractions rather
-than stated by the depositors (Results Section 2), and deposited alongside each call the starting most probable number,
-the growth rate, the isoniazid susceptibility and the killing readings the call
-was built from. The classification, the inputs to it, and the assay geometry that
-bounds it are all in the same file.
-
-We test the two boundaries on the classification and the assay geometry of 217
-clinical isolates, then ask what the resulting phenotype tracks: drug
-susceptibility, or the physiological state of the culture. Four further deposits
-carry the question beyond one clinical panel: a six-laboratory consortium
-exercise distributing one strain under one written protocol (3, 11), a
-concentration-by-time grid in the same organism (12, 13), a panel of evolved
-clones in which the concentration and duration axes can be checked for
-independence (14), and a hollow-fibre deposit (15, 16) held out until
-every boundary was fixed. All five are published and openly licensed (Table 3).
-The two boundaries are then tested forward
-rather than backward, in a prospective experiment built to break them, with every
-prediction written down before a plate was counted.
+The two boundaries are tested here on a published rifampicin-tolerance
+classification of 217 clinical *M. tuberculosis* isolates, which deposits
+alongside each call the starting most probable number, the growth rate, the
+isoniazid susceptibility and the killing readings the call was built from
+(2, 10); the class thresholds are not stated there and are recovered here
+(Results Section 2). Four further deposits carry the question beyond one clinical
+panel: a six-laboratory consortium exercise distributing one strain under one
+written protocol (3, 11), a concentration-by-time grid in the same organism
+(12, 13), a panel of evolved clones in which the concentration and duration
+axes can be checked for independence (14), and a hollow-fibre deposit
+(15, 16) held out until every boundary was fixed (Table 3). Both boundaries
+are then tested forward in a prospective experiment built to break them, with
+every prediction written down before a plate was counted.
+---
 
 Two of the claims this arithmetic supports are not testable and should not be
 read as though they were. If the last reading sits at the floor, the recorded
@@ -935,6 +928,15 @@ in a flask makes it a harder test, not a softer one: a rule fitted to
 tuberculosis time-kill data could be expected to fit more of it; what it
 has no right to survive is a different organism, drug class and apparatus.
 The boundaries are derived from definitions, so they predict they will.
+
+Two features of that deposit are the failure modes this framework is meant
+to catch. Its Methods give a nominal inoculum of 10⁵ CFU/mL while the file
+measures a median of 1.215 × 10⁶, so taking *N₀* from the Methods rather
+than the data would have placed a full order of magnitude into every
+boundary. And its treated arm reads at or below the floor already at day
+zero while the paired control reads about 10⁶; the file cannot distinguish
+a sample drawn after exposure from a placeholder or a transcription error,
+so the reading is flagged rather than treated as a measured time zero.
 
 ### Extended results for article section 8: A prospective E. coli experiment confirms the floor artifact: one culture, two plated volumes, two conflicting labels
 

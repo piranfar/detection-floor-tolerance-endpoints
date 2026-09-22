@@ -40,7 +40,7 @@ The organism is masked to `XX` throughout: 67 substitutions over 9 spellings.
 
 ## GROUP
 
-- `GROUP-1` = Brauner
+- `GROUP-1` = Vijay
 - `GROUP-10` = Aldridge
 - `GROUP-11` = Rabodoarivelo
 - `GROUP-12` = Pym
@@ -50,7 +50,7 @@ The organism is masked to `XX` throughout: 67 substitutions over 9 spellings.
 - `GROUP-16` = Savic
 - `GROUP-17` = Vilch
 - `GROUP-18` = Tabor
-- `GROUP-2` = Vijay
+- `GROUP-2` = Brauner
 - `GROUP-3` = Kaur
 - `GROUP-4` = Windels
 - `GROUP-5` = Dubey
