@@ -55,8 +55,10 @@ FIGURE_IMAGE = image_map()
 LEGEND = re.compile(r"^\*\*Figure (S?\d+)\.")
 TABLE_ROW = re.compile(r"^\s*\|")
 TABLE_RULE = re.compile(r"^\s*\|[\s:|-]+\|?\s*$")
-# **bold** and *italic*, taken in that order so the two asterisks win.
-INLINE = re.compile(r"(\*\*.+?\*\*|\*[^*\n]+?\*)")
+# [text](url), then **bold** and *italic*, taken in that order so the two
+# asterisks win and a link's own text is not re-split.
+INLINE = re.compile(r"(\[[^\]\n]+?\]\([^)\s]+?\)|\*\*.+?\*\*|\*[^*\n]+?\*)")
+MD_LINK = re.compile(r"^\[([^\]\n]+?)\]\(([^)\s]+?)\)$")
 
 
 def add_line_numbers(doc: Document) -> None:
@@ -101,11 +103,16 @@ def style_document(doc: Document, double_spaced: bool) -> None:
 
 
 def write_runs(par, text: str) -> None:
-    """Render **bold** and *italic* as runs; everything else is plain."""
+    """Render [text](url), **bold** and *italic* as runs; everything else plain."""
     for piece in INLINE.split(text):
         if not piece:
             continue
-        if piece.startswith("**") and piece.endswith("**") and len(piece) > 4:
+        link = MD_LINK.match(piece)
+        if link:
+            label, url = link.group(1), link.group(2)
+            # Print the label; append the URL only when it adds information.
+            par.add_run(label if label in url else f"{label} ({url})")
+        elif piece.startswith("**") and piece.endswith("**") and len(piece) > 4:
             par.add_run(piece[2:-2]).bold = True
         elif piece.startswith("*") and piece.endswith("*") and len(piece) > 2:
             par.add_run(piece[1:-1]).italic = True
