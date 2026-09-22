@@ -2152,7 +2152,7 @@ Massachusetts Institute of Technology (MIT) licence, and the manuscript,
 figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit dc28972+ of it.
+manuscript was built from commit 5433e8e+ of it.
 
 ### Declaration of computational reproducibility
 
@@ -2309,7 +2309,7 @@ the original draft, review and editing, and visualisation.
 
 63. Davidson-Pilon C. 2019. lifelines: survival analysis in Python. J Open Source Softw 4:1317. https://doi.org/10.21105/joss.01317.
 
-64. Piranfar V. 2026. Analysis code, audit scripts and headroom tool for "The detection floor bounds tolerance endpoints in Mycobacterium tuberculosis". GitHub. https://github.com/piranfar/detection-floor-tolerance-endpoints.
+64. Piranfar V. 2026. Analysis code, audit scripts and headroom tool for "Rifampicin tolerance classification is bounded by assay detection floor among clinical Mycobacterium tuberculosis isolates". GitHub. https://github.com/piranfar/detection-floor-tolerance-endpoints.
 
 ## Figure legends
 

@@ -60,12 +60,12 @@ quantification against its floor; a susceptibility-testing methodology critique.
 | Item | Requirement | State |
 |---|---|---|
 | Article type | Research Article. | Front matter reads `Research Article`. |
-| Title | No stated limit. | Retitled: names the finding and the design, expands "MDK", and drops the universal "every MDK" that the Discussion spent a paragraph walking back. 168 characters. |
+| Title | No stated limit. | "Rifampicin tolerance classification is bounded by assay detection floor among clinical *Mycobacterium tuberculosis* isolates" — names the organism, the drug, and the mechanism directly. 122 characters. |
 | Abstract | 250 words, 1–7 keywords. | Exactly 250 words. Seven keywords, retargeted to the journal's own vocabulary. |
-| Main text length | No limit, succinctness encouraged. | 15,400 words with Methods complete in the article (no word cap at this venue, so nothing needed condensing); 2 figures, 15 tables. |
-| Supplementary file | Encouraged; **can only be added or replaced at revision**, so it must be complete at first submission. | One file: three supplementary analyses, five supplementary figures and 14 supplementary tables. Materials and Methods now stays complete in the article (no word cap at this venue), so it no longer duplicates into the supplement. Built by `src/build_submission.py` from the same prose as the article, so the two cannot drift. |
+| Main text length | No limit, succinctness encouraged. | 12,200 words with Methods complete in the article (no word cap at this venue, so nothing needed condensing); 2 figures, 3 tables in the main text. |
+| Supplementary file | Encouraged; **can only be added or replaced at revision**, so it must be complete at first submission. | One file: three supplementary analyses, 26 supplementary tables and 6 supplementary figures. Materials and Methods now stays complete in the article (no word cap at this venue), so it no longer duplicates into the supplement. Built by `src/build_submission.py` from the same prose as the article, so the two cannot drift. |
 | Every supplementary item cited | Files "must be cited in the text". | Enforced by the builder, which fails the build if an item is uncited. |
-| Reference style | Numbered, citation order. | Generated per file from its own citation order: 27 in the article, 38 in the supplement. |
+| Reference style | Numbered, citation order. | Generated per file from its own citation order: 52 in the article, 29 in the supplement. |
 | Data availability | Required. | Paragraph at the end of Materials and Methods. |
 | Publication route | Subscription, not open access — this is what makes it free. | Requested explicitly in the cover letter. **Confirm it again on the submission form; the OA question is asked there and a wrong click costs USD 3,230.** |
 | Affiliation | Department, institution, city, country. | **Department of Microbiology, Iran University of Medical Sciences, Tehran, Iran.** In the manuscript front matter and in the cover letter signature. |
@@ -82,5 +82,4 @@ quantification against its floor; a susceptibility-testing methodology critique.
 | Item | What is needed |
 |---|---|
 | **Print colour** | The guide prices no print colour and offers free online colour. If the proof stage offers print colour, decline it. |
-| **Repository URL** | The code deposit is cited as a reference; its public URL is not yet fixed. |
-| **Article section numbering** | The Guide for Authors asks for numbered sections (1, 1.1, 1.1.1, ...) rather than headings alone. This manuscript uses `###`-level narrative headings (e.g. "1. The plate's floor sets how far down killing can be seen") without the decimal subsection numbers the guide illustrates. Word/LaTeX templates for this journal are not strict on this point in practice — many published JMM Research Articles use unnumbered or loosely-numbered headings — but if editorial queries it, renumbering is mechanical from the existing `### N.` markers and does not touch the prose. |
+| **Article section numbering** | The Guide for Authors asks for numbered sections (1, 1.1, 1.1.1, ...) rather than headings alone. This manuscript uses `###`-level narrative headings (e.g. "1. Rifampicin tolerance in 217 clinical isolates is scored against an unreported assay floor") without the decimal subsection numbers the guide illustrates. Word/LaTeX templates for this journal are not strict on this point in practice — many published JMM Research Articles use unnumbered or loosely-numbered headings — but if editorial queries it, renumbering is mechanical from the existing `### N.` markers and does not touch the prose. |

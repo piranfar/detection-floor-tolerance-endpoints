@@ -1,6 +1,6 @@
 # Submission package
 
-Built by `python -m src.build_submission_package` on 2026-09-21. Every file here is
+Built by `python -m src.build_submission_package` on 2026-09-22. Every file here is
 a copy of something the pipeline generated; nothing in this folder is edited by
 hand. Delete it and rebuild it rather than correcting a file inside it.
 
@@ -39,7 +39,7 @@ hand. Delete it and rebuild it rather than correcting a file inside it.
 ## State of the manuscript at this build
 
 - Manuscript audit: {'high': 0, 'medium': 0, 'low': 11}
-- Article: 12,262 words
+- Article: 12,267 words
 - Supplement: 23,170 words
 
 ## Still to do before this can be sent

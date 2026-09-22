@@ -1,3 +1,12 @@
 cff-version: 1.2.0
 title: >-
-  The detection floor bounds what a time-kill assay can report: minimum duration for killing and log-reduction endpoints in five published deposits and a prospective test
+  Rifampicin tolerance classification is bounded by assay detection floor
+  among clinical Mycobacterium tuberculosis isolates
+message: If you use this code or these analyses, please cite this work.
+authors:
+  - family-names: Piranfar
+    given-names: Vahhab
+    orcid: "https://orcid.org/0000-0003-3653-5739"
+repository-code: "https://github.com/piranfar/detection-floor-tolerance-endpoints"
+license: MIT
+license-url: "https://github.com/piranfar/detection-floor-tolerance-endpoints/blob/main/LICENSE"

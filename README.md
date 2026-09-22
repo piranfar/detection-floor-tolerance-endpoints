@@ -83,7 +83,7 @@ If you use the code or the analyses, cite the manuscript; `CITATION.cff` carries
 the machine-readable form. If you use any of the deposits, cite their depositors
 rather than this repository — none of that data was generated here.
 
-Vahhab Piranfar. The detection floor bounds tolerance endpoints in *Mycobacterium tuberculosis* ORCID [0000-0003-3653-5739](https://orcid.org/0000-0003-3653-5739).
+Vahhab Piranfar. Rifampicin tolerance classification is bounded by assay detection floor among clinical *Mycobacterium tuberculosis* isolates. ORCID [0000-0003-3653-5739](https://orcid.org/0000-0003-3653-5739).
 
 ## Licence
 
