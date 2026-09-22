@@ -56,7 +56,8 @@ the plated volume nor how deep a reduction the assay can report (9).
 This is testable rather than arguable, because one published deposit assigns the
 tolerance phenotype itself. Vijay and colleagues (2, 10) scored 217 clinical
 *Mycobacterium tuberculosis* isolates as having low, medium or high tolerance to
-rifampicin, and deposited alongside each call the starting most probable number,
+rifampicin, on thresholds recovered here from the deposited fractions rather
+than stated by the depositors (Results Section 2), and deposited alongside each call the starting most probable number,
 the growth rate, the isoniazid susceptibility and the killing readings the call
 was built from. The classification, the inputs to it, and the assay geometry that
 bounds it are all in the same file.
@@ -431,7 +432,8 @@ from.
 
 Take two flasks in the same treatment arm from different laboratories.
 Across 191 such pairs (45 further pairs the censoring could not settle are
-excluded rather than imputed), **66 pairs (34.6 per cent) are inversions**:
+excluded rather than imputed, and the pairs are built from 42 flasks in six
+laboratories, not 191 independent trials), **66 pairs (34.6 per cent) are inversions**:
 the flask in which the population fell faster crossed below the assay floor
 later (Table S20). Restrict to pairs whose rates differ by more than 0.10
 log10 per day, so the faster flask is unambiguously faster, and 23.0 per
@@ -914,10 +916,14 @@ from, all *Mycobacterium tuberculosis*. Of the 45 deposits whose series
 could be read in full, 18 permit reachability and identifiability to be
 computed once the floor is established on the tiers this paper uses for
 its own: stated by the depositor, derived from a recorded plated volume, or
-inferred from a pile-up of counts on a plate-plausible value. Across those,
-the condition the boundaries imply, that no series may present as a
+inferred from a pile-up of counts on a plate-plausible value. Seventeen of
+those are published literature; the eighteenth is this paper's own
+prospective *E. coli* deposit (Section 8), included here because it
+passes the same screen, not because it is being counted twice. Across all
+eighteen, the condition both boundaries imply, that no series may present as a
 measurement a reduction deeper than its own floor allows, holds in 2,210 of
-2,210 series. Ten of the eighteen name their organism, six distinct
+2,210 series (2,201 from the seventeen published deposits, 9 from this
+paper's own). Ten of the eighteen name their organism, six distinct
 species; the other eight do not, and are described in the data release
 rather than here. One is the held-out deposit below, fetched independently
 under a second identifier, so this corpus-wide check and the cold test are

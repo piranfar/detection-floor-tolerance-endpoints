@@ -6,11 +6,11 @@ Outputs of the earlier paper are not here; they live in `version_one/results/`.
 
 | | tables | figures | receipts |
 | --- | ---: | ---: | ---: |
-| total | 84 | 7 | 31 |
+| total | 84 | 10 | 31 |
 
 ## Tolerance and the assay floor (manuscript/PAPER_COMPLETE.md)
 
-**Figures.** `fig1_dynamic_range`, `fig2_rate_vs_duration`, `fig3_endpoint_collapse`, `fig4_independence`, `figS1_survival_and_cox`, `figS_designer_nomogram`
+**Figures.** `fig1_dynamic_range`, `fig2_rate_vs_duration`, `fig3_endpoint_collapse`, `fig4_independence`, `figS1_survival_and_cox`, `figS4_corpus_funnel`, `figS5_two_platings`, `figS6_methods_overview`, `figS_designer_nomogram`
 
 **Tables (63).**
 
@@ -90,9 +90,9 @@ Outputs of the earlier paper are not here; they live in `version_one/results/`.
 | --- | --- | --- |
 | `corpus_coverage.csv` | `exp45_screen_flow.py` | `build_corpus_long` |
 | `exp38_boundary_tests.csv` | `exp38_boundary_experiment.py` | quoted in the text only |
-| `exp38_experiment_readings.csv` | `exp38_boundary_experiment.py` | quoted in the text only |
-| `exp38_headroom_by_flask.csv` | `exp38_boundary_experiment.py` | `audit_claims`, `build_tables`, `figS_designer_nomogram` |
-| `exp38_threshold_sweep.csv` | `exp38_boundary_experiment.py` | `audit_claims`, `build_tables` |
+| `exp38_experiment_readings.csv` | `exp38_boundary_experiment.py` | `figS5_two_platings` |
+| `exp38_headroom_by_flask.csv` | `exp38_boundary_experiment.py` | `audit_claims`, `build_tables`, `figS5_two_platings`, `figS_designer_nomogram` |
+| `exp38_threshold_sweep.csv` | `exp38_boundary_experiment.py` | `audit_claims`, `build_tables`, `figS5_two_platings` |
 | `exp40_floor_signatures.csv` | `exp40_corpus_landscape.py` | quoted in the text only |
 | `exp40_landscape.csv` | `exp40_corpus_landscape.py` | quoted in the text only |
 | `exp41_mediation_without_floor.csv` | `exp41_mediation_without_floor.py` | quoted in the text only |
@@ -101,7 +101,7 @@ Outputs of the earlier paper are not here; they live in `version_one/results/`.
 | `exp43_plate_zero_vs_mpn.csv` | `exp43_below_the_floor_is_not_zero.py` | quoted in the text only |
 | `exp44_mpn_interval.csv` | `exp44_mpn_interval.py` | quoted in the text only |
 | `exp44_mpn_interval_summary.csv` | `exp44_mpn_interval.py` | `build_tables` |
-| `exp45_screen_flow.csv` | `exp45_screen_flow.py` | `build_tables` |
+| `exp45_screen_flow.csv` | `exp45_screen_flow.py` | `build_tables`, `figS4_corpus_funnel`, `figS6_methods_overview` |
 | `exp45_screen_studies.csv` | `exp45_screen_flow.py` | quoted in the text only |
 | `exp46_class_posterior.csv` | `exp46_class_posterior.py` | `build_tables` |
 | `exp46_class_posterior_summary.csv` | `exp46_class_posterior.py` | quoted in the text only |

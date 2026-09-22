@@ -3,7 +3,7 @@
 **Do not send this file anywhere the blinded copy is going.** It is
 the mapping that undoes the blinding.
 
-The organism is masked to `XX` throughout: 66 substitutions over 9 spellings.
+The organism is masked to `XX` throughout: 67 substitutions over 9 spellings.
 
 ## DRUG
 

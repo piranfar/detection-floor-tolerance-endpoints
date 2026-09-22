@@ -1,11 +1,11 @@
 ## Abstract
 
 Time-kill assays are the standard method for evaluating antibiotic
-tolerance, but constraints from starting bacterial density and the assay's
-detection floor are frequently overlooked, causing systematic
-misclassification of bacterial survival. We show how an unreported
-detection floor structurally distorts rifampicin tolerance classification
-in *Mycobacterium tuberculosis*.
+tolerance, but starting bacterial density and the assay's detection floor
+are frequently overlooked, causing systematic misclassification of
+bacterial survival. We show how an unreported detection floor
+structurally distorts rifampicin tolerance classification in
+*Mycobacterium tuberculosis*.
 
 We analyzed rifampicin tolerance against the assay's detection floor in 217
 clinical *M. tuberculosis* isolates, isoniazid-susceptible and
@@ -29,9 +29,9 @@ The *E. coli* experiment confirmed both boundaries outside
 conflicting tolerance labels to a single culture at six of 54 sample times.
 
 A rifampicin tolerance classification made without reporting starting
-density and detection floor is mathematically uninterpretable, and
-isoniazid-resistant tuberculosis, read at the edge of that floor, is where
-the distortion concentrates.
+density and detection floor is mathematically uninterpretable. Whether
+starting density explains isoniazid-resistant isolates' disproportionate
+exposure as a confounder or a mediator is unresolved here.
 
 **Keywords:** time-kill assay; limit of quantification; minimum duration for
 killing; antibiotic tolerance; colony counting; censored data;

@@ -139,6 +139,24 @@
       "redistributable": true,
       "in_repo": "data/raw/cryptic2022/",
       "note": "MIC compendium for 12,289 M. tuberculosis isolates across 13 drugs. exp16 tested MIC against MDK independence on 217 isolates from one study; this shows whether that MIC distribution is representative."
+    },
+    {
+      "key": "vijay2024",
+      "doi": "10.7554/eLife.93243",
+      "pmid": null,
+      "licence": "CC BY 4.0",
+      "redistributable": true,
+      "in_repo": "data/raw/tb/elife93243_supp2.xlsx",
+      "note": "The paper's primary deposit: 217 clinical M. tuberculosis isolates scored for rifampicin tolerance, supplementary file 2. Isolate collection approved under the ethics recorded in the article's own Methods (Institutional Research Board of Pham Ngoc Thach Hospital, Ho Chi Minh City Health Services, and Oxford University Tropical Research Ethics Committee OxTREC 030-07), reported here in Ethics."
+    },
+    {
+      "key": "dubey2026",
+      "doi": "10.1038/s41467-026-74323-2",
+      "pmid": "42288477",
+      "licence": "CC BY 4.0",
+      "redistributable": true,
+      "in_repo": "data/raw/dubey2026/source_data.xlsx",
+      "note": "The held-out validation deposit (Results Section 9): hollow-fibre amoxicillin-clavulanate pharmacodynamics against E. coli, analysed only after both boundaries were fixed. Full provenance, including the below-limit placeholder quirk and the nominal-vs-measured inoculum discrepancy, is in data/raw/dubey2026/PROVENANCE.json."
     }
   ]
 }

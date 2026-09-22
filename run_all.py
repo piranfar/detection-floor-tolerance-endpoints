@@ -98,6 +98,12 @@ STAGES = [
     ("exp44  an MPN floor is not a plate-count floor: the identifiability sweep, rerun with the assay's own likelihood",
      "src.experiments.exp44_mpn_interval"),
 
+    ("exp45  the screen, as one reconcilable flow",
+     "src.experiments.exp45_screen_flow"),
+
+    ("exp42  the two boundaries applied to every corpus deposit whose floor can be established",
+     "src.experiments.exp42_boundaries_across_the_corpus"),
+
     ("exp46  tolerance classification as posterior inference, with a refusal rule",
      "src.experiments.exp46_class_posterior"),
 
@@ -126,8 +132,6 @@ STAGES = [
      "src.build_references"),
     ("paper   assemble the complete document",
      "src.assemble_paper"),
-    ("supp    the supplemental file AAC wants separately",
-     "src.build_supplement"),
     ("split   the short main text and its supplement, for submission",
      "src.build_submission"),
     ("index   map results/ to the paper it serves",

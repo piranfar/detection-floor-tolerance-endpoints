@@ -1,6 +1,6 @@
 {
   "script": "src/experiments/exp29_floor_provenance.py",
-  "utc": "2026-09-19T22:08:03+00:00",
+  "utc": "2026-09-22T19:47:29+00:00",
   "data_sources": [
     "eLife 93243 supplementary file 2 (Vijay et al. 2024)",
     "figshare 19766083 (ERA4TB / van Wijk et al. 2023)",
@@ -14,7 +14,7 @@
       "deposit_matches": 0,
       "deposit_matches_stating_a_value": 0,
       "deposit_hits": [],
-      "project_record_strings_scanned": 1,
+      "project_record_strings_scanned": 7,
       "project_record_matches": 0,
       "project_record_hits": []
     },
@@ -88,7 +88,7 @@
       "deposit_matches": 0,
       "deposit_matches_stating_a_value": 0,
       "deposit_hits": [],
-      "project_record_strings_scanned": 19,
+      "project_record_strings_scanned": 25,
       "project_record_matches": 1,
       "project_record_hits": [
         {

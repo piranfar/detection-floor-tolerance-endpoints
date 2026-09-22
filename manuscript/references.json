@@ -872,5 +872,31 @@
     "identifier": "https://doi.org/10.1520/E2315-23",
     "retrieved": "",
     "supports": "Box 2: an existing general time-kill reporting guide, distinguished from the five-field minimum this paper proposes, which is additional to it rather than a substitute for it."
+  },
+  "R70": {
+    "kind": "article",
+    "authors": "Harms A, Fino C, Sørensen MA, Semsey S, Gerdes K",
+    "year": "2017",
+    "title": "Prophages and growth dynamics confound experimental results with antibiotic-tolerant persister cells",
+    "journal": "mBio",
+    "volume_pages": "8:e01964-17",
+    "publisher": "",
+    "repository": "",
+    "identifier": "https://doi.org/10.1128/mBio.01964-17",
+    "retrieved": "",
+    "supports": "Introduction/Discussion: an independent prior report that inoculum-dependent measurements distort antibiotic-tolerance assay results in E. coli, attributed there to growth-phase dynamics and prophage induction rather than an assay detection floor; cited to distinguish this paper's mechanism (floor-driven censoring) from a previously reported one (culture-state confounding) rather than claim the general symptom is unrecognized."
+  },
+  "R71": {
+    "kind": "article",
+    "authors": "Michael CT, Budak M, Maiello P, Kracinovsky K, Rodgers M, Tomko J, Lin PL, Flynn J, Linderman JJ, Kirschner D",
+    "year": "2025",
+    "title": "Rankings of tuberculosis antibiotic treatment regimens are sensitive to spatial scale, detection limit, and initial host bacterial burden",
+    "journal": "J Theor Biol",
+    "volume_pages": "",
+    "publisher": "",
+    "repository": "",
+    "identifier": "https://doi.org/10.1016/j.jtbi.2025.112176",
+    "retrieved": "",
+    "supports": "Discussion: an independent in silico demonstration, in a whole-host granuloma model rather than a plate assay, that the CFU detection threshold used to define treatment success changes which regimen ranks best; cited as convergent evidence from a different computational system that a detection limit can drive a classification a reader expects to be purely biological."
   }
 }

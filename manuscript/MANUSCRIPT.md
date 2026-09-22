@@ -132,6 +132,15 @@ deposits reanalysed here) and must therefore be measured sample by sample rather
 than assumed; nor to ask what the published record looks like where the rule was
 not applied. <!--supp-->
 
+Inoculum-dependent tolerance measurements have been reported before, under a
+different mechanism: a persister assay in *Escherichia coli* was shown to give
+different tolerant fractions depending on growth phase and culture history at
+the time of sampling, attributed there to prophage induction and growth
+dynamics rather than to an assay floor [[R70]]. That report and this one agree
+on the symptom, a measurement that moves with how the culture was prepared
+rather than with the drug; they disagree on the mechanism, and neither rules
+out the other operating at once in a given assay.
+
 The requirement is older still, and it is quantitative: NCCLS M26-A ties the
 plated volume to the endpoint, and separately requires the smallest accurately
 detectable count to be established by serial dilution of a known inoculum
@@ -151,7 +160,8 @@ scoring a duration from the points so recorded.
 This is testable rather than arguable, because one published deposit assigns the
 tolerance phenotype itself. Vijay and colleagues [[R5]][[R51]] scored 217 clinical
 *Mycobacterium tuberculosis* isolates as having low, medium or high tolerance to
-rifampicin, and deposited alongside each call the starting most probable number,
+rifampicin, on thresholds recovered here from the deposited fractions rather
+than stated by the depositors (Results Section 2), and deposited alongside each call the starting most probable number,
 the growth rate, the isoniazid susceptibility and the killing readings the call
 was built from. The classification, the inputs to it, and the assay geometry that
 bounds it are all in the same file. <!--supp-->
@@ -812,7 +822,8 @@ from.
 
 Take two flasks in the same treatment arm from different laboratories.
 Across 191 such pairs (45 further pairs the censoring could not settle are
-excluded rather than imputed), **66 pairs (34.6 per cent) are inversions**:
+excluded rather than imputed, and the pairs are built from 42 flasks in six
+laboratories, not 191 independent trials), **66 pairs (34.6 per cent) are inversions**:
 the flask in which the population fell faster crossed below the assay floor
 later (Table 11). Restrict to pairs whose rates differ by more than 0.10
 log10 per day, so the faster flask is unambiguously faster, and 23.0 per
@@ -921,10 +932,14 @@ from, all *Mycobacterium tuberculosis*. Of the 45 deposits whose series
 could be read in full, 18 permit reachability and identifiability to be
 computed once the floor is established on the tiers this paper uses for
 its own: stated by the depositor, derived from a recorded plated volume, or
-inferred from a pile-up of counts on a plate-plausible value. Across those,
-the condition the boundaries imply, that no series may present as a
+inferred from a pile-up of counts on a plate-plausible value. Seventeen of
+those are published literature; the eighteenth is this paper's own
+prospective *E. coli* deposit (Section 11), included here because it
+passes the same screen, not because it is being counted twice. Across all
+eighteen, the condition both boundaries imply, that no series may present as a
 measurement a reduction deeper than its own floor allows, holds in 2,210 of
-2,210 series. Ten of the eighteen name their organism, six distinct
+2,210 series (2,201 from the seventeen published deposits, 9 from this
+paper's own). Ten of the eighteen name their organism, six distinct
 species; the other eight do not, and are described in the data release
 rather than here. One is the held-out deposit below, fetched independently
 under a second identifier, so this corpus-wide check and the cold test are
@@ -1232,17 +1247,22 @@ not meet it, not for lack of care but because the endpoint moved: M26-A
 nowhere contemplates a four-log call, and the volume rule did not travel
 with the deeper endpoints.
 
-Take the assay's contribution out and what is left makes biological sense.
-Growth state predicts the tolerance class before and after adjustment for
-starting density (isoniazid needs KatG and active cell-wall synthesis
-[[R39]], rifampicin needs transcription [[R40]]), and a population that is
-not dividing offers less of what these drugs act on. The classification is
-reading physiological state, not drug susceptibility.
+Take the assay's contribution out and what is left is consistent with
+biology. Growth state predicts the tolerance class before and after
+adjustment for starting density (isoniazid needs KatG and active
+cell-wall synthesis [[R39]], rifampicin needs transcription [[R40]]), and
+a population that is not dividing offers less of what these drugs act
+on. The classification tracks physiological state at least as much as
+drug susceptibility.
 
 That axis is the one tuberculosis drug development already leans on.
 Killing assays of this design rank regimens before they enter trials, and
 tolerance followed in patients is now being read as within-host evolution
-[[R55]]. If a tolerance classification is partly an inoculum measurement,
+[[R55]]. A whole-host simulation of tuberculosis treatment reports the
+same sensitivity one step further downstream: which regimen ranks best
+in a granuloma model changes with the CFU detection threshold used to
+define success, independent of any question about tolerance
+classification [[R71]]. If a tolerance classification is partly an inoculum measurement,
 conclusions drawn from it, that one regimen sterilises faster than another,
 or that a patient's isolates are becoming more tolerant over therapy, are
 in part conclusions about how the assay was set up. The correction applied
@@ -1508,11 +1528,12 @@ because for twelve of them no count below the floor would have changed
 which class the rule could return.
 
 The consequence is that a tolerance call made without its headroom cannot
-be told apart from an inoculum measurement, and that the phenotype which
-does survive the correction is physiological state rather than drug
-susceptibility, not that tolerance is an artefact. Report the starting
-density and the assay floor. Match the depth of the endpoint to the range
-actually available. Treat a reading at the floor as a bound. Do those
+be told apart from an inoculum measurement, and that the phenotype
+associated with survival after correction tracks physiological state at
+least as much as drug susceptibility, not that tolerance is an artefact.
+Report the starting density and the assay floor. Match the depth of the
+endpoint to the range actually available. Treat a reading at the floor
+as a bound. Do those
 three things and a tolerance classification would mean the same in one
 laboratory as in the next. Until then, some of what the field calls
 tolerance cannot be separated from a record of how much culture went into
@@ -1725,7 +1746,14 @@ since the censored interval always contains zero and so is only
 compatible with the lowest class above this point. Both boundaries are
 properties of the method alone; seeding a culture above
 *L* · max(10^*q*, 1/*c*₁) makes both failure modes impossible before an
-experiment runs.
+experiment runs. The class thresholds *c*₁, *c*₂ are an input to this
+definition, not an output of it: *N*_id only tests a classification
+independently of the data being classified when the thresholds come from
+somewhere other than that data. Where a deposit states its own
+thresholds, the test is independent; where they are recovered from the
+deposit itself, as in Results Section 2, the agreement that follows is an
+identity rather than a test, and the manuscript says so at the point it
+occurs.
 
 ### Statistical analysis
 
@@ -1824,7 +1852,13 @@ This study analysed publicly available, de-identified datasets, and
 generated one time-kill experiment in a reference strain of *Escherichia
 coli*. No human or animal subjects were involved, no patient samples were
 collected, and no individual is identifiable from any material presented
-here. The prospective experiment was performed at the Department of
+here. The clinical isolates reanalysed in Section 1 through Section 5 were
+collected under the ethical approval reported by their depositors: the
+Institutional Research Board of Pham Ngoc Thach Hospital, the Ho Chi Minh
+City Health Services and the Oxford University Tropical Research Ethics
+Committee (OxTREC 030-07) [[R51]]; the isolates are deposited de-identified
+and CC BY 4.0 licensed for secondary analysis, and this manuscript performs
+no new sampling from any patient. The prospective experiment was performed at the Department of
 Microbiology, Iran University of Medical Sciences, Tehran, Iran, on a
 biosafety-level-1-appropriate quality-control strain (ATCC 25922); no
 institutional review board holds jurisdiction over secondary analysis of
