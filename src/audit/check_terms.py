@@ -18,9 +18,9 @@ THE RULE, AS THE MANUSCRIPT STATES IT.  The Methods subsection *Two kinds of
 limit, kept apart* declares:
 
     "Those two names are the precise ones and are used where *L* is defined or
-    its provenance discussed.  In running text *L* is the **assay floor**, and
-    that is the only short form used, so that "boundary" is left free for the
-    two derived boundaries of the next subsection and never denotes a value.
+    its provenance discussed.  In running text *L* is the **assay floor**, the
+    only short form used, so that "boundary" is left free for the two derived
+    boundaries of the next subsection.
     The event a time-to-event analysis records is correspondingly a first
     observed crossing below the assay floor."
 
@@ -165,9 +165,9 @@ from pathlib import Path
 # --------------------------------------------------------------------------
 
 _RULE_BOUNDARY = (
-    'In running text *L* is the **assay floor**, and that is the only short '
-    'form used, so that "boundary" is left free for the two derived boundaries '
-    'of the next subsection and never denotes a value.'
+    'In running text *L* is the **assay floor**, the only short form used, so '
+    'that "boundary" is left free for the two derived boundaries of the next '
+    'subsection.'
 )
 _RULE_EVENT = (
     'The event a time-to-event analysis records is correspondingly a first '

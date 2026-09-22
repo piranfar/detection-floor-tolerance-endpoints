@@ -13,24 +13,19 @@ Vahhab Piranfar
 *Material held back from the article for length. It is reported here rather than dropped, because each paragraph answers a question a reader of that section may reasonably ask.*
 
 The bound is already in the papers that defined the assays. Vijay and colleagues,
-introducing the most-probable-number MDK for rifampicin (a count read off a
-dilution series rather than off colonies on a plate) treated an MDK99.99 longer
-than ten days as high tolerance beyond the **time** window of the assay, not as a
-statement about the count floor (1). In the 217-isolate classification that
-follows from that assay they report that MDK99.99 at 15 days of recovery could be
-calculated for only 22 of 209 isolates and that the rest lay, in their words,
-"beyond the assay limits" (2). The ERA4TB consortium requires below- and
-above-quantification-limit flags together with the limit of quantification, and
-notes that pharmacometric models can use those flags (3); the same
-six-laboratory comparison then excluded both from its numerical analysis. Their
-2025 protocol states the geometry of the pipette explicitly: a 2.5 µL drop has a
-limit of detection above 2.6 log10 CFU/mL, and a lower limit requires a larger
-plated volume (4). Independently, a 2025 pharmacokinetic-pharmacodynamic
-analysis of hollow-fibre CFU series showed that censoring counts below 10 CFU
-(recording them only as "below the floor", with the true value unknown) biases
-regimen ranking (5), and a within-host tuberculosis tolerance study chose a
-shallower MDK threshold specifically so that more isolates could enter the
-analysis (6).
+introducing the most-probable-number MDK for rifampicin, treated an MDK99.99
+longer than ten days as high tolerance beyond the **time** window of the assay,
+not as a statement about the count floor (1), and in the 217-isolate
+classification that follows they report MDK99.99 at 15 days could be calculated
+for only 22 of 209 isolates, the rest falling outside what that assay could
+resolve (2). The ERA4TB consortium requires below- and
+above-quantification-limit flags together with the limit of quantification
+(3); the same six-laboratory comparison then excluded both from its numerical
+analysis, and its 2025 protocol states the geometry explicitly: a 2.5 µL drop has
+a limit of detection above 2.6 log10 CFU/mL (4). Independently, censoring
+hollow-fibre counts below 10 CFU biases regimen ranking (5), and a within-host
+tuberculosis tolerance study chose a shallower MDK threshold specifically so that
+more isolates could enter the analysis (6).
 
 The closest statement of the bound is in the framework's own methods paper, and
 we claim no priority over it. Brauner and colleagues, presenting a direct
@@ -45,13 +40,13 @@ deposits reanalysed here) and must therefore be measured sample by sample rather
 than assumed; nor to ask what the published record looks like where the rule was
 not applied.
 
-The requirement is older still, and it is quantitative: NCCLS M26-A ties the
-plated volume to the endpoint, and separately requires the smallest accurately
-detectable count to be established by serial dilution of a known inoculum
-(8). The endpoint has since moved and the rule did not travel with it. The
-persistence field's own consensus guideline, which catalogues at length what else
-can go wrong with a time-kill assay, raises neither the limit of detection nor
-the plated volume nor how deep a reduction the assay can report (9).
+The requirement is older still: NCCLS M26-A ties the plated volume to the
+endpoint and separately requires the smallest accurately detectable count
+to be established by serial dilution of a known inoculum (8). The
+endpoint has since moved and the rule did not travel with it, and the
+persistence field's own consensus guideline raises neither the limit of
+detection nor the plated volume nor how deep a reduction the assay can
+report (9).
 
 The two boundaries are tested here on a published rifampicin-tolerance
 classification of 217 clinical *M. tuberculosis* isolates, which deposits

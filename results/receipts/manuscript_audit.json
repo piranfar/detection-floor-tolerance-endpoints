@@ -1,6 +1,6 @@
 {
   "script": "src/audit_manuscript.py",
-  "utc": "2026-09-22T22:49:48+00:00",
+  "utc": "2026-09-22T23:00:05+00:00",
   "checkers": [
     "check_abstract_length",
     "check_arithmetic",
@@ -12,7 +12,7 @@
     "check_identity",
     "check_terms"
   ],
-  "n_words_audited": 34079,
+  "n_words_audited": 33979,
   "counts": {
     "high": 0,
     "medium": 0,
@@ -32,7 +32,7 @@
       "severity": "low",
       "kind": "audit-count-summary",
       "where": "whole repository",
-      "detail": "src/audit_claims.py runs 174 checks (run); 3 place(s) state that number: Methods (PAPER_COMPLETE.md) line 2135 = 174; manuscript/MANUSCRIPT.md line 1845 = 174; README.md line 44 = 174",
+      "detail": "src/audit_claims.py runs 174 checks (run); 3 place(s) state that number: Methods (PAPER_COMPLETE.md) line 2128 = 174; manuscript/MANUSCRIPT.md line 1838 = 174; README.md line 44 = 174",
       "expected": "174",
       "found": "174, 174, 174",
       "checker": "check_census"
@@ -49,7 +49,7 @@
     {
       "severity": "low",
       "kind": "named-items-not-resolved",
-      "where": "results, 4. Isoniazid-resistant isolates appear more rifampicin-toler (line 680): \"Five are recorded almost only for resistant isolates, so their missingness is the exposure: the two susceptibi\"",
+      "where": "results, 4. Isoniazid-resistant isolates appear more rifampicin-toler (line 675): \"Five are recorded almost only for resistant isolates, so their missingness is the exposure: the two susceptibi\"",
       "detail": "resolved: the sentence says 5 and then names a list. Not resolved: 2 of its 6 items do not open with a determiner or a count (none of the 119 susceptible; none), so the list runs into qualifying clauses and cannot be counted mechanically. Count it by eye",
       "expected": "5 items named",
       "found": "a list of 6 fragments",
@@ -58,7 +58,7 @@
     {
       "severity": "low",
       "kind": "quantity-in-words-and-figures",
-      "where": "Table 11 legend (line 1024) and results, 7. A slower-killing culture can still cross the assay floor  (line 1051)",
+      "where": "Table 11 legend (line 1019) and results, 7. A slower-killing culture can still cross the assay floor  (line 1046)",
       "detail": "\"a half\" states in words what 70.4 per cent states in figures; the two sentences share arms, bootstrap, deleting, distance, half. Check they are the same quantity -- this rule matches on wording, not on arithmetic, because 70.4 is not a rounding of 50",
       "expected": "the figure, or the word, in both places",
       "found": "\"a half\" against 70.4 per cent",
@@ -67,7 +67,7 @@
     {
       "severity": "low",
       "kind": "quantity-in-words-and-figures",
-      "where": "Table 11 legend (line 1024) and results, 7. A slower-killing culture can still cross the assay floor  (line 1051)",
+      "where": "Table 11 legend (line 1019) and results, 7. A slower-killing culture can still cross the assay floor  (line 1046)",
       "detail": "\"a half\" states in words what 62.3 per cent states in figures; the two sentences share arms, bootstrap, deleting, distance, half. Check they are the same quantity -- this rule matches on wording, not on arithmetic, because 62.3 is not a rounding of 50",
       "expected": "the figure, or the word, in both places",
       "found": "\"a half\" against 62.3 per cent",
@@ -76,7 +76,7 @@
     {
       "severity": "low",
       "kind": "quantity-in-words-and-figures",
-      "where": "discussion (line 1533) and results, 7. A slower-killing culture can still cross the assay floor  (line 1007)",
+      "where": "discussion (line 1528) and results, 7. A slower-killing culture can still cross the assay floor  (line 1002)",
       "detail": "\"a third\" states in words what 34.6 per cent states in figures; the two sentences share assay, crossed, faster, fell, flask. Check they are the same quantity -- this rule matches on wording, not on arithmetic, because 34.6 is not a rounding of 33.3333",
       "expected": "the figure, or the word, in both places",
       "found": "\"a third\" against 34.6 per cent",
@@ -112,16 +112,16 @@
     {
       "severity": "low",
       "kind": "statistic-identity",
-      "where": "prose, line 728 vs prose, line 730",
-      "detail": "26 is used as a count at line 728 and as a p value at line 730; both windows name acquires, mcnemar, unpaired",
+      "where": "prose, line 723 vs prose, line 725",
+      "detail": "26 is used as a count at line 723 and as a p value at line 725; both windows name acquires, mcnemar, unpaired",
       "expected": "one statistical label for 26",
-      "found": "count at line 728, p_value at line 730",
+      "found": "count at line 723, p_value at line 725",
       "checker": "check_identity"
     },
     {
       "severity": "low",
       "kind": "unit-mpn-over-cfu-reference",
-      "where": "Table S5 legend, line 2470",
+      "where": "Table S5 legend, line 2463",
       "detail": "Table S5 divides every row by one reference stated in CFU/mL, but 2 row(s) are the most-probable-number deposit, so those ratios convert MPN into CFU without saying so",
       "expected": "the MPN rows marked as such, or the reference given per deposit",
       "found": "| Vijay, 15-day culture | 5.79 | 246x |; | Vijay, 60-day culture | 7.36 | 7x |",

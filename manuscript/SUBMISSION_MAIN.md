@@ -720,12 +720,11 @@ positive count**, one colony in that volume; where none is recorded it is
 inferred from the deposit and labelled as such. The term limit of
 quantification is used only in reporting what a source states.
 
-In running text *L* is the **assay floor**, and that is the only short
-form used, so that "boundary" is left free for the two derived boundaries
-of the next subsection and never denotes a value. The event a
-time-to-event analysis records is correspondingly a first observed
-crossing below the assay floor. What *L* is in each deposit is tabulated
-deposit by deposit (Table S12).
+In running text *L* is the **assay floor**, the only short form used, so
+that "boundary" is left free for the two derived boundaries of the next
+subsection. The event a time-to-event analysis records is correspondingly
+a first observed crossing below the assay floor. What *L* is in each
+deposit is tabulated deposit by deposit (Table S12).
 
 Two censoring problems are handled separately. A **count below the assay
 floor** is left-censored: the population is somewhere below a known
@@ -802,12 +801,12 @@ Log10 viable counts were modelled as a linear function of time using a
 **Tobit model** with observation-specific left-censoring limits, fitted by
 maximum likelihood (31); a censored reading contributes log Φ((limit −
 µ)/σ), the probability it fell below its own limit (Beal's M3 written
-for this assay (32)). As a computational consistency check, 50 imputed
-datasets were generated from the fitted truncated-normal distribution,
-analysed by ordinary least squares, and pooled using Rubin's rules
-(33); both procedures share the same distributional assumptions, and
-their agreement shows the answer does not depend on which arithmetic
-recovers it, not that the sub-floor distribution is normal.
+for this assay (32)). As a consistency check, 50 imputed datasets were
+generated from the fitted truncated-normal distribution, analysed by
+ordinary least squares, and pooled using Rubin's rules (33); both
+procedures share the same distributional assumptions, so their agreement
+shows the answer does not depend on which arithmetic recovers it, not that
+the sub-floor distribution is normal.
 
 The growth proxy is the deposit's time to an optical density of 0.4, in
 days, so it runs inversely to growth rate. **The tolerance label** was
@@ -832,11 +831,10 @@ proportionality tested on Schoenfeld residuals (41, 42).
 **The replicate-level bootstrap** (43) behind interval slopes resamples
 the three replicate counts with replacement, takes their mean, refits the
 concentration slope on each draw, and takes percentile intervals from
-20,000 draws, reported instead of the least-squares fit through the
+20,000 draws, reported instead of a least-squares fit through the
 deposited concentration means, which has two residual degrees of freedom
 and discards the replicate scatter. An interval on a proportion is the
-Jeffreys interval (44), which does not collapse to zero width at the
-sample sizes here.
+Jeffreys interval (44).
 
 **Causal mediation of the resistance association.** A linear
 product-of-coefficients mediation decomposes the total effect of
@@ -937,7 +935,7 @@ Massachusetts Institute of Technology (MIT) licence, and the manuscript,
 figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit dd8345f+ of it.
+manuscript was built from commit 6b34842+ of it.
 
 ### Declaration of computational reproducibility
 

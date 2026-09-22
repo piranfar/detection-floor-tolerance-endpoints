@@ -81,24 +81,19 @@ inoculum-independent becomes a pure inoculum readout at exactly the depth where
 tolerance is scored. That is the second boundary, identifiability.
 
 The bound is already in the papers that defined the assays. Vijay and colleagues,
-introducing the most-probable-number MDK for rifampicin (a count read off a
-dilution series rather than off colonies on a plate) treated an MDK99.99 longer
-than ten days as high tolerance beyond the **time** window of the assay, not as a
-statement about the count floor [[R53]]. In the 217-isolate classification that
-follows from that assay they report that MDK99.99 at 15 days of recovery could be
-calculated for only 22 of 209 isolates and that the rest lay, in their words,
-"beyond the assay limits" [[R51]]. The ERA4TB consortium requires below- and
-above-quantification-limit flags together with the limit of quantification, and
-notes that pharmacometric models can use those flags [[R23]]; the same
-six-laboratory comparison then excluded both from its numerical analysis. Their
-2025 protocol states the geometry of the pipette explicitly: a 2.5 µL drop has a
-limit of detection above 2.6 log10 CFU/mL, and a lower limit requires a larger
-plated volume [[R34]]. Independently, a 2025 pharmacokinetic-pharmacodynamic
-analysis of hollow-fibre CFU series showed that censoring counts below 10 CFU
-(recording them only as "below the floor", with the true value unknown) biases
-regimen ranking [[R54]], and a within-host tuberculosis tolerance study chose a
-shallower MDK threshold specifically so that more isolates could enter the
-analysis [[R55]]. <!--supp-->
+introducing the most-probable-number MDK for rifampicin, treated an MDK99.99
+longer than ten days as high tolerance beyond the **time** window of the assay,
+not as a statement about the count floor [[R53]], and in the 217-isolate
+classification that follows they report MDK99.99 at 15 days could be calculated
+for only 22 of 209 isolates, the rest falling outside what that assay could
+resolve [[R51]]. The ERA4TB consortium requires below- and
+above-quantification-limit flags together with the limit of quantification
+[[R23]]; the same six-laboratory comparison then excluded both from its numerical
+analysis, and its 2025 protocol states the geometry explicitly: a 2.5 µL drop has
+a limit of detection above 2.6 log10 CFU/mL [[R34]]. Independently, censoring
+hollow-fibre counts below 10 CFU biases regimen ranking [[R54]], and a within-host
+tuberculosis tolerance study chose a shallower MDK threshold specifically so that
+more isolates could enter the analysis [[R55]]. <!--supp-->
 
 The closest statement of the bound is in the framework's own methods paper, and
 we claim no priority over it. Brauner and colleagues, presenting a direct
@@ -141,17 +136,17 @@ were inspected in full; of the 40 distinct literature deposits among them, **32
 state no assay floor by any route**. That is the first result, and it is why the
 five carried forward are five rather than fifty (Table S12).
 
+The requirement is older still: NCCLS M26-A ties the plated volume to the
+endpoint and separately requires the smallest accurately detectable count
+to be established by serial dilution of a known inoculum [[R31]]. The
+endpoint has since moved and the rule did not travel with it, and the
+persistence field's own consensus guideline raises neither the limit of
+detection nor the plated volume nor how deep a reduction the assay can
+report [[R56]]. <!--supp-->
+
 If the hypothesis holds, a tolerance call reported without its starting density
 and its assay floor cannot be interpreted, and the phenotypes assigned in its
 name are in part a record of how the assay was set up.
-
-The requirement is older still, and it is quantitative: NCCLS M26-A ties the
-plated volume to the endpoint, and separately requires the smallest accurately
-detectable count to be established by serial dilution of a known inoculum
-[[R31]]. The endpoint has since moved and the rule did not travel with it. The
-persistence field's own consensus guideline, which catalogues at length what else
-can go wrong with a time-kill assay, raises neither the limit of detection nor
-the plated volume nor how deep a reduction the assay can report [[R56]]. <!--supp-->
 
 The two boundaries are tested here on a published rifampicin-tolerance
 classification of 217 clinical *M. tuberculosis* isolates, which deposits
@@ -1620,12 +1615,11 @@ positive count**, one colony in that volume; where none is recorded it is
 inferred from the deposit and labelled as such. The term limit of
 quantification is used only in reporting what a source states.
 
-In running text *L* is the **assay floor**, and that is the only short
-form used, so that "boundary" is left free for the two derived boundaries
-of the next subsection and never denotes a value. The event a
-time-to-event analysis records is correspondingly a first observed
-crossing below the assay floor. What *L* is in each deposit is tabulated
-deposit by deposit (Table 15).
+In running text *L* is the **assay floor**, the only short form used, so
+that "boundary" is left free for the two derived boundaries of the next
+subsection. The event a time-to-event analysis records is correspondingly
+a first observed crossing below the assay floor. What *L* is in each
+deposit is tabulated deposit by deposit (Table 15).
 
 Two censoring problems are handled separately. A **count below the assay
 floor** is left-censored: the population is somewhere below a known
@@ -1702,12 +1696,12 @@ Log10 viable counts were modelled as a linear function of time using a
 **Tobit model** with observation-specific left-censoring limits, fitted by
 maximum likelihood [[R47]]; a censored reading contributes log Φ((limit −
 µ)/σ), the probability it fell below its own limit (Beal's M3 written
-for this assay [[R46]]). As a computational consistency check, 50 imputed
-datasets were generated from the fitted truncated-normal distribution,
-analysed by ordinary least squares, and pooled using Rubin's rules
-[[R48]]; both procedures share the same distributional assumptions, and
-their agreement shows the answer does not depend on which arithmetic
-recovers it, not that the sub-floor distribution is normal.
+for this assay [[R46]]). As a consistency check, 50 imputed datasets were
+generated from the fitted truncated-normal distribution, analysed by
+ordinary least squares, and pooled using Rubin's rules [[R48]]; both
+procedures share the same distributional assumptions, so their agreement
+shows the answer does not depend on which arithmetic recovers it, not that
+the sub-floor distribution is normal.
 
 The growth proxy is the deposit's time to an optical density of 0.4, in
 days, so it runs inversely to growth rate. **The tolerance label** was
@@ -1732,11 +1726,10 @@ proportionality tested on Schoenfeld residuals [[R49]][[R50]].
 **The replicate-level bootstrap** [[R26]] behind interval slopes resamples
 the three replicate counts with replacement, takes their mean, refits the
 concentration slope on each draw, and takes percentile intervals from
-20,000 draws, reported instead of the least-squares fit through the
+20,000 draws, reported instead of a least-squares fit through the
 deposited concentration means, which has two residual degrees of freedom
 and discards the replicate scatter. An interval on a proportion is the
-Jeffreys interval [[R30]], which does not collapse to zero width at the
-sample sizes here.
+Jeffreys interval [[R30]].
 
 **Causal mediation of the resistance association.** A linear
 product-of-coefficients mediation decomposes the total effect of
