@@ -1,0 +1,5 @@
+- Tolerance endpoints depend on the assay's detection floor, not just the drug
+- 33 of 217 M. tuberculosis isolates lacked headroom for their own endpoint
+- 18 floor-level MPN readings reproduce every tolerance label from N0 alone
+- Plated volume alone gave two tolerance labels to one E. coli culture
+- A five-field minimum (MINTK) makes any time-kill endpoint recomputable

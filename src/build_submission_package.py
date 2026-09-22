@@ -102,9 +102,29 @@ prospective experiment are written, and the repository name is correct at
 
 
 def main() -> int:
+    # Rebuild the directory in place. An earlier version called
+    # shutil.rmtree(OUT) first, which on Windows fails part-way through when
+    # any output file is open in a reader: the tree is left half-deleted and
+    # the rest of the build never runs. Check for locks before touching
+    # anything, then overwrite file by file so a failure cannot destroy the
+    # package it was meant to refresh.
     if OUT.exists():
-        shutil.rmtree(OUT)
-    (OUT / "figures").mkdir(parents=True)
+        locked = []
+        for path in sorted(OUT.rglob("*")):
+            if not path.is_file():
+                continue
+            try:
+                with path.open("r+b"):
+                    pass
+            except OSError:
+                locked.append(path.relative_to(OUT).as_posix())
+        if locked:
+            print("cannot rebuild submission/: these files are open elsewhere")
+            for name in locked:
+                print(f"   {name}")
+            print("close them (a PDF reader holds the file open) and re-run")
+            return 1
+    (OUT / "figures").mkdir(parents=True, exist_ok=True)
 
     missing, copied = [], []
     for src, name in DOCS:
