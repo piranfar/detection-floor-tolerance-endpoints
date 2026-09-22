@@ -503,11 +503,11 @@ the floor turns out to be is that the separation between doses collapses.
 The 217-isolate clinical file, tested the other way, supports 24
 comparisons of how much drug it takes to stop growth against how long it
 takes to kill, all corrected together (Benjamini-Hochberg against
-24, Table S22). Four are significant before correction, where 1.2 are
+24, Table S22, Fig. S2A). Four are significant before correction, where 1.2 are
 expected by
 chance, and none survives it; all four point the wrong way (a higher
 inhibitory concentration goes with a *shorter* killing time) and cluster at
-the deepest endpoint, the one Section 1 shows is compromised. Across all 24
+the deepest endpoint, the one Section 1 shows is compromised (Fig. S2B). Across all 24
 tests the weakest correlation this design could have detected runs 0.14 to
 0.25 depending on the subgroup; the six strongest, listed in Table S22, span
 0.14 to 0.18. Restricted to baseline isolates alone, the deepest 15-day
@@ -519,7 +519,7 @@ coli* clones sharing one ancestor (14, 25) returns ρ = +0.043, p =
 holds inside every nutrient group separately, which matters because the
 concentration written on the flask is not the same exposure in every group
 (at 25 µg/mL, 0.55 to 9.47 times the inhibitory concentration that
-population had evolved to, Table S23). Neither deposit shows the two axes
+population had evolved to, Table S23, Fig. S2C). Neither deposit shows the two axes
 are independent. Both show they are not positively coupled, which is what
 they can support.
 
@@ -990,10 +990,10 @@ p-values are plotted because they are what moves, not because they are valid: th
 laboratory label is constant within its own cluster and there are six clusters, so
 no between-laboratory test is available and none is claimed. Blue marks a term
 crossing the conventional threshold, which is a description of the movement and
-not a finding. Both panels appear here, rather than in Figure 2,
+not a finding. Both panels appear here, rather than in Fig. 2,
 because each requires its own disclaiming legend. Colour, and the split
 between laboratories that ever crossed and those that never did, are shared with
-Figure 2 by construction: both figures read the assignment from one function.
+Fig. 2 by construction: both figures read the assignment from one function.
 
 **Figure S2. Resistance and tolerance occupy separate axes, in two designs.**
 (**A**) All 24 comparisons between the concentration axis and the duration axis

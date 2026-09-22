@@ -1096,11 +1096,11 @@ the floor turns out to be is that the separation between doses collapses.
 The 217-isolate clinical file, tested the other way, supports 24
 comparisons of how much drug it takes to stop growth against how long it
 takes to kill, all corrected together (Benjamini-Hochberg against
-24, Table 14). Four are significant before correction, where 1.2 are
+24, Table 14, Fig. S2A). Four are significant before correction, where 1.2 are
 expected by
 chance, and none survives it; all four point the wrong way (a higher
 inhibitory concentration goes with a *shorter* killing time) and cluster at
-the deepest endpoint, the one Section 1 shows is compromised. Across all 24
+the deepest endpoint, the one Section 1 shows is compromised (Fig. S2B). Across all 24
 tests the weakest correlation this design could have detected runs 0.14 to
 0.25 depending on the subgroup; the six strongest, listed in Table 14, span
 0.14 to 0.18. Restricted to baseline isolates alone, the deepest 15-day
@@ -1112,7 +1112,7 @@ coli* clones sharing one ancestor (17, 31) returns ρ = +0.043, p =
 holds inside every nutrient group separately, which matters because the
 concentration written on the flask is not the same exposure in every group
 (at 25 µg/mL, 0.55 to 9.47 times the inhibitory concentration that
-population had evolved to, Table S6). Neither deposit shows the two axes
+population had evolved to, Table S6, Fig. S2C). Neither deposit shows the two axes
 are independent. Both show they are not positively coupled, which is what
 they can support.
 
@@ -1784,7 +1784,7 @@ reported no assay floor by any route: no limit of detection, no limit of
 quantification, and no plated volume from which one could be derived.
 Eighteen carried enough information to compute both boundaries, and five
 carried the complete set of fields the full analysis requires (Table 1,
-Figure S4). The full pipeline is summarised in Figure S6. These 78
+Fig. S4). The full pipeline is summarised in Fig. S6. These 78
 candidates are a documented sample of the literature, assembled without a
 registered search protocol; the two boundaries are derived from
 definitions rather than estimated from the corpus's size, so a single
@@ -2120,7 +2120,7 @@ Massachusetts Institute of Technology (MIT) licence, and the manuscript,
 figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit 6b34842+ of it.
+manuscript was built from commit 160fb5a+ of it.
 
 ### Declaration of computational reproducibility
 
@@ -2320,7 +2320,7 @@ H37Rv, moxifloxacin at ten times the minimum inhibitory concentration.
 profile-likelihood intervals; every laboratory yields one, spanning 5.2-fold.
 (**B**) The two summaries against each other. The three lowest starting densities
 are exactly the three laboratories that recorded crossings at the 100 µL plating;
-the kill rate produces no such separation. The crossing times themselves are Figure S1, with the
+the kill rate produces no such separation. The crossing times themselves are Fig. S1, with the
 laboratory-level tests this design does and does not support.
 
 ![Figure S3](../results/figures/fig3_endpoint_collapse.png)
@@ -2366,10 +2366,10 @@ p-values are plotted because they are what moves, not because they are valid: th
 laboratory label is constant within its own cluster and there are six clusters, so
 no between-laboratory test is available and none is claimed. Blue marks a term
 crossing the conventional threshold, which is a description of the movement and
-not a finding. Both panels appear here, rather than in Figure 2,
+not a finding. Both panels appear here, rather than in Fig. 2,
 because each requires its own disclaiming legend. Colour, and the split
 between laboratories that ever crossed and those that never did, are shared with
-Figure 2 by construction: both figures read the assignment from one function.
+Fig. 2 by construction: both figures read the assignment from one function.
 
 ![Figure S4](../results/figures/figS4_corpus_funnel.png)
 

@@ -614,7 +614,7 @@ reported no assay floor by any route: no limit of detection, no limit of
 quantification, and no plated volume from which one could be derived.
 Eighteen carried enough information to compute both boundaries, and five
 carried the complete set of fields the full analysis requires (Table 3,
-Figure S4). The full pipeline is summarised in Figure S6. These 78
+Fig. S4). The full pipeline is summarised in Fig. S6. These 78
 candidates are a documented sample of the literature, assembled without a
 registered search protocol; the two boundaries are derived from
 definitions rather than estimated from the corpus's size, so a single
@@ -935,7 +935,7 @@ Massachusetts Institute of Technology (MIT) licence, and the manuscript,
 figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit 6b34842+ of it.
+manuscript was built from commit 160fb5a+ of it.
 
 ### Declaration of computational reproducibility
 
@@ -996,7 +996,7 @@ H37Rv, moxifloxacin at ten times the minimum inhibitory concentration.
 profile-likelihood intervals; every laboratory yields one, spanning 5.2-fold.
 (**B**) The two summaries against each other. The three lowest starting densities
 are exactly the three laboratories that recorded crossings at the 100 µL plating;
-the kill rate produces no such separation. The crossing times themselves are Figure S1, with the
+the kill rate produces no such separation. The crossing times themselves are Fig. S1, with the
 laboratory-level tests this design does and does not support.
 
 
