@@ -7,6 +7,7 @@ authors:
   - family-names: Piranfar
     given-names: Vahhab
     orcid: "https://orcid.org/0000-0003-3653-5739"
+    affiliation: "Independent Researcher, Jersey City, NJ, USA"
 repository-code: "https://github.com/piranfar/detection-floor-tolerance-endpoints"
 license: MIT
 license-url: "https://github.com/piranfar/detection-floor-tolerance-endpoints/blob/main/LICENSE"

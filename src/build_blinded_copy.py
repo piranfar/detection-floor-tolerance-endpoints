@@ -115,7 +115,18 @@ AUTHOR = [
     (r"vahab\.p@gmail\.com", "[AUTHOR EMAIL]"),
     (r"0000-0003-3653-5739", "[AUTHOR ORCID]"),
     (r"https?://orcid\.org/\[AUTHOR ORCID\]", "[AUTHOR ORCID]"),
-    (r"Independent Researcher,\s*New York,\s*NY,\s*USA", "[AFFILIATION]"),
+    # The author line, and the note naming where the prospective experiment was
+    # run. Both identify the author to anyone in the field, so a topic-blind
+    # read needs them gone. The city is matched loosely because it has changed
+    # once already and a stale literal silently stops masking anything.
+    (r"Independent Researcher,\s*[^,\n]+,\s*[^,\n]+,\s*USA", "[AFFILIATION]"),
+    (r"The prospective [^\n]*experiment reported here was performed at the\s*\n?"
+     r"Department of Microbiology[^.]*\.\s*The author holds no current\s*\n?"
+     r"institutional\s*\n?affiliation, and the reanalysis, modelling and"
+     r" writing were carried out\s*\n?independently\.",
+     "[AFFILIATION NOTE]"),
+    (r"Department of Microbiology, Iran University of Medical Sciences,"
+     r"\s*\n?Tehran, Iran", "[INSTITUTION]"),
     (r"an independent researcher with no institutional\s*\n?affiliation",
      "an author with no institutional affiliation"),
     (r"https?://github\.com/\S+", "[REPOSITORY URL]"),
