@@ -35,24 +35,22 @@ bacterial survival. We show how an unreported detection floor
 structurally distorts rifampicin tolerance classification in
 *Mycobacterium tuberculosis*.
 
-We analyzed rifampicin tolerance against the assay's detection floor in 217
-clinical *M. tuberculosis* isolates, isoniazid-susceptible and
-isoniazid-resistant alike, and derived two boundaries from the assay's own
-definitions: a reachability boundary, below which starting density cannot
-mathematically support the assigned log reduction, and an identifiability
-boundary, below which a floor-level reading cannot be distinguished from a
-lower tolerance class. Both boundaries were then tested prospectively in
-*Escherichia coli*.
+We analyzed rifampicin tolerance against the detection floor in
+217 clinical *M. tuberculosis* isolates, isoniazid-susceptible and
+isoniazid-resistant alike, and derived two boundaries from the
+assay's own definitions: a reachability boundary, below which starting
+density cannot mathematically support the assigned log reduction, and an
+identifiability boundary, below which a floor-level reading cannot be
+distinguished from a lower tolerance class. We then ran a prospective *Escherichia coli*
+time-kill experiment in our laboratory, testing both boundaries
+independently of the tuberculosis collection.
 
-The standard classification proved structurally compromised. Thirty-three
-of 217 isolates lacked the starting density needed to physically reach
-their assigned 99.99 percent reduction, and none of them did. Eighteen
-isolates ended the assay exactly at the detection floor; a third were
-compatible with more than one tolerance class, admitting no unique
-classification. These floor-level outcomes tracked growth rate, and
-isoniazid-resistant isolates, seeded at a tenfold lower starting density
-than susceptible ones, were disproportionately exposed to this artifact.
-The *E. coli* experiment confirmed both boundaries outside
+The classification proved structurally compromised in the clinical cohort. Thirty-three of 217 isolates lacked the starting density needed to
+reach their assigned 99.99 percent reduction, and none did. Eighteen isolates ended exactly at the detection floor; a third were
+compatible with more than one tolerance class. These outcomes tracked growth rate, and isoniazid-resistant
+isolates, seeded at a tenfold lower starting density than susceptible
+ones, were disproportionately exposed.
+Our *E. coli* experiment confirmed both boundaries outside
 *M. tuberculosis*: adjusting the plated volume alone assigned two
 conflicting tolerance labels to a single culture at six of 54 sample times.
 
@@ -935,7 +933,7 @@ Massachusetts Institute of Technology (MIT) licence, and the manuscript,
 figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit 160fb5a+ of it.
+manuscript was built from commit fbc0bb5+ of it.
 
 ### Declaration of computational reproducibility
 
