@@ -63,6 +63,15 @@ def first_citation_positions(body: str, n_tables: int) -> dict[int, int]:
     results_at = body.find("## 3. Results")
     pos = {}
     for n in range(1, n_tables + 1):
+        # A citation wrapped across a line break ("(Table\n10)") does not match
+        # the one-line pattern below, so the table silently never gets spliced
+        # and the audit reports it as both dangling and missing. Rewrapping a
+        # paragraph is enough to cause this, so check before anything else.
+        if re.search(rf"Table\s*\n\s*{n}\b", body):
+            raise SystemExit(
+                f"Table {n} is cited across a line break in MANUSCRIPT.md. "
+                f"Keep 'Table {n}' on one line; break before it instead."
+            )
         hits = list(re.finditer(rf"Table {n}\b", body))
         if not hits:
             continue
