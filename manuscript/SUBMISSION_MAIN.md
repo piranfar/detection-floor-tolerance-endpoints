@@ -70,34 +70,35 @@ finding drugs that kill *Mycobacterium tuberculosis* faster, and that choice is
 made in a flask: compounds are ranked by in vitro killing curves, counts of
 surviving colonies read off a plate over time.
 
-A negative culture taken after treatment has begun is not evidence of sterility,
-which is why blood cultures are drawn before the first dose. The plate also has
-a hard floor, and the pipette sets it: the smallest positive result is one
-colony, and what one colony means depends on the volume spread. Plate 100 µL and
-one colony is 10 bacteria per mL. Below that the plate reports no growth, which
-is not the same as nothing there. Write *L* for that floor and *N₀* for the
-starting density.
+A plate count has a hard floor, and the pipette sets it. The smallest positive
+result is one colony, and what one colony means depends on the volume spread:
+plate 100 µL and a single colony is 10 bacteria per mL. Below that the plate
+reports no growth, which is not the same as nothing there. A negative culture
+taken after treatment has begun is not evidence of sterility, which is why blood
+cultures are drawn before the first dose. We write *L* for that floor and *N₀*
+for the starting density.
 
 Tuberculosis makes that floor expensive, because the phenotype invoked to explain
 why treatment takes so long is itself defined by a duration. Tolerance is the
 capacity of a genetically susceptible population to survive an exposure that
-should kill it: the drug still works, the bacteria take a long time to die, and
-that time is the measurement.
+should kill it: the drug still works, but the bacteria take a long time to die,
+and that time is the measurement.
 
-Rather than asking whether a culture went negative, the modern definition asks
-how many logs the population fell: the minimum duration for killing, MDK, is the
-time to a specified fractional reduction (90, 99 or 99.99 per cent), proposed as
-the tolerance counterpart to the minimum inhibitory concentration (2, 3).
-The fraction is the whole point. A ratio to the starting population is
-scale-free: if the count falls in a straight line on a log scale at rate *b*, the
-time to a *q*-log reduction is *q/b*, and the starting density cancels. By
-construction MDK cannot be contaminated by how much culture went into the tube.
+Rather than asking whether a culture has gone negative, the modern definition
+asks how many logs the population fell. The minimum duration for killing (MDK),
+the time to a specified fractional reduction of 90, 99 or 99.99 per cent, was
+proposed as the tolerance counterpart to the minimum inhibitory concentration
+(2, 3). The fraction is the whole point. A ratio to the starting
+population is scale-free: if the count falls in a straight line on a log scale
+at rate *b*, the time to a *q*-log reduction is *q/b*, and the starting density
+cancels. By construction, MDK cannot be contaminated by how much culture
+went into the tube.
 
-MDK as originally defined is not a plate-count metric: it was measured from
-presence or absence of survivors in microwell arrays of about a hundred cells, a
-design chosen to avoid dilution plating, and the consensus guidelines say how the
+MDK as originally defined is not a plate-count metric. It was measured from the
+presence or absence of survivors in microwell arrays of about a hundred cells,
+a design chosen to avoid dilution plating. The consensus guidelines say how the
 smallest detectable count should be established (3, 4). What this paper
-examines is the form the tuberculosis field adopted, log-reduction endpoints
+examines is the form the tuberculosis field adopted: log-reduction endpoints
 computed from plate counts and most-probable-number series. The floor problem
 belongs to that implementation, not to the definition.
 
@@ -108,42 +109,45 @@ down, and what is visible is bounded below by the floor. So an isolate has
     headroom  h = log10(N₀ / L)
 
 and no experiment can demonstrate a reduction deeper than *h*, however completely
-the drug worked. Where *h* < *q* the endpoint is unreachable before the drug is
-added. That is the first boundary, and we call it reachability.
+the drug worked. Where *h* < *q*, the endpoint is unreachable before the drug is
+added. We call this first boundary reachability.
 
-It gets worse when the last count lands on the floor. The fraction written down
-is then *L/N₀*, the floor divided by the starting density. The drug has dropped
-out of it; what is left is the pipette and the inoculum. A metric designed to be
-inoculum-independent becomes a pure inoculum readout at exactly the depth where
-tolerance is scored. That is the second boundary, identifiability.
+A second failure appears when the last count lands on the floor. The fraction
+written down is then *L/N₀*, the floor divided by the starting density; the drug
+has dropped out of it, and what is left is the pipette and the inoculum. A metric
+designed to be inoculum-independent becomes a pure inoculum readout at exactly
+the depth where tolerance is scored. We call this second boundary
+identifiability.
 
 Inoculum-dependent tolerance measurements have been reported before under a
-different mechanism: an *Escherichia coli* persister assay gave different
+different mechanism. An *Escherichia coli* persister assay gave different
 tolerant fractions depending on growth phase and culture history, attributed
 there to prophage induction rather than to an assay floor (5). That report
 and this one agree on the symptom and differ on the mechanism, and neither rules
 out the other operating in a given assay.
 
-No prior treatment converts a floor-level reading into the classification rule it
-becomes. When the last count sits at *L*, the recorded fraction is *L*/*N*₀, and
-the low, medium or high label is then a cut on starting density. That is the gap
-this paper fills. Two further failures stay distinct from it: a duration ceiling
-(the assay stopped looking) is not a count floor, and recording a below-limit
-flag is not the same as scoring a duration from the points so recorded.
+What has not been recognised before is what a floor-level reading becomes: a
+classification rule. When the last count sits at *L*, the recorded fraction is
+*L*/*N*₀, and the low, medium or high label is then a cut on starting density.
+That is the gap this paper fills. Two further failures stay distinct from it. A
+duration ceiling, where the assay stopped looking, is not a count floor.
+Recording a below-limit flag is not the same as scoring a duration from the
+points so recorded.
 
 This study asks how deep a log-reduction tolerance endpoint can be measured at
 all, and whether isolates have been assigned tolerance phenotypes from outside
-that range. Two boundaries on the starting density follow from the definitions,
-one deciding whether an endpoint is reachable and the other whether a
-floor-level reading identifies a class, both computed from quantities a
-time-kill protocol already records.
+that range. Two boundaries on the starting density follow from the definitions.
+One decides whether an endpoint is reachable, the other whether a floor-level
+reading identifies a class, and both are computed from quantities a time-kill
+protocol already records.
 
-That question needs data recording three quantities (a starting density measured
-before treatment, a time series, and either a plated volume or a stated floor),
-and most do not. Of 78 candidate time-kill datasets assembled for this study, 45
-were inspected in full; of the 40 distinct literature deposits among them, **32
-state no assay floor by any route**. That is the first result, and it is why the
-five carried forward are five rather than fifty (Table S1).
+Answering that question needs data recording three quantities: a starting
+density measured before treatment, a time series, and either a plated volume or
+a stated floor. Most datasets do not record all three. Of 78 candidate time-kill
+datasets assembled for this study, 45 were inspected in full; of the 40 distinct
+literature deposits among them, **32 state no assay floor by any route**. That is
+the first result, and it is why the five carried forward are five rather than
+fifty (Table S1).
 
 If the hypothesis holds, a tolerance call reported without its starting density
 and its assay floor cannot be interpreted, and the phenotypes assigned in its
@@ -933,7 +937,7 @@ Massachusetts Institute of Technology (MIT) licence, and the manuscript,
 figures and results under CC BY 4.0. The deposits
 keep their depositors' own licences. It is at
 https://github.com/piranfar/detection-floor-tolerance-endpoints, and this
-manuscript was built from commit fbc0bb5+ of it.
+manuscript was built from commit 47b26bf+ of it.
 
 ### Declaration of computational reproducibility
 
