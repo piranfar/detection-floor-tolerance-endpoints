@@ -106,5 +106,34 @@ data/corpus/
 manuscript/REVIEW_COPY.html
 manuscript/REVIEW_COPY.pdf
 
+# ---------------------------------------------------------------------------
+# (5) The manuscript prose itself. Withheld while the paper is under
+# consideration, so that a preprint server's duplicate-text screening does not
+# find the full text of the submission already published on the web, and so
+# that the version of record is the journal's rather than a moving target in
+# git. This is a publication-timing decision, not a licence change: the
+# manuscript, figures and results remain CC BY 4.0 as the paper states.
+#
+# What stays tracked is everything needed to reproduce the analysis: the code,
+# the data manifests, every results table and receipt, and results/figures/,
+# which holds the same figure files the submission uses. The paper's
+# reproducibility claim therefore still holds against this repository.
+#
+# Earlier commits still contain the prose. History was deliberately not
+# rewritten; the point is to stop republishing it, not to erase it.
+# ---------------------------------------------------------------------------
+manuscript/
+submission/
+
+# Standalone review renders of individual sections, same reason as above.
+Methods_for_review.docx
+Results_for_review.docx
+Title_and_Abstract_for_review.docx
+
+# Superseded drafts that still carry manuscript prose.
+_archive/superseded_drafts/02_introduction_humanized.*
+_archive/superseded_drafts/SUPPLEMENTAL_MATERIAL.md
+_archive/superseded_drafts/REFERENCES_DRAFT.md
+
 # macOS directory droppings
 .DS_Store

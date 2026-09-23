@@ -19,13 +19,19 @@ were given.
 ## Layout
 
 ```
-manuscript/     the paper: PAPER_COMPLETE.md is the assembled document
 docs/           working documents 12 to 18
 src/            the analysis
 results/        every table, figure and receipt it produces
 data/           the deposits, shared with version one
 version_one/    the first paper, complete and frozen
 ```
+
+The manuscript prose is not in this repository while the paper is under
+consideration at a journal. Everything the analysis needs is: `src/` builds
+every number, `results/tables/` holds them, `results/receipts/` records the
+software each stage ran under, and `results/figures/` holds the figure files
+the submission uses. `python run_all.py` regenerates all of it from
+`data/raw/`. The prose is restored here once the paper is published.
 
 Two papers live here. This one is at the root; the earlier simulation study is
 in `version_one/`, self-contained, with its own copy of the modules the two once
@@ -92,7 +98,7 @@ Three kinds of material, licensed separately, with the full terms in `LICENSE`:
 | what | where | licence |
 |---|---|---|
 | code | `src/`, `run_all.py`, `version_one/src/` | MIT |
-| manuscripts, figures, tables, results | `manuscript/`, `docs/`, `results/` | CC BY 4.0 |
+| manuscripts, figures, tables, results | `docs/`, `results/` (and `manuscript/`, once restored) | CC BY 4.0 |
 | third-party data | `data/` | each depositor's own licence |
 
 CC BY 4.0 rather than a NonCommercial or NoDerivatives variant, deliberately: a
