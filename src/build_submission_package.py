@@ -113,6 +113,11 @@ def main() -> int:
         for path in sorted(OUT.rglob("*")):
             if not path.is_file():
                 continue
+            # JMM/ holds the hand-assembled copy for one journal's upload form.
+            # The packager never writes there, so a file open in Word inside it
+            # cannot break this build and must not block it.
+            if path.relative_to(OUT).parts[0] == "JMM":
+                continue
             try:
                 with path.open("r+b"):
                     pass
